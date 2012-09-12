@@ -36,7 +36,7 @@
             this.globalvarname = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.globalvarlistbox = new System.Windows.Forms.ListBox();
+            this.GlobVarListBox = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.roomnametextbox = new System.Windows.Forms.TextBox();
@@ -226,6 +226,7 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.ShowPlPosCB = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -297,12 +298,13 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.ShowPlPosCB);
             this.tabPage1.Controls.Add(this.CreateNewGlobalVar);
             this.tabPage1.Controls.Add(this.globalvarvalue);
             this.tabPage1.Controls.Add(this.globalvarname);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.globalvarlistbox);
+            this.tabPage1.Controls.Add(this.GlobVarListBox);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.roomnametextbox);
@@ -364,15 +366,15 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "Variable Name";
             // 
-            // globalvarlistbox
+            // GlobVarListBox
             // 
-            this.globalvarlistbox.FormattingEnabled = true;
-            this.globalvarlistbox.Location = new System.Drawing.Point(451, 21);
-            this.globalvarlistbox.Name = "globalvarlistbox";
-            this.globalvarlistbox.Size = new System.Drawing.Size(217, 498);
-            this.globalvarlistbox.TabIndex = 14;
-            this.globalvarlistbox.SelectedIndexChanged += new System.EventHandler(this.globalvarlistbox_SelectedIndexChanged);
-            this.globalvarlistbox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.globalvarlistbox_MouseDoubleClick);
+            this.GlobVarListBox.FormattingEnabled = true;
+            this.GlobVarListBox.Location = new System.Drawing.Point(451, 21);
+            this.GlobVarListBox.Name = "GlobVarListBox";
+            this.GlobVarListBox.Size = new System.Drawing.Size(217, 498);
+            this.GlobVarListBox.TabIndex = 14;
+            this.GlobVarListBox.SelectedIndexChanged += new System.EventHandler(this.globalvarlistbox_SelectedIndexChanged);
+            this.GlobVarListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.globalvarlistbox_MouseDoubleClick);
             // 
             // label13
             // 
@@ -2353,6 +2355,17 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
+            // ShowPlPosCB
+            // 
+            this.ShowPlPosCB.AutoSize = true;
+            this.ShowPlPosCB.Location = new System.Drawing.Point(21, 197);
+            this.ShowPlPosCB.Name = "ShowPlPosCB";
+            this.ShowPlPosCB.Size = new System.Drawing.Size(172, 17);
+            this.ShowPlPosCB.TabIndex = 20;
+            this.ShowPlPosCB.Text = "Show Player Position (Console)";
+            this.ShowPlPosCB.UseVisualStyleBackColor = true;
+            this.ShowPlPosCB.CheckedChanged += new System.EventHandler(this.ShowPlPosCB_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2496,7 +2509,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox globalvarlistbox;
+        private System.Windows.Forms.ListBox GlobVarListBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button CreateNewGlobalVar;
         private System.Windows.Forms.TextBox globalvarvalue;
@@ -2625,6 +2638,7 @@
         private System.Windows.Forms.NumericUpDown comobjmoveXBox;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.CheckBox ShowPlPosCB;
 
     }
 }

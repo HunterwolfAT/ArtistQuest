@@ -19,6 +19,8 @@ namespace WindowsGame1
         public int selectedWalkRect = 0;
         public int selectedObject = 0;
 
+        public bool ShowPlayerPos = false;
+
         private Graphics graphics;
         private Pen greenpen;
         private String AnimationImageFilename;
@@ -48,10 +50,10 @@ namespace WindowsGame1
                 listBox1.Items.Add(rect);
             }
 
-            globalvarlistbox.Items.Clear();
+            GlobVarListBox.Items.Clear();
             foreach (String[] var in game.GameVariables)
             {
-                globalvarlistbox.Items.Add(var[0] + ": " + var[1]);
+                GlobVarListBox.Items.Add(var[0] + ": " + var[1]);
             }
 
             listBox2.Items.Clear();
@@ -527,6 +529,11 @@ namespace WindowsGame1
                 asglobvarlistbox.Items.Add(var[0] + ": " + var[1]);
                 comglobvarlistbox.Items.Add(var[0] + ": " + var[1]);
             }
+
+            //Add Player Position to the choices at Ifgobalvarlistbox
+            ifglobvarlistbox.Items.Add("Player X-Position");
+            ifglobvarlistbox.Items.Add("Player Y-Position");
+
             foreach (Item item in game.items.ReturnItemList())
             {
                 ifitemlistbox.Items.Add(item.Name);
@@ -644,7 +651,7 @@ namespace WindowsGame1
 
         private void globalvarlistbox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            game.GameVariables.RemoveAt(globalvarlistbox.SelectedIndex);
+            game.GameVariables.RemoveAt(GlobVarListBox.SelectedIndex);
             UpdateEditor();
         }
 
@@ -663,7 +670,18 @@ namespace WindowsGame1
             {
                 sargs.Add("Variablecheck");
 
-                sargs.Add(game.GameVariables[ifglobvarlistbox.SelectedIndex][0]);
+                //If one of the non-global varibles have been chosen...
+                if (ifglobvarlistbox.SelectedIndex >= (ifglobvarlistbox.Items.Count - 2))
+                {
+                    if (ifglobvarlistbox.SelectedIndex == ifglobvarlistbox.Items.Count - 1) // Y-POS of Player
+                        sargs.Add("PlayerYPos");
+                    if (ifglobvarlistbox.SelectedIndex == ifglobvarlistbox.Items.Count - 2) // X-POS of Player
+                        sargs.Add("PlayerXPos");
+                }
+                else //and if a global variable has been chosen...
+                {
+                    sargs.Add(game.GameVariables[ifglobvarlistbox.SelectedIndex][0]);
+                }
 
                 sargs.Add(islistbox.Items[islistbox.SelectedIndex].ToString());
 
@@ -743,8 +761,8 @@ namespace WindowsGame1
 
         private void globalvarlistbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            globalvarname.Text = game.GameVariables[globalvarlistbox.SelectedIndex][0];
-            globalvarvalue.Text = game.GameVariables[globalvarlistbox.SelectedIndex][1];
+            globalvarname.Text = game.GameVariables[GlobVarListBox.SelectedIndex][0];
+            globalvarvalue.Text = game.GameVariables[GlobVarListBox.SelectedIndex][1];
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -1362,6 +1380,11 @@ namespace WindowsGame1
                     || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
                     AddCommand("Fade Object", iargs, sargs, commandlistbox.SelectedIndex);
             }
+        }
+
+        private void ShowPlPosCB_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowPlayerPos = ShowPlPosCB.Checked;
         }
 
     }

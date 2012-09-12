@@ -253,6 +253,9 @@ namespace WindowsGame1
             {
                 player.Update();
 
+                if (Editor.ShowPlayerPos)
+                    Console.WriteLine("Player X: " + player.position.X.ToString() + " Y: " + player.position.Y.ToString());
+
                 bool objectfound = false;
                 foreach (Object obj in map.getObjects())
                 {

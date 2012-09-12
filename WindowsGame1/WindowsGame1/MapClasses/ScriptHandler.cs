@@ -219,6 +219,12 @@ namespace WindowsGame1
                                     Value2 = var[1];
                             }
 
+                            //Check if the first value isn't a global variable, but a property
+                            if (activescript.Commands[Commandcounter].SArgs[1] == "PlayerXPos")
+                                Value1 = game.player.position.X.ToString();
+                            if (activescript.Commands[Commandcounter].SArgs[1] == "PlayerYPos")
+                                Value1 = game.player.position.Y.ToString();
+
                             if (activescript.Commands[Commandcounter].SArgs[3][0] == '\\')
                                 Value2 = activescript.Commands[Commandcounter].SArgs[3].Remove(0, 1);    //Removes the first '\' char
 
