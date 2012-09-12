@@ -1,0 +1,684 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Storage;
+using System.IO;
+
+namespace WindowsGame1
+{
+    /// <summary>
+    /// This is the main type for your game
+    /// </summary>
+    public class Game1 : Microsoft.Xna.Framework.Game
+    {
+        //************INSTANCE ALL VARIABLES**************
+        //SUPER SECRET ONLY ONCE IN A LIFETIME ADJUSTING VARIABLES
+        private String Projectname = "ArtistQuestProt";
+        private String FirstRoom = "Hallway";
+        private Boolean Debug = true;
+        private Boolean ShowTitle = true;
+        
+        //System Variables
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private Boolean GameStartup = true;
+
+        //Game critical Objects
+        public Project proj;
+        public Maps map;
+        public Player player;
+        public Itemhandler items;
+        private Form1 Editor;           // The Form for the Editor
+
+        //Game Variables
+        private Title title;
+        public List<String[]> GameVariables;
+
+        //Variables for Controls
+        float thumbx, thumby;
+        bool EditorToggleHold = false;
+        private MouseState oldState;
+        private KeyboardState KoldState;
+
+        //Variables for GUI
+        public GUI gui;
+        private SpriteFont font;
+
+        //ScriptHandler
+        private ScriptHandler scripthandler;
+
+        //Variables for the Editor
+        private Boolean EditorON = false;
+        private Rectangle NewWalkMap;
+        private Boolean SelectWalkMap = false;
+        private Point E_ClickedOn = new Point(-1,-1);
+
+        //Constructor
+        public Game1()
+        {
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
+
+            // Define resolution of the game
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480;
+
+        }
+
+        /// <summary>
+        /// Allows the game to perform any initialization it needs to before starting to run.
+        /// This is where it can query for any required services and load any non-graphic
+        /// related content.  Calling base.Initialize will enumerate through any components
+        /// and initialize them as well.
+        /// </summary>
+        protected override void Initialize()
+        {
+            // TODO: Add your initialization logic here    
+            title = new Title();
+
+            if (!ShowTitle)
+            {
+                InitializeContent();
+                title.Startup = false;
+                GameStartup = false;
+            }
+
+            base.Initialize();
+        }
+
+        private void InitializeContent()
+        {
+            map = new Maps();
+
+            if (FirstRoom != "")
+            {
+                string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = path.Substring(6, path.Length - 6);      // Getting rid of the file:\ it puts in front of the path with the above line
+                string relPath = System.IO.Path.Combine(path + "\\saves\\", FirstRoom);
+                LoadMap(relPath, true);
+            }
+            else
+            {
+                //Test-Walkmaps
+                map.AddWalkRect(new Rectangle(174, 101, 271, 183));
+                map.AddWalkRect(new Rectangle(174, 258, 71, 149));
+            }
+
+            player = new Player();
+            items = new Itemhandler();
+
+            GameVariables = new List<String[]>();
+
+            proj = new Project(Projectname, GameVariables, items.ReturnItemList());
+
+            LoadProjectfile();
+
+            Editor = new Form1(this);
+            NewWalkMap = new Rectangle(0, 0, 0, 0);
+        }
+
+    
+
+        /// <summary>
+        /// LoadContent will be called once per game and is the place to load
+        /// all of your content.
+        /// </summary>
+        protected override void LoadContent()
+        {
+            // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            
+            font = Content.Load<SpriteFont>("Defaultfont");
+
+            //Loads the title (and loading-) screen
+            title.LoadContent(this.Content);
+
+            if (!ShowTitle)
+                LoadContentContent();
+        }
+
+        /// <summary>
+        /// LoadContentContent loads everything else that isnt the title screen
+        /// </summary>
+        private void LoadContentContent()
+        {
+
+            // TODO: use this.Content to load your game content here
+            map.LoadContent(this.Content);
+            player.LoadContent(this.Content, font);
+            gui = new GUI(font, player.InvList);
+            gui.LoadContent(this.Content);
+
+            scripthandler = new ScriptHandler(map, player, items, this);
+        }
+
+        /// <summary>
+        /// UnloadContent will be called once per game and is the place to unload
+        /// all content.
+        /// </summary>
+        protected override void UnloadContent()
+        {
+            // TODO: Unload any non ContentManager content here
+        }
+
+        /// <summary>
+        /// Allows the game to run logic such as updating the world,
+        /// checking for collisions, gathering input, and playing audio.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        protected override void Update(GameTime gameTime)
+        {
+            // Allows the game to exit
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            //    this.Exit();
+
+            // TODO: Add your update logic here
+            if (ShowTitle)
+            {
+                if (title.Update() == -1)
+                    CheckControls();
+                else
+                {
+                    switch (title.Update())
+                    {
+                        case 0:
+                            ShowTitle = false;
+                            if (title.Startup)
+                                title.Startup = false;
+                            break;
+                        case 1:
+                            this.Exit();
+                            break;
+                    }
+                }
+            }
+            else // Regular Game Logic
+            {
+                player.Update();
+
+                bool objectfound = false;
+                foreach (Object obj in map.getObjects())
+                {
+                    if (obj.Update(player.playerRect))
+                    {
+                        player.selectedObject = obj;
+                        objectfound = true;
+                    }
+                }
+
+                if (objectfound == false)
+                    player.selectedObject = null;
+
+                gui.Update();
+
+                CheckControls();
+
+                scripthandler.Update(gui, GameVariables);
+            }
+
+            base.Update(gameTime);
+
+        }
+
+        /// <summary>
+        ///This is called when the game should draw itself.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        protected override void Draw(GameTime gameTime)
+        {
+            
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+            
+            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            if (ShowTitle)
+            {
+                title.Draw(spriteBatch, GameStartup, font);
+                if (GameStartup)
+                {
+                    InitializeContent();
+                    LoadContentContent();
+                    GameStartup = false;
+                }
+            }
+            else
+            {
+                // Draw everything behind the player
+                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), false);
+                player.Draw(spriteBatch, graphics);
+                // And then everything in front of him
+                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), true);
+
+                // Drawing UserInterface last
+                player.verbmenu.Draw(spriteBatch);
+                gui.Draw(spriteBatch, player.verbmenu.Shown, player.selectedObject, scripthandler.IsScriptRunning());
+            }
+
+            spriteBatch.End();
+
+            base.Draw(gameTime);
+        }
+
+        private void CheckControls()
+        {
+            #region Keyboard Input
+            KeyboardState KnewState = Keyboard.GetState();
+
+            //KEYBOARD SECTION
+            if (Keyboard.GetState().IsKeyUp(Keys.F3))
+                EditorToggleHold = false;
+
+            if (KnewState.IsKeyDown(Keys.F4) && KoldState.IsKeyUp(Keys.F4))
+                player.clipping = !player.clipping;
+
+            // Title-Screen keyboard checks
+            if (ShowTitle)
+            {
+                if (KnewState.IsKeyDown(Keys.Up) && KoldState.IsKeyUp(Keys.Up))
+                {
+                    title.SelectUp();
+                }
+                if (KnewState.IsKeyDown(Keys.Down) && KoldState.IsKeyUp(Keys.Down))
+                {
+                    title.SelectDown();
+                }
+                if (KnewState.IsKeyDown(Keys.Enter) && KoldState.IsKeyUp(Keys.Enter))
+                {
+                    title.Confirm();
+                }
+            }
+            else
+            {
+                // When ESC - Show Title Screen
+                if (KnewState.IsKeyDown(Keys.Escape) && KoldState.IsKeyUp(Keys.Escape))
+                {
+                    ShowTitle = true;
+                    title.Show();
+                }
+                
+                // Start up the Editor-Mode
+                if (Keyboard.GetState().IsKeyDown(Keys.F3) && EditorToggleHold == false)
+                {
+                    if (EditorON == false)
+                    {
+                        Editor.Show();
+                    }
+                    else
+                        Editor.Hide();
+
+                    //toggle debug variables
+                    EditorON = !EditorON;
+                    this.IsMouseVisible = !this.IsMouseVisible;
+
+                    Editor.UpdateEditor();
+                    EditorToggleHold = true;
+                }
+
+                if (KnewState.IsKeyDown(Keys.Space) && KoldState.IsKeyUp(Keys.Space))
+                {
+                    if (!scripthandler.IsScriptRunning())
+                        gui.ShowInventory = !gui.ShowInventory;
+                }
+
+                if (gui.ShowInventory == false)
+                {
+
+                    if (player.verbmenu.Shown == false)
+                    {
+                        // Movement of the Player
+                        if (scripthandler.IsScriptRunning() == false)
+                        {
+                            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                            {
+                                if (player.CheckCollision(new Vector2(-2, 0), map.getWalkrects(), map.Objects))
+                                    player.move(-2, 0);
+                            }
+                            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                            {
+                                if (player.CheckCollision(new Vector2(2, 0), map.getWalkrects(), map.Objects))
+                                    player.move(2, 0);
+                            }
+                            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                            {
+                                if (player.CheckCollision(new Vector2(0, -2), map.getWalkrects(), map.Objects))
+                                    player.move(0, -2);
+                            }
+                            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                            {
+                                if (player.CheckCollision(new Vector2(0, 2), map.getWalkrects(), map.Objects))
+                                    player.move(0, 2);
+                            }
+                        }
+                        // Check for Objects to interact with and interact with them
+                        if (KnewState.IsKeyDown(Keys.Enter) && KoldState.IsKeyUp(Keys.Enter))
+                        {
+                            if (!gui.CheckControls() && gui.ShowMSG == false)
+                                player.CheckObject(graphics.PreferredBackBufferWidth);
+                        }
+                    }
+                    else // Verbmenu is shown
+                    {
+                        // Close menu without doing anything
+                        if (KnewState.IsKeyDown(Keys.RightShift) && KoldState.IsKeyUp(Keys.RightShift))
+                        {
+                            player.verbmenu.Hide();
+                        }
+                        // Navigate menu
+                        if (KnewState.IsKeyDown(Keys.Up) && KoldState.IsKeyUp(Keys.Up))
+                        {
+                            player.verbmenu.goUp();
+                        }
+                        if (KnewState.IsKeyDown(Keys.Down) && KoldState.IsKeyUp(Keys.Down))
+                        {
+                            player.verbmenu.goDown(player.selectedObject.scripts);
+                        }
+                        if (KnewState.IsKeyDown(Keys.Enter) && KoldState.IsKeyUp(Keys.Enter))
+                        {
+                            player.verbmenu.Hide();
+                            if (player.selectedObject.scripts.Count != 0)
+                                scripthandler.RunScript(player.selectedObject.scripts[player.verbmenu.getSelectedItem()]);
+                        }
+                    }
+                }
+                else // Inventory is shown
+                {
+                    if (gui.InventoryActive)
+                    {
+                        if (KnewState.IsKeyDown(Keys.Right) && KoldState.IsKeyUp(Keys.Right))
+                        {
+                            if (player.InvList.Count - 1 > gui.InventorySelected)
+                            {
+                                gui.InventorySelected++;
+                            }
+                        }
+
+                        if (KnewState.IsKeyDown(Keys.Left) && KoldState.IsKeyUp(Keys.Left))
+                        {
+                            if (gui.InventorySelected > 0)
+                            {
+                                gui.InventorySelected--;
+                            }
+                        }
+
+                        if (KnewState.IsKeyDown(Keys.RightShift) && KoldState.IsKeyUp(Keys.RightShift))
+                        {
+                            if (player.InvList.Count > 0)
+                                //Run the Look-at script
+                                scripthandler.RunScript(player.InvList[gui.InventorySelected].scripts[0]);
+                        }
+
+                        if (KnewState.IsKeyDown(Keys.Enter) && KoldState.IsKeyUp(Keys.Enter))
+                        {
+                            if (gui.ShowMSG)
+                            {
+                                gui.CheckControls();
+                            }
+                            else if (player.verbmenu.Shown)
+                            {
+                                if (player.InvList.Count > 0)
+                                {
+                                    bool foundscript = false;
+
+                                    //Check if the item has a script for this object. Otherwise run default script
+                                    foreach (Script script in player.InvList[gui.InventorySelected].scripts)
+                                    {
+                                        Console.WriteLine(script.Name + "  " + player.selectedObject.name);
+                                        if (script.Name == player.selectedObject.name)
+                                        {
+                                            player.verbmenu.Hide();
+                                            gui.ShowInventory = false;
+                                            scripthandler.RunScript(script);
+                                            foundscript = true;
+                                        }
+                                    }
+
+                                    if (!foundscript)
+                                    {
+                                        player.verbmenu.Hide();
+                                        gui.ShowInventory = false;
+                                        scripthandler.RunScript(player.InvList[gui.InventorySelected].scripts[1]);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            KoldState = KnewState;
+            #endregion
+
+            #region GamePad Input
+            // GAMEPAD INPUT
+            thumbx = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X;
+            thumby = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y;
+            if (thumbx >= 0.1 || thumbx <= -0.1)
+            {
+                //player.image.Position += new Vector2(thumbx, -thumby);
+                Vector2 deltapos = new Vector2(thumbx * 2, 0);
+                if (player.CheckCollision(deltapos, map.getWalkrects(), map.Objects))
+                    player.move(deltapos.X, 0);
+            }
+            if (thumby <= -0.1 || thumby >= 0.1)
+            {
+                Vector2 deltapos = new Vector2(0, -thumby * 2);
+                if (player.CheckCollision(deltapos, map.getWalkrects(), map.Objects))
+                    player.move(0, deltapos.Y);
+            }
+
+            #endregion
+
+            #region Mouse Input
+            MouseState newState = Mouse.GetState();
+
+            if (EditorON)
+            {
+                //ON LEFT BUTTON HOLD
+                if (newState.LeftButton == ButtonState.Pressed && newState.X >= 0 && newState.Y >= 0 && newState.X <= graphics.PreferredBackBufferWidth && newState.Y <= graphics.PreferredBackBufferHeight)
+                {
+                    // Move Walkmap
+                    if (Editor.ToolState == "MoveWalkmap" || Editor.ToolState == "MovingWalkmap")
+                    {
+                        if (map.getWalkrects().Count >= Editor.selectedWalkRect && Editor.selectedObject != -1)
+                        {
+                            if (Editor.ToolState == "MoveWalkmap")
+                            {
+                                E_ClickedOn = new Point(newState.X, newState.Y);
+                                if (map.getWalkrects()[Editor.selectedWalkRect].Contains(E_ClickedOn))
+                                    Editor.ToolState = "MovingWalkmap";
+                            }
+                            else if (Editor.ToolState == "MovingWalkmap")
+                            {
+                                // Move the Rect by the Delta
+                                int deltaX = newState.X - E_ClickedOn.X;
+                                int deltaY = newState.Y - E_ClickedOn.Y;
+                                map.getWalkrects()[Editor.selectedWalkRect] = new Rectangle(map.getWalkrects()[Editor.selectedWalkRect].X + deltaX, map.getWalkrects()[Editor.selectedWalkRect].Y + deltaY, map.getWalkrects()[Editor.selectedWalkRect].Width, map.getWalkrects()[Editor.selectedWalkRect].Height);
+                                E_ClickedOn = new Point(newState.X, newState.Y);
+                            }
+                        }
+                    }
+
+                    // Move Object
+                    if (Editor.ToolState == "MoveObject" || Editor.ToolState == "MovingObject")
+                    {
+                        if (map.getObjects().Count >= Editor.selectedObject && Editor.selectedObject > -1)
+                        {
+                            if (Editor.ToolState == "MoveObject")
+                            {
+                                E_ClickedOn = new Point(newState.X, newState.Y);
+                                if (map.getObjects()[Editor.selectedObject].getActualRect().Contains(E_ClickedOn))
+                                    Editor.ToolState = "MovingObject";
+                            }
+                            else if (Editor.ToolState == "MovingObject")
+                            {
+                                // Move the Rect by the Delta
+                                int deltaX = newState.X - E_ClickedOn.X;
+                                int deltaY = newState.Y - E_ClickedOn.Y;
+                                map.getObjects()[Editor.selectedObject].rect = new Rectangle(map.getObjects()[Editor.selectedObject].rect.X + deltaX, map.getObjects()[Editor.selectedObject].rect.Y + deltaY, map.getObjects()[Editor.selectedObject].rect.Width, map.getObjects()[Editor.selectedObject].rect.Height);
+                                E_ClickedOn = new Point(newState.X, newState.Y);
+                            }
+                        }
+                    }
+                }
+
+                //ON LEFT BUTTON RELEASE
+                if (newState.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Pressed && newState.X >= 0 && newState.Y >= 0 && newState.X <= graphics.PreferredBackBufferWidth && newState.Y <= graphics.PreferredBackBufferHeight)
+                {
+                    if (Editor.ToolState == "MovingWalkmap")
+                    {
+                        Editor.ToolState = "MoveWalkmap";
+                    }
+                    if (Editor.ToolState == "MovingObject")
+                    {
+                        Editor.ToolState = "MoveObject";
+                        Editor.UpdateEditor();
+                    }
+                }
+
+                //SINGLE LEFT CLICK
+                if (newState.LeftButton == ButtonState.Pressed && oldState.LeftButton == ButtonState.Released && newState.X >= 0 && newState.Y >= 0 && newState.X <= graphics.PreferredBackBufferWidth && newState.Y <= graphics.PreferredBackBufferHeight)
+                {
+                    // The "Create a Walkmap"-Tool
+                    if (Editor.ToolState == "CreateWalkMap")
+                    {
+                        if (SelectWalkMap == false)
+                        {
+                            NewWalkMap = new Rectangle(newState.X, newState.Y, 0, 0);
+                            SelectWalkMap = true;
+                        }
+                        else
+                        {
+                            NewWalkMap = new Rectangle(NewWalkMap.X, NewWalkMap.Y, newState.X - NewWalkMap.X, newState.Y - NewWalkMap.Y);
+                            map.AddWalkRect(NewWalkMap);
+                            Editor.UpdateEditor();
+                            SelectWalkMap = false;
+                        }
+                    }
+                }
+
+                //SINGLE RIGHT CLICK
+                if (newState.RightButton == ButtonState.Pressed && oldState.RightButton == ButtonState.Released && newState.X >= 0 && newState.Y >= 0 && newState.X <= graphics.PreferredBackBufferWidth && newState.Y <= graphics.PreferredBackBufferHeight)
+                {
+                    // Reset your Editortool
+                    Editor.ToolState = "None";
+                    SelectWalkMap = false;
+                    Editor.UpdateEditor();
+                }
+            }
+
+            oldState = newState;
+            #endregion
+        }
+
+        public void AddGlobalVariable(String name, String value)
+        {
+            String[] newvariable = new String[2] {name, value};
+            GameVariables.Add(newvariable);
+        }
+
+        public void SaveMap(String Filename)
+        {
+            //Get the Path to the directory from which the game is run
+            String path = Filename.Substring(0, Filename.LastIndexOf('\\'));
+            path = path.Substring(0, path.LastIndexOf("\\"));
+
+            if (map.Save(path + "\\" + "dummyfile"))
+                map.Save(Filename);
+            else
+                Console.WriteLine("The Map could not be saved!");
+            
+            //Save the Projectfile too
+
+            //Empty the player inventory, otherwise the serialization wont work right because
+            //there are two lists with items and that gets it confused or something
+            List<Item> tempitemlist = new List<Item>();
+            foreach (Item item in player.InvList)
+            {
+                tempitemlist.Add(item);
+            }
+            player.InvList.Clear();
+
+            //Save the actual file
+            proj.SetGlobalVariables(GameVariables);
+            proj.SetItems(items.ReturnItemList());
+            proj.Save(path + "\\" + proj.Name + ".prj");
+
+            //then, restory the player inventory
+            foreach (Item item in tempitemlist)
+            {
+                player.InvList.Add(item);
+                player.InvList[player.InvList.Count-1].LoadContent(Content);
+            }
+        }
+
+        public void LoadMap(String Filename, bool Startup = false)
+        {
+            map = (Maps)Maps.Load(Filename, typeof(Maps));
+
+            if (map == null)
+            {
+                Console.WriteLine("Oh no, something went wrong with the map-file!");
+                map = new Maps();
+            }
+            
+            if (!Startup)
+                map.LoadContent(this.Content);
+
+            if (map.Objects.Count > 0)
+            {
+                foreach (Object obj in map.Objects)
+                {
+                    obj.LoadContent(this.Content);
+                    if (obj.scripts.Count > 0)
+                    {
+                        foreach (Script script in obj.scripts)
+                        {
+                            if (script.Commands.Count > 0)
+                            {
+                                foreach (Command com in script.Commands)
+                                {
+                                    com.gui = gui;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Make a new instance of the scripthandler with the freshly loaded map
+            scripthandler = new ScriptHandler(map, player, items);
+
+            Console.WriteLine("MAP LOCKED AND LOADED, SIR!");
+        }
+
+        public void LoadProjectfile()
+        {
+            string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            path = path.Substring(6, path.Length - 6);      // Getting rid of the file:\ it puts in front of the path with the above line
+            string relPath = System.IO.Path.Combine(path,proj.Name + ".prj");
+            proj = (Project)Project.Load(relPath, typeof(Project));
+
+            if (proj != null)
+            {
+                GameVariables = proj.GetGlobalVariables();
+                items.items = proj.GetItems();
+            }
+            else
+            {
+                proj = new Project(Projectname, GameVariables, items.ReturnItemList());
+
+                Console.WriteLine("Could not load Projectfile!");
+            }
+
+            items.LoadContent(Content);
+        }
+    }
+}
