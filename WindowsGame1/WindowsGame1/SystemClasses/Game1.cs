@@ -700,8 +700,13 @@ namespace WindowsGame1
             //Always reset this variable
             map.introplayed = false;
 
+            Console.WriteLine("Saving.....");
+
             if (map.Save(path + "\\" + "dummyfile"))
+            {
                 map.Save(Filename);
+                Console.WriteLine("Saved successfully to " + Filename);
+            }
             else
                 Console.WriteLine("The Map could not be saved!");
             

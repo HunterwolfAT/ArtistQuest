@@ -31,6 +31,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ShowPlPosCB = new System.Windows.Forms.CheckBox();
             this.CreateNewGlobalVar = new System.Windows.Forms.Button();
             this.globalvarvalue = new System.Windows.Forms.TextBox();
             this.globalvarname = new System.Windows.Forms.TextBox();
@@ -226,7 +227,7 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.ShowPlPosCB = new System.Windows.Forms.CheckBox();
+            this.commoveplayerCB = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -323,6 +324,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // ShowPlPosCB
+            // 
+            this.ShowPlPosCB.AutoSize = true;
+            this.ShowPlPosCB.Location = new System.Drawing.Point(21, 197);
+            this.ShowPlPosCB.Name = "ShowPlPosCB";
+            this.ShowPlPosCB.Size = new System.Drawing.Size(172, 17);
+            this.ShowPlPosCB.TabIndex = 20;
+            this.ShowPlPosCB.Text = "Show Player Position (Console)";
+            this.ShowPlPosCB.UseVisualStyleBackColor = true;
+            this.ShowPlPosCB.CheckedChanged += new System.EventHandler(this.ShowPlPosCB_CheckedChanged);
             // 
             // CreateNewGlobalVar
             // 
@@ -1256,6 +1268,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.commoveplayerCB);
             this.tabPage5.Controls.Add(this.button20);
             this.tabPage5.Controls.Add(this.button19);
             this.tabPage5.Controls.Add(this.comobjmoveButton);
@@ -1290,7 +1303,7 @@
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(394, 165);
+            this.button20.Location = new System.Drawing.Point(400, 174);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(59, 23);
             this.button20.TabIndex = 31;
@@ -1300,7 +1313,7 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(330, 165);
+            this.button19.Location = new System.Drawing.Point(336, 174);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(58, 23);
             this.button19.TabIndex = 30;
@@ -1310,7 +1323,7 @@
             // 
             // comobjmoveButton
             // 
-            this.comobjmoveButton.Location = new System.Drawing.Point(330, 139);
+            this.comobjmoveButton.Location = new System.Drawing.Point(336, 148);
             this.comobjmoveButton.Name = "comobjmoveButton";
             this.comobjmoveButton.Size = new System.Drawing.Size(123, 23);
             this.comobjmoveButton.TabIndex = 29;
@@ -1321,7 +1334,7 @@
             // comobjmovewaitCB
             // 
             this.comobjmovewaitCB.AutoSize = true;
-            this.comobjmovewaitCB.Location = new System.Drawing.Point(330, 119);
+            this.comobjmovewaitCB.Location = new System.Drawing.Point(336, 128);
             this.comobjmovewaitCB.Name = "comobjmovewaitCB";
             this.comobjmovewaitCB.Size = new System.Drawing.Size(97, 17);
             this.comobjmovewaitCB.TabIndex = 28;
@@ -1331,7 +1344,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(432, 78);
+            this.label37.Location = new System.Drawing.Point(438, 87);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(38, 13);
             this.label37.TabIndex = 27;
@@ -1340,7 +1353,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(380, 78);
+            this.label36.Location = new System.Drawing.Point(386, 87);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(14, 13);
             this.label36.TabIndex = 26;
@@ -1349,7 +1362,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(330, 78);
+            this.label35.Location = new System.Drawing.Point(336, 87);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(14, 13);
             this.label35.TabIndex = 25;
@@ -1357,7 +1370,7 @@
             // 
             // comobjmoveSpeedBox
             // 
-            this.comobjmoveSpeedBox.Location = new System.Drawing.Point(432, 94);
+            this.comobjmoveSpeedBox.Location = new System.Drawing.Point(438, 103);
             this.comobjmoveSpeedBox.Maximum = new decimal(new int[] {
             150,
             0,
@@ -1379,7 +1392,7 @@
             // 
             // comobjmoveYBox
             // 
-            this.comobjmoveYBox.Location = new System.Drawing.Point(383, 93);
+            this.comobjmoveYBox.Location = new System.Drawing.Point(389, 102);
             this.comobjmoveYBox.Maximum = new decimal(new int[] {
             9000,
             0,
@@ -1396,7 +1409,7 @@
             // 
             // comobjmoveXBox
             // 
-            this.comobjmoveXBox.Location = new System.Drawing.Point(330, 93);
+            this.comobjmoveXBox.Location = new System.Drawing.Point(336, 102);
             this.comobjmoveXBox.Maximum = new decimal(new int[] {
             9000,
             0,
@@ -1413,7 +1426,7 @@
             // 
             // comstopaniButton
             // 
-            this.comstopaniButton.Location = new System.Drawing.Point(172, 165);
+            this.comstopaniButton.Location = new System.Drawing.Point(172, 173);
             this.comstopaniButton.Name = "comstopaniButton";
             this.comstopaniButton.Size = new System.Drawing.Size(142, 23);
             this.comstopaniButton.TabIndex = 20;
@@ -1423,7 +1436,7 @@
             // 
             // comstartaniButton
             // 
-            this.comstartaniButton.Location = new System.Drawing.Point(172, 139);
+            this.comstartaniButton.Location = new System.Drawing.Point(172, 143);
             this.comstartaniButton.Name = "comstartaniButton";
             this.comstartaniButton.Size = new System.Drawing.Size(142, 23);
             this.comstartaniButton.TabIndex = 19;
@@ -1433,7 +1446,7 @@
             // 
             // complayaniButton
             // 
-            this.complayaniButton.Location = new System.Drawing.Point(172, 106);
+            this.complayaniButton.Location = new System.Drawing.Point(172, 103);
             this.complayaniButton.Name = "complayaniButton";
             this.complayaniButton.Size = new System.Drawing.Size(142, 23);
             this.complayaniButton.TabIndex = 18;
@@ -1444,7 +1457,7 @@
             // comanilistbox
             // 
             this.comanilistbox.FormattingEnabled = true;
-            this.comanilistbox.Location = new System.Drawing.Point(172, 79);
+            this.comanilistbox.Location = new System.Drawing.Point(172, 70);
             this.comanilistbox.Name = "comanilistbox";
             this.comanilistbox.Size = new System.Drawing.Size(142, 21);
             this.comanilistbox.TabIndex = 17;
@@ -1452,7 +1465,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(172, 60);
+            this.label30.Location = new System.Drawing.Point(172, 51);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(76, 13);
             this.label30.TabIndex = 16;
@@ -1465,7 +1478,7 @@
             this.panel2.Controls.Add(this.verbactiveonRB);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.verbcombobox);
-            this.panel2.Location = new System.Drawing.Point(598, 88);
+            this.panel2.Location = new System.Drawing.Point(598, 74);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(89, 96);
             this.panel2.TabIndex = 15;
@@ -1523,7 +1536,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(327, 16);
+            this.label20.Location = new System.Drawing.Point(276, 14);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(141, 13);
             this.label20.TabIndex = 12;
@@ -1532,7 +1545,7 @@
             // walkvisCombobox
             // 
             this.walkvisCombobox.FormattingEnabled = true;
-            this.walkvisCombobox.Location = new System.Drawing.Point(356, 32);
+            this.walkvisCombobox.Location = new System.Drawing.Point(420, 12);
             this.walkvisCombobox.Name = "walkvisCombobox";
             this.walkvisCombobox.Size = new System.Drawing.Size(137, 21);
             this.walkvisCombobox.TabIndex = 11;
@@ -1543,9 +1556,9 @@
             this.panel1.Controls.Add(this.setwalkbutton);
             this.panel1.Controls.Add(this.walkonRB);
             this.panel1.Controls.Add(this.walkoffRB);
-            this.panel1.Location = new System.Drawing.Point(483, 75);
+            this.panel1.Location = new System.Drawing.Point(492, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(109, 55);
+            this.panel1.Size = new System.Drawing.Size(100, 55);
             this.panel1.TabIndex = 10;
             // 
             // setwalkbutton
@@ -1583,7 +1596,7 @@
             // visoffRB
             // 
             this.visoffRB.AutoSize = true;
-            this.visoffRB.Location = new System.Drawing.Point(536, 180);
+            this.visoffRB.Location = new System.Drawing.Point(545, 180);
             this.visoffRB.Name = "visoffRB";
             this.visoffRB.Size = new System.Drawing.Size(45, 17);
             this.visoffRB.TabIndex = 9;
@@ -1594,7 +1607,7 @@
             // 
             this.visonRB.AutoSize = true;
             this.visonRB.Checked = true;
-            this.visonRB.Location = new System.Drawing.Point(489, 180);
+            this.visonRB.Location = new System.Drawing.Point(498, 180);
             this.visonRB.Name = "visonRB";
             this.visonRB.Size = new System.Drawing.Size(41, 17);
             this.visonRB.TabIndex = 8;
@@ -1604,9 +1617,9 @@
             // 
             // setvisibility
             // 
-            this.setvisibility.Location = new System.Drawing.Point(488, 147);
+            this.setvisibility.Location = new System.Drawing.Point(497, 147);
             this.setvisibility.Name = "setvisibility";
-            this.setvisibility.Size = new System.Drawing.Size(92, 23);
+            this.setvisibility.Size = new System.Drawing.Size(83, 23);
             this.setvisibility.TabIndex = 5;
             this.setvisibility.Text = "Set Visibility";
             this.setvisibility.UseVisualStyleBackColor = true;
@@ -2355,16 +2368,17 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // ShowPlPosCB
+            // commoveplayerCB
             // 
-            this.ShowPlPosCB.AutoSize = true;
-            this.ShowPlPosCB.Location = new System.Drawing.Point(21, 197);
-            this.ShowPlPosCB.Name = "ShowPlPosCB";
-            this.ShowPlPosCB.Size = new System.Drawing.Size(172, 17);
-            this.ShowPlPosCB.TabIndex = 20;
-            this.ShowPlPosCB.Text = "Show Player Position (Console)";
-            this.ShowPlPosCB.UseVisualStyleBackColor = true;
-            this.ShowPlPosCB.CheckedChanged += new System.EventHandler(this.ShowPlPosCB_CheckedChanged);
+            this.commoveplayerCB.FormattingEnabled = true;
+            this.commoveplayerCB.Items.AddRange(new object[] {
+            "Move Object, not Player",
+            "Move Player w/ Anim",
+            "Move Player w/o Anim"});
+            this.commoveplayerCB.Location = new System.Drawing.Point(336, 63);
+            this.commoveplayerCB.Name = "commoveplayerCB";
+            this.commoveplayerCB.Size = new System.Drawing.Size(140, 21);
+            this.commoveplayerCB.TabIndex = 32;
             // 
             // Form1
             // 
@@ -2639,6 +2653,7 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.CheckBox ShowPlPosCB;
+        private System.Windows.Forms.ComboBox commoveplayerCB;
 
     }
 }

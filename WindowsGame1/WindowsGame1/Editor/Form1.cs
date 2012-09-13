@@ -549,7 +549,8 @@ namespace WindowsGame1
                 comitemlist.Items.Add(item.Name);
             }
 
-            
+            if (commoveplayerCB.SelectedIndex == -1)
+                commoveplayerCB.SelectedIndex = 0;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -1316,17 +1317,26 @@ namespace WindowsGame1
         }
 
         private void comobjmoveButton_Click(object sender, EventArgs e)
-        {
-            if (walkvisCombobox.SelectedIndex != -1)
+        {   
+            if (walkvisCombobox.SelectedIndex != -1 || commoveplayerCB.SelectedIndex > 0)
             {
                 List<String> sargs = new List<String>();
                 List<int> iargs = new List<int>();
 
-                sargs.Add(walkvisCombobox.Text);
+                if (commoveplayerCB.SelectedIndex <= 0)
+                    sargs.Add(walkvisCombobox.Text);
+                else
+                    sargs.Add("*PLAYER");
+
                 if (comobjmovewaitCB.Checked)
                     sargs.Add("wait");
                 else
                     sargs.Add("dont wait");
+
+                if (commoveplayerCB.SelectedIndex == 1)
+                    sargs.Add("with animation");
+                if (commoveplayerCB.SelectedIndex == 2)
+                    sargs.Add("no animation");
 
                 iargs.Add((int)comobjmoveXBox.Value);
                 iargs.Add((int)comobjmoveYBox.Value);
@@ -1335,6 +1345,9 @@ namespace WindowsGame1
                 if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                     || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
                     AddCommand("Move Object", iargs, sargs, commandlistbox.SelectedIndex);
+
+                //Reset the 'Move Player' Listbox
+                commoveplayerCB.SelectedIndex = 0;
             }
         }
 

@@ -21,6 +21,13 @@ namespace WindowsGame1
         public int animationcounter = 0;
         public Boolean visible = true;
         //public Rectangle Rect;
+        Vector2 OriginalPostition;
+        int deltaX = 0;
+        int deltaY = 0;
+        int xspeed = 0;
+        int yspeed = 0;
+        bool movewithanim = true;
+        public bool moving = false;
 
         public bool showRect = false;
 
@@ -140,7 +147,28 @@ namespace WindowsGame1
             if (deltax < 0)
                 direction = (int)directions.left;
 
-            iswalking = true;
+            if (movewithanim)
+                iswalking = true;
+        }
+
+        public void move(int x, int y, int speed, bool animate)
+        {
+            OriginalPostition = new Vector2(position.X, position.Y);
+            deltaX = x;
+            deltaY = y;
+            xspeed = yspeed = speed;
+            moving = true;
+            movewithanim = animate;
+
+            if (deltaX == 0)
+                xspeed = 0;
+            else if (deltaX < 0)
+                xspeed *= -1;
+
+            if (deltaY == 0)
+                yspeed = 0;
+            else if (deltaY < 0)
+                yspeed *= -1;
         }
 
         public void CheckObject(int screenwidth)
@@ -156,13 +184,60 @@ namespace WindowsGame1
 
         public void Update()
         {
-            //speed += acc;
-            //image.Position += speed;
+            if (moving)
+            {
+                move(xspeed, yspeed);
+
+                bool XDestinationReached = false;
+                bool YDestinationReached = false;
+
+                if (deltaX > 0 && OriginalPostition.X + deltaX <= position.X)
+                {
+                    position.X = (int)OriginalPostition.X + deltaX;
+                    XDestinationReached = true;
+                }
+                if (deltaX < 0 && OriginalPostition.X + deltaX >= position.X)
+                {
+                    position.X = (int)OriginalPostition.X + deltaX;
+                    XDestinationReached = true;
+                }
+
+                if (deltaY > 0 && OriginalPostition.Y + deltaY <= position.Y)
+                {
+                    position.Y = (int)OriginalPostition.Y + deltaY;
+                    YDestinationReached = true;
+                }
+                if (deltaY < 0 && OriginalPostition.Y + deltaY >= position.Y)
+                {
+                    position.Y = (int)OriginalPostition.Y + deltaY;
+                    YDestinationReached = true;
+                }
+
+                if (deltaX == 0)
+                {
+                    XDestinationReached = true;
+                    position.X = (int)OriginalPostition.X;
+                }
+                if (deltaY == 0)
+                {
+                    YDestinationReached = true;
+                    position.Y = (int)OriginalPostition.Y;
+                }
+
+                if (XDestinationReached && YDestinationReached)
+                {
+                    moving = false;
+                    movewithanim = true;
+                }
+            }
+
             playerRect.X = (int)position.X;
             playerRect.Y = (int)position.Y;
 
             animate();
-            iswalking = false;
+
+            if (!moving)
+                iswalking = false;
             //animimage.Update();
         }
 
