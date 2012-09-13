@@ -160,9 +160,14 @@ namespace WindowsGame1
             moving = true;
             movewithanim = animate;
 
-            if (deltaX < 0)
+            if (deltaX == 0)
+                xspeed = 0;
+            else if (deltaX < 0)
                 xspeed *= -1;
-            if (deltaY < 0)
+
+            if (deltaY == 0)
+                yspeed = 0;
+            else if (deltaY < 0)
                 yspeed *= -1;
         }
 
