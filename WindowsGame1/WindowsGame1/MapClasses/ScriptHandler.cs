@@ -104,10 +104,21 @@ namespace WindowsGame1
                     }
                     else if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Move Object" && activescript.Commands[Commandcounter - 1].SArgs[1] == "wait")
                     {
-                        if (game.map.FindObject(activescript.Commands[Commandcounter - 1].SArgs[0]).moving)
+                        if (activescript.Commands[Commandcounter - 1].SArgs[0] == "*PLAYER")
                         {
-                            RunNextCommand = false;
-                            Commandcounter--;
+                            if (game.player.moving)
+                            {
+                                RunNextCommand = false;
+                                Commandcounter--;
+                            }
+                        }
+                        else
+                        {
+                            if (game.map.FindObject(activescript.Commands[Commandcounter - 1].SArgs[0]).moving)
+                            {
+                                RunNextCommand = false;
+                                Commandcounter--;
+                            }
                         }
                     }
                     else if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Fade Object" && activescript.Commands[Commandcounter - 1].SArgs[2] == "wait")
@@ -554,7 +565,14 @@ namespace WindowsGame1
                         int y = activescript.Commands[Commandcounter].IArgs[1];
                         int speed = activescript.Commands[Commandcounter].IArgs[2];
 
-                        game.map.FindObject(activescript.Commands[Commandcounter].SArgs[0]).move(x, y, speed);
+                        if (activescript.Commands[Commandcounter].SArgs[0] == "*PLAYER")
+                        {
+
+                        }
+                        else
+                        {
+                            game.map.FindObject(activescript.Commands[Commandcounter].SArgs[0]).move(x, y, speed);
+                        }
                     }
                     #endregion
                     #region Fade Object
