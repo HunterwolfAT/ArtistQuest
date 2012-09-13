@@ -104,10 +104,21 @@ namespace WindowsGame1
                     }
                     else if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Move Object" && activescript.Commands[Commandcounter - 1].SArgs[1] == "wait")
                     {
-                        if (game.map.FindObject(activescript.Commands[Commandcounter - 1].SArgs[0]).moving)
+                        if (activescript.Commands[Commandcounter - 1].SArgs[0] == "*PLAYER")
                         {
-                            RunNextCommand = false;
-                            Commandcounter--;
+                            if (game.player.moving)
+                            {
+                                RunNextCommand = false;
+                                Commandcounter--;
+                            }
+                        }
+                        else
+                        {
+                            if (game.map.FindObject(activescript.Commands[Commandcounter - 1].SArgs[0]).moving)
+                            {
+                                RunNextCommand = false;
+                                Commandcounter--;
+                            }
                         }
                     }
                     else if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Fade Object" && activescript.Commands[Commandcounter - 1].SArgs[2] == "wait")
@@ -134,6 +145,7 @@ namespace WindowsGame1
                 {
                     //activescript.Commands[Commandcounter].Run();
 
+                    # region Message
                     if (activescript.Commands[Commandcounter].Type == "Message")
                     {
                         if (activescript.Commands[Commandcounter].SArgs.Count != 0)
@@ -141,11 +153,15 @@ namespace WindowsGame1
                         else
                             Console.WriteLine("No Message was defined!");
                     }
+                    #endregion
+                    #region ChangeSprite
                     else if (activescript.Commands[Commandcounter].Type == "ChangeSprite")
                     {
                         Object ActiveObject = map.FindObject(activescript.Commands[Commandcounter].SArgs[0]);
                         ActiveObject.imagenum = activescript.Commands[Commandcounter].IArgs[0];
                     }
+                    #endregion
+                    #region Change GlobalVariable
                     else if (activescript.Commands[Commandcounter].Type == "Change GlobalVariable")
                     {
                         Boolean VariableExists = false;
@@ -165,6 +181,8 @@ namespace WindowsGame1
                             gamevariables.Add(newvariable);
                         }
                     }
+                    #endregion
+                    #region Change Visible
                     else if (activescript.Commands[Commandcounter].Type == "Change Visible")
                     {
                         //fetch the object this command wants to manipulate
@@ -195,6 +213,8 @@ namespace WindowsGame1
                         else
                             Console.WriteLine("SCRIPT ERROR: Could not find Object");
                     }
+                    #endregion
+                    #region IF-Statement
                     else if (activescript.Commands[Commandcounter].Type == "IF")
                     {
                         Boolean StatementIsTrue = false;
@@ -319,6 +339,8 @@ namespace WindowsGame1
                         IFstack.Add(StatementIsTrue);
 
                     }
+                    #endregion
+                    #region ELSE-Statement
                     else if (activescript.Commands[Commandcounter].Type == "ELSE")
                     {
                         //First, go back to find the corrosponding IF condition, and see if it was true or not
@@ -359,6 +381,8 @@ namespace WindowsGame1
 
 
                     }
+                    #endregion
+                    #region END IF-Statement
                     else if (activescript.Commands[Commandcounter].Type == "END IF")
                     {
                         //Dont. Do. Anything.
@@ -368,6 +392,8 @@ namespace WindowsGame1
                         else
                             Console.WriteLine("END IF ERROR: The IF-Stack was already empty! Was there even a IF before it?");
                     }
+                    #endregion
+                    #region Add Item
                     else if (activescript.Commands[Commandcounter].Type == "Add Item")
                     {
                         Item ActiveItem = items.FindItem(activescript.Commands[Commandcounter].SArgs[0]);
@@ -379,6 +405,8 @@ namespace WindowsGame1
                         else
                             Console.WriteLine("SCRIPT ERROR: Can't find Item!");
                     }
+                    #endregion
+                    #region Remove Item
                     else if (activescript.Commands[Commandcounter].Type == "Remove Item")
                     {
                         Item ActiveItem = items.FindItem(activescript.Commands[Commandcounter].SArgs[0]);
@@ -390,6 +418,8 @@ namespace WindowsGame1
                         else
                             Console.WriteLine("SCRIPT ERROR: Can't find Item!");
                     }
+                    #endregion
+                    #region Change Verb
                     else if (activescript.Commands[Commandcounter].Type == "Change verb")
                     {
                         Object targetobject = map.FindObject(activescript.Commands[Commandcounter].SArgs[0]);
@@ -416,10 +446,14 @@ namespace WindowsGame1
                         else
                             Console.WriteLine("Change Verb ERROR: Couldn't find the object!");
                     }
+                    #endregion
+                    #region END SCRIPT
                     else if (activescript.Commands[Commandcounter].Type == "END SCRIPT")
                     {
                         Commandcounter = activescript.Commands.Count();
                     }
+                    #endregion
+                    #region Screenfade
                     else if (activescript.Commands[Commandcounter].Type == "Screenfade")
                     {
                         if (activescript.Commands[Commandcounter].SArgs[0] == "OUT")
@@ -427,6 +461,8 @@ namespace WindowsGame1
                         if (activescript.Commands[Commandcounter].SArgs[0] == "IN")
                             gui.FadeIn();
                     }
+                    #endregion
+                    #region Teleport
                     else if (activescript.Commands[Commandcounter].Type == "Teleport")
                     {
                         //Find the path to all the maps
@@ -444,6 +480,8 @@ namespace WindowsGame1
                         player.position.X = activescript.Commands[Commandcounter].IArgs[0];
                         player.position.Y = activescript.Commands[Commandcounter].IArgs[1];
                     }
+                    #endregion
+                    #region Play Animation
                     else if (activescript.Commands[Commandcounter].Type == "Play Animation")
                     {
                         Object SelectedObject = null;
@@ -500,27 +538,50 @@ namespace WindowsGame1
                         else
                             Console.WriteLine("Animation Command ERROR: Couldn't find the object!");
                     }
+                    #endregion
+                    #region Wait
                     else if (activescript.Commands[Commandcounter].Type == "Wait")
                     {
                         WaitCounter = 0;
                         Console.WriteLine("OJHÖLDKJFHLKSDJFHLSKDJHFSLDKJ");
                     }
+                    #endregion
+                    #region Turn Player Invisible
                     else if (activescript.Commands[Commandcounter].Type == "Turn Player Invisible")
                     {
                         game.player.visible = false;
                     }
+                    #endregion
+                    #region Turn Player Visible
                     else if (activescript.Commands[Commandcounter].Type == "Turn Player Visible")
                     {
                         game.player.visible = true;
                     }
+                    #endregion
+                    #region Move Object
                     else if (activescript.Commands[Commandcounter].Type == "Move Object")
                     {
                         int x = activescript.Commands[Commandcounter].IArgs[0];
                         int y = activescript.Commands[Commandcounter].IArgs[1];
                         int speed = activescript.Commands[Commandcounter].IArgs[2];
 
-                        game.map.FindObject(activescript.Commands[Commandcounter].SArgs[0]).move(x, y, speed);
+                        if (activescript.Commands[Commandcounter].SArgs[0] == "*PLAYER")
+                        {
+                            bool animate;
+                            if (activescript.Commands[Commandcounter].SArgs[2] == "with animation")
+                                animate = true;
+                            else
+                                animate = false;
+
+                            player.move(x, y, speed, animate);
+                        }
+                        else
+                        {
+                            game.map.FindObject(activescript.Commands[Commandcounter].SArgs[0]).move(x, y, speed);
+                        }
                     }
+                    #endregion
+                    #region Fade Object
                     else if (activescript.Commands[Commandcounter].Type == "Fade Object")
                     {
                         int speed = activescript.Commands[Commandcounter].IArgs[0];
@@ -530,6 +591,7 @@ namespace WindowsGame1
                         if (activescript.Commands[Commandcounter].SArgs[1] == "out")
                             game.map.FindObject(activescript.Commands[Commandcounter].SArgs[0]).fadeout(speed);
                     }
+                    #endregion
                     else
                         Console.WriteLine("Couldn't get that command right!");
                 }
