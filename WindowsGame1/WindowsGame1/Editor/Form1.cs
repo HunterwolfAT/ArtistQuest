@@ -1333,6 +1333,9 @@ namespace WindowsGame1
                 else
                     sargs.Add("dont wait");
 
+                if (commoveplayerCB.SelectedIndex == 2)
+                    sargs.Add("no animation");
+
                 iargs.Add((int)comobjmoveXBox.Value);
                 iargs.Add((int)comobjmoveYBox.Value);
                 iargs.Add((int)comobjmoveSpeedBox.Value);
