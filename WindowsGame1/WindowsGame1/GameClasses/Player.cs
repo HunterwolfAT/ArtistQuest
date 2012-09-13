@@ -26,6 +26,7 @@ namespace WindowsGame1
         int deltaY = 0;
         int xspeed = 0;
         int yspeed = 0;
+        bool movewithanim = true;
         public bool moving = false;
 
         public bool showRect = false;
@@ -146,17 +147,18 @@ namespace WindowsGame1
             if (deltax < 0)
                 direction = (int)directions.left;
 
-            iswalking = true;
+            if (movewithanim)
+                iswalking = true;
         }
 
-        public void move(int x, int y, int speed)
+        public void move(int x, int y, int speed, bool animate)
         {
             OriginalPostition = new Vector2(position.X, position.Y);
             deltaX = x;
             deltaY = y;
             xspeed = yspeed = speed;
             moving = true;
-            iswalking = true;
+            movewithanim = animate;
 
             if (deltaX < 0)
                 xspeed *= -1;
@@ -220,6 +222,7 @@ namespace WindowsGame1
                 if (XDestinationReached && YDestinationReached)
                 {
                     moving = false;
+                    movewithanim = true;
                 }
             }
 

@@ -567,7 +567,13 @@ namespace WindowsGame1
 
                         if (activescript.Commands[Commandcounter].SArgs[0] == "*PLAYER")
                         {
+                            bool animate;
+                            if (activescript.Commands[Commandcounter].SArgs[2] == "with animation")
+                                animate = true;
+                            else
+                                animate = false;
 
+                            player.move(x, y, speed, animate);
                         }
                         else
                         {
