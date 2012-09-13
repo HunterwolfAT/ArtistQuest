@@ -1,20 +1,14 @@
-A First Level Header
+ArtistQuest
 ====================
+by HunterwolfAT (eMail: hunterwolf0815@gmail.com)
 
-A Second Level Header
+Overview
 ---------------------
 
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
+**ArtistQuest** is a adventure game for windows I made by myself, written in C# with the XNA-Framework. It's pretty swell!
 
-The quick brown fox jumped over the lazy
-dog's back.
+### Links
 
-### Header 3
+Dokumentation as well as instructions can be found at the wiki! https://github.com/HunterwolfAT/ArtistQuest/wiki
 
-> This is a blockquote.
-> 
-> This is the second paragraph in the blockquote.
->
-> ## This is an H2 in a blockquote
+Check out the Website at: http://hunterwolfat.github.com/ArtistQuest/
