@@ -90,7 +90,7 @@
             this.objname = new System.Windows.Forms.TextBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button13 = new System.Windows.Forms.Button();
+            this.comeditbutton = new System.Windows.Forms.Button();
             this.comdownbutton = new System.Windows.Forms.Button();
             this.comupbutton = new System.Windows.Forms.Button();
             this.comremoveselectionbutton = new System.Windows.Forms.Button();
@@ -120,6 +120,7 @@
             this.Com_SArg = new System.Windows.Forms.TextBox();
             this.MSG_com = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.commoveplayerCB = new System.Windows.Forms.ComboBox();
             this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.comobjmoveButton = new System.Windows.Forms.Button();
@@ -227,7 +228,6 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.commoveplayerCB = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -955,7 +955,7 @@
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.button13);
+            this.tabPage3.Controls.Add(this.comeditbutton);
             this.tabPage3.Controls.Add(this.comdownbutton);
             this.tabPage3.Controls.Add(this.comupbutton);
             this.tabPage3.Controls.Add(this.comremoveselectionbutton);
@@ -970,14 +970,15 @@
             this.tabPage3.Text = "Scripts";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // comeditbutton
             // 
-            this.button13.Location = new System.Drawing.Point(562, 265);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(55, 23);
-            this.button13.TabIndex = 10;
-            this.button13.Text = "Edit";
-            this.button13.UseVisualStyleBackColor = true;
+            this.comeditbutton.Location = new System.Drawing.Point(562, 265);
+            this.comeditbutton.Name = "comeditbutton";
+            this.comeditbutton.Size = new System.Drawing.Size(64, 23);
+            this.comeditbutton.TabIndex = 10;
+            this.comeditbutton.Text = "Edit";
+            this.comeditbutton.UseVisualStyleBackColor = true;
+            this.comeditbutton.Click += new System.EventHandler(this.button13_Click);
             // 
             // comdownbutton
             // 
@@ -1300,6 +1301,18 @@
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Obj Stats";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // commoveplayerCB
+            // 
+            this.commoveplayerCB.FormattingEnabled = true;
+            this.commoveplayerCB.Items.AddRange(new object[] {
+            "Move Object, not Player",
+            "Move Player w/ Anim",
+            "Move Player w/o Anim"});
+            this.commoveplayerCB.Location = new System.Drawing.Point(336, 63);
+            this.commoveplayerCB.Name = "commoveplayerCB";
+            this.commoveplayerCB.Size = new System.Drawing.Size(140, 21);
+            this.commoveplayerCB.TabIndex = 32;
             // 
             // button20
             // 
@@ -2368,18 +2381,6 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // commoveplayerCB
-            // 
-            this.commoveplayerCB.FormattingEnabled = true;
-            this.commoveplayerCB.Items.AddRange(new object[] {
-            "Move Object, not Player",
-            "Move Player w/ Anim",
-            "Move Player w/o Anim"});
-            this.commoveplayerCB.Location = new System.Drawing.Point(336, 63);
-            this.commoveplayerCB.Name = "commoveplayerCB";
-            this.commoveplayerCB.Size = new System.Drawing.Size(140, 21);
-            this.commoveplayerCB.TabIndex = 32;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2589,7 +2590,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.ToolStripMenuItem saveRoomToolStripMenuItem1;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button comeditbutton;
         private System.Windows.Forms.CheckBox VerbisactiveCheckbox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button setverbactivebutton;

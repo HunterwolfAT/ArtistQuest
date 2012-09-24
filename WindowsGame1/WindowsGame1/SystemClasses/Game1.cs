@@ -202,8 +202,9 @@ namespace WindowsGame1
 
                             case 0:
                                 ShowTitle = false;
-                                if (title.Startup)
+                                if (title.Startup)      // Starting the game from the beginning
                                 {
+                                    gui.SetOpacity(255);
                                     Script introscript = map.PlayIntro();
                                     if (introscript != null)
                                         scripthandler.RunScript(introscript);

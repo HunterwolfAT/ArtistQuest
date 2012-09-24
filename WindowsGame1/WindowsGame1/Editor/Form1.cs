@@ -25,6 +25,9 @@ namespace WindowsGame1
         private Pen greenpen;
         private String AnimationImageFilename;
 
+        private Boolean EditingMSG = false;
+        private int EditingMSGIndex;
+
         public Form1(Game1 mygame)
         {
             InitializeComponent();
@@ -227,6 +230,10 @@ namespace WindowsGame1
                     }
                 }
             }
+
+            MSG_com.Text = "Message";
+            comeditbutton.Text = "Edit";
+            EditingMSG = false;
         }
 
         private void UpdateGrid()
@@ -426,6 +433,10 @@ namespace WindowsGame1
                     verblistscript.Items.Add(script.Name);
                 }
             }
+
+            MSG_com.Text = "Message";
+            comeditbutton.Text = "Edit";
+            EditingMSG = false;
         }
 
         private void MSG_com_Click(object sender, EventArgs e)
@@ -439,8 +450,19 @@ namespace WindowsGame1
 
                 if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                     || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
-                    AddCommand("Message", iargs, sargs, commandlistbox.SelectedIndex);
+                {
+                    if (!EditingMSG)
+                        AddCommand("Message", iargs, sargs, commandlistbox.SelectedIndex);
+                    else
+                    {
+                        if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab")
+                            game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands.RemoveAt(EditingMSGIndex);
+                        else if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab")
+                            game.map.getObjects()[objectlistbox.SelectedIndex].scripts[objectlistbox.SelectedIndex].Commands.RemoveAt(EditingMSGIndex);
 
+                        AddCommand("Message", iargs, sargs, EditingMSGIndex);
+                    }
+                }
                 Com_SArg.Text = "";
                 Com_SArg.Focus();
                 
@@ -813,6 +835,9 @@ namespace WindowsGame1
             {
                 scriptitemlistbox.Items.Add(item.Name);
             }
+            MSG_com.Text = "Message";
+            comeditbutton.Text = "Edit";
+            EditingMSG = false;
         }
 
         private void makeitembutton_Click(object sender, EventArgs e)
@@ -1398,6 +1423,47 @@ namespace WindowsGame1
         private void ShowPlPosCB_CheckedChanged(object sender, EventArgs e)
         {
             ShowPlayerPos = ShowPlPosCB.Checked;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // If nothing is to be edited yet
+            if (!EditingMSG)
+            {
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    && commandlistbox.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1
+                    && commandlistbox.SelectedIndex != -1)
+                {
+                    // Once for Item-Scripts 
+                    if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab"
+                        && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
+                    {
+                        Com_SArg.Text = game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].SArgs[0];
+                        MSG_com.Text = "Edit Message";
+                        comeditbutton.Text = "Stop Edit";
+                        EditingMSGIndex = commandlistbox.SelectedIndex;
+                        EditingMSG = true;
+                    }
+                    // And again for the scripts of objects
+                    if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab"
+                        && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[verblistscript.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
+                    {
+                        Com_SArg.Text = game.map.getObjects()[objectlistbox.SelectedIndex].scripts[verblistscript.SelectedIndex].Commands[commandlistbox.SelectedIndex].SArgs[0];
+                        MSG_com.Text = "Edit Message";
+                        comeditbutton.Text = "Stop Edit";
+                        EditingMSGIndex = commandlistbox.SelectedIndex;
+                        EditingMSG = true;
+                    }
+
+                }
+            }
+            else    // When some editing is already in progress, stop it!
+            {
+                MSG_com.Text = "Message";
+                comeditbutton.Text = "Edit";
+                EditingMSG = false;
+            }
         }
 
     }
