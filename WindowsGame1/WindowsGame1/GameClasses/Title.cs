@@ -28,6 +28,7 @@ namespace WindowsGame1
         public int ConfirmedSelectedIndex;
         public int ScrollIndex;
         SpriteFont myfont;
+        Boolean DontSave;
         public String newsavename;
         public Boolean Startup;
         public String Mode;
@@ -157,7 +158,7 @@ namespace WindowsGame1
         
         public void SelectDown()
         {
-            if (Mode == "Menu" && Startup && SelectedIndex == 0)
+            if (Mode == "Menu" && Startup && SelectedIndex == 0 || Mode == "Menu" && DontSave && SelectedIndex == 0)
                 SelectedIndex += 2;
             else if (Mode == "Menu" && SelectedIndex < 3)
                 SelectedIndex++;
@@ -189,9 +190,10 @@ namespace WindowsGame1
             }
         }
 
-        public void Show()
+        public void Show(bool dontsave)
         {
             ConfirmedSelectedIndex = -1;
+            DontSave = dontsave;
         }
 
         public void Draw(SpriteBatch mySpriteBatch, Boolean GameStartup, SpriteFont Font, String Path)
@@ -217,12 +219,14 @@ namespace WindowsGame1
                 if (Mode == "Menu")
                 {
                     if (Startup)
-                    {
-                        NewGame.Draw(mySpriteBatch);
-                        SaveGame.Color = Color.Gray;
-                    }
+                        NewGame.Draw(mySpriteBatch);   
                     else
                         Resume.Draw(mySpriteBatch);
+
+                    if (Startup || DontSave)
+                    {
+                        SaveGame.Color = Color.Gray;
+                    }
 
                     SaveGame.Draw(mySpriteBatch);
                     LoadGame.Draw(mySpriteBatch);

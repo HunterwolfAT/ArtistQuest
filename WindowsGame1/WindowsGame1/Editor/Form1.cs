@@ -458,7 +458,7 @@ namespace WindowsGame1
                         if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab")
                             game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands.RemoveAt(EditingMSGIndex);
                         else if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab")
-                            game.map.getObjects()[objectlistbox.SelectedIndex].scripts[objectlistbox.SelectedIndex].Commands.RemoveAt(EditingMSGIndex);
+                            game.map.getObjects()[objectlistbox.SelectedIndex].scripts[verblistscript.SelectedIndex].Commands.RemoveAt(EditingMSGIndex);
 
                         AddCommand("Message", iargs, sargs, EditingMSGIndex);
                     }

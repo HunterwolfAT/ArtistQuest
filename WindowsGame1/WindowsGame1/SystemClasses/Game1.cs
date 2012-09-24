@@ -373,7 +373,7 @@ namespace WindowsGame1
                 {
                     ShowTitle = true;
                     title.SelectedIndex = 0;
-                    title.Show();
+                    title.Show(scripthandler.IsScriptRunning());
                 }
 
                 // Show Player position in the room for reasons
