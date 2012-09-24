@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<Maps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>Outside</name>
+  <image>
+    <Texture>
+      <Name />
+    </Texture>
+    <Position>
+      <X>400</X>
+      <Y>240</Y>
+    </Position>
+    <SourceRect xsi:nil="true" />
+    <Color>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+      <A>255</A>
+      <PackedValue>4294967295</PackedValue>
+    </Color>
+    <Rotation>0</Rotation>
+    <Origin>
+      <X>400</X>
+      <Y>240</Y>
+    </Origin>
+    <Scale>1</Scale>
+    <Effects>None</Effects>
+    <LayerDepth>0</LayerDepth>
+  </image>
+  <backgroundimage>backgrounds/outside</backgroundimage>
+  <Walkrects>
+    <Rectangle>
+      <X>136</X>
+      <Y>229</Y>
+      <Width>555</Width>
+      <Height>36</Height>
+      <Location>
+        <X>136</X>
+        <Y>229</Y>
+      </Location>
+    </Rectangle>
+  </Walkrects>
+  <Objects>
+    <Object>
+      <name>Kitchen Window</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>198</X>
+        <Y>124</Y>
+        <Width>63</Width>
+        <Height>90</Height>
+        <Location>
+          <X>198</X>
+          <Y>124</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>6000</radius>
+      <scripts>
+        <Script>
+          <Name>Look at</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Just thinking about how the heck this is supposed to be working is making my head hurt very very badly.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Climb in</Name>
+          <Commands>
+            <Command>
+              <Type>Teleport</Type>
+              <SArgs>
+                <string>Kitchen</string>
+              </SArgs>
+              <IArgs>
+                <int>616</int>
+                <int>318</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>229</X>
+            <Y>169</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>31</X>
+            <Y>45</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>rooms/outside/uglywindow1</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>Hallway Window</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>564</X>
+        <Y>128</Y>
+        <Width>63</Width>
+        <Height>90</Height>
+        <Location>
+          <X>564</X>
+          <Y>128</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>6000</radius>
+      <scripts>
+        <Script>
+          <Name>Look at</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>It seems to me one of them went missing.....</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>And it's closed again.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>And way bigger than before.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Of course!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>595</X>
+            <Y>173</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>31</X>
+            <Y>45</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>rooms/outside/uglywindow2</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+  </Objects>
+  <introplayed>false</introplayed>
+  <ShowWalkmap>false</ShowWalkmap>
+  <ShowObjectRects>false</ShowObjectRects>
+  <ShowInteractionHandles>false</ShowInteractionHandles>
+  <HighlightedWalkmap>8</HighlightedWalkmap>
+</Maps>

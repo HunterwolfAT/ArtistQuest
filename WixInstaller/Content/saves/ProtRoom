@@ -1,0 +1,4283 @@
+<?xml version="1.0"?>
+<Maps xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>ProtRoom</name>
+  <image>
+    <Texture>
+      <Name />
+    </Texture>
+    <Position>
+      <X>400</X>
+      <Y>240</Y>
+    </Position>
+    <SourceRect xsi:nil="true" />
+    <Color>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+      <A>255</A>
+      <PackedValue>4294967295</PackedValue>
+    </Color>
+    <Rotation>0</Rotation>
+    <Origin>
+      <X>400</X>
+      <Y>240</Y>
+    </Origin>
+    <Scale>1</Scale>
+    <Effects>None</Effects>
+    <LayerDepth>0</LayerDepth>
+  </image>
+  <backgroundimage>roomfarbefragezeichen</backgroundimage>
+  <Walkrects>
+    <Rectangle>
+      <X>173</X>
+      <Y>102</Y>
+      <Width>183</Width>
+      <Height>64</Height>
+      <Location>
+        <X>173</X>
+        <Y>102</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>190</X>
+      <Y>131</Y>
+      <Width>256</Width>
+      <Height>96</Height>
+      <Location>
+        <X>190</X>
+        <Y>131</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>191</X>
+      <Y>202</Y>
+      <Width>133</Width>
+      <Height>47</Height>
+      <Location>
+        <X>191</X>
+        <Y>202</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>193</X>
+      <Y>265</Y>
+      <Width>54</Width>
+      <Height>149</Height>
+      <Location>
+        <X>193</X>
+        <Y>265</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>173</X>
+      <Y>365</Y>
+      <Width>58</Width>
+      <Height>49</Height>
+      <Location>
+        <X>173</X>
+        <Y>365</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>249</X>
+      <Y>350</Y>
+      <Width>197</Width>
+      <Height>63</Height>
+      <Location>
+        <X>249</X>
+        <Y>350</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>224</X>
+      <Y>350</Y>
+      <Width>51</Width>
+      <Height>30</Height>
+      <Location>
+        <X>224</X>
+        <Y>350</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>174</X>
+      <Y>225</Y>
+      <Width>117</Width>
+      <Height>54</Height>
+      <Location>
+        <X>174</X>
+        <Y>225</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>216</X>
+      <Y>190</Y>
+      <Width>109</Width>
+      <Height>95</Height>
+      <Location>
+        <X>216</X>
+        <Y>190</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>53</X>
+      <Y>329</Y>
+      <Width>657</Width>
+      <Height>-108</Height>
+      <Location>
+        <X>53</X>
+        <Y>329</Y>
+      </Location>
+    </Rectangle>
+    <Rectangle>
+      <X>51</X>
+      <Y>181</Y>
+      <Width>200</Width>
+      <Height>-16</Height>
+      <Location>
+        <X>51</X>
+        <Y>181</Y>
+      </Location>
+    </Rectangle>
+  </Walkrects>
+  <Objects>
+    <Object>
+      <name>Cupboard</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>187</X>
+        <Y>57</Y>
+        <Width>52</Width>
+        <Height>72</Height>
+        <Location>
+          <X>187</X>
+          <Y>57</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>-2</X>
+        <Y>22</Y>
+      </interactOffset>
+      <radius>2000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts>
+        <Script>
+          <Name>Examine</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>My cupboard/closet. The only constant in this whole mess.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>CupboardOpen</string>
+                <string>EQUAL</string>
+                <string>\true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>...that someone STILL managed to screw over.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Sigh.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Itemcheck</string>
+                <string>screwdriver</string>
+                <string>is in inventory</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Itemcheck</string>
+                <string>dirty(?) clothes</string>
+                <string>is not in inventory</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Wait a second!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Why is it still empty? Don't tell me...</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>The artist only drew states of the closet where it appears empty.... even if it's not?!?</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>GGRRRBLMPFH!!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Okay, let us not get carried away, I have more important things to focus on.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But I'll take my clothes with me again. This way I can at least tell if it's there or not.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Add Item</Type>
+              <SArgs>
+                <string>dirty(?) clothes</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Open</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>CupboardOpen</string>
+                <string>EQUAL</string>
+                <string>\true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But it is already open!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>Cupboard</string>
+              </SArgs>
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>CupboardOpen</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>CheckedCupboard</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Wha?</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Empty?!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Where is my stuff?! Don't tell me this guy had the time to draw clothes littering on the FLOOR...!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But not the minute to draw something into my closet?! Mmmgfhpgh!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>KFFGMMPHFG!!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>CheckedCupboard</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Cupboard</string>
+                <string>Open</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Cupboard</string>
+                <string>Close</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Close</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>CupboardOpen</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>It is already closed.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>Cupboard</string>
+              </SArgs>
+              <IArgs>
+                <int>0</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>CupboardOpen</string>
+                <string>false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Cupboard</string>
+                <string>Close</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Cupboard</string>
+                <string>Open</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>false</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>213</X>
+            <Y>93</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>26</X>
+            <Y>48</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>213</X>
+            <Y>93</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>154</R>
+            <G>205</G>
+            <B>50</B>
+            <A>255</A>
+            <PackedValue>4281519514</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>26</X>
+            <Y>48</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>213</X>
+            <Y>93</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>154</R>
+            <G>205</G>
+            <B>50</B>
+            <A>255</A>
+            <PackedValue>4281519514</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>26</X>
+            <Y>48</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>213</X>
+            <Y>93</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>154</R>
+            <G>205</G>
+            <B>50</B>
+            <A>255</A>
+            <PackedValue>4281519514</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>26</X>
+            <Y>48</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>cupboard0</string>
+        <string>cupboard1</string>
+        <string>cupboard2</string>
+        <string>cupboard3</string>
+      </imagenames>
+      <aniimages />
+      <walkable>false</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>Clothes</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>259</X>
+        <Y>253</Y>
+        <Width>59</Width>
+        <Height>4</Height>
+        <Location>
+          <X>259</X>
+          <Y>253</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>-26</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>-6</X>
+        <Y>22</Y>
+      </interactOffset>
+      <radius>1300</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts>
+        <Script>
+          <Name>Look at</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Hm, dirty clothes that lie on the floor.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Completly stainless, perfectly white, dirty clothes.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Mmmmmhm.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Pick up</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Itemcheck</string>
+                <string>dirty(?) clothes</string>
+                <string>is not in inventory</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Let's get this "trash" sorted out.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Add Item</Type>
+              <SArgs>
+                <string>dirty(?) clothes</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Visible</Type>
+              <SArgs>
+                <string>Clothes</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Clothes</string>
+                <string>Look at</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Clothes</string>
+                <string>Pick up</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>288</X>
+            <Y>255</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>31</X>
+            <Y>25</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>dreckzeug</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>StorageDoor</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>210</X>
+        <Y>327</Y>
+        <Width>40</Width>
+        <Height>7</Height>
+        <Location>
+          <X>210</X>
+          <Y>327</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>28</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>12</X>
+        <Y>18</Y>
+      </interactOffset>
+      <radius>1000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts>
+        <Script>
+          <Name>Open</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>StorageDoorWithoutHandle</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>PlayerYPos</string>
+                <string>SMALLER</string>
+                <string>\360</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Move Object</Type>
+              <SArgs>
+                <string>*PLAYER</string>
+                <string>wait</string>
+                <string>with animation</string>
+              </SArgs>
+              <IArgs>
+                <int>0</int>
+                <int>10</int>
+                <int>2</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+              </SArgs>
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+                <string>Open</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+                <string>Close</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>StorageDoorOpen</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Visible</Type>
+              <SArgs>
+                <string>StorageRoomlid</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Walkable</Type>
+              <SArgs>
+                <string>StorageRoomlid</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Visible</Type>
+              <SArgs>
+                <string>Safe</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Walkable</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But I took the handle off! I can't open it without one.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Close</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>StorageDoorWithoutHandle</string>
+                <string>EQUAL</string>
+                <string>\true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+              </SArgs>
+              <IArgs>
+                <int>2</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+              </SArgs>
+              <IArgs>
+                <int>0</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+                <string>Open</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+                <string>Close</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>StorageDoorOpen</string>
+                <string>false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Walkable</Type>
+              <SArgs>
+                <string>StorageRoomlid</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Visible</Type>
+              <SArgs>
+                <string>StorageRoomlid</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Walkable</Type>
+              <SArgs>
+                <string>StorageDoor</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Visible</Type>
+              <SArgs>
+                <string>Safe</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>false</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>230</X>
+            <Y>330</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>20</X>
+            <Y>34</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>230</X>
+            <Y>330</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>154</R>
+            <G>205</G>
+            <B>50</B>
+            <A>255</A>
+            <PackedValue>4281519514</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>20</X>
+            <Y>34</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>230</X>
+            <Y>330</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>154</R>
+            <G>205</G>
+            <B>50</B>
+            <A>255</A>
+            <PackedValue>4281519514</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>20</X>
+            <Y>34</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>storagedoor</string>
+        <string>storagedooropen</string>
+        <string>storagedoor1</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>Table</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>256</X>
+        <Y>147</Y>
+        <Width>68</Width>
+        <Height>39</Height>
+        <Location>
+          <X>256</X>
+          <Y>147</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>3</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>6000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts />
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>290</X>
+            <Y>166</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>35</X>
+            <Y>26</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>table</string>
+      </imagenames>
+      <aniimages>
+        <AnimatedSprite>
+          <name>Walking</name>
+          <imagefilename>figur</imagefilename>
+          <color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </color>
+          <animationspeed>5</animationspeed>
+          <Texture>
+            <Name />
+          </Texture>
+          <Rows>4</Rows>
+          <Columns>9</Columns>
+        </AnimatedSprite>
+      </aniimages>
+      <walkable>false</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>Television</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>371</X>
+        <Y>170</Y>
+        <Width>72</Width>
+        <Height>28</Height>
+        <Location>
+          <X>371</X>
+          <Y>170</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>16</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>6000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts />
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>407</X>
+            <Y>184</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>36</X>
+            <Y>33</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>tv</string>
+      </imagenames>
+      <aniimages />
+      <walkable>false</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>Hallway Door</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>242</X>
+        <Y>42</Y>
+        <Width>36</Width>
+        <Height>59</Height>
+        <Location>
+          <X>242</X>
+          <Y>42</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>2000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts>
+        <Script>
+          <Name>Open</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>HallwayDoorUsable</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Itemcheck</string>
+                <string>hexagon key</string>
+                <string>is not in inventory</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>?!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>...</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I..... can't!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Hallway Door</string>
+                <string>Open</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Hallway Door</string>
+                <string>Examine</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I could use the hexagon key on this side too.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Yes! Sweet Jesus I can't believe I am actually doing this!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>YESSS!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>SSSSSSSSSSSSSS!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Teleport</Type>
+              <SArgs>
+                <string>Hallway</string>
+              </SArgs>
+              <IArgs>
+                <int>250</int>
+                <int>250</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Examine</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>LookedAtHallwayDoor</string>
+                <string>EQUAL</string>
+                <string>\true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I have to think of something to get out of here.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Something to.... escape the room!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>LookedAtHallwayDoor</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>The....</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I can't believe I am saying this.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>The door handle is missing!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>There is no way to open the door!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Which incompetent fuck forgets to give a door its freaking doorknob?!!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I guess I'll have to figure something out.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>LookedAtHallwayDoor</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>false</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>260</X>
+            <Y>71</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>18</X>
+            <Y>29</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>260</X>
+            <Y>71</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>18</X>
+            <Y>29</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>260</X>
+            <Y>71</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>18</X>
+            <Y>29</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>door</string>
+        <string>door1</string>
+        <string>door2</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>Drill</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>336</X>
+        <Y>383</Y>
+        <Width>30</Width>
+        <Height>2</Height>
+        <Location>
+          <X>336</X>
+          <Y>383</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>-12</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>2500</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts>
+        <Script>
+          <Name>Look at</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Yes.... a totally sensicial location for a hand-drill. Why the hell not!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Drill</string>
+                <string>Pick up</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Pick up</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Let us ignore that this room is completly empty.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I mean, hey, why even bother!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>It's not like it would change anything.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>...</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>GIVE ME THAT DRILL!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Add Item</Type>
+              <SArgs>
+                <string>drill</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Drill</string>
+                <string>Pick up</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Drill</string>
+                <string>Look at</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Visible</Type>
+              <SArgs>
+                <string>Drill</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>351</X>
+            <Y>384</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>15</X>
+            <Y>15</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>drillsmall</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>StorageRoomlid</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>249</X>
+        <Y>286</Y>
+        <Width>248</Width>
+        <Height>289</Height>
+        <Location>
+          <X>249</X>
+          <Y>286</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>6000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts />
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>373</X>
+            <Y>430</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>124</X>
+            <Y>144</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>storagelid</string>
+      </imagenames>
+      <aniimages />
+      <walkable>false</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>Safe</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>421</X>
+        <Y>326</Y>
+        <Width>19</Width>
+        <Height>36</Height>
+        <Location>
+          <X>421</X>
+          <Y>326</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>-3</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>2000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts>
+        <Script>
+          <Name>Look at</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Well, the safe I used to own wasn't this... weird looking. And it didn't have a hole where the spin thingy is supposed to be.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Safe</string>
+                <string>Open</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Open</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>SafeUnlocked</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>It's locked like it's supposed to be... yet the lock shouldn't be this hole... it's not even round!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>SafeOpen</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Oooh! Let's see here.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>Safe</string>
+              </SArgs>
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>What?</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>SafeOpen</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Safe</string>
+                <string>Loot</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Safe</string>
+                <string>Open</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But I already openend it.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>false</Active>
+        </Script>
+        <Script>
+          <Name>Loot</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>What the heck even is this? A walkie-talkie?</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Add Item</Type>
+              <SArgs>
+                <string>oil</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Huh.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Safe</string>
+                <string>Loot</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>false</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>430</X>
+            <Y>344</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>10</X>
+            <Y>23</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>430</X>
+            <Y>344</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>10</X>
+            <Y>23</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>430</X>
+            <Y>344</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>10</X>
+            <Y>23</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>rooms/protroom/safeclosed</string>
+        <string>rooms/protroom/safe2</string>
+        <string>rooms/protroom/safe3</string>
+      </imagenames>
+      <aniimages />
+      <walkable>false</walkable>
+      <visible>false</visible>
+    </Object>
+    <Object>
+      <name>System</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>100</X>
+        <Y>100</Y>
+        <Width>1</Width>
+        <Height>1</Height>
+        <Location>
+          <X>100</X>
+          <Y>100</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>6000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>255</opacity>
+      <scripts>
+        <Script>
+          <Name>Intro</Name>
+          <Commands>
+            <Command>
+              <Type>Wait</Type>
+              <SArgs />
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>It is late at night.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>You have been up working on a video game that you are developing.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>It was hard work and you have been devoloping it for a very long time now, but it is coming along nicely.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>...</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Wait</Type>
+              <SArgs />
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>It's time to go to bed for today.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Wait</Type>
+              <SArgs />
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>The next morning...</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Screenfade</Type>
+              <SArgs>
+                <string>IN</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Alright!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Soon my adventure-rpg-strategy-bullethell-MMO will be finally finished!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Move Object</Type>
+              <SArgs>
+                <string>*PLAYER</string>
+                <string>dont wait</string>
+                <string>with animation</string>
+              </SArgs>
+              <IArgs>
+                <int>0</int>
+                <int>-7</int>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I should get going to work on my laser-particly-system with-</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Huh?</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>What the heck? Why does my room look so crappy?!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>If this would be a game, nobody would would wanna play it!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Move Object</Type>
+              <SArgs>
+                <string>*PLAYER</string>
+                <string>dont wait</string>
+                <string>with animation</string>
+              </SArgs>
+              <IArgs>
+                <int>-16</int>
+                <int>0</int>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I need to do something!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Move Object</Type>
+              <SArgs>
+                <string>*PLAYER</string>
+                <string>dont wait</string>
+                <string>with animation</string>
+              </SArgs>
+              <IArgs>
+                <int>0</int>
+                <int>-1</int>
+                <int>1</int>
+              </IArgs>
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I got it!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I need to get to the cellar!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Onward! To glory!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>100</X>
+            <Y>100</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>0</X>
+            <Y>0</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>empty</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+  </Objects>
+  <introplayed>false</introplayed>
+  <ShowWalkmap>false</ShowWalkmap>
+  <ShowObjectRects>false</ShowObjectRects>
+  <ShowInteractionHandles>false</ShowInteractionHandles>
+  <HighlightedWalkmap>8</HighlightedWalkmap>
+</Maps>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{92D4EEE8-32EC-43B9-87EC-EC9A3416B37F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Package</OutputType>
+    <RootNamespace>MyGame</RootNamespace>
+    <OutputName>MyGame</OutputName>
+    <WixToolPath Condition=" '$(WixToolPath)' == '' ">$(SharpDevelopBinPath)\Tools\Wix</WixToolPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(WixToolPath)\wix.targets</WixTargetsPath>
+    <WixTasksPath Condition=" '$(WixTasksPath)' == '' ">$(WixToolPath)\WixTasks.dll</WixTasksPath>
+    <SupressIces>ICE45</SupressIces>
+    <DefineConstants>DATADIR=$(SharpDevelopBinPath)\..\data\resources\InstallerBitmaps</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <Import Project="$(WixToolPath)\wix.targets" />
+  <ItemGroup>
+    <None Include="Content\ArtistQuestProt.prj" />
+    <None Include="Content\Content\backgrounds\flur.xnb" />
+    <None Include="Content\Content\backgrounds\kitchenbackground.xnb" />
+    <None Include="Content\Content\backgrounds\outside.xnb" />
+    <None Include="Content\Content\cupboard0.xnb" />
+    <None Include="Content\Content\cupboard1.xnb" />
+    <None Include="Content\Content\cupboard2.xnb" />
+    <None Include="Content\Content\cupboard3.xnb" />
+    <None Include="Content\Content\Defaultfont.xnb" />
+    <None Include="Content\Content\door.xnb" />
+    <None Include="Content\Content\door1.xnb" />
+    <None Include="Content\Content\door2.xnb" />
+    <None Include="Content\Content\dreckzeug.xnb" />
+    <None Include="Content\Content\drillsmall.xnb" />
+    <None Include="Content\Content\empty.xnb" />
+    <None Include="Content\Content\fadepic.xnb" />
+    <None Include="Content\Content\figur.xnb" />
+    <None Include="Content\Content\figur3.xnb" />
+    <None Include="Content\Content\figur4.xnb" />
+    <None Include="Content\Content\figur5.xnb" />
+    <None Include="Content\Content\figur6.xnb" />
+    <None Include="Content\Content\inventoryback.xnb" />
+    <None Include="Content\Content\inventoryselected.xnb" />
+    <None Include="Content\Content\items\drill.xnb" />
+    <None Include="Content\Content\items\handle.xnb" />
+    <None Include="Content\Content\items\oil.xnb" />
+    <None Include="Content\Content\items\screwdriver.xnb" />
+    <None Include="Content\Content\items\sechskant.xnb" />
+    <None Include="Content\Content\keys\enterkey.xnb" />
+    <None Include="Content\Content\keys\rshiftkey.xnb" />
+    <None Include="Content\Content\keys\spacekey.xnb" />
+    <None Include="Content\Content\mandl.xnb" />
+    <None Include="Content\Content\menu.xnb" />
+    <None Include="Content\Content\neson.xnb" />
+    <None Include="Content\Content\pc.xnb" />
+    <None Include="Content\Content\prota.xnb" />
+    <None Include="Content\Content\roomfarbefragezeichen.xnb" />
+    <None Include="Content\Content\rooms\hallway\boxes.xnb" />
+    <None Include="Content\Content\rooms\hallway\flurdoor.xnb" />
+    <None Include="Content\Content\rooms\hallway\window1.xnb" />
+    <None Include="Content\Content\rooms\hallway\window2.xnb" />
+    <None Include="Content\Content\rooms\hallway\window2bitopen.xnb" />
+    <None Include="Content\Content\rooms\hallway\window2open.xnb" />
+    <None Include="Content\Content\rooms\hallway\window3.xnb" />
+    <None Include="Content\Content\rooms\kitchen\bigdoor.xnb" />
+    <None Include="Content\Content\rooms\kitchen\keys.xnb" />
+    <None Include="Content\Content\rooms\kitchen\kitchendoor.xnb" />
+    <None Include="Content\Content\rooms\kitchen\kitchentable.xnb" />
+    <None Include="Content\Content\rooms\outside\uglywindow1.xnb" />
+    <None Include="Content\Content\rooms\outside\uglywindow2.xnb" />
+    <None Include="Content\Content\rooms\protroom\safe2.xnb" />
+    <None Include="Content\Content\rooms\protroom\safe3.xnb" />
+    <None Include="Content\Content\rooms\protroom\safeclosed.xnb" />
+    <None Include="Content\Content\storagedoor.xnb" />
+    <None Include="Content\Content\storagedoor1.xnb" />
+    <None Include="Content\Content\storagedooropen.xnb" />
+    <None Include="Content\Content\storagelid.xnb" />
+    <None Include="Content\Content\table.xnb" />
+    <None Include="Content\Content\textbox.xnb" />
+    <None Include="Content\Content\Titlefont.xnb" />
+    <None Include="Content\Content\title\arroww.xnb" />
+    <None Include="Content\Content\title\arrowwup.xnb" />
+    <None Include="Content\Content\title\artistquest.xnb" />
+    <None Include="Content\Content\title\snowflake.xnb" />
+    <None Include="Content\Content\title\titlebackground.xnb" />
+    <None Include="Content\Content\title\titleexit.xnb" />
+    <None Include="Content\Content\title\titlefileblank.xnb" />
+    <None Include="Content\Content\title\titleloadgame.xnb" />
+    <None Include="Content\Content\title\titlenewgame.xnb" />
+    <None Include="Content\Content\title\titleresume.xnb" />
+    <None Include="Content\Content\title\titlesavegame.xnb" />
+    <None Include="Content\Content\title\titlesettings.xnb" />
+    <None Include="Content\Content\tv.xnb" />
+    <None Include="Content\Content\tvon.xnb" />
+    <None Include="Content\Hunters XNA Adventure.application" />
+    <None Include="Content\Hunters XNA Adventure.exe" />
+    <None Include="Content\Hunters XNA Adventure.exe.manifest" />
+    <None Include="Content\Hunters XNA Adventure.pdb" />
+    <None Include="Content\savegames\AAAALSO DAS IST ES WAS WIR WOLLTEN" />
+    <None Include="Content\savegames\ACHSO IST DAS" />
+    <None Include="Content\savegames\Autosave" />
+    <None Include="Content\savegames\HALLO ICH BIIN EEIIN FREUNND" />
+    <None Include="Content\savegames\HUBEEERTEnter0" />
+    <None Include="Content\savegames\hubert, youve been a good friend. Hoots1" />
+    <None Include="Content\savegames\HUNTEER" />
+    <None Include="Content\saves\bla" />
+    <None Include="Content\saves\bla2" />
+    <None Include="Content\saves\blank room" />
+    <None Include="Content\saves\conditions" />
+    <None Include="Content\saves\fdgd" />
+    <None Include="Content\saves\Hallway" />
+    <None Include="Content\saves\Icorrectedrects" />
+    <None Include="Content\saves\Kitchen" />
+    <None Include="Content\saves\Outside" />
+    <None Include="Content\saves\ProtRoom" />
+    <None Include="Content\saves\roomwithobjectandmultiplepics" />
+    <None Include="Content\saves\roomwithsimpleobject" />
+    <None Include="Content\saves\sdf" />
+    <None Include="Content\saves\yesitworks" />
+    <None Include="Resources\DirectX-64.bmp" />
+    <None Include="Resources\DotNet-64.bmp" />
+    <None Include="Resources\GreenCheck-16.ico" />
+    <None Include="Resources\GreenCheck-24.ico" />
+    <None Include="Resources\RedX-16.ico" />
+    <None Include="Resources\RedX-24.ico" />
+    <None Include="Resources\Xna-64.bmp" />
+    <None Include="Source\Config.wxi" />
+    <Compile Include="Source\Dialogs\BrowseDialog.wxs" />
+    <Compile Include="Source\Dialogs\CancelDialog.wxs" />
+    <Compile Include="Source\Dialogs\ErrorDialog.wxs" />
+    <Compile Include="Source\Dialogs\ExitDialog.wxs" />
+    <Compile Include="Source\Dialogs\FatalErrorDialog.wxs" />
+    <Compile Include="Source\Dialogs\FilesInUseDialog.wxs" />
+    <Compile Include="Source\Dialogs\PrerequisitesDialog.wxs" />
+    <Compile Include="Source\Dialogs\OutOfDiskSpaceDialog.wxs" />
+    <Compile Include="Source\Dialogs\OutOfRollbackDiskSpaceDialog.wxs" />
+    <Compile Include="Source\Dialogs\ProgressDialog.wxs" />
+    <Compile Include="Source\Dialogs\RequireDotNetDialog.wxs" />
+    <Compile Include="Source\Dialogs\SelectFolderDialog.wxs" />
+    <Compile Include="Source\Dialogs\ShaderWarningDialog.wxs" />
+    <Compile Include="Source\Dialogs\UserExitDialog.wxs" />
+    <Compile Include="Source\Dialogs\VerifyReadyDialog.wxs" />
+    <Compile Include="Source\Dialogs\ViewLicenseAgreementDialog.wxs" />
+    <Compile Include="Source\Dialogs\WelcomeDialog.wxs" />
+    <Compile Include="Source\Dialogs\WrongOperatingSystemDialog.wxs" />
+    <Compile Include="Source\EmbeddedPrerequisites.wxs" />
+    <Compile Include="Source\Files.wxs" />
+    <Compile Include="Source\NuclexSetupDetector.wxs" />
+    <Compile Include="Source\Setup.wxs" />
+    <Compile Include="Source\UserInterface.wxs" />
+    <None Include="Documents\license.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content" />
+    <Folder Include="Content\Content" />
+    <Folder Include="Content\Content\backgrounds" />
+    <Folder Include="Content\Content\items" />
+    <Folder Include="Content\Content\keys" />
+    <Folder Include="Content\Content\rooms" />
+    <Folder Include="Content\Content\rooms\hallway" />
+    <Folder Include="Content\Content\rooms\kitchen" />
+    <Folder Include="Content\Content\rooms\outside" />
+    <Folder Include="Content\Content\rooms\protroom" />
+    <Folder Include="Content\Content\title" />
+    <Folder Include="Content\savegames" />
+    <Folder Include="Content\saves" />
+    <Folder Include="Documents" />
+    <Folder Include="Resources" />
+    <Folder Include="Source" />
+    <Folder Include="Source\Dialogs" />
+  </ItemGroup>
+</Project>
