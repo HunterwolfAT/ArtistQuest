@@ -205,7 +205,7 @@ namespace WindowsGame1
         /// </summary>
         /// <param name="playerrect">The rect of the player character. Needed for collisiondetection and interaction.</param>
         /// <returns></returns>
-        public Boolean Update(Rectangle playerrect)
+        public Boolean Update(Rectangle playerrect, int playerdirection)
         {
             bool playernear = false;
 
@@ -219,7 +219,7 @@ namespace WindowsGame1
                     activeverbcount++;
             }
 
-            if (CheckPlayerDistance(playerrect) && activeverbcount != 0)
+            if (CheckPlayerDistance(playerrect, playerdirection) && activeverbcount != 0)
             {
                 images[imagenum].Color = Color.YellowGreen;
                 playernear = true;
@@ -377,21 +377,21 @@ namespace WindowsGame1
         /// Determines if the player is closer to the object than it's range.
         /// </summary>
         /// <param name="playerrect">The rect of the player character</param>
-        /// <returns>Return true, if the player is closer to the object than its range value.</returns>
-        public Boolean CheckPlayerDistance(Rectangle playerrect)
+        /// <param name="playerdirection">The way the player is facing. 0 = Up, 1 = Right, 2 = Down, 3 = Left</param>
+        /// <returns>Return true, if the player is facing the object and is closer to the object than its range value.</returns>
+        public Boolean CheckPlayerDistance(Rectangle playerrect, int playerdirection)
         {
             Vector2 obrect = new Vector2(rect.X + (rect.Width / 2) + rectOffset.X + interactOffset.X, rect.Y + (rect.Height / 2) + rectOffset.Y + interactOffset.Y);
             Vector2 playerpos = new Vector2(playerrect.X + (playerrect.Width / 2), playerrect.Y + (playerrect.Height / 2));
 
-            //Console.WriteLine(Vector2.DistanceSquared(playerpos, obrect));
-
-            if (Vector2.DistanceSquared(playerpos, obrect) < radius)
+            if (playerdirection == 0 && obrect.Y < playerpos.Y || playerdirection == 1 && obrect.X > playerpos.X ||
+                playerdirection == 2 && obrect.Y > playerpos.Y || playerdirection == 3 && obrect.X < playerpos.X)
             {
-                //Console.WriteLine(Math.Sqrt((obrect.X - playerpos.X) * (obrect.X - playerpos.X) + (playerpos.Y - obrect.Y) * (playerpos.Y - obrect.Y)));
-                return true;
+                if (Vector2.DistanceSquared(playerpos, obrect) < radius)
+                    return true;      
             }
-            else
-                return false;
+
+            return false;
         }
 
         /// <summary>

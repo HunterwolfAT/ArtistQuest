@@ -260,7 +260,7 @@ namespace WindowsGame1
                 bool objectfound = false;
                 foreach (Object obj in map.getObjects())
                 {
-                    if (obj.Update(player.playerRect))
+                    if (obj.Update(player.playerRect, player.direction))
                     {
                         player.selectedObject = obj;
                         objectfound = true;
