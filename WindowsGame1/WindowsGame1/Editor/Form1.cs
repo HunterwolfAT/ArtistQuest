@@ -1466,5 +1466,19 @@ namespace WindowsGame1
             }
         }
 
+        private void verblist_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listBox2.SelectedIndex != -1 && verblist.SelectedIndex != -1)
+            {
+                game.map.getObjects()[listBox2.SelectedIndex].scripts.RemoveAt(verblist.SelectedIndex);
+                
+                verblist.Items.Clear();
+                foreach (Script script in game.map.getObjects()[listBox2.SelectedIndex].scripts)
+                {
+                    verblist.Items.Add(script.Name);
+                }
+            }
+        }
+
     }
 }

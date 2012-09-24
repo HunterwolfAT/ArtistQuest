@@ -36,6 +36,9 @@ namespace WindowsGame1
         public List<String> imagenames;
         public List<AnimatedSprite> aniimages;
 
+        /// <summary>
+        /// Represents everything in a room/map that isn't the player. Null-Constructor for the storagemanager!
+        /// </summary>
         public Object()
         {
             name = "";
@@ -65,11 +68,23 @@ namespace WindowsGame1
             scripts = new List<Script>();
         }
         
+        /// <summary>
+        /// Returns the rect including every offset
+        /// </summary>
         public Rectangle getActualRect()
         {
             return new Rectangle(rect.X + (int)rectOffset.X, rect.Y + (int)rectOffset.Y, rect.Width, rect.Height);
         }
-        
+
+        /// <summary>
+        /// Represents everything in a room/map that isn't the player.
+        /// </summary>
+        /// <param name="newname">Name of the Object</param>
+        /// <param name="newimage">Name of an imagefile</param>
+        /// <param name="position">Position of the new Object</param>
+        /// <param name="newwalkable">Defines if the player can walk through/over the object</param>
+        /// <param name="newvisible">Defines wether the Object will be drawn</param>
+        /// <param name="newradius">The radius in which the played needs to be to interact with the Object (Objects need Verbs so something happens)</param>
         public Object(String newname, String newimage, Vector2 position, Boolean newwalkable = true, Boolean newvisible = true, float newradius = 6000f)
         {
             name = newname;
@@ -127,12 +142,20 @@ namespace WindowsGame1
 
         }
 
+        /// <summary>
+        /// Initializes the rect of the Object
+        /// </summary>
         public void Init()
         {
             rect.Width = images[0].Texture.Width;
             rect.Height = images[0].Texture.Height;
         }
 
+        /// <summary>
+        /// Add an image to the imagelist of the object.
+        /// </summary>
+        /// <param name="myContentManager">XNA Contentmanager</param>
+        /// <param name="spritename">Name of the image file in the XNA Contentpipeline</param>
         public void AddSprite(ContentManager myContentManager, String spritename)
         {
             Sprite NewSprite = new Sprite();
@@ -142,6 +165,15 @@ namespace WindowsGame1
             imagenames.Add(spritename);
         }
 
+        /// <summary>
+        /// Add an animation
+        /// </summary>
+        /// <param name="myContentManager">XNA Contentmanager</param>
+        /// <param name="imagename">Name of the image file in the XNA Contentpipelin</param>
+        /// <param name="colum">Number of frames in one column of the image</param>
+        /// <param name="row">Number of frames in one row of the image</param>
+        /// <param name="name">Name of the new animation</param>
+        /// <param name="speed">How fast the animation is going to be played</param>
         public void AddAniSprite(ContentManager myContentManager, String imagename, int colum, int row, string name, int speed)
         {
             Texture2D texture = myContentManager.Load<Texture2D>(imagename);
@@ -150,6 +182,10 @@ namespace WindowsGame1
             aniimages.Add(NewAniSprite);
         }
 
+        /// <summary>
+        /// Render the object at it's position on the screen, with it's current frame (either animation or not)
+        /// </summary>
+        /// <param name="mySpriteBatch">XNA SpriteBatch</param>
         public void Draw(SpriteBatch mySpriteBatch)
         {
             if (aniimagenum == -1)
@@ -164,6 +200,11 @@ namespace WindowsGame1
             }
         }
 
+        /// <summary>
+        /// Process various calculations regarding the Object.
+        /// </summary>
+        /// <param name="playerrect">The rect of the player character. Needed for collisiondetection and interaction.</param>
+        /// <returns></returns>
         public Boolean Update(Rectangle playerrect)
         {
             bool playernear = false;
@@ -289,6 +330,12 @@ namespace WindowsGame1
             return playernear;
         }
 
+        /// <summary>
+        /// Initialize to move the object over the specified path. Values are relative, not absolute.
+        /// </summary>
+        /// <param name="x">How far the object is supposed to move in X</param>
+        /// <param name="y">How far the object is supposed to move in Y</param>
+        /// <param name="speed">How many pixels the object is supposed to move in one update</param>
         public void move(int x, int y, int speed)
         {
             OriginalPostition = new Vector2(rect.X, rect.Y);
@@ -298,6 +345,10 @@ namespace WindowsGame1
             moving = true;
         }
 
+        /// <summary>
+        /// Initializes a fade in (appear)
+        /// </summary>
+        /// <param name="speed">Will be added to Opacity variable every Update</param>
         public void fadein(int speed)
         {
             movingspeed = speed;
@@ -311,6 +362,10 @@ namespace WindowsGame1
             }
         }
 
+        /// <summary>
+        /// Initializes a fade out (disappear)
+        /// </summary>
+        /// <param name="speed">Will be substracted from Opacity variable every Update</param>
         public void fadeout(int speed)
         {
             movingspeed = speed;
@@ -318,6 +373,11 @@ namespace WindowsGame1
             fadedout = false;
         }
 
+        /// <summary>
+        /// Determines if the player is closer to the object than it's range.
+        /// </summary>
+        /// <param name="playerrect">The rect of the player character</param>
+        /// <returns>Return true, if the player is closer to the object than its range value.</returns>
         public Boolean CheckPlayerDistance(Rectangle playerrect)
         {
             Vector2 obrect = new Vector2(rect.X + (rect.Width / 2) + rectOffset.X + interactOffset.X, rect.Y + (rect.Height / 2) + rectOffset.Y + interactOffset.Y);
@@ -334,6 +394,10 @@ namespace WindowsGame1
                 return false;
         }
 
+        /// <summary>
+        /// Find a certain script in this object's list of scripts by name.
+        /// </summary>
+        /// <param name="name">The name of the script you're looking for</param>
         public Script FindScript(String name)
         {
             foreach (Script script in scripts)
@@ -343,6 +407,10 @@ namespace WindowsGame1
             return null;
         }
 
+        /// <summary>
+        /// Creates an empty script and adds it to it's list.
+        /// </summary>
+        /// <param name="name">The name of the new script</param>
         public void AddScript(String name)
         {
             Script newscript = new Script(name);

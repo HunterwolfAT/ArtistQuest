@@ -840,6 +840,7 @@
             this.verblist.Size = new System.Drawing.Size(84, 95);
             this.verblist.TabIndex = 9;
             this.verblist.SelectedIndexChanged += new System.EventHandler(this.verblist_SelectedIndexChanged);
+            this.verblist.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.verblist_MouseDoubleClick);
             // 
             // label7
             // 
