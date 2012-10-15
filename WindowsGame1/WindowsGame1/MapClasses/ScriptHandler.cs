@@ -326,7 +326,7 @@ namespace WindowsGame1
                                     {
                                         Console.WriteLine("SETTING SCRIPT TO LINE: " + a);
                                         //Set the Commandcounter to the new line
-                                        Commandcounter = a;
+                                        Commandcounter = a - 1;
                                         if (activescript.Commands[a].Type == "ELSE")
                                             Commandcounter = a;
                                         break;

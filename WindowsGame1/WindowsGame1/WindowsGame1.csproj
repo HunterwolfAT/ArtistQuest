@@ -154,6 +154,7 @@
     <Compile Include="SavefileClasses\Savegame.cs" />
     <Compile Include="MapClasses\Script.cs" />
     <Compile Include="MapClasses\ScriptHandler.cs" />
+    <Compile Include="SystemClasses\Sound.cs" />
     <Compile Include="SystemClasses\Sprite.cs" />
     <Compile Include="SystemClasses\storagemanager.cs" />
     <Compile Include="GameClasses\Title.cs" />
