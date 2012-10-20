@@ -416,21 +416,25 @@ namespace WindowsGame1
                         {
                             if (Keyboard.GetState().IsKeyDown(Keys.Left))
                             {
+                                player.direction = 3;
                                 if (player.CheckCollision(new Vector2(-2, 0), map.getWalkrects(), map.Objects))
                                     player.move(-2, 0);
                             }
                             if (Keyboard.GetState().IsKeyDown(Keys.Right))
                             {
+                                player.direction = 1;
                                 if (player.CheckCollision(new Vector2(2, 0), map.getWalkrects(), map.Objects))
                                     player.move(2, 0);
                             }
                             if (Keyboard.GetState().IsKeyDown(Keys.Up))
                             {
+                                player.direction = 0;
                                 if (player.CheckCollision(new Vector2(0, -2), map.getWalkrects(), map.Objects))
                                     player.move(0, -2);
                             }
                             if (Keyboard.GetState().IsKeyDown(Keys.Down))
                             {
+                                player.direction = 2;
                                 if (player.CheckCollision(new Vector2(0, 2), map.getWalkrects(), map.Objects))
                                     player.move(0, 2);
                             }
