@@ -62,6 +62,7 @@ namespace WindowsGame1
         private Rectangle NewWalkMap;
         private Boolean SelectWalkMap = false;
         private Point E_ClickedOn = new Point(-1,-1);
+        public List<Snapshot> Snapshots;
 
         //Constructor
         public Game1()
@@ -131,6 +132,8 @@ namespace WindowsGame1
 
             Editor = new Form1(this);
             NewWalkMap = new Rectangle(0, 0, 0, 0);
+
+            Snapshots = new List<Snapshot>();
         }
 
     
@@ -800,6 +803,21 @@ namespace WindowsGame1
             }
 
             items.LoadContent(Content);
+        }
+
+        public void LoadSnapshot(Snapshot snapshot)
+        {
+            foreach (String[] var in GameVariables)
+            {
+                int i = 0;
+                foreach (String name in snapshot.GVName)
+                {
+                    if (name == var[0])
+                        var[1] = snapshot.GVValue[i];
+
+                    i++;
+                }
+            }
         }
 
         public void SaveGame(String Filename)

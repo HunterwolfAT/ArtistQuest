@@ -228,6 +228,9 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.snapshotLB = new System.Windows.Forms.ListBox();
+            this.newsnapshotButton = new System.Windows.Forms.Button();
+            this.a = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -299,6 +302,9 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.a);
+            this.tabPage1.Controls.Add(this.newsnapshotButton);
+            this.tabPage1.Controls.Add(this.snapshotLB);
             this.tabPage1.Controls.Add(this.ShowPlPosCB);
             this.tabPage1.Controls.Add(this.CreateNewGlobalVar);
             this.tabPage1.Controls.Add(this.globalvarvalue);
@@ -338,7 +344,7 @@
             // 
             // CreateNewGlobalVar
             // 
-            this.CreateNewGlobalVar.Location = new System.Drawing.Point(241, 496);
+            this.CreateNewGlobalVar.Location = new System.Drawing.Point(462, 489);
             this.CreateNewGlobalVar.Name = "CreateNewGlobalVar";
             this.CreateNewGlobalVar.Size = new System.Drawing.Size(190, 23);
             this.CreateNewGlobalVar.TabIndex = 19;
@@ -348,14 +354,14 @@
             // 
             // globalvarvalue
             // 
-            this.globalvarvalue.Location = new System.Drawing.Point(244, 470);
+            this.globalvarvalue.Location = new System.Drawing.Point(465, 463);
             this.globalvarvalue.Name = "globalvarvalue";
             this.globalvarvalue.Size = new System.Drawing.Size(187, 20);
             this.globalvarvalue.TabIndex = 18;
             // 
             // globalvarname
             // 
-            this.globalvarname.Location = new System.Drawing.Point(244, 429);
+            this.globalvarname.Location = new System.Drawing.Point(465, 422);
             this.globalvarname.Name = "globalvarname";
             this.globalvarname.Size = new System.Drawing.Size(187, 20);
             this.globalvarname.TabIndex = 17;
@@ -363,7 +369,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(241, 454);
+            this.label15.Location = new System.Drawing.Point(462, 447);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(34, 13);
             this.label15.TabIndex = 16;
@@ -372,7 +378,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(241, 408);
+            this.label14.Location = new System.Drawing.Point(462, 401);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(76, 13);
             this.label14.TabIndex = 15;
@@ -383,7 +389,7 @@
             this.GlobVarListBox.FormattingEnabled = true;
             this.GlobVarListBox.Location = new System.Drawing.Point(451, 21);
             this.GlobVarListBox.Name = "GlobVarListBox";
-            this.GlobVarListBox.Size = new System.Drawing.Size(217, 498);
+            this.GlobVarListBox.Size = new System.Drawing.Size(217, 368);
             this.GlobVarListBox.TabIndex = 14;
             this.GlobVarListBox.SelectedIndexChanged += new System.EventHandler(this.globalvarlistbox_SelectedIndexChanged);
             this.GlobVarListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.globalvarlistbox_MouseDoubleClick);
@@ -2382,6 +2388,34 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
+            // snapshotLB
+            // 
+            this.snapshotLB.FormattingEnabled = true;
+            this.snapshotLB.Location = new System.Drawing.Point(18, 232);
+            this.snapshotLB.Name = "snapshotLB";
+            this.snapshotLB.Size = new System.Drawing.Size(183, 199);
+            this.snapshotLB.TabIndex = 21;
+            // 
+            // newsnapshotButton
+            // 
+            this.newsnapshotButton.Location = new System.Drawing.Point(21, 447);
+            this.newsnapshotButton.Name = "newsnapshotButton";
+            this.newsnapshotButton.Size = new System.Drawing.Size(172, 28);
+            this.newsnapshotButton.TabIndex = 22;
+            this.newsnapshotButton.Text = "Make Snapshot";
+            this.newsnapshotButton.UseVisualStyleBackColor = true;
+            this.newsnapshotButton.Click += new System.EventHandler(this.newsnapshotButton_Click);
+            // 
+            // a
+            // 
+            this.a.Location = new System.Drawing.Point(21, 481);
+            this.a.Name = "a";
+            this.a.Size = new System.Drawing.Size(172, 29);
+            this.a.TabIndex = 23;
+            this.a.Text = "Load Snapshot";
+            this.a.UseVisualStyleBackColor = true;
+            this.a.Click += new System.EventHandler(this.a_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2656,6 +2690,9 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.CheckBox ShowPlPosCB;
         private System.Windows.Forms.ComboBox commoveplayerCB;
+        private System.Windows.Forms.ListBox snapshotLB;
+        private System.Windows.Forms.Button a;
+        private System.Windows.Forms.Button newsnapshotButton;
 
     }
 }

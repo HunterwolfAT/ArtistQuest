@@ -59,6 +59,12 @@ namespace WindowsGame1
                 GlobVarListBox.Items.Add(var[0] + ": " + var[1]);
             }
 
+            snapshotLB.Items.Clear();
+            foreach (Snapshot snap in game.Snapshots)
+            {
+                snapshotLB.Items.Add(snap.Mapname + ": " + snap.Timestamp.ToString("HH:mm:ss"));
+            }
+
             listBox2.Items.Clear();
             objectlistbox.Items.Clear();
             foreach (Object obj in game.map.getObjects())
@@ -1480,5 +1486,25 @@ namespace WindowsGame1
             }
         }
 
+        private void newsnapshotButton_Click(object sender, EventArgs e)
+        {
+            Snapshot newsnapshot = new Snapshot(game.GameVariables, game.map);
+            
+            game.Snapshots.Add(newsnapshot);
+
+            UpdateEditor();
+        }
+
+        private void a_Click(object sender, EventArgs e)
+        {
+            if (snapshotLB.SelectedIndex != -1)
+            {
+                if (game.Snapshots[snapshotLB.SelectedIndex].Mapname != game.map.name)
+                    MessageBox.Show("The current map is not the one you took the snapshot from. (At least not by name)", "Snapshot Load Error:", MessageBoxButtons.OK);
+                else
+                    game.LoadSnapshot(game.Snapshots[snapshotLB.SelectedIndex]);
+        
+            }
+        }
     }
 }

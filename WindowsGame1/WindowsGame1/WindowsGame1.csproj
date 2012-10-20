@@ -129,6 +129,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editor\Snapshot.cs" />
     <Compile Include="GameClasses\Snowflake.cs" />
     <Compile Include="SystemClasses\AnimatedSprite.cs" />
     <Compile Include="MapClasses\Command.cs" />
