@@ -31,6 +31,9 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.a = new System.Windows.Forms.Button();
+            this.newsnapshotButton = new System.Windows.Forms.Button();
+            this.snapshotLB = new System.Windows.Forms.ListBox();
             this.ShowPlPosCB = new System.Windows.Forms.CheckBox();
             this.CreateNewGlobalVar = new System.Windows.Forms.Button();
             this.globalvarvalue = new System.Windows.Forms.TextBox();
@@ -228,9 +231,7 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.snapshotLB = new System.Windows.Forms.ListBox();
-            this.newsnapshotButton = new System.Windows.Forms.Button();
-            this.a = new System.Windows.Forms.Button();
+            this.objpicbutton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -330,6 +331,34 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // a
+            // 
+            this.a.Location = new System.Drawing.Point(21, 481);
+            this.a.Name = "a";
+            this.a.Size = new System.Drawing.Size(172, 29);
+            this.a.TabIndex = 23;
+            this.a.Text = "Load Snapshot";
+            this.a.UseVisualStyleBackColor = true;
+            this.a.Click += new System.EventHandler(this.a_Click);
+            // 
+            // newsnapshotButton
+            // 
+            this.newsnapshotButton.Location = new System.Drawing.Point(21, 447);
+            this.newsnapshotButton.Name = "newsnapshotButton";
+            this.newsnapshotButton.Size = new System.Drawing.Size(172, 28);
+            this.newsnapshotButton.TabIndex = 22;
+            this.newsnapshotButton.Text = "Make Snapshot";
+            this.newsnapshotButton.UseVisualStyleBackColor = true;
+            this.newsnapshotButton.Click += new System.EventHandler(this.newsnapshotButton_Click);
+            // 
+            // snapshotLB
+            // 
+            this.snapshotLB.FormattingEnabled = true;
+            this.snapshotLB.Location = new System.Drawing.Point(18, 232);
+            this.snapshotLB.Name = "snapshotLB";
+            this.snapshotLB.Size = new System.Drawing.Size(183, 199);
+            this.snapshotLB.TabIndex = 21;
             // 
             // ShowPlPosCB
             // 
@@ -894,6 +923,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.objpicbutton);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.objectpic);
             this.groupBox1.Controls.Add(this.label4);
@@ -901,7 +931,7 @@
             this.groupBox1.Controls.Add(this.objname);
             this.groupBox1.Location = new System.Drawing.Point(251, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(224, 120);
+            this.groupBox1.Size = new System.Drawing.Size(240, 120);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create an object";
@@ -2388,33 +2418,15 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // snapshotLB
+            // objpicbutton
             // 
-            this.snapshotLB.FormattingEnabled = true;
-            this.snapshotLB.Location = new System.Drawing.Point(18, 232);
-            this.snapshotLB.Name = "snapshotLB";
-            this.snapshotLB.Size = new System.Drawing.Size(183, 199);
-            this.snapshotLB.TabIndex = 21;
-            // 
-            // newsnapshotButton
-            // 
-            this.newsnapshotButton.Location = new System.Drawing.Point(21, 447);
-            this.newsnapshotButton.Name = "newsnapshotButton";
-            this.newsnapshotButton.Size = new System.Drawing.Size(172, 28);
-            this.newsnapshotButton.TabIndex = 22;
-            this.newsnapshotButton.Text = "Make Snapshot";
-            this.newsnapshotButton.UseVisualStyleBackColor = true;
-            this.newsnapshotButton.Click += new System.EventHandler(this.newsnapshotButton_Click);
-            // 
-            // a
-            // 
-            this.a.Location = new System.Drawing.Point(21, 481);
-            this.a.Name = "a";
-            this.a.Size = new System.Drawing.Size(172, 29);
-            this.a.TabIndex = 23;
-            this.a.Text = "Load Snapshot";
-            this.a.UseVisualStyleBackColor = true;
-            this.a.Click += new System.EventHandler(this.a_Click);
+            this.objpicbutton.Location = new System.Drawing.Point(206, 44);
+            this.objpicbutton.Name = "objpicbutton";
+            this.objpicbutton.Size = new System.Drawing.Size(31, 23);
+            this.objpicbutton.TabIndex = 5;
+            this.objpicbutton.Text = "...";
+            this.objpicbutton.UseVisualStyleBackColor = true;
+            this.objpicbutton.Click += new System.EventHandler(this.objpicbutton_Click);
             // 
             // Form1
             // 
@@ -2693,6 +2705,7 @@
         private System.Windows.Forms.ListBox snapshotLB;
         private System.Windows.Forms.Button a;
         private System.Windows.Forms.Button newsnapshotButton;
+        private System.Windows.Forms.Button objpicbutton;
 
     }
 }

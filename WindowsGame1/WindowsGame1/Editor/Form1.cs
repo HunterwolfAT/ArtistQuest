@@ -317,6 +317,7 @@ namespace WindowsGame1
             Object newObject = new Object(objname.Text, objectpic.Text, new Vector2(100f,100f));
             newObject.LoadContent(game.Content);
             newObject.Init();                       // Sets up the Rectangle of the Object right
+            newObject.opacity = 1f;                 // I don't know why I need to specify this but heck if I don't it wont be drawn
             game.map.AddObject(newObject);
             UpdateEditor();
         }
@@ -477,6 +478,10 @@ namespace WindowsGame1
 
         private void saveRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            String path = game.GetGamePath();
+            path += "\\saves";
+            saveFileDialog1.InitialDirectory = path;
+
             saveFileDialog1.FileName = game.map.name;
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 game.SaveMap(saveFileDialog1.FileName);
@@ -484,6 +489,10 @@ namespace WindowsGame1
 
         private void loadRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            String path = game.GetGamePath();
+            path += "\\saves";
+            openFileDialog1.InitialDirectory = path;
+
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
                 game.LoadMap(openFileDialog1.FileName);
         }
@@ -1504,6 +1513,23 @@ namespace WindowsGame1
                 else
                     game.LoadSnapshot(game.Snapshots[snapshotLB.SelectedIndex]);
         
+            }
+        }
+
+        private void objpicbutton_Click(object sender, EventArgs e)
+        {
+            String path = game.GetGamePath();
+            path = path.Substring(0, path.Length - 28);
+            path += "WindowsGame1Content";
+            openFileDialog1.InitialDirectory = path;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // remove everything before, including "WindowsGame1Content\" and the fileextension
+                String editorpath = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf("WindowsGame1Content", openFileDialog1.FileName.Length));
+                editorpath = editorpath.Substring(20, editorpath.Length - 24);
+                objectpic.Text = editorpath;
+                //openFileDialog1.FileName
             }
         }
     }

@@ -63,7 +63,7 @@ namespace WindowsGame1
 
             fading = false;
             fadedout = false;
-            opacity = 1;
+            opacity = 1f;
 
             scripts = new List<Script>();
         }

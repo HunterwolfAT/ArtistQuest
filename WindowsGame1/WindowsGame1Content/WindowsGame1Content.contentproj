@@ -522,6 +522,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="rooms\protroom\lettersmal.png">
       <Name>lettersmal</Name>
       <Importer>TextureImporter</Importer>
