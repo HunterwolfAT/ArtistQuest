@@ -1532,5 +1532,39 @@ namespace WindowsGame1
                 //openFileDialog1.FileName
             }
         }
+
+        private void itempicbutton_Click(object sender, EventArgs e)
+        {
+            String path = game.GetGamePath();
+            path = path.Substring(0, path.Length - 28);
+            path += "WindowsGame1Content";
+            openFileDialog1.InitialDirectory = path;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // remove everything before, including "WindowsGame1Content\" and the fileextension
+                String editorpath = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf("WindowsGame1Content", openFileDialog1.FileName.Length));
+                editorpath = editorpath.Substring(20, editorpath.Length - 24);
+                itempicturetextbox.Text = editorpath;
+                //openFileDialog1.FileName
+            }
+        }
+
+        private void animpicbutton_Click(object sender, EventArgs e)
+        {
+            String path = game.GetGamePath();
+            path = path.Substring(0, path.Length - 28);
+            path += "WindowsGame1Content";
+            openFileDialog1.InitialDirectory = path;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // remove everything before, including "WindowsGame1Content\" and the fileextension
+                String editorpath = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf("WindowsGame1Content", openFileDialog1.FileName.Length));
+                editorpath = editorpath.Substring(20, editorpath.Length - 24);
+                AniPictureNameTB.Text = editorpath;
+                //openFileDialog1.FileName
+            }
+        }
     }
 }

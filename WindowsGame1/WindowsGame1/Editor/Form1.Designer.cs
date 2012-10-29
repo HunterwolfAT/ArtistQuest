@@ -232,6 +232,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.objpicbutton = new System.Windows.Forms.Button();
+            this.itempicbutton = new System.Windows.Forms.Button();
+            this.animpicbutton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -2013,6 +2015,7 @@
             // tabPage8
             // 
             this.tabPage8.AutoScroll = true;
+            this.tabPage8.Controls.Add(this.itempicbutton);
             this.tabPage8.Controls.Add(this.groupBox5);
             this.tabPage8.Controls.Add(this.itemlistbox);
             this.tabPage8.Controls.Add(this.makeitembutton);
@@ -2111,6 +2114,7 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.animpicbutton);
             this.tabPage10.Controls.Add(this.button18);
             this.tabPage10.Controls.Add(this.label29);
             this.tabPage10.Controls.Add(this.aninameTB);
@@ -2279,7 +2283,7 @@
             // 
             this.AniPictureNameTB.Location = new System.Drawing.Point(11, 314);
             this.AniPictureNameTB.Name = "AniPictureNameTB";
-            this.AniPictureNameTB.Size = new System.Drawing.Size(108, 20);
+            this.AniPictureNameTB.Size = new System.Drawing.Size(96, 20);
             this.AniPictureNameTB.TabIndex = 6;
             // 
             // label28
@@ -2427,6 +2431,26 @@
             this.objpicbutton.Text = "...";
             this.objpicbutton.UseVisualStyleBackColor = true;
             this.objpicbutton.Click += new System.EventHandler(this.objpicbutton_Click);
+            // 
+            // itempicbutton
+            // 
+            this.itempicbutton.Location = new System.Drawing.Point(629, 252);
+            this.itempicbutton.Name = "itempicbutton";
+            this.itempicbutton.Size = new System.Drawing.Size(31, 23);
+            this.itempicbutton.TabIndex = 9;
+            this.itempicbutton.Text = "...";
+            this.itempicbutton.UseVisualStyleBackColor = true;
+            this.itempicbutton.Click += new System.EventHandler(this.itempicbutton_Click);
+            // 
+            // animpicbutton
+            // 
+            this.animpicbutton.Location = new System.Drawing.Point(109, 312);
+            this.animpicbutton.Name = "animpicbutton";
+            this.animpicbutton.Size = new System.Drawing.Size(31, 23);
+            this.animpicbutton.TabIndex = 25;
+            this.animpicbutton.Text = "...";
+            this.animpicbutton.UseVisualStyleBackColor = true;
+            this.animpicbutton.Click += new System.EventHandler(this.animpicbutton_Click);
             // 
             // Form1
             // 
@@ -2706,6 +2730,8 @@
         private System.Windows.Forms.Button a;
         private System.Windows.Forms.Button newsnapshotButton;
         private System.Windows.Forms.Button objpicbutton;
+        private System.Windows.Forms.Button itempicbutton;
+        private System.Windows.Forms.Button animpicbutton;
 
     }
 }
