@@ -27,7 +27,7 @@ namespace WindowsGame1
             Position = Origin;
         }
         
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, float opacity = 1)
         {
             if (Texture == null)
                 return;
@@ -36,7 +36,7 @@ namespace WindowsGame1
                 Texture,
                 Position,
                 SourceRect,
-                Color,
+                Color * opacity,
                 Rotation,
                 Origin,
                 Scale,

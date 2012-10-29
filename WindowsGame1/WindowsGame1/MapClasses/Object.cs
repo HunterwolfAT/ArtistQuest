@@ -29,7 +29,7 @@ namespace WindowsGame1
         public int movingspeed;
         public Boolean fading = false;
         public Boolean fadedout = false;
-        public int opacity;
+        public float opacity;
 
         public List<Script> scripts;
         public List<Sprite> images;
@@ -63,7 +63,7 @@ namespace WindowsGame1
 
             fading = false;
             fadedout = false;
-            opacity = 255;
+            opacity = 1;
 
             scripts = new List<Script>();
         }
@@ -190,13 +190,13 @@ namespace WindowsGame1
         {
             if (aniimagenum == -1)
             {
-                images[imagenum].Color.A = (byte)opacity;
+                //images[imagenum].Color.A = (byte)opacity;     //This is XNA3.5 Code!
                 if (visible)
-                    images[imagenum].Draw(mySpriteBatch);
+                    images[imagenum].Draw(mySpriteBatch, opacity);
             }
             else
             {
-                aniimages[aniimagenum].Draw(mySpriteBatch, new Vector2(rect.X, rect.Y));
+                aniimages[aniimagenum].Draw(mySpriteBatch, new Vector2(rect.X, rect.Y), opacity);
             }
         }
 
@@ -292,22 +292,23 @@ namespace WindowsGame1
                 }
             }
 
+            // Fade the object out or in
             if (fading)
             {
                 Console.WriteLine(opacity);
                 if (fadedout)
                 {
-                    opacity += movingspeed;
-                    if (opacity >= 255)
+                    opacity += (float)movingspeed / 100;
+                    if (opacity >= 1)
                     {
-                        opacity = 255;
+                        opacity = 1;
                         fadedout = false;
                         fading = false;
                     }
                 }
                 else
                 {
-                    opacity -= movingspeed;
+                    opacity -= (float)movingspeed / 100;
                     if (opacity <= 0)
                     {
                         opacity = 0;
