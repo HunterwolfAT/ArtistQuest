@@ -346,7 +346,10 @@ namespace WindowsGame1
                         //First, go back to find the corrosponding IF condition, and see if it was true or not
 
                         //Find the IF-result from the top of the IF-Stack:
-                        Boolean StatementIsTrue = IFstack[IFstack.Count - 1];
+                        Boolean StatementIsTrue = false;
+                        
+                        if (IFstack.Count > 0)
+                            StatementIsTrue = IFstack[IFstack.Count - 1];
 
 
                         if (StatementIsTrue == false)
