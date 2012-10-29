@@ -327,6 +327,15 @@ namespace WindowsGame1
             }
         }
 
+        public void SetOpacity(int value)
+        {
+            FadeOpacity = value;
+            if (value == 0)
+                FadedOut = false;
+            else
+                FadedOut = true;
+        }
+
         public void Update()
         {
             if (MSGBoxText.Length > ShownMSGBoxText.Length)

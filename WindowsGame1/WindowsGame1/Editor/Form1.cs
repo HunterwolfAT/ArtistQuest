@@ -25,6 +25,9 @@ namespace WindowsGame1
         private Pen greenpen;
         private String AnimationImageFilename;
 
+        private Boolean EditingMSG = false;
+        private int EditingMSGIndex;
+
         public Form1(Game1 mygame)
         {
             InitializeComponent();
@@ -54,6 +57,12 @@ namespace WindowsGame1
             foreach (String[] var in game.GameVariables)
             {
                 GlobVarListBox.Items.Add(var[0] + ": " + var[1]);
+            }
+
+            snapshotLB.Items.Clear();
+            foreach (Snapshot snap in game.Snapshots)
+            {
+                snapshotLB.Items.Add(snap.Mapname + ": " + snap.Timestamp.ToString("HH:mm:ss"));
             }
 
             listBox2.Items.Clear();
@@ -227,6 +236,10 @@ namespace WindowsGame1
                     }
                 }
             }
+
+            MSG_com.Text = "Message";
+            comeditbutton.Text = "Edit";
+            EditingMSG = false;
         }
 
         private void UpdateGrid()
@@ -304,6 +317,7 @@ namespace WindowsGame1
             Object newObject = new Object(objname.Text, objectpic.Text, new Vector2(100f,100f));
             newObject.LoadContent(game.Content);
             newObject.Init();                       // Sets up the Rectangle of the Object right
+            newObject.opacity = 1f;                 // I don't know why I need to specify this but heck if I don't it wont be drawn
             game.map.AddObject(newObject);
             UpdateEditor();
         }
@@ -391,12 +405,14 @@ namespace WindowsGame1
         private void addverbbutton_Click(object sender, EventArgs e)
         {
             if (verbtextbox.Text != "" && listBox2.SelectedIndex != -1)
+            {
                 game.map.getObjects()[listBox2.SelectedIndex].AddScript(verbtextbox.Text);
 
-            verblist.Items.Clear();
-            foreach (Script verb in game.map.getObjects()[listBox2.SelectedIndex].scripts)
-            {
-                verblist.Items.Add(verb.Name);
+                verblist.Items.Clear();
+                foreach (Script verb in game.map.getObjects()[listBox2.SelectedIndex].scripts)
+                {
+                    verblist.Items.Add(verb.Name);
+                }
             }
             //UpdateEditor();
         }
@@ -426,6 +442,10 @@ namespace WindowsGame1
                     verblistscript.Items.Add(script.Name);
                 }
             }
+
+            MSG_com.Text = "Message";
+            comeditbutton.Text = "Edit";
+            EditingMSG = false;
         }
 
         private void MSG_com_Click(object sender, EventArgs e)
@@ -439,8 +459,19 @@ namespace WindowsGame1
 
                 if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                     || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
-                    AddCommand("Message", iargs, sargs, commandlistbox.SelectedIndex);
+                {
+                    if (!EditingMSG)
+                        AddCommand("Message", iargs, sargs, commandlistbox.SelectedIndex);
+                    else
+                    {
+                        if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab")
+                            game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands.RemoveAt(EditingMSGIndex);
+                        else if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab")
+                            game.map.getObjects()[objectlistbox.SelectedIndex].scripts[verblistscript.SelectedIndex].Commands.RemoveAt(EditingMSGIndex);
 
+                        AddCommand("Message", iargs, sargs, EditingMSGIndex);
+                    }
+                }
                 Com_SArg.Text = "";
                 Com_SArg.Focus();
                 
@@ -449,6 +480,10 @@ namespace WindowsGame1
 
         private void saveRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            String path = game.GetGamePath();
+            path += "\\saves";
+            saveFileDialog1.InitialDirectory = path;
+
             saveFileDialog1.FileName = game.map.name;
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
                 game.SaveMap(saveFileDialog1.FileName);
@@ -456,6 +491,10 @@ namespace WindowsGame1
 
         private void loadRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            String path = game.GetGamePath();
+            path += "\\saves";
+            openFileDialog1.InitialDirectory = path;
+
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
                 game.LoadMap(openFileDialog1.FileName);
         }
@@ -813,6 +852,9 @@ namespace WindowsGame1
             {
                 scriptitemlistbox.Items.Add(item.Name);
             }
+            MSG_com.Text = "Message";
+            comeditbutton.Text = "Edit";
+            EditingMSG = false;
         }
 
         private void makeitembutton_Click(object sender, EventArgs e)
@@ -1400,5 +1442,141 @@ namespace WindowsGame1
             ShowPlayerPos = ShowPlPosCB.Checked;
         }
 
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // If nothing is to be edited yet
+            if (!EditingMSG)
+            {
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    && commandlistbox.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1
+                    && commandlistbox.SelectedIndex != -1)
+                {
+                    // Once for Item-Scripts 
+                    if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab"
+                        && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
+                    {
+                        Com_SArg.Text = game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].SArgs[0];
+                        MSG_com.Text = "Edit Message";
+                        comeditbutton.Text = "Stop Edit";
+                        EditingMSGIndex = commandlistbox.SelectedIndex;
+                        EditingMSG = true;
+                    }
+                    // And again for the scripts of objects
+                    if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab"
+                        && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[verblistscript.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
+                    {
+                        Com_SArg.Text = game.map.getObjects()[objectlistbox.SelectedIndex].scripts[verblistscript.SelectedIndex].Commands[commandlistbox.SelectedIndex].SArgs[0];
+                        MSG_com.Text = "Edit Message";
+                        comeditbutton.Text = "Stop Edit";
+                        EditingMSGIndex = commandlistbox.SelectedIndex;
+                        EditingMSG = true;
+                    }
+
+                }
+            }
+            else    // When some editing is already in progress, stop it!
+            {
+                MSG_com.Text = "Message";
+                comeditbutton.Text = "Edit";
+                EditingMSG = false;
+            }
+        }
+
+        private void verblist_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listBox2.SelectedIndex != -1 && verblist.SelectedIndex != -1)
+            {
+                game.map.getObjects()[listBox2.SelectedIndex].scripts.RemoveAt(verblist.SelectedIndex);
+                
+                verblist.Items.Clear();
+                foreach (Script script in game.map.getObjects()[listBox2.SelectedIndex].scripts)
+                {
+                    verblist.Items.Add(script.Name);
+                }
+            }
+        }
+
+        private void newsnapshotButton_Click(object sender, EventArgs e)
+        {
+            Snapshot newsnapshot = new Snapshot(game.GameVariables, game.map, game.map.Objects, game.player.InvList);
+            
+            game.Snapshots.Add(newsnapshot);
+
+            UpdateEditor();
+        }
+
+        private void a_Click(object sender, EventArgs e)
+        {
+            if (snapshotLB.SelectedIndex != -1)
+            {
+                if (game.Snapshots[snapshotLB.SelectedIndex].Mapname != game.map.name)
+                    MessageBox.Show("The current map is not the one you took the snapshot from. (At least not by name)", "Snapshot Load Error:", MessageBoxButtons.OK);
+                else
+                    game.LoadSnapshot(game.Snapshots[snapshotLB.SelectedIndex]);
+        
+            }
+        }
+
+        private void objpicbutton_Click(object sender, EventArgs e)
+        {
+            String path = game.GetGamePath();
+            path = path.Substring(0, path.Length - 28);
+            path += "WindowsGame1Content";
+            openFileDialog1.InitialDirectory = path;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // remove everything before, including "WindowsGame1Content\" and the fileextension
+                String editorpath = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf("WindowsGame1Content", openFileDialog1.FileName.Length));
+                editorpath = editorpath.Substring(20, editorpath.Length - 24);
+                objectpic.Text = editorpath;
+                //openFileDialog1.FileName
+            }
+        }
+
+        private void itempicbutton_Click(object sender, EventArgs e)
+        {
+            String path = game.GetGamePath();
+            path = path.Substring(0, path.Length - 28);
+            path += "WindowsGame1Content";
+            openFileDialog1.InitialDirectory = path;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // remove everything before, including "WindowsGame1Content\" and the fileextension
+                String editorpath = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf("WindowsGame1Content", openFileDialog1.FileName.Length));
+                editorpath = editorpath.Substring(20, editorpath.Length - 24);
+                itempicturetextbox.Text = editorpath;
+                //openFileDialog1.FileName
+            }
+        }
+
+        private void animpicbutton_Click(object sender, EventArgs e)
+        {
+            String path = game.GetGamePath();
+            path = path.Substring(0, path.Length - 28);
+            path += "WindowsGame1Content";
+            openFileDialog1.InitialDirectory = path;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // remove everything before, including "WindowsGame1Content\" and the fileextension
+                String editorpath = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf("WindowsGame1Content", openFileDialog1.FileName.Length));
+                editorpath = editorpath.Substring(20, editorpath.Length - 24);
+                AniPictureNameTB.Text = editorpath;
+                //openFileDialog1.FileName
+            }
+        }
+
+        private void MSG_Enter_Click(object sender, EventArgs e)
+        {
+            List<String> sargs = new List<String>();
+            List<int> iargs = new List<int>();
+
+            if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                AddCommand("Wait for Enter", iargs, sargs, commandlistbox.SelectedIndex);
+        }
     }
 }

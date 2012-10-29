@@ -41,11 +41,13 @@ namespace WindowsGame1
         public Player()
         {
             playerRect = new Rectangle(200, 200, 1, 1);
-            position = new Vector2(200f, 150f);
+            position = new Vector2(352f, 212f);
 
             verbmenu = new verbmenu();
 
             InvList = new List<Item>();
+
+            direction = 2;
         }
 
         public void LoadContent(ContentManager myContentManager, SpriteFont font)

@@ -48,7 +48,7 @@ namespace WindowsGame1
         float thumbx, thumby;
         bool EditorToggleHold = false;
         private MouseState oldState;
-        private KeyboardState KoldState;
+        public KeyboardState KoldState;
 
         //Variables for GUI
         public GUI gui;
@@ -62,6 +62,7 @@ namespace WindowsGame1
         private Rectangle NewWalkMap;
         private Boolean SelectWalkMap = false;
         private Point E_ClickedOn = new Point(-1,-1);
+        public List<Snapshot> Snapshots;
 
         //Constructor
         public Game1()
@@ -74,7 +75,7 @@ namespace WindowsGame1
             graphics.PreferredBackBufferHeight = 480;
 
             //this.Window.AllowUserResizing = true;
-            this.Window.Title = "Artist Quest Alpha v0.62b";
+            this.Window.Title = "Artist Quest Alpha v0.65b";
         }
 
         /// <summary>
@@ -131,6 +132,8 @@ namespace WindowsGame1
 
             Editor = new Form1(this);
             NewWalkMap = new Rectangle(0, 0, 0, 0);
+
+            Snapshots = new List<Snapshot>();
         }
 
     
@@ -202,11 +205,15 @@ namespace WindowsGame1
 
                             case 0:
                                 ShowTitle = false;
-                                if (title.Startup)
+                                if (title.Startup)      // Starting the game from the beginning
                                 {
+                                    
                                     Script introscript = map.PlayIntro();
-                                    if (introscript != null)
+                                    if (introscript != null && !Debug)
+                                    {
+                                        gui.SetOpacity(255);
                                         scripthandler.RunScript(introscript);
+                                    }
                                     title.Startup = false;
                                 }
                                 break;
@@ -259,7 +266,7 @@ namespace WindowsGame1
                 bool objectfound = false;
                 foreach (Object obj in map.getObjects())
                 {
-                    if (obj.Update(player.playerRect))
+                    if (obj.Update(player.playerRect, player.direction))
                     {
                         player.selectedObject = obj;
                         objectfound = true;
@@ -372,7 +379,7 @@ namespace WindowsGame1
                 {
                     ShowTitle = true;
                     title.SelectedIndex = 0;
-                    title.Show();
+                    title.Show(scripthandler.IsScriptRunning());
                 }
 
                 // Show Player position in the room for reasons
@@ -415,21 +422,25 @@ namespace WindowsGame1
                         {
                             if (Keyboard.GetState().IsKeyDown(Keys.Left))
                             {
+                                player.direction = 3;
                                 if (player.CheckCollision(new Vector2(-2, 0), map.getWalkrects(), map.Objects))
                                     player.move(-2, 0);
                             }
                             if (Keyboard.GetState().IsKeyDown(Keys.Right))
                             {
+                                player.direction = 1;
                                 if (player.CheckCollision(new Vector2(2, 0), map.getWalkrects(), map.Objects))
                                     player.move(2, 0);
                             }
                             if (Keyboard.GetState().IsKeyDown(Keys.Up))
                             {
+                                player.direction = 0;
                                 if (player.CheckCollision(new Vector2(0, -2), map.getWalkrects(), map.Objects))
                                     player.move(0, -2);
                             }
                             if (Keyboard.GetState().IsKeyDown(Keys.Down))
                             {
+                                player.direction = 2;
                                 if (player.CheckCollision(new Vector2(0, 2), map.getWalkrects(), map.Objects))
                                     player.move(0, 2);
                             }
@@ -752,6 +763,10 @@ namespace WindowsGame1
                 foreach (Object obj in map.Objects)
                 {
                     obj.LoadContent(this.Content);
+                    
+                    if (obj.opacity > 1f)
+                        obj.opacity = 1f;
+
                     if (obj.scripts.Count > 0)
                     {
                         foreach (Script script in obj.scripts)
@@ -795,6 +810,54 @@ namespace WindowsGame1
             }
 
             items.LoadContent(Content);
+        }
+
+        public void LoadSnapshot(Snapshot snapshot)
+        {
+            // Load Global Variables
+            foreach (String[] var in GameVariables)
+            {
+                int i = 0;
+                foreach (String name in snapshot.GVName)
+                {
+                    if (name == var[0])
+                        var[1] = snapshot.GVValue[i];
+
+                    i++;
+                }
+            }
+            // Load Object data
+            foreach (SnapObject snapj in snapshot.snapjects)
+            {
+                Object obj = map.FindObject(snapj.name);
+                if (obj != null)
+                {
+                    obj.color = snapj.color;
+                    obj.imagenum = snapj.imagenum;
+                    obj.opacity = snapj.opacity;
+                    obj.rect = snapj.rect;
+                    obj.visible = snapj.visible;
+                    obj.walkable = snapj.walkable;
+
+                    for (int i = 0; i < snapj.VBName.Count; i++)
+                    {
+                        foreach (Script scr in obj.scripts)
+                        {
+                            if (scr.Name == snapj.VBName[i])
+                            {
+                                scr.Active = snapj.VBactive[i];
+                            }
+                        }
+                    }
+                }
+                else
+                    Console.WriteLine("SNAPSHOT LOAD ERROR: Object wasn't found!");
+            }
+
+            // Load the player inventory
+            player.InvList.Clear();
+            foreach (Item item in snapshot.snapventory)
+                player.InvList.Add(item);
         }
 
         public void SaveGame(String Filename)
