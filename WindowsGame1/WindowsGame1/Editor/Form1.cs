@@ -405,12 +405,14 @@ namespace WindowsGame1
         private void addverbbutton_Click(object sender, EventArgs e)
         {
             if (verbtextbox.Text != "" && listBox2.SelectedIndex != -1)
+            {
                 game.map.getObjects()[listBox2.SelectedIndex].AddScript(verbtextbox.Text);
 
-            verblist.Items.Clear();
-            foreach (Script verb in game.map.getObjects()[listBox2.SelectedIndex].scripts)
-            {
-                verblist.Items.Add(verb.Name);
+                verblist.Items.Clear();
+                foreach (Script verb in game.map.getObjects()[listBox2.SelectedIndex].scripts)
+                {
+                    verblist.Items.Add(verb.Name);
+                }
             }
             //UpdateEditor();
         }
@@ -1565,6 +1567,16 @@ namespace WindowsGame1
                 AniPictureNameTB.Text = editorpath;
                 //openFileDialog1.FileName
             }
+        }
+
+        private void MSG_Enter_Click(object sender, EventArgs e)
+        {
+            List<String> sargs = new List<String>();
+            List<int> iargs = new List<int>();
+
+            if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                AddCommand("Wait for Enter", iargs, sargs, commandlistbox.SelectedIndex);
         }
     }
 }

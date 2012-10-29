@@ -48,7 +48,7 @@ namespace WindowsGame1
         float thumbx, thumby;
         bool EditorToggleHold = false;
         private MouseState oldState;
-        private KeyboardState KoldState;
+        public KeyboardState KoldState;
 
         //Variables for GUI
         public GUI gui;
@@ -763,6 +763,10 @@ namespace WindowsGame1
                 foreach (Object obj in map.Objects)
                 {
                     obj.LoadContent(this.Content);
+                    
+                    if (obj.opacity > 1f)
+                        obj.opacity = 1f;
+
                     if (obj.scripts.Count > 0)
                     {
                         foreach (Script script in obj.scripts)

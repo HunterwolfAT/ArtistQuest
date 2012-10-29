@@ -234,6 +234,7 @@
             this.objpicbutton = new System.Windows.Forms.Button();
             this.itempicbutton = new System.Windows.Forms.Button();
             this.animpicbutton = new System.Windows.Forms.Button();
+            this.MSG_Enter = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1149,6 +1150,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.MSG_Enter);
             this.tabPage4.Controls.Add(this.button22);
             this.tabPage4.Controls.Add(this.button21);
             this.tabPage4.Controls.Add(this.comwaitButton);
@@ -1229,7 +1231,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(253, 148);
+            this.button16.Location = new System.Drawing.Point(253, 153);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(186, 30);
             this.button16.TabIndex = 11;
@@ -1293,14 +1295,14 @@
             this.Com_SArg.Location = new System.Drawing.Point(40, 23);
             this.Com_SArg.Multiline = true;
             this.Com_SArg.Name = "Com_SArg";
-            this.Com_SArg.Size = new System.Drawing.Size(207, 119);
+            this.Com_SArg.Size = new System.Drawing.Size(207, 71);
             this.Com_SArg.TabIndex = 4;
             // 
             // MSG_com
             // 
-            this.MSG_com.Location = new System.Drawing.Point(49, 148);
+            this.MSG_com.Location = new System.Drawing.Point(52, 108);
             this.MSG_com.Name = "MSG_com";
-            this.MSG_com.Size = new System.Drawing.Size(186, 30);
+            this.MSG_com.Size = new System.Drawing.Size(186, 37);
             this.MSG_com.TabIndex = 3;
             this.MSG_com.Text = "Message";
             this.MSG_com.UseVisualStyleBackColor = true;
@@ -2452,6 +2454,16 @@
             this.animpicbutton.UseVisualStyleBackColor = true;
             this.animpicbutton.Click += new System.EventHandler(this.animpicbutton_Click);
             // 
+            // MSG_Enter
+            // 
+            this.MSG_Enter.Location = new System.Drawing.Point(52, 153);
+            this.MSG_Enter.Name = "MSG_Enter";
+            this.MSG_Enter.Size = new System.Drawing.Size(186, 36);
+            this.MSG_Enter.TabIndex = 18;
+            this.MSG_Enter.Text = "Wait for ENTER";
+            this.MSG_Enter.UseVisualStyleBackColor = true;
+            this.MSG_Enter.Click += new System.EventHandler(this.MSG_Enter_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2732,6 +2744,7 @@
         private System.Windows.Forms.Button objpicbutton;
         private System.Windows.Forms.Button itempicbutton;
         private System.Windows.Forms.Button animpicbutton;
+        private System.Windows.Forms.Button MSG_Enter;
 
     }
 }

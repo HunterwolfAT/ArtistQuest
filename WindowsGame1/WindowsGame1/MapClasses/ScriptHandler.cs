@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace WindowsGame1
 {
@@ -124,6 +125,14 @@ namespace WindowsGame1
                     else if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Fade Object" && activescript.Commands[Commandcounter - 1].SArgs[2] == "wait")
                     {
                         if (game.map.FindObject(activescript.Commands[Commandcounter - 1].SArgs[0]).fading)
+                        {
+                            RunNextCommand = false;
+                            Commandcounter--;
+                        }
+                    }
+                    else if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Wait for Enter")
+                    {
+                        if (game.KoldState.IsKeyUp(Keys.Enter))
                         {
                             RunNextCommand = false;
                             Commandcounter--;
