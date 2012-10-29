@@ -1499,7 +1499,7 @@ namespace WindowsGame1
 
         private void newsnapshotButton_Click(object sender, EventArgs e)
         {
-            Snapshot newsnapshot = new Snapshot(game.GameVariables, game.map);
+            Snapshot newsnapshot = new Snapshot(game.GameVariables, game.map, game.map.Objects, game.player.InvList);
             
             game.Snapshots.Add(newsnapshot);
 

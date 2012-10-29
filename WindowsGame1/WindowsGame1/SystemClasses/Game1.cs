@@ -814,6 +814,7 @@ namespace WindowsGame1
 
         public void LoadSnapshot(Snapshot snapshot)
         {
+            // Load Global Variables
             foreach (String[] var in GameVariables)
             {
                 int i = 0;
@@ -825,6 +826,38 @@ namespace WindowsGame1
                     i++;
                 }
             }
+            // Load Object data
+            foreach (SnapObject snapj in snapshot.snapjects)
+            {
+                Object obj = map.FindObject(snapj.name);
+                if (obj != null)
+                {
+                    obj.color = snapj.color;
+                    obj.imagenum = snapj.imagenum;
+                    obj.opacity = snapj.opacity;
+                    obj.rect = snapj.rect;
+                    obj.visible = snapj.visible;
+                    obj.walkable = snapj.walkable;
+
+                    for (int i = 0; i < snapj.VBName.Count; i++)
+                    {
+                        foreach (Script scr in obj.scripts)
+                        {
+                            if (scr.Name == snapj.VBName[i])
+                            {
+                                scr.Active = snapj.VBactive[i];
+                            }
+                        }
+                    }
+                }
+                else
+                    Console.WriteLine("SNAPSHOT LOAD ERROR: Object wasn't found!");
+            }
+
+            // Load the player inventory
+            player.InvList.Clear();
+            foreach (Item item in snapshot.snapventory)
+                player.InvList.Add(item);
         }
 
         public void SaveGame(String Filename)
