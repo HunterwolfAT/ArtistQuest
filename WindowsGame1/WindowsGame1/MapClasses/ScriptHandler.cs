@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace WindowsGame1
 {
@@ -124,6 +125,14 @@ namespace WindowsGame1
                     else if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Fade Object" && activescript.Commands[Commandcounter - 1].SArgs[2] == "wait")
                     {
                         if (game.map.FindObject(activescript.Commands[Commandcounter - 1].SArgs[0]).fading)
+                        {
+                            RunNextCommand = false;
+                            Commandcounter--;
+                        }
+                    }
+                    else if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Wait for Enter")
+                    {
+                        if (game.KoldState.IsKeyUp(Keys.Enter))
                         {
                             RunNextCommand = false;
                             Commandcounter--;
@@ -326,7 +335,7 @@ namespace WindowsGame1
                                     {
                                         Console.WriteLine("SETTING SCRIPT TO LINE: " + a);
                                         //Set the Commandcounter to the new line
-                                        Commandcounter = a;
+                                        Commandcounter = a - 1;
                                         if (activescript.Commands[a].Type == "ELSE")
                                             Commandcounter = a;
                                         break;
@@ -346,7 +355,10 @@ namespace WindowsGame1
                         //First, go back to find the corrosponding IF condition, and see if it was true or not
 
                         //Find the IF-result from the top of the IF-Stack:
-                        Boolean StatementIsTrue = IFstack[IFstack.Count - 1];
+                        Boolean StatementIsTrue = false;
+                        
+                        if (IFstack.Count > 0)
+                            StatementIsTrue = IFstack[IFstack.Count - 1];
 
 
                         if (StatementIsTrue == false)
@@ -372,7 +384,7 @@ namespace WindowsGame1
                                     {
                                         Console.WriteLine("SETTING SCRIPT TO LINE: " + a);
                                         //Set the Commandcounter to the new line
-                                        Commandcounter = a;
+                                        Commandcounter = a - 1;
                                         break;
                                     }
                                 }

@@ -9,6 +9,6 @@ Overview
 
 ### Links
 
-Dokumentation as well as instructions can be found at the wiki! https://github.com/HunterwolfAT/ArtistQuest/wiki
+Documentation as well as instructions can be found at the wiki! https://github.com/HunterwolfAT/ArtistQuest/wiki
 
 Check out the Website at: http://hunterwolfat.github.com/ArtistQuest/

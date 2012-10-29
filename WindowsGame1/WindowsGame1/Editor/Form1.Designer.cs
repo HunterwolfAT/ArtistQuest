@@ -31,6 +31,9 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.a = new System.Windows.Forms.Button();
+            this.newsnapshotButton = new System.Windows.Forms.Button();
+            this.snapshotLB = new System.Windows.Forms.ListBox();
             this.ShowPlPosCB = new System.Windows.Forms.CheckBox();
             this.CreateNewGlobalVar = new System.Windows.Forms.Button();
             this.globalvarvalue = new System.Windows.Forms.TextBox();
@@ -90,7 +93,7 @@
             this.objname = new System.Windows.Forms.TextBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button13 = new System.Windows.Forms.Button();
+            this.comeditbutton = new System.Windows.Forms.Button();
             this.comdownbutton = new System.Windows.Forms.Button();
             this.comupbutton = new System.Windows.Forms.Button();
             this.comremoveselectionbutton = new System.Windows.Forms.Button();
@@ -120,6 +123,7 @@
             this.Com_SArg = new System.Windows.Forms.TextBox();
             this.MSG_com = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.commoveplayerCB = new System.Windows.Forms.ComboBox();
             this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.comobjmoveButton = new System.Windows.Forms.Button();
@@ -227,7 +231,10 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.commoveplayerCB = new System.Windows.Forms.ComboBox();
+            this.objpicbutton = new System.Windows.Forms.Button();
+            this.itempicbutton = new System.Windows.Forms.Button();
+            this.animpicbutton = new System.Windows.Forms.Button();
+            this.MSG_Enter = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -299,6 +306,9 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.a);
+            this.tabPage1.Controls.Add(this.newsnapshotButton);
+            this.tabPage1.Controls.Add(this.snapshotLB);
             this.tabPage1.Controls.Add(this.ShowPlPosCB);
             this.tabPage1.Controls.Add(this.CreateNewGlobalVar);
             this.tabPage1.Controls.Add(this.globalvarvalue);
@@ -325,6 +335,34 @@
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // a
+            // 
+            this.a.Location = new System.Drawing.Point(21, 481);
+            this.a.Name = "a";
+            this.a.Size = new System.Drawing.Size(172, 29);
+            this.a.TabIndex = 23;
+            this.a.Text = "Load Snapshot";
+            this.a.UseVisualStyleBackColor = true;
+            this.a.Click += new System.EventHandler(this.a_Click);
+            // 
+            // newsnapshotButton
+            // 
+            this.newsnapshotButton.Location = new System.Drawing.Point(21, 447);
+            this.newsnapshotButton.Name = "newsnapshotButton";
+            this.newsnapshotButton.Size = new System.Drawing.Size(172, 28);
+            this.newsnapshotButton.TabIndex = 22;
+            this.newsnapshotButton.Text = "Make Snapshot";
+            this.newsnapshotButton.UseVisualStyleBackColor = true;
+            this.newsnapshotButton.Click += new System.EventHandler(this.newsnapshotButton_Click);
+            // 
+            // snapshotLB
+            // 
+            this.snapshotLB.FormattingEnabled = true;
+            this.snapshotLB.Location = new System.Drawing.Point(18, 232);
+            this.snapshotLB.Name = "snapshotLB";
+            this.snapshotLB.Size = new System.Drawing.Size(183, 199);
+            this.snapshotLB.TabIndex = 21;
+            // 
             // ShowPlPosCB
             // 
             this.ShowPlPosCB.AutoSize = true;
@@ -338,7 +376,7 @@
             // 
             // CreateNewGlobalVar
             // 
-            this.CreateNewGlobalVar.Location = new System.Drawing.Point(241, 496);
+            this.CreateNewGlobalVar.Location = new System.Drawing.Point(462, 489);
             this.CreateNewGlobalVar.Name = "CreateNewGlobalVar";
             this.CreateNewGlobalVar.Size = new System.Drawing.Size(190, 23);
             this.CreateNewGlobalVar.TabIndex = 19;
@@ -348,14 +386,14 @@
             // 
             // globalvarvalue
             // 
-            this.globalvarvalue.Location = new System.Drawing.Point(244, 470);
+            this.globalvarvalue.Location = new System.Drawing.Point(465, 463);
             this.globalvarvalue.Name = "globalvarvalue";
             this.globalvarvalue.Size = new System.Drawing.Size(187, 20);
             this.globalvarvalue.TabIndex = 18;
             // 
             // globalvarname
             // 
-            this.globalvarname.Location = new System.Drawing.Point(244, 429);
+            this.globalvarname.Location = new System.Drawing.Point(465, 422);
             this.globalvarname.Name = "globalvarname";
             this.globalvarname.Size = new System.Drawing.Size(187, 20);
             this.globalvarname.TabIndex = 17;
@@ -363,7 +401,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(241, 454);
+            this.label15.Location = new System.Drawing.Point(462, 447);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(34, 13);
             this.label15.TabIndex = 16;
@@ -372,7 +410,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(241, 408);
+            this.label14.Location = new System.Drawing.Point(462, 401);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(76, 13);
             this.label14.TabIndex = 15;
@@ -383,7 +421,7 @@
             this.GlobVarListBox.FormattingEnabled = true;
             this.GlobVarListBox.Location = new System.Drawing.Point(451, 21);
             this.GlobVarListBox.Name = "GlobVarListBox";
-            this.GlobVarListBox.Size = new System.Drawing.Size(217, 498);
+            this.GlobVarListBox.Size = new System.Drawing.Size(217, 368);
             this.GlobVarListBox.TabIndex = 14;
             this.GlobVarListBox.SelectedIndexChanged += new System.EventHandler(this.globalvarlistbox_SelectedIndexChanged);
             this.GlobVarListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.globalvarlistbox_MouseDoubleClick);
@@ -840,6 +878,7 @@
             this.verblist.Size = new System.Drawing.Size(84, 95);
             this.verblist.TabIndex = 9;
             this.verblist.SelectedIndexChanged += new System.EventHandler(this.verblist_SelectedIndexChanged);
+            this.verblist.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.verblist_MouseDoubleClick);
             // 
             // label7
             // 
@@ -887,6 +926,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.objpicbutton);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.objectpic);
             this.groupBox1.Controls.Add(this.label4);
@@ -894,7 +934,7 @@
             this.groupBox1.Controls.Add(this.objname);
             this.groupBox1.Location = new System.Drawing.Point(251, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(224, 120);
+            this.groupBox1.Size = new System.Drawing.Size(240, 120);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create an object";
@@ -955,7 +995,7 @@
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.button13);
+            this.tabPage3.Controls.Add(this.comeditbutton);
             this.tabPage3.Controls.Add(this.comdownbutton);
             this.tabPage3.Controls.Add(this.comupbutton);
             this.tabPage3.Controls.Add(this.comremoveselectionbutton);
@@ -970,14 +1010,15 @@
             this.tabPage3.Text = "Scripts";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // comeditbutton
             // 
-            this.button13.Location = new System.Drawing.Point(562, 265);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(55, 23);
-            this.button13.TabIndex = 10;
-            this.button13.Text = "Edit";
-            this.button13.UseVisualStyleBackColor = true;
+            this.comeditbutton.Location = new System.Drawing.Point(562, 265);
+            this.comeditbutton.Name = "comeditbutton";
+            this.comeditbutton.Size = new System.Drawing.Size(64, 23);
+            this.comeditbutton.TabIndex = 10;
+            this.comeditbutton.Text = "Edit";
+            this.comeditbutton.UseVisualStyleBackColor = true;
+            this.comeditbutton.Click += new System.EventHandler(this.button13_Click);
             // 
             // comdownbutton
             // 
@@ -1109,6 +1150,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.MSG_Enter);
             this.tabPage4.Controls.Add(this.button22);
             this.tabPage4.Controls.Add(this.button21);
             this.tabPage4.Controls.Add(this.comwaitButton);
@@ -1189,7 +1231,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(253, 148);
+            this.button16.Location = new System.Drawing.Point(253, 153);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(186, 30);
             this.button16.TabIndex = 11;
@@ -1253,14 +1295,14 @@
             this.Com_SArg.Location = new System.Drawing.Point(40, 23);
             this.Com_SArg.Multiline = true;
             this.Com_SArg.Name = "Com_SArg";
-            this.Com_SArg.Size = new System.Drawing.Size(207, 119);
+            this.Com_SArg.Size = new System.Drawing.Size(207, 71);
             this.Com_SArg.TabIndex = 4;
             // 
             // MSG_com
             // 
-            this.MSG_com.Location = new System.Drawing.Point(49, 148);
+            this.MSG_com.Location = new System.Drawing.Point(52, 108);
             this.MSG_com.Name = "MSG_com";
-            this.MSG_com.Size = new System.Drawing.Size(186, 30);
+            this.MSG_com.Size = new System.Drawing.Size(186, 37);
             this.MSG_com.TabIndex = 3;
             this.MSG_com.Text = "Message";
             this.MSG_com.UseVisualStyleBackColor = true;
@@ -1300,6 +1342,18 @@
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Obj Stats";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // commoveplayerCB
+            // 
+            this.commoveplayerCB.FormattingEnabled = true;
+            this.commoveplayerCB.Items.AddRange(new object[] {
+            "Move Object, not Player",
+            "Move Player w/ Anim",
+            "Move Player w/o Anim"});
+            this.commoveplayerCB.Location = new System.Drawing.Point(336, 63);
+            this.commoveplayerCB.Name = "commoveplayerCB";
+            this.commoveplayerCB.Size = new System.Drawing.Size(140, 21);
+            this.commoveplayerCB.TabIndex = 32;
             // 
             // button20
             // 
@@ -1963,6 +2017,7 @@
             // tabPage8
             // 
             this.tabPage8.AutoScroll = true;
+            this.tabPage8.Controls.Add(this.itempicbutton);
             this.tabPage8.Controls.Add(this.groupBox5);
             this.tabPage8.Controls.Add(this.itemlistbox);
             this.tabPage8.Controls.Add(this.makeitembutton);
@@ -2061,6 +2116,7 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.animpicbutton);
             this.tabPage10.Controls.Add(this.button18);
             this.tabPage10.Controls.Add(this.label29);
             this.tabPage10.Controls.Add(this.aninameTB);
@@ -2229,7 +2285,7 @@
             // 
             this.AniPictureNameTB.Location = new System.Drawing.Point(11, 314);
             this.AniPictureNameTB.Name = "AniPictureNameTB";
-            this.AniPictureNameTB.Size = new System.Drawing.Size(108, 20);
+            this.AniPictureNameTB.Size = new System.Drawing.Size(96, 20);
             this.AniPictureNameTB.TabIndex = 6;
             // 
             // label28
@@ -2368,17 +2424,45 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // commoveplayerCB
+            // objpicbutton
             // 
-            this.commoveplayerCB.FormattingEnabled = true;
-            this.commoveplayerCB.Items.AddRange(new object[] {
-            "Move Object, not Player",
-            "Move Player w/ Anim",
-            "Move Player w/o Anim"});
-            this.commoveplayerCB.Location = new System.Drawing.Point(336, 63);
-            this.commoveplayerCB.Name = "commoveplayerCB";
-            this.commoveplayerCB.Size = new System.Drawing.Size(140, 21);
-            this.commoveplayerCB.TabIndex = 32;
+            this.objpicbutton.Location = new System.Drawing.Point(206, 44);
+            this.objpicbutton.Name = "objpicbutton";
+            this.objpicbutton.Size = new System.Drawing.Size(31, 23);
+            this.objpicbutton.TabIndex = 5;
+            this.objpicbutton.Text = "...";
+            this.objpicbutton.UseVisualStyleBackColor = true;
+            this.objpicbutton.Click += new System.EventHandler(this.objpicbutton_Click);
+            // 
+            // itempicbutton
+            // 
+            this.itempicbutton.Location = new System.Drawing.Point(629, 252);
+            this.itempicbutton.Name = "itempicbutton";
+            this.itempicbutton.Size = new System.Drawing.Size(31, 23);
+            this.itempicbutton.TabIndex = 9;
+            this.itempicbutton.Text = "...";
+            this.itempicbutton.UseVisualStyleBackColor = true;
+            this.itempicbutton.Click += new System.EventHandler(this.itempicbutton_Click);
+            // 
+            // animpicbutton
+            // 
+            this.animpicbutton.Location = new System.Drawing.Point(109, 312);
+            this.animpicbutton.Name = "animpicbutton";
+            this.animpicbutton.Size = new System.Drawing.Size(31, 23);
+            this.animpicbutton.TabIndex = 25;
+            this.animpicbutton.Text = "...";
+            this.animpicbutton.UseVisualStyleBackColor = true;
+            this.animpicbutton.Click += new System.EventHandler(this.animpicbutton_Click);
+            // 
+            // MSG_Enter
+            // 
+            this.MSG_Enter.Location = new System.Drawing.Point(52, 153);
+            this.MSG_Enter.Name = "MSG_Enter";
+            this.MSG_Enter.Size = new System.Drawing.Size(186, 36);
+            this.MSG_Enter.TabIndex = 18;
+            this.MSG_Enter.Text = "Wait for ENTER";
+            this.MSG_Enter.UseVisualStyleBackColor = true;
+            this.MSG_Enter.Click += new System.EventHandler(this.MSG_Enter_Click);
             // 
             // Form1
             // 
@@ -2589,7 +2673,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.ToolStripMenuItem saveRoomToolStripMenuItem1;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button comeditbutton;
         private System.Windows.Forms.CheckBox VerbisactiveCheckbox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button setverbactivebutton;
@@ -2654,6 +2738,13 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.CheckBox ShowPlPosCB;
         private System.Windows.Forms.ComboBox commoveplayerCB;
+        private System.Windows.Forms.ListBox snapshotLB;
+        private System.Windows.Forms.Button a;
+        private System.Windows.Forms.Button newsnapshotButton;
+        private System.Windows.Forms.Button objpicbutton;
+        private System.Windows.Forms.Button itempicbutton;
+        private System.Windows.Forms.Button animpicbutton;
+        private System.Windows.Forms.Button MSG_Enter;
 
     }
 }

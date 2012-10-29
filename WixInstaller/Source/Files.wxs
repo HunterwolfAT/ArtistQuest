@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+
+    <!--
+      Defined in Setup.wxs, the "TARGETDIR" is not actually created, it's just a crutch
+      in WiX to allow the files to share a common root
+    -->
+    <DirectoryRef Id="TARGETDIR">
+
+      <!--
+        ProgramMenuFolder is a special name that resolves to the start menu folder.
+        The files (see below) can indicate that they want a shortcut created in
+        another folder. By defining this folder, we can make them put a shortcut
+        into the start menu!
+      -->
+      <Directory Id='ProgramMenuFolder' Name='Programs'>
+        <Directory Id='MyGameProgramMenuFolder' Name='ArtistQuest'>
+          <Component Id="StartMenuEntriesComponent" Guid="f1184ff7-b6d2-4e21-93fc-b2cb5052ce37" DiskId="1">
+            <RemoveFolder Id='MyGameProgramMenuFolder' On='uninstall' />          
+            <RegistryValue
+              Root='HKCU'
+              Key='SOFTWARE\ArtistQuest'
+              Type='string'
+              Value='Hello World'
+              KeyPath='yes'
+            />
+          </Component>
+        </Directory>
+      </Directory>
+
+      <!--
+        ProgramFilesFolder is a special name that is resolved to the system's
+        programs folder. This entry makes sure that INSTALLDIR, displayed in
+        directory selection dialog, initially points to "C:\Program files\MyGame".
+        Note that this does not prevent the user from selecting an entirely
+        different path like "D:\Games\MyGame".
+      -->
+      <Directory Id="ProgramFilesFolder" Name="PFiles">
+ 
+        <!--
+          Target directory you game will be installed to. Create more <Directory />
+          elements below this one to create subdirectories or add <File /> elements
+          to add files to a directory
+        -->
+        <Directory Id="INSTALLDIR" Name="ArtistQuest">
+
+          <!--
+            Any <File /> element must be contained in a <Component /> element.
+            Components are entirely internal to the installs and group inseperable
+            partS of your game. For example, you could have 4 components:
+            "shared", "game", "editor" and "docs".
+
+            An installer then sets up a series of features (see <Feature /> in Setup.wxs),
+            where each feature points to a number of components. Following the previous
+            example, two features named "game" and "editor" could be imagined where
+            both point to the "shared" component and to their own component.
+          -->
+          <Component Id="MyComponent" Guid="f31215ee-133e-4278-8af8-27a79f757482" DiskId="1">
+            <File
+              Id="LicenseFile" Name="license.rtf"
+              Source="$(sys.SOURCEFILEDIR)/../Documents/license.rtf"
+            />
+            <File
+              Id="GameExecutable" Name="ArtistQuest.exe" KeyPath="yes"
+              Source="$(sys.SOURCEFILEDIR)/../Content/Hunters XNA Adventure.exe"
+            >
+              <!--
+                Let the installer create a shorcut to this file in the start menu. There are
+                several ways to do this. For some more in-depth explanation, visit this url: 
+                
+				http://blogs.technet.com/alexshev/pages/from-msi-to-wix-part-10-shortcuts.aspx
+ 			  -->
+              <Shortcut
+                Id="MyGameShortcut"
+                Name="MyGame Shortcut"
+                Directory="MyGameProgramMenuFolder"
+                Advertise="yes"
+                WorkingDirectory="INSTALLDIR"
+              />
+            </File>
+          </Component>
+
+        </Directory>
+      
+      </Directory>
+
+    </DirectoryRef>
+
+  </Fragment>
+</Wix>

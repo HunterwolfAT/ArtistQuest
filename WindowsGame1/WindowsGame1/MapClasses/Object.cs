@@ -29,13 +29,16 @@ namespace WindowsGame1
         public int movingspeed;
         public Boolean fading = false;
         public Boolean fadedout = false;
-        public int opacity;
+        public float opacity;
 
         public List<Script> scripts;
         public List<Sprite> images;
         public List<String> imagenames;
         public List<AnimatedSprite> aniimages;
 
+        /// <summary>
+        /// Represents everything in a room/map that isn't the player. Null-Constructor for the storagemanager!
+        /// </summary>
         public Object()
         {
             name = "";
@@ -60,16 +63,28 @@ namespace WindowsGame1
 
             fading = false;
             fadedout = false;
-            opacity = 255;
+            opacity = 1f;
 
             scripts = new List<Script>();
         }
         
+        /// <summary>
+        /// Returns the rect including every offset
+        /// </summary>
         public Rectangle getActualRect()
         {
             return new Rectangle(rect.X + (int)rectOffset.X, rect.Y + (int)rectOffset.Y, rect.Width, rect.Height);
         }
-        
+
+        /// <summary>
+        /// Represents everything in a room/map that isn't the player.
+        /// </summary>
+        /// <param name="newname">Name of the Object</param>
+        /// <param name="newimage">Name of an imagefile</param>
+        /// <param name="position">Position of the new Object</param>
+        /// <param name="newwalkable">Defines if the player can walk through/over the object</param>
+        /// <param name="newvisible">Defines wether the Object will be drawn</param>
+        /// <param name="newradius">The radius in which the played needs to be to interact with the Object (Objects need Verbs so something happens)</param>
         public Object(String newname, String newimage, Vector2 position, Boolean newwalkable = true, Boolean newvisible = true, float newradius = 6000f)
         {
             name = newname;
@@ -127,12 +142,20 @@ namespace WindowsGame1
 
         }
 
+        /// <summary>
+        /// Initializes the rect of the Object
+        /// </summary>
         public void Init()
         {
             rect.Width = images[0].Texture.Width;
             rect.Height = images[0].Texture.Height;
         }
 
+        /// <summary>
+        /// Add an image to the imagelist of the object.
+        /// </summary>
+        /// <param name="myContentManager">XNA Contentmanager</param>
+        /// <param name="spritename">Name of the image file in the XNA Contentpipeline</param>
         public void AddSprite(ContentManager myContentManager, String spritename)
         {
             Sprite NewSprite = new Sprite();
@@ -142,6 +165,15 @@ namespace WindowsGame1
             imagenames.Add(spritename);
         }
 
+        /// <summary>
+        /// Add an animation
+        /// </summary>
+        /// <param name="myContentManager">XNA Contentmanager</param>
+        /// <param name="imagename">Name of the image file in the XNA Contentpipelin</param>
+        /// <param name="colum">Number of frames in one column of the image</param>
+        /// <param name="row">Number of frames in one row of the image</param>
+        /// <param name="name">Name of the new animation</param>
+        /// <param name="speed">How fast the animation is going to be played</param>
         public void AddAniSprite(ContentManager myContentManager, String imagename, int colum, int row, string name, int speed)
         {
             Texture2D texture = myContentManager.Load<Texture2D>(imagename);
@@ -150,21 +182,30 @@ namespace WindowsGame1
             aniimages.Add(NewAniSprite);
         }
 
+        /// <summary>
+        /// Render the object at it's position on the screen, with it's current frame (either animation or not)
+        /// </summary>
+        /// <param name="mySpriteBatch">XNA SpriteBatch</param>
         public void Draw(SpriteBatch mySpriteBatch)
         {
             if (aniimagenum == -1)
             {
-                images[imagenum].Color.A = (byte)opacity;
+                //images[imagenum].Color.A = (byte)opacity;     //This is XNA3.5 Code!
                 if (visible)
-                    images[imagenum].Draw(mySpriteBatch);
+                    images[imagenum].Draw(mySpriteBatch, opacity);
             }
             else
             {
-                aniimages[aniimagenum].Draw(mySpriteBatch, new Vector2(rect.X, rect.Y));
+                aniimages[aniimagenum].Draw(mySpriteBatch, new Vector2(rect.X, rect.Y), opacity);
             }
         }
 
-        public Boolean Update(Rectangle playerrect)
+        /// <summary>
+        /// Process various calculations regarding the Object.
+        /// </summary>
+        /// <param name="playerrect">The rect of the player character. Needed for collisiondetection and interaction.</param>
+        /// <returns></returns>
+        public Boolean Update(Rectangle playerrect, int playerdirection)
         {
             bool playernear = false;
 
@@ -178,7 +219,7 @@ namespace WindowsGame1
                     activeverbcount++;
             }
 
-            if (CheckPlayerDistance(playerrect) && activeverbcount != 0)
+            if (CheckPlayerDistance(playerrect, playerdirection) && activeverbcount != 0)
             {
                 images[imagenum].Color = Color.YellowGreen;
                 playernear = true;
@@ -251,22 +292,23 @@ namespace WindowsGame1
                 }
             }
 
+            // Fade the object out or in
             if (fading)
             {
                 Console.WriteLine(opacity);
                 if (fadedout)
                 {
-                    opacity += movingspeed;
-                    if (opacity >= 255)
+                    opacity += (float)movingspeed / 100;
+                    if (opacity >= 1)
                     {
-                        opacity = 255;
+                        opacity = 1;
                         fadedout = false;
                         fading = false;
                     }
                 }
                 else
                 {
-                    opacity -= movingspeed;
+                    opacity -= (float)movingspeed / 100;
                     if (opacity <= 0)
                     {
                         opacity = 0;
@@ -289,6 +331,12 @@ namespace WindowsGame1
             return playernear;
         }
 
+        /// <summary>
+        /// Initialize to move the object over the specified path. Values are relative, not absolute.
+        /// </summary>
+        /// <param name="x">How far the object is supposed to move in X</param>
+        /// <param name="y">How far the object is supposed to move in Y</param>
+        /// <param name="speed">How many pixels the object is supposed to move in one update</param>
         public void move(int x, int y, int speed)
         {
             OriginalPostition = new Vector2(rect.X, rect.Y);
@@ -298,6 +346,10 @@ namespace WindowsGame1
             moving = true;
         }
 
+        /// <summary>
+        /// Initializes a fade in (appear)
+        /// </summary>
+        /// <param name="speed">Will be added to Opacity variable every Update</param>
         public void fadein(int speed)
         {
             movingspeed = speed;
@@ -311,6 +363,10 @@ namespace WindowsGame1
             }
         }
 
+        /// <summary>
+        /// Initializes a fade out (disappear)
+        /// </summary>
+        /// <param name="speed">Will be substracted from Opacity variable every Update</param>
         public void fadeout(int speed)
         {
             movingspeed = speed;
@@ -318,22 +374,31 @@ namespace WindowsGame1
             fadedout = false;
         }
 
-        public Boolean CheckPlayerDistance(Rectangle playerrect)
+        /// <summary>
+        /// Determines if the player is closer to the object than it's range.
+        /// </summary>
+        /// <param name="playerrect">The rect of the player character</param>
+        /// <param name="playerdirection">The way the player is facing. 0 = Up, 1 = Right, 2 = Down, 3 = Left</param>
+        /// <returns>Return true, if the player is facing the object and is closer to the object than its range value.</returns>
+        public Boolean CheckPlayerDistance(Rectangle playerrect, int playerdirection)
         {
             Vector2 obrect = new Vector2(rect.X + (rect.Width / 2) + rectOffset.X + interactOffset.X, rect.Y + (rect.Height / 2) + rectOffset.Y + interactOffset.Y);
             Vector2 playerpos = new Vector2(playerrect.X + (playerrect.Width / 2), playerrect.Y + (playerrect.Height / 2));
 
-            //Console.WriteLine(Vector2.DistanceSquared(playerpos, obrect));
-
-            if (Vector2.DistanceSquared(playerpos, obrect) < radius)
+            if (playerdirection == 0 && obrect.Y < playerpos.Y || playerdirection == 1 && obrect.X > playerpos.X ||
+                playerdirection == 2 && obrect.Y > playerpos.Y || playerdirection == 3 && obrect.X < playerpos.X)
             {
-                //Console.WriteLine(Math.Sqrt((obrect.X - playerpos.X) * (obrect.X - playerpos.X) + (playerpos.Y - obrect.Y) * (playerpos.Y - obrect.Y)));
-                return true;
+                if (Vector2.DistanceSquared(playerpos, obrect) < radius)
+                    return true;      
             }
-            else
-                return false;
+
+            return false;
         }
 
+        /// <summary>
+        /// Find a certain script in this object's list of scripts by name.
+        /// </summary>
+        /// <param name="name">The name of the script you're looking for</param>
         public Script FindScript(String name)
         {
             foreach (Script script in scripts)
@@ -343,6 +408,10 @@ namespace WindowsGame1
             return null;
         }
 
+        /// <summary>
+        /// Creates an empty script and adds it to it's list.
+        /// </summary>
+        /// <param name="name">The name of the new script</param>
         public void AddScript(String name)
         {
             Script newscript = new Script(name);

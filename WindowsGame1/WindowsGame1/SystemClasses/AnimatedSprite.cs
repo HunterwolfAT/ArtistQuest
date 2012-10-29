@@ -81,7 +81,7 @@ namespace WindowsGame1
             return animationspeed;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, float opactiy = 1)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
@@ -94,7 +94,7 @@ namespace WindowsGame1
             //Console.WriteLine(sourceRectangle);
             //Console.WriteLine(destinationRectangle);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, color);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, color * opactiy);
         }
     }
 }
