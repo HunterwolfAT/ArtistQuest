@@ -207,10 +207,13 @@ namespace WindowsGame1
                                 ShowTitle = false;
                                 if (title.Startup)      // Starting the game from the beginning
                                 {
-                                    gui.SetOpacity(255);
+                                    
                                     Script introscript = map.PlayIntro();
-                                    if (introscript != null)
+                                    if (introscript != null && !Debug)
+                                    {
+                                        gui.SetOpacity(255);
                                         scripthandler.RunScript(introscript);
+                                    }
                                     title.Startup = false;
                                 }
                                 break;
