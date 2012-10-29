@@ -75,7 +75,7 @@ namespace WindowsGame1
             graphics.PreferredBackBufferHeight = 480;
 
             //this.Window.AllowUserResizing = true;
-            this.Window.Title = "Artist Quest Alpha v0.65b";
+            this.Window.Title = "Artist Quest Alpha v0.8";
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace WindowsGame1
                                     Script introscript = map.PlayIntro();
                                     if (introscript != null && !Debug)
                                     {
-                                        gui.SetOpacity(255);
+                                        gui.SetOpacity(1f);
                                         scripthandler.RunScript(introscript);
                                     }
                                     title.Startup = false;

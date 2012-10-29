@@ -19,6 +19,9 @@ namespace WindowsGame1
         public Boolean ShowMSG;
         Boolean MSGisdone;
         Color MSGColor;
+        float MSGOpacity = 0f;
+        Boolean MSGMoving;
+        int MSGYOffset;
 
         int scrollcounter;
 
@@ -42,8 +45,8 @@ namespace WindowsGame1
         Sprite ScreenFadeTex;
         public bool FadedOut = false;
         public bool Fading = false;
-        int FadeOpacity;
-        int FadeStep = 5;
+        float FadeOpacity;
+        float FadeStep = 0.01f;
 
         // Key sprites
         Sprite EnterKeySprite;
@@ -74,7 +77,7 @@ namespace WindowsGame1
             ItemPic = new Sprite();
 
             ScreenFadeTex = new Sprite();
-            FadeOpacity = 0;
+            FadeOpacity = 0f;
 
             EnterKeySprite = new Sprite();
             SpaceKeySprite = new Sprite();
@@ -105,6 +108,7 @@ namespace WindowsGame1
             ItemPic = new Sprite();
 
             ScreenFadeTex = new Sprite();
+            FadeOpacity = 0f;
 
             EnterKeySprite = new Sprite();
             SpaceKeySprite = new Sprite();
@@ -128,7 +132,7 @@ namespace WindowsGame1
             ScreenFadeTex.Color = new Color(255, 255, 255, FadeOpacity);
         }
 
-        public void DisplayMSG(String MSG, Boolean scrolling, String name = "")
+        public void DisplayMSG(String MSG, Boolean scrolling, String name = "", Boolean first = false)
         {
             MSGBoxText = parseText(MSG);
             ShowMSG = true;
@@ -140,6 +144,12 @@ namespace WindowsGame1
             MSGposition = new Vector2(200, 300);
             MsgBox.Position = new Vector2(MSGposition.X - 10, MSGposition.Y - 15);
             MSGisdone = false;
+            if (first)
+            {
+                MSGMoving = true;
+                MSGYOffset = 15;
+                MSGOpacity = 0f;
+            }
         }
 
         public void DisplayNewItem(Item targetitem, bool Addedtoinventory)
@@ -221,7 +231,7 @@ namespace WindowsGame1
                 mySpriteBatch.DrawString(Font, invtext, new Vector2(70, InvPositionY - 110), Color.Wheat);
             }
 
-            if (interactwithobject != null && verbmenuopen == false && ShowMSG == false && InventoryActive == false && ShowItemBox == false)
+            if (interactwithobject != null && verbmenuopen == false && ShowMSG == false && InventoryActive == false && ShowItemBox == false && ascriptisrunning == false)
             {
                 EnterKeySprite.Position = new Vector2(710, 445);
                 EnterKeySprite.Draw(mySpriteBatch);
@@ -233,18 +243,19 @@ namespace WindowsGame1
             }
 
             // The Fade-Sprite over everything
-            if (FadeOpacity != 0)
+            if (FadeOpacity > 0f)
             {
-                ScreenFadeTex.Color = new Color(255, 255, 255, FadeOpacity);
-                ScreenFadeTex.Draw(mySpriteBatch);
+                ScreenFadeTex.Color = new Color(255, 255, 255);
+                ScreenFadeTex.Draw(mySpriteBatch, FadeOpacity);
             }
 
             //Messagebox needs to be shown OVER the Inventory
             if (ShowMSG)
             {
-                MsgBox.Position = new Vector2(MSGposition.X+190, MSGposition.Y+42); 
-                MsgBox.Draw(mySpriteBatch);
-                mySpriteBatch.DrawString(Font, ShownMSGBoxText, MSGposition, MSGColor);
+                MsgBox.Position = new Vector2(MSGposition.X+190, MSGposition.Y+42+MSGYOffset); 
+                MsgBox.Draw(mySpriteBatch, MSGOpacity);
+                if (!MSGMoving)
+                    mySpriteBatch.DrawString(Font, ShownMSGBoxText, MSGposition, MSGColor);
 
                 //Draw Key-Prompt
                 if (MSGBoxText == ShownMSGBoxText)
@@ -327,10 +338,10 @@ namespace WindowsGame1
             }
         }
 
-        public void SetOpacity(int value)
+        public void SetOpacity(float value)
         {
             FadeOpacity = value;
-            if (value == 0)
+            if (value < 1f)
                 FadedOut = false;
             else
                 FadedOut = true;
@@ -338,12 +349,28 @@ namespace WindowsGame1
 
         public void Update()
         {
-            if (MSGBoxText.Length > ShownMSGBoxText.Length)
+            if (MSGMoving)
             {
-                ShownMSGBoxText += MSGBoxText[ShownMSGBoxText.Length];
-                scrollcounter = -1;
+                MSGOpacity += 0.1f;
+                if (MSGOpacity > 1f)
+                    MSGOpacity = 1f;
+
+                MSGYOffset -= 1;
+                if (MSGYOffset == 0)
+                    MSGYOffset = 0;
+
+                if (MSGYOffset == 0 && MSGOpacity == 1f)
+                    MSGMoving = false;
             }
-            scrollcounter++;
+            else
+            {
+                if (MSGBoxText.Length > ShownMSGBoxText.Length)
+                {
+                    ShownMSGBoxText += MSGBoxText[ShownMSGBoxText.Length];
+                    scrollcounter = -1;
+                }
+                scrollcounter++;
+            }
 
 
             if (ShowInventory)
@@ -371,9 +398,9 @@ namespace WindowsGame1
                 Console.WriteLine(FadeOpacity);
                 if (FadedOut)
                 {
-                    if (FadeOpacity < 0)
+                    if (FadeOpacity < 0f)
                     {
-                        FadeOpacity = 0;
+                        FadeOpacity = 0f;
                         FadedOut = false;
                         Fading = false;
                     }
@@ -382,9 +409,9 @@ namespace WindowsGame1
                 }
                 else
                 {
-                    if (FadeOpacity > 255)
+                    if (FadeOpacity > 1f)
                     {
-                        FadeOpacity = 255;
+                        FadeOpacity = 1f;
                         FadedOut = true;
                         Fading = false;
                     }

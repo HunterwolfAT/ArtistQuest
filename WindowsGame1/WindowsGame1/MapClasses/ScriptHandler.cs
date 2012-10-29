@@ -158,7 +158,19 @@ namespace WindowsGame1
                     if (activescript.Commands[Commandcounter].Type == "Message")
                     {
                         if (activescript.Commands[Commandcounter].SArgs.Count != 0)
-                            gui.DisplayMSG(activescript.Commands[Commandcounter].SArgs[0], true);
+                        {
+                            Boolean firstMSG = false;
+
+                            if (Commandcounter > 0)
+                            {
+                                if (activescript.Commands[Commandcounter - 1].Type != "Message")
+                                    firstMSG = true;
+                            }
+                            else
+                                firstMSG = true;
+
+                            gui.DisplayMSG(activescript.Commands[Commandcounter].SArgs[0], true, "LOL", firstMSG);
+                        }
                         else
                             Console.WriteLine("No Message was defined!");
                     }
