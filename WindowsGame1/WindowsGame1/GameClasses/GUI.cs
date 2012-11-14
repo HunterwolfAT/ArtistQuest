@@ -61,7 +61,7 @@ namespace WindowsGame1
             MSGBoxText = "";
             ShownMSGBoxText = "";
             ShowMSG = false;
-            MSGisdone = false;
+            MSGisdone = true;
             MSGposition = new Vector2(10f, 10f);
             MSGColor = Color.White;
             MsgBox = new Sprite();
@@ -91,7 +91,7 @@ namespace WindowsGame1
             MSGBoxText = "";
             ShownMSGBoxText = "";
             ShowMSG = false;
-            MSGisdone = false;
+            MSGisdone = true;
             Font = font;
             MSGposition = new Vector2(10f, 10f);
             MSGColor = Color.White;

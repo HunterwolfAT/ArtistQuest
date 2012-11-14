@@ -48,6 +48,7 @@ namespace WindowsGame1
                 Console.WriteLine("RUNNING SCRIPT NOW");
                 ScriptRunning = true;
                 activescript = newscript;
+                IFstack.Clear();
             }
         }
 
@@ -56,14 +57,17 @@ namespace WindowsGame1
             if (ScriptRunning)
             {
                 Boolean RunNextCommand = true;
-                
+
+                Console.WriteLine(Commandcounter.ToString() + " Count: " + activescript.Commands.Count.ToString());
+
                 if ((Commandcounter + 1) < activescript.Commands.Count)
                 {
                     Commandcounter++;
+                    Console.WriteLine(Commandcounter.ToString() + " Count: " + activescript.Commands.Count.ToString());
 
                     if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Message")
                     {
-                        if (gui.IsDone() && !gui.ShowMSG)
+                        if (gui.IsDone())
                         {
                             //Dont do anything
                         }
@@ -142,6 +146,7 @@ namespace WindowsGame1
                 }
                 else    // were on the last command in the script now
                 {
+                    Console.WriteLine("LOLOLOLOLOL:OLOL");
                     Boolean endscript = true;
                     //if this last command is a message, dont end it until the message has been clicked away!
                     if (activescript.Commands[Commandcounter].Type == "Message")
