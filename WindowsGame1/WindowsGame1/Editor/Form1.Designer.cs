@@ -2407,14 +2407,17 @@
             // saveRoomToolStripMenuItem1
             // 
             this.saveRoomToolStripMenuItem1.Name = "saveRoomToolStripMenuItem1";
-            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
+            this.saveRoomToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(283, 22);
             this.saveRoomToolStripMenuItem1.Text = "Save Room";
             this.saveRoomToolStripMenuItem1.Click += new System.EventHandler(this.saveRoomToolStripMenuItem1_Click);
             // 
             // saveRoomToolStripMenuItem
             // 
             this.saveRoomToolStripMenuItem.Name = "saveRoomToolStripMenuItem";
-            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.saveRoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.saveRoomToolStripMenuItem.Text = "Save Room As...";
             this.saveRoomToolStripMenuItem.Click += new System.EventHandler(this.saveRoomToolStripMenuItem_Click);
             // 
