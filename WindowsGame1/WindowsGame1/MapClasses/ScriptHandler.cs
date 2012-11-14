@@ -63,7 +63,7 @@ namespace WindowsGame1
 
                     if (Commandcounter != 0 && activescript.Commands[Commandcounter-1].Type == "Message")
                     {
-                        if (gui.IsDone())
+                        if (gui.IsDone() && !gui.ShowMSG)
                         {
                             //Dont do anything
                         }
