@@ -1039,8 +1039,24 @@ namespace WindowsGame1
 
         private void saveRoomToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //String Path = 
-            //game.SaveMap();
+             String path = game.GetGamePath();
+             path += "\\saves";
+
+            //If the room hasnt been saved before
+             if (game.map.name == "NewRoom")
+             {
+                 saveFileDialog1.InitialDirectory = path;
+
+                 saveFileDialog1.FileName = game.map.name;
+                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                     game.SaveMap(saveFileDialog1.FileName);
+             }
+             else
+             {
+                 path += "\\" + game.map.name;
+                 game.SaveMap(path);
+                 Console.WriteLine("Game saved to: " + path);
+             }
         }
 
         private void verblist_SelectedIndexChanged(object sender, EventArgs e)

@@ -61,7 +61,7 @@ namespace WindowsGame1
                 {
                     Commandcounter++;
 
-                    if (Commandcounter != 0 && activescript.Commands[Commandcounter-1].Type == "Message")
+                    if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Message")
                     {
                         if (gui.IsDone() && !gui.ShowMSG)
                         {
@@ -140,14 +140,32 @@ namespace WindowsGame1
                     }
 
                 }
-                else
+                else    // were on the last command in the script now
                 {
-                    Console.WriteLine("SCRIPT IS DONE!");
-                    ScriptRunning = false;
-                    Commandcounter = -1;
-                    oldCommandcounter = -1;
+                    Boolean endscript = true;
+                    //if this last command is a message, dont end it until the message has been clicked away!
+                    if (activescript.Commands[Commandcounter].Type == "Message")
+                    {
+                        if (gui.IsDone())
+                        {
+                            endscript = true;
+                        }
+                        else
+                        {
+                            endscript = false;
+                        }
+                    }
 
-                    IFstack.Clear();
+                    //then, end it
+                    if (endscript)
+                    {
+                        Console.WriteLine("SCRIPT IS DONE!");
+                        ScriptRunning = false;
+                        Commandcounter = -1;
+                        oldCommandcounter = -1;
+
+                        IFstack.Clear();
+                    }
                 }
 
                 if (oldCommandcounter != Commandcounter && RunNextCommand)

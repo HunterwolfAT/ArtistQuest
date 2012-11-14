@@ -86,6 +86,7 @@
             this.objvisible = new System.Windows.Forms.CheckBox();
             this.objwalkable = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.objpicbutton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.objectpic = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -107,6 +108,7 @@
             this.scriptitemscriptlistbox = new System.Windows.Forms.ListBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.MSG_Enter = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.comwaitButton = new System.Windows.Forms.Button();
@@ -188,6 +190,7 @@
             this.comitemlist = new System.Windows.Forms.ListBox();
             this.commandlistbox = new System.Windows.Forms.ListBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.itempicbutton = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.itemaddinventorybutton = new System.Windows.Forms.Button();
             this.itemremoveinventorybutton = new System.Windows.Forms.Button();
@@ -198,6 +201,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.itemnametextbox = new System.Windows.Forms.TextBox();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.animpicbutton = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.aninameTB = new System.Windows.Forms.TextBox();
@@ -231,10 +235,6 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.objpicbutton = new System.Windows.Forms.Button();
-            this.itempicbutton = new System.Windows.Forms.Button();
-            this.animpicbutton = new System.Windows.Forms.Button();
-            this.MSG_Enter = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -939,6 +939,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create an object";
             // 
+            // objpicbutton
+            // 
+            this.objpicbutton.Location = new System.Drawing.Point(206, 44);
+            this.objpicbutton.Name = "objpicbutton";
+            this.objpicbutton.Size = new System.Drawing.Size(31, 23);
+            this.objpicbutton.TabIndex = 5;
+            this.objpicbutton.Text = "...";
+            this.objpicbutton.UseVisualStyleBackColor = true;
+            this.objpicbutton.Click += new System.EventHandler(this.objpicbutton_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(41, 71);
@@ -1173,6 +1183,16 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "General";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // MSG_Enter
+            // 
+            this.MSG_Enter.Location = new System.Drawing.Point(52, 153);
+            this.MSG_Enter.Name = "MSG_Enter";
+            this.MSG_Enter.Size = new System.Drawing.Size(186, 36);
+            this.MSG_Enter.TabIndex = 18;
+            this.MSG_Enter.Text = "Wait for ENTER";
+            this.MSG_Enter.UseVisualStyleBackColor = true;
+            this.MSG_Enter.Click += new System.EventHandler(this.MSG_Enter_Click);
             // 
             // button22
             // 
@@ -2032,6 +2052,16 @@
             this.tabPage8.Text = "Items";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // itempicbutton
+            // 
+            this.itempicbutton.Location = new System.Drawing.Point(629, 252);
+            this.itempicbutton.Name = "itempicbutton";
+            this.itempicbutton.Size = new System.Drawing.Size(31, 23);
+            this.itempicbutton.TabIndex = 9;
+            this.itempicbutton.Text = "...";
+            this.itempicbutton.UseVisualStyleBackColor = true;
+            this.itempicbutton.Click += new System.EventHandler(this.itempicbutton_Click);
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.itemaddinventorybutton);
@@ -2143,6 +2173,16 @@
             this.tabPage10.TabIndex = 4;
             this.tabPage10.Text = "Animations";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // animpicbutton
+            // 
+            this.animpicbutton.Location = new System.Drawing.Point(109, 312);
+            this.animpicbutton.Name = "animpicbutton";
+            this.animpicbutton.Size = new System.Drawing.Size(31, 23);
+            this.animpicbutton.TabIndex = 25;
+            this.animpicbutton.Text = "...";
+            this.animpicbutton.UseVisualStyleBackColor = true;
+            this.animpicbutton.Click += new System.EventHandler(this.animpicbutton_Click);
             // 
             // button18
             // 
@@ -2366,7 +2406,6 @@
             // 
             // saveRoomToolStripMenuItem1
             // 
-            this.saveRoomToolStripMenuItem1.Enabled = false;
             this.saveRoomToolStripMenuItem1.Name = "saveRoomToolStripMenuItem1";
             this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
             this.saveRoomToolStripMenuItem1.Text = "Save Room";
@@ -2423,46 +2462,6 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
-            // 
-            // objpicbutton
-            // 
-            this.objpicbutton.Location = new System.Drawing.Point(206, 44);
-            this.objpicbutton.Name = "objpicbutton";
-            this.objpicbutton.Size = new System.Drawing.Size(31, 23);
-            this.objpicbutton.TabIndex = 5;
-            this.objpicbutton.Text = "...";
-            this.objpicbutton.UseVisualStyleBackColor = true;
-            this.objpicbutton.Click += new System.EventHandler(this.objpicbutton_Click);
-            // 
-            // itempicbutton
-            // 
-            this.itempicbutton.Location = new System.Drawing.Point(629, 252);
-            this.itempicbutton.Name = "itempicbutton";
-            this.itempicbutton.Size = new System.Drawing.Size(31, 23);
-            this.itempicbutton.TabIndex = 9;
-            this.itempicbutton.Text = "...";
-            this.itempicbutton.UseVisualStyleBackColor = true;
-            this.itempicbutton.Click += new System.EventHandler(this.itempicbutton_Click);
-            // 
-            // animpicbutton
-            // 
-            this.animpicbutton.Location = new System.Drawing.Point(109, 312);
-            this.animpicbutton.Name = "animpicbutton";
-            this.animpicbutton.Size = new System.Drawing.Size(31, 23);
-            this.animpicbutton.TabIndex = 25;
-            this.animpicbutton.Text = "...";
-            this.animpicbutton.UseVisualStyleBackColor = true;
-            this.animpicbutton.Click += new System.EventHandler(this.animpicbutton_Click);
-            // 
-            // MSG_Enter
-            // 
-            this.MSG_Enter.Location = new System.Drawing.Point(52, 153);
-            this.MSG_Enter.Name = "MSG_Enter";
-            this.MSG_Enter.Size = new System.Drawing.Size(186, 36);
-            this.MSG_Enter.TabIndex = 18;
-            this.MSG_Enter.Text = "Wait for ENTER";
-            this.MSG_Enter.UseVisualStyleBackColor = true;
-            this.MSG_Enter.Click += new System.EventHandler(this.MSG_Enter_Click);
             // 
             // Form1
             // 
