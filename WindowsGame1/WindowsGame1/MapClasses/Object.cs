@@ -186,16 +186,22 @@ namespace WindowsGame1
         /// Render the object at it's position on the screen, with it's current frame (either animation or not)
         /// </summary>
         /// <param name="mySpriteBatch">XNA SpriteBatch</param>
-        public void Draw(SpriteBatch mySpriteBatch)
+        public void Draw(SpriteBatch mySpriteBatch, Boolean isascriptrunning)
         {
             if (aniimagenum == -1)
             {
+                if (isascriptrunning)
+                    images[imagenum].Color = Color.White;
+                
                 //images[imagenum].Color.A = (byte)opacity;     //This is XNA3.5 Code!
                 if (visible)
                     images[imagenum].Draw(mySpriteBatch, opacity);
             }
             else
             {
+                //if (isascriptrunning)
+                //    aniimages[aniimagenum].Color = Color.White;
+                
                 aniimages[aniimagenum].Draw(mySpriteBatch, new Vector2(rect.X, rect.Y), opacity);
             }
         }

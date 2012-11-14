@@ -64,7 +64,7 @@ namespace WindowsGame1
             return null;
         }
 
-        public void Draw(SpriteBatch mySpriteBatch, GraphicsDeviceManager graphics, Vector2 playerpos, Boolean frontofplayer = false)
+        public void Draw(SpriteBatch mySpriteBatch, GraphicsDeviceManager graphics, Vector2 playerpos, Boolean frontofplayer = false, Boolean isascriptrunning = false)
         {
 
             if (frontofplayer == false)
@@ -74,7 +74,7 @@ namespace WindowsGame1
                 foreach (Object obj in Objects)
                 {
                     if (playerpos.Y > (obj.getActualRect().Y + obj.getActualRect().Height))
-                        obj.Draw(mySpriteBatch);
+                        obj.Draw(mySpriteBatch, isascriptrunning);
                 }
 
                 // Draw the WalkMap rectangles, if option in editor was checked:
@@ -137,7 +137,7 @@ namespace WindowsGame1
                 foreach (Object obj in Objects)
                 {
                     if (playerpos.Y <= (obj.getActualRect().Y + obj.getActualRect().Height))
-                        obj.Draw(mySpriteBatch);
+                        obj.Draw(mySpriteBatch, isascriptrunning);
                 }
             }
 

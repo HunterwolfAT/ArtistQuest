@@ -1463,9 +1463,7 @@ namespace WindowsGame1
             // If nothing is to be edited yet
             if (!EditingMSG)
             {
-                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
-                    && commandlistbox.SelectedIndex != -1
-                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1
                     && commandlistbox.SelectedIndex != -1)
                 {
                     // Once for Item-Scripts 
@@ -1478,6 +1476,11 @@ namespace WindowsGame1
                         EditingMSGIndex = commandlistbox.SelectedIndex;
                         EditingMSG = true;
                     }
+                }
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    && commandlistbox.SelectedIndex != -1)
+                {
                     // And again for the scripts of objects
                     if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab"
                         && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[verblistscript.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
@@ -1490,6 +1493,7 @@ namespace WindowsGame1
                     }
 
                 }
+                
             }
             else    // When some editing is already in progress, stop it!
             {

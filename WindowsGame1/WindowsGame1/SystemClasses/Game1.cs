@@ -312,10 +312,10 @@ namespace WindowsGame1
             else
             {
                 // Draw everything behind the player
-                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), false);
+                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), false, scripthandler.IsScriptRunning());
                 player.Draw(spriteBatch, graphics);
                 // And then everything in front of him
-                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), true);
+                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), true, scripthandler.IsScriptRunning());
 
                 // Drawing UserInterface last
                 player.verbmenu.Draw(spriteBatch);
