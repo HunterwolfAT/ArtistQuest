@@ -28,6 +28,7 @@ namespace WindowsGame1
         int yspeed = 0;
         bool movewithanim = true;
         public bool moving = false;
+        public bool movelock = false;
 
         public bool showRect = false;
 

@@ -339,6 +339,9 @@ namespace WindowsGame1
             if (KnewState.IsKeyDown(Keys.F4) && KoldState.IsKeyUp(Keys.F4))
                 player.clipping = !player.clipping;
 
+            if (KnewState.IsKeyDown(Keys.F2) && KoldState.IsKeyUp(Keys.F2) && Debug)
+                player.movelock = !player.movelock;
+
             // Title-Screen keyboard checks
             if (ShowTitle)
             {
@@ -370,7 +373,7 @@ namespace WindowsGame1
                         title.newsavename = input;
                 }
             }
-            else
+            else if (!player.movelock)
             {
                 // REGULAR GAME KEYBOARD CHECKS
 
