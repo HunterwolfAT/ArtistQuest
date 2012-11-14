@@ -83,7 +83,7 @@ namespace WindowsGame1
             foreach (Item item in Inventory)
                 snapventory.Add(item);
            
-            Timestamp = DateTime.Now;
+            Timestamp = DateTime.Now;   
         }
     }
 }
