@@ -146,18 +146,21 @@ namespace WindowsGame1
                 }
                 else    // were on the last command in the script now
                 {
-                    Console.WriteLine("LOLOLOLOLOL:OLOL");
                     Boolean endscript = true;
+
                     //if this last command is a message, dont end it until the message has been clicked away!
-                    if (activescript.Commands[Commandcounter].Type == "Message")
+                    if (activescript.Commands.Count != 0)
                     {
-                        if (gui.IsDone())
+                        if (activescript.Commands[Commandcounter].Type == "Message")
                         {
-                            endscript = true;
-                        }
-                        else
-                        {
-                            endscript = false;
+                            if (gui.IsDone())
+                            {
+                                endscript = true;
+                            }
+                            else
+                            {
+                                endscript = false;
+                            }
                         }
                     }
 
