@@ -132,7 +132,7 @@ namespace WindowsGame1
             ScreenFadeTex.Color = new Color(255, 255, 255, FadeOpacity);
         }
 
-        public void DisplayMSG(String MSG, Boolean scrolling, String name = "", Boolean first = false)
+        public void DisplayMSG(String MSG, Boolean scrolling, String name = "", Boolean down = true, Boolean first = false)
         {
             MSGBoxText = parseText(MSG);
             ShowMSG = true;
@@ -140,8 +140,13 @@ namespace WindowsGame1
             MSGBoxTextName = name;
             if (!scrolling)
                 ShownMSGBoxText = MSGBoxText;
+            
+            //Would the box overlay the player?
+            if (down)
+                MSGposition = new Vector2(200, 300);
+            else
+                MSGposition = new Vector2(200, 100);
 
-            MSGposition = new Vector2(200, 300);
             MsgBox.Position = new Vector2(MSGposition.X - 10, MSGposition.Y - 15);
             MSGisdone = false;
             if (first)
