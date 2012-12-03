@@ -790,10 +790,13 @@ namespace WindowsGame1
             //Make a new instance of the scripthandler with the freshly loaded map
             scripthandler = new ScriptHandler(map, player, items, this);
 
-            //Also make a snapshot right awayy
-            Snapshot newsnapshot = new Snapshot(GameVariables, map, map.Objects, player.InvList);
+            if (!Startup)
+            {
+                //Also make a snapshot right awayy
+                Snapshot newsnapshot = new Snapshot(GameVariables, map, map.Objects);
 
-            Snapshots.Add(newsnapshot);
+                Snapshots.Add(newsnapshot);
+            }
 
             Console.WriteLine("MAP LOCKED AND LOADED, SIR!");
         }

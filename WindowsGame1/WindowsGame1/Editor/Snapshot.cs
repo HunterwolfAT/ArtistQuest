@@ -85,5 +85,49 @@ namespace WindowsGame1
            
             Timestamp = DateTime.Now;   
         }
+
+        public Snapshot(List<String[]> gamevariables, Maps map, List<Object> objects)
+        {
+            Mapname = map.name;
+
+            // Global Variables
+            GVName = new List<string>();
+            GVValue = new List<string>();
+
+            foreach (String[] var in gamevariables)
+            {
+                GVName.Add(var[0]);
+                GVValue.Add(var[1]);
+            }
+
+            // Objects
+            snapjects = new List<SnapObject>();
+
+            foreach (Object obj in objects)
+            {
+                SnapObject snapj = new SnapObject();
+                snapj.name = obj.name;
+                snapj.imagenum = obj.imagenum;
+                snapj.color = obj.color;
+                snapj.rect = obj.rect;
+                snapj.walkable = obj.walkable;
+                snapj.visible = obj.visible;
+                snapj.opacity = obj.opacity;
+
+                // Verbs
+                foreach (Script script in obj.scripts)
+                {
+                    snapj.VBName.Add(script.Name);
+                    snapj.VBactive.Add(script.Active);
+                }
+
+                snapjects.Add(snapj);
+            }
+
+            // Inventory
+            snapventory = new List<Item>();
+
+            Timestamp = DateTime.Now;
+        }
     }
 }
