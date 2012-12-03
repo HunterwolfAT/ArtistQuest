@@ -58,12 +58,12 @@ namespace WindowsGame1
             {
                 Boolean RunNextCommand = true;
 
-                //Console.WriteLine(Commandcounter.ToString() + " Count: " + activescript.Commands.Count.ToString());
+                Console.WriteLine(Commandcounter.ToString() + " Count: " + activescript.Commands.Count.ToString());
 
                 if ((Commandcounter + 1) < activescript.Commands.Count)
                 {
                     Commandcounter++;
-                    //Console.WriteLine(Commandcounter.ToString() + " Count: " + activescript.Commands.Count.ToString());
+                    Console.WriteLine(Commandcounter.ToString() + " Count: " + activescript.Commands.Count.ToString());
 
                     if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Message")
                     {
@@ -179,8 +179,7 @@ namespace WindowsGame1
                 if (oldCommandcounter != Commandcounter && RunNextCommand)
                 {
                     //activescript.Commands[Commandcounter].Run();
-                    Console.WriteLine("EXECUTING COMMAND NR. " + Commandcounter.ToString() + ": " + activescript.Commands[Commandcounter].Type);
-                    
+
                     # region Message
                     if (activescript.Commands[Commandcounter].Type == "Message")
                     {
@@ -389,7 +388,6 @@ namespace WindowsGame1
 
                         //Adding the result to the if-stack
                         IFstack.Add(StatementIsTrue);
-                        Console.WriteLine("IF - IFstack at the end: " + IFstack[IFstack.Count - 1].ToString());
 
                     }
                     #endregion
@@ -403,8 +401,6 @@ namespace WindowsGame1
                         
                         if (IFstack.Count > 0)
                             StatementIsTrue = IFstack[IFstack.Count - 1];
-
-                        Console.WriteLine("ELSE - IFstack: " + IFstack[IFstack.Count - 1].ToString() + " is " + StatementIsTrue.ToString());
 
 
                         if (StatementIsTrue == false)
@@ -428,7 +424,7 @@ namespace WindowsGame1
 
                                     if (ifcounter == 0)
                                     {
-                                        Console.WriteLine("SETTING SCRIPT TO LINE: " + (a - 1));
+                                        Console.WriteLine("SETTING SCRIPT TO LINE: " + a);
                                         //Set the Commandcounter to the new line
                                         Commandcounter = a - 1;
                                         break;
