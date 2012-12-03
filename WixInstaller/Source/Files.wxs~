@@ -56,19 +56,14 @@
             example, two features named "game" and "editor" could be imagined where
             both point to the "shared" component and to their own component.
           -->
-		  <Directory Id="Maps" Name="saves">
-			  <Component Id="Rooms" Guid="4f6671ff-d668-45f5-96ae-d7a11a5b22f8" DiskId="1">
-				  <File Id="FirstRoom" Name="ProtRoom" Source="$(sys.SOURCEFILEDIR)/../Content/saves/Protroom"/>
-				  <File Id="SecondRoom" Name="Hallway" Source="$(sys.SOURCEFILEDIR)/../Content/saves/Hallway"/>
-				  <File Id="ThirdRoom" Name="Outside" Source="$(sys.SOURCEFILEDIR)/../Content/saves/Outside"/>
-				  <File Id="FourthRoom" Name="Kitchen" Source="$(sys.SOURCEFILEDIR)/../Content/saves/Kitchen"/>
-			  </Component>
-		  </Directory>
-		  <Directory Id="Saves" Name="savegames">
-        	<Component Id="Savefiles" Guid="a2b9debc-39b4-4d86-8e03-450374e6fd81" DiskId="1">
-		  	</Component>
-		  </Directory>
-
+	  <Directory Id="Maps" Name="saves">
+		  <Component Id="Rooms" Guid="4f6671ff-d668-45f5-96ae-d7a11a5b22f8" DiskId="1">
+			  <File Id="FirstRoom" Name="ProtRoom" Source="$(sys.SOURCEFILEDIR)/../saves/Protroom"/>
+			  <File Id="SecondRoom" Name="Hallway" Source="$(sys.SOURCEFILEDIR)/../saves/Hallway"/>
+			  <File Id="ThirdRoom" Name="Outside" Source="$(sys.SOURCEFILEDIR)/../saves/Outside"/>
+			  <File Id="FourthRoom" Name="Kitchen" Source="$(sys.SOURCEFILEDIR)/../saves/Kitchen"/>
+		  </Component>
+	  </Directory>
           <Component Id="MyComponent" Guid="f31215ee-133e-4278-8af8-27a79f757482" DiskId="1">
             <File
               Id="LicenseFile" Name="license.rtf"
@@ -92,7 +87,7 @@
                 WorkingDirectory="INSTALLDIR"
               />
             </File>
-	    <File Id="ProjectFile" Name="ArtistQuestProt.prj" Source="$(sys.SOURCEFILEDIR)/../Content/ArtistQuestProt.prj" />
+	    <File Id="ProjectFile" Name="ArtistQuestProt.prj" Source="$(sys.SOURCEFILEDIR)/../ArtistQuest.prj" />
           </Component>
 
         </Directory>

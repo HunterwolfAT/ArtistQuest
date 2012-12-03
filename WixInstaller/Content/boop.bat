@@ -1,0 +1,1 @@
+"F:\Program Files (x86)\SharpDevelop\4.2\bin\Tools\Wix\heat.exe" dir "C:\Users\haudi_000\Documents\GitHub\ArtistQuest\WixInstaller\Content\" -cg MyGameFilesGroup -dr INSTALLDIR -gg -suid -out "C:\Users\haudi_000\Documents\GitHub\AritstQuest\WixInstaler\Source\" -var var.GameDeployFolder
