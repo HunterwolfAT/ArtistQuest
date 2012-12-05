@@ -30,6 +30,8 @@ namespace WindowsGame1
         private SpriteBatch spriteBatch;
         private Boolean GameStartup = true;
         private TextInput textinput;
+        private Vector2 baseScreenSize = new Vector2(800, 480);
+        private Matrix SpriteScale;
         
 
         //Game critical Objects
@@ -71,8 +73,9 @@ namespace WindowsGame1
             Content.RootDirectory = "Content";
 
             // Define resolution of the game
-            graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
+            //graphics.ToggleFullScreen();
 
             //this.Window.AllowUserResizing = true;
             this.Window.Title = "Artist Quest Alpha v0.8";
@@ -154,6 +157,11 @@ namespace WindowsGame1
 
             if (!ShowTitle)
                 LoadContentContent();
+
+            float Screenscalex = graphics.GraphicsDevice.Viewport.Width / baseScreenSize.X;
+            float Screenscaley = graphics.GraphicsDevice.Viewport.Height / baseScreenSize.Y;
+
+            SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);
         }
 
         /// <summary>
@@ -297,7 +305,7 @@ namespace WindowsGame1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullNone, null, SpriteScale);
 
             if (ShowTitle)
             {
