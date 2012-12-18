@@ -968,8 +968,6 @@ namespace WindowsGame1
             string relPath2 = System.IO.Path.Combine(path + "\\saves\\", save.CurrentRoom);
             LoadMap(relPath2, Startup);
 
-            //proj.SetGlobalVariables(save.GameVariables);
-
             player.InvList.Clear();
             foreach (String itemname in save.Inventory)
             {
@@ -989,6 +987,7 @@ namespace WindowsGame1
                 counter++;
             }
 
+            // Load Plaser Position
             player.position = save.Playerpos;
 
             //Load everything into all of the variables!

@@ -44,7 +44,10 @@ namespace WindowsGame1
 
             GVName = new List<String>();
             GVValue = new List<String>();
-            
+
+            GVName.Clear();
+            GVValue.Clear();
+
             foreach (String[] str in gamevariables)
             {
                 GVName.Add(str[0]);
@@ -85,6 +88,9 @@ namespace WindowsGame1
 
             // Put current map in the list
             MapSaves.Add(new MapSave(map.name, map.introplayed, map.getObjects()));
+
+            GVName.Clear();
+            GVValue.Clear();
 
             foreach (String[] str in gamevariables)
             {

@@ -27,7 +27,7 @@ namespace WindowsGame1
 
         public void SetGlobalVariables(List<String[]> globalvariables)
         {
-            GameVariables = globalvariables;
+            this.GameVariables = globalvariables;
         }
 
         public List<String[]> GetGlobalVariables()
