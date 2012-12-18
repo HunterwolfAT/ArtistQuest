@@ -162,10 +162,10 @@ namespace WindowsGame1
                 SelectedIndex += 2;
             else if (Mode == "Menu" && SelectedIndex < 3)
                 SelectedIndex++;
-            else if (Mode == "Save" && SelectedIndex < 5 && ScrollIndex + 5 < Savefilenames.Count() || Mode == "Load" && SelectedIndex < 5 && ScrollIndex + 5 < Savefilenames.Count())
+            else if (Mode == "Save" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count)
                 SelectedIndex++;
 
-            if (Mode == "Save" && SelectedIndex == 5 && ScrollIndex + 5 < Savefilenames.Count() || Mode == "Load" && SelectedIndex == 5 && ScrollIndex + 5 < Savefilenames.Count())
+            if (Mode == "Save" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count)
             {
                 ScrollIndex++;
                 SelectedIndex--;
@@ -299,14 +299,20 @@ namespace WindowsGame1
                     if (ScrollIndex > 0)
                         ArrowUp.Draw(mySpriteBatch);
 
-                    
+                  
                     for (int x = 0; x < 5; x++)
                     {
-                        if (x == SelectedIndex && Mode != "WriteSave")
-                            mySpriteBatch.DrawString(Font, Savefilenames[x + ScrollIndex], new Vector2(220, 137 + (x * 50)), Color.YellowGreen);
-                        else
-                            mySpriteBatch.DrawString(Font, Savefilenames[x + ScrollIndex], new Vector2(220, 137 + (x * 50)), Color.Red);
+                        if (Savefilenames.Count > x + ScrollIndex)
+                        {
+                            if (x == SelectedIndex && Mode != "WriteSave")
+                                mySpriteBatch.DrawString(Font, Savefilenames[x + ScrollIndex], new Vector2(220, 137 + (x * 50)), Color.YellowGreen);
+                            else
+                            {
+                                mySpriteBatch.DrawString(Font, Savefilenames[x + ScrollIndex], new Vector2(220, 137 + (x * 50)), Color.Red);
+                            }
+                        }
                     }
+
 
                     //int counter = 0;
                     //foreach (string file in Savefilenames)

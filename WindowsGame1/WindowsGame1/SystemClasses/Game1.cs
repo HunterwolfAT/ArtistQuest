@@ -73,8 +73,8 @@ namespace WindowsGame1
             Content.RootDirectory = "Content";
 
             // Define resolution of the game
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480;
             //graphics.ToggleFullScreen();
 
             //this.Window.AllowUserResizing = true;
@@ -217,7 +217,7 @@ namespace WindowsGame1
                                 {
                                     
                                     Script introscript = map.PlayIntro();
-                                    if (introscript != null && !Debug)
+                                    if (introscript != null)
                                     {
                                         gui.SetOpacity(1f);
                                         scripthandler.RunScript(introscript);
