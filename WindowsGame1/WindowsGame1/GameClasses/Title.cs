@@ -162,10 +162,10 @@ namespace WindowsGame1
                 SelectedIndex += 2;
             else if (Mode == "Menu" && SelectedIndex < 3)
                 SelectedIndex++;
-            else if (Mode == "Save" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count)
+            else if (Mode == "Save" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) < Savefilenames.Count)
                 SelectedIndex++;
 
-            if (Mode == "Save" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count)
+            if (Mode == "Save" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) < Savefilenames.Count)
             {
                 ScrollIndex++;
                 SelectedIndex--;
