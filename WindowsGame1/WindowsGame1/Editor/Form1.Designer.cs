@@ -1446,7 +1446,7 @@
             // 
             this.comobjmoveSpeedBox.Location = new System.Drawing.Point(438, 103);
             this.comobjmoveSpeedBox.Maximum = new decimal(new int[] {
-            150,
+            1000,
             0,
             0,
             0});
@@ -2400,7 +2400,7 @@
             // newRoomToolStripMenuItem
             // 
             this.newRoomToolStripMenuItem.Name = "newRoomToolStripMenuItem";
-            this.newRoomToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.newRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.newRoomToolStripMenuItem.Text = "New Room";
             this.newRoomToolStripMenuItem.Click += new System.EventHandler(this.newRoomToolStripMenuItem_Click);
             // 
@@ -2408,37 +2408,37 @@
             // 
             this.saveRoomToolStripMenuItem1.Name = "saveRoomToolStripMenuItem1";
             this.saveRoomToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(283, 22);
+            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
             this.saveRoomToolStripMenuItem1.Text = "Save Room";
             this.saveRoomToolStripMenuItem1.Click += new System.EventHandler(this.saveRoomToolStripMenuItem1_Click);
             // 
             // saveRoomToolStripMenuItem
             // 
             this.saveRoomToolStripMenuItem.Name = "saveRoomToolStripMenuItem";
-            this.saveRoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.saveRoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+                        | System.Windows.Forms.Keys.S)));
+            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.saveRoomToolStripMenuItem.Text = "Save Room As...";
             this.saveRoomToolStripMenuItem.Click += new System.EventHandler(this.saveRoomToolStripMenuItem_Click);
             // 
             // loadRoomToolStripMenuItem
             // 
             this.loadRoomToolStripMenuItem.Name = "loadRoomToolStripMenuItem";
-            this.loadRoomToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.loadRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.loadRoomToolStripMenuItem.Text = "Load Room";
             this.loadRoomToolStripMenuItem.Click += new System.EventHandler(this.loadRoomToolStripMenuItem_Click);
             // 
             // closeEditorToolStripMenuItem
             // 
             this.closeEditorToolStripMenuItem.Name = "closeEditorToolStripMenuItem";
-            this.closeEditorToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.closeEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.closeEditorToolStripMenuItem.Text = "Close Editor";
             this.closeEditorToolStripMenuItem.Click += new System.EventHandler(this.closeEditorToolStripMenuItem_Click);
             // 
             // exitGameToolStripMenuItem
             // 
             this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
-            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.exitGameToolStripMenuItem.Text = "Exit Game";
             this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
             // 
