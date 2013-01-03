@@ -12,6 +12,7 @@ namespace WindowsGame1
     {
         //Message (Text-) box variables
         Sprite MsgBox;
+        Sprite MsgBoxAscii;
         String MSGBoxText;
         String ShownMSGBoxText;
         String MSGBoxTextName;
@@ -70,6 +71,7 @@ namespace WindowsGame1
             MSGposition = new Vector2(10f, 10f);
             MSGColor = Color.White;
             MsgBox = new Sprite();
+            MsgBoxAscii = new Sprite();
             asciiMode = false;
 
             InventoryBackground = new Sprite();
@@ -105,6 +107,7 @@ namespace WindowsGame1
             MSGposition = new Vector2(10f, 10f);
             MSGColor = Color.White;
             MsgBox = new Sprite();
+            MsgBoxAscii = new Sprite();
             asciiMode = false;
 
             InventoryBackground = new Sprite();
@@ -134,6 +137,7 @@ namespace WindowsGame1
         {
             Font = myContentManager.Load<SpriteFont>("Defaultfont");
             MsgBox.LoadContent(myContentManager, "textbox");
+            MsgBoxAscii.LoadContent(myContentManager, "textboxascii");
             InventoryBackground.LoadContent(myContentManager, "inventoryback");
             InventoryBackgroundAscii.LoadContent(myContentManager, "inventorybackascii");
             InventoryHighlight.LoadContent(myContentManager, "inventoryselected");
@@ -279,8 +283,18 @@ namespace WindowsGame1
             //Messagebox needs to be shown OVER the Inventory
             if (ShowMSG)
             {
-                MsgBox.Position = new Vector2(MSGposition.X+190, MSGposition.Y+42+MSGYOffset); 
-                MsgBox.Draw(mySpriteBatch, MSGOpacity);
+                if (!asciiMode)
+                {
+                    MsgBox.Position = new Vector2(MSGposition.X + 190, MSGposition.Y + 42 + MSGYOffset);
+                    MsgBox.Draw(mySpriteBatch, MSGOpacity);
+                }
+                else
+                {
+                    MsgBoxAscii.Position = new Vector2(MSGposition.X + 190, MSGposition.Y + 42);
+                    MsgBoxAscii.Draw(mySpriteBatch);
+                }
+                
+                
                 if (!MSGMoving)
                     mySpriteBatch.DrawString(Font, ShownMSGBoxText, MSGposition, MSGColor);
 
@@ -380,10 +394,12 @@ namespace WindowsGame1
             if (asciiMode)
             {
                 FontColor = Color.Green;
+                MSGColor = Color.Green;
             }
             else
             {
                 FontColor = Color.Wheat;
+                MSGColor = Color.White;
             }
         }
 

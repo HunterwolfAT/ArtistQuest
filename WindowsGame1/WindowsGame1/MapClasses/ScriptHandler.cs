@@ -651,6 +651,7 @@ namespace WindowsGame1
                     {
                         game.player.toggleAscii(!player.asciimode);
                         game.gui.toggleAscii(!gui.asciiMode);
+                        game.player.verbmenu.toggleAscii(!game.player.verbmenu.asciiMode);
                     }
                     #endregion
                     else
