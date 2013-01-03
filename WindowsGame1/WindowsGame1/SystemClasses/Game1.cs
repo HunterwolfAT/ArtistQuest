@@ -217,7 +217,7 @@ namespace WindowsGame1
                                 {
                                     
                                     Script introscript = map.PlayIntro();
-                                    if (introscript != null)
+                                    if (introscript != null && !Debug)
                                     {
                                         gui.SetOpacity(1f);
                                         scripthandler.RunScript(introscript);
@@ -384,7 +384,7 @@ namespace WindowsGame1
             else if (!player.movelock)
             {
                 // REGULAR GAME KEYBOARD CHECKS
-
+   
                 // When ESC - Show Title Screen
                 if (KnewState.IsKeyDown(Keys.Escape) && KoldState.IsKeyUp(Keys.Escape))
                 {

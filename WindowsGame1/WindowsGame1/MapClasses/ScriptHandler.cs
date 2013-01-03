@@ -646,6 +646,13 @@ namespace WindowsGame1
                             game.map.FindObject(activescript.Commands[Commandcounter].SArgs[0]).fadeout(speed);
                     }
                     #endregion
+                    #region Toggle ASCII
+                    else if (activescript.Commands[Commandcounter].Type == "ToggleASCII")
+                    {
+                        game.player.toggleAscii(!player.asciimode);
+                        game.gui.toggleAscii(!gui.asciiMode);
+                    }
+                    #endregion
                     else
                         Console.WriteLine("Couldn't get that command right!");
                 }

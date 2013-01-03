@@ -1598,5 +1598,15 @@ namespace WindowsGame1
                 || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
                 AddCommand("Wait for Enter", iargs, sargs, commandlistbox.SelectedIndex);
         }
+
+        private void script_gs_toggleascii_Button_Click(object sender, EventArgs e)
+        {
+            List<String> sargs = new List<String>();
+            List<int> iargs = new List<int>();
+
+            if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                AddCommand("ToggleASCII", iargs, sargs, commandlistbox.SelectedIndex);
+        }
     }
 }

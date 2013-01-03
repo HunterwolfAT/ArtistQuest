@@ -235,6 +235,7 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.script_gs_toggleascii_Button = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1910,6 +1911,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.script_gs_toggleascii_Button);
             this.tabPage7.Controls.Add(this.button9);
             this.tabPage7.Controls.Add(this.label19);
             this.tabPage7.Controls.Add(this.label18);
@@ -1926,7 +1928,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(373, 141);
+            this.button9.Location = new System.Drawing.Point(272, 137);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(160, 23);
             this.button9.TabIndex = 6;
@@ -1937,7 +1939,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(384, 81);
+            this.label19.Location = new System.Drawing.Point(283, 77);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(34, 13);
             this.label19.TabIndex = 5;
@@ -1946,7 +1948,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(381, 38);
+            this.label18.Location = new System.Drawing.Point(280, 34);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(35, 13);
             this.label18.TabIndex = 4;
@@ -1954,14 +1956,14 @@
             // 
             // comglobvarvalue
             // 
-            this.comglobvarvalue.Location = new System.Drawing.Point(373, 103);
+            this.comglobvarvalue.Location = new System.Drawing.Point(272, 99);
             this.comglobvarvalue.Name = "comglobvarvalue";
             this.comglobvarvalue.Size = new System.Drawing.Size(160, 20);
             this.comglobvarvalue.TabIndex = 3;
             // 
             // comglobvarname
             // 
-            this.comglobvarname.Location = new System.Drawing.Point(373, 54);
+            this.comglobvarname.Location = new System.Drawing.Point(272, 50);
             this.comglobvarname.Name = "comglobvarname";
             this.comglobvarname.Size = new System.Drawing.Size(160, 20);
             this.comglobvarname.TabIndex = 2;
@@ -1969,7 +1971,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(174, 9);
+            this.label16.Location = new System.Drawing.Point(73, 5);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(83, 13);
             this.label16.TabIndex = 1;
@@ -1978,7 +1980,7 @@
             // comglobvarlistbox
             // 
             this.comglobvarlistbox.FormattingEnabled = true;
-            this.comglobvarlistbox.Location = new System.Drawing.Point(171, 25);
+            this.comglobvarlistbox.Location = new System.Drawing.Point(70, 21);
             this.comglobvarlistbox.Name = "comglobvarlistbox";
             this.comglobvarlistbox.Size = new System.Drawing.Size(179, 173);
             this.comglobvarlistbox.TabIndex = 0;
@@ -2400,7 +2402,7 @@
             // newRoomToolStripMenuItem
             // 
             this.newRoomToolStripMenuItem.Name = "newRoomToolStripMenuItem";
-            this.newRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.newRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.newRoomToolStripMenuItem.Text = "New Room";
             this.newRoomToolStripMenuItem.Click += new System.EventHandler(this.newRoomToolStripMenuItem_Click);
             // 
@@ -2408,7 +2410,7 @@
             // 
             this.saveRoomToolStripMenuItem1.Name = "saveRoomToolStripMenuItem1";
             this.saveRoomToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
+            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(283, 22);
             this.saveRoomToolStripMenuItem1.Text = "Save Room";
             this.saveRoomToolStripMenuItem1.Click += new System.EventHandler(this.saveRoomToolStripMenuItem1_Click);
             // 
@@ -2417,28 +2419,28 @@
             this.saveRoomToolStripMenuItem.Name = "saveRoomToolStripMenuItem";
             this.saveRoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
                         | System.Windows.Forms.Keys.S)));
-            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.saveRoomToolStripMenuItem.Text = "Save Room As...";
             this.saveRoomToolStripMenuItem.Click += new System.EventHandler(this.saveRoomToolStripMenuItem_Click);
             // 
             // loadRoomToolStripMenuItem
             // 
             this.loadRoomToolStripMenuItem.Name = "loadRoomToolStripMenuItem";
-            this.loadRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.loadRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.loadRoomToolStripMenuItem.Text = "Load Room";
             this.loadRoomToolStripMenuItem.Click += new System.EventHandler(this.loadRoomToolStripMenuItem_Click);
             // 
             // closeEditorToolStripMenuItem
             // 
             this.closeEditorToolStripMenuItem.Name = "closeEditorToolStripMenuItem";
-            this.closeEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.closeEditorToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.closeEditorToolStripMenuItem.Text = "Close Editor";
             this.closeEditorToolStripMenuItem.Click += new System.EventHandler(this.closeEditorToolStripMenuItem_Click);
             // 
             // exitGameToolStripMenuItem
             // 
             this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
-            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.exitGameToolStripMenuItem.Text = "Exit Game";
             this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
             // 
@@ -2465,6 +2467,16 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
+            // 
+            // script_gs_toggleascii_Button
+            // 
+            this.script_gs_toggleascii_Button.Location = new System.Drawing.Point(460, 21);
+            this.script_gs_toggleascii_Button.Name = "script_gs_toggleascii_Button";
+            this.script_gs_toggleascii_Button.Size = new System.Drawing.Size(214, 23);
+            this.script_gs_toggleascii_Button.TabIndex = 7;
+            this.script_gs_toggleascii_Button.Text = "Toggle ASCII Mode";
+            this.script_gs_toggleascii_Button.UseVisualStyleBackColor = true;
+            this.script_gs_toggleascii_Button.Click += new System.EventHandler(this.script_gs_toggleascii_Button_Click);
             // 
             // Form1
             // 
@@ -2747,6 +2759,7 @@
         private System.Windows.Forms.Button itempicbutton;
         private System.Windows.Forms.Button animpicbutton;
         private System.Windows.Forms.Button MSG_Enter;
+        private System.Windows.Forms.Button script_gs_toggleascii_Button;
 
     }
 }
