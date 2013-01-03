@@ -384,6 +384,40 @@ namespace WindowsGame1
             else if (!player.movelock)
             {
                 // REGULAR GAME KEYBOARD CHECKS
+
+                // CHANGE THE FRIGGIN REOLUTION AT WILL MOFO
+                if (KnewState.IsKeyDown(Keys.F5) && KoldState.IsKeyUp(Keys.F5))
+                {
+                    if (graphics.PreferredBackBufferHeight == 480)
+                    {
+                        graphics.PreferredBackBufferWidth = 1280;
+                        graphics.PreferredBackBufferHeight = 720;
+                    }
+                    else if (graphics.PreferredBackBufferHeight == 720)
+                    {
+                        graphics.PreferredBackBufferWidth = 1920;
+                        graphics.PreferredBackBufferHeight = 1080;
+                    }
+                    else if (graphics.PreferredBackBufferHeight == 1080)
+                    {
+                        graphics.PreferredBackBufferWidth = 800;
+                        graphics.PreferredBackBufferHeight = 480;
+                    }
+
+                    graphics.ApplyChanges();
+
+                    float Screenscalex = graphics.GraphicsDevice.Viewport.Width / baseScreenSize.X;
+                    float Screenscaley = graphics.GraphicsDevice.Viewport.Height / baseScreenSize.Y;
+
+                    SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);
+                }
+
+                if (KnewState.IsKeyDown(Keys.F6) && KoldState.IsKeyUp(Keys.F6))
+                {
+                    graphics.IsFullScreen = !graphics.IsFullScreen;
+                    graphics.ApplyChanges();
+                }
+                
    
                 // When ESC - Show Title Screen
                 if (KnewState.IsKeyDown(Keys.Escape) && KoldState.IsKeyUp(Keys.Escape))
