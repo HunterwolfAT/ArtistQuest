@@ -199,7 +199,6 @@ namespace WindowsGame1
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //    this.Exit();
 
-            // TODO: Add your update logic here
             if (ShowTitle)
             {
                 if (title.Update(gameTime) == -1)
@@ -266,7 +265,7 @@ namespace WindowsGame1
             }
             else // Regular Game Logic
             {
-                player.Update();
+                player.Update(gui.MSGTextDisplayed());
 
                 if (Editor.ShowPlayerPos)
                     Console.WriteLine("Player X: " + player.position.X.ToString() + " Y: " + player.position.Y.ToString());

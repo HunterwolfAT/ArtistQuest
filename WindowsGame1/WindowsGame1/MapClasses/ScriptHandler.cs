@@ -69,7 +69,7 @@ namespace WindowsGame1
                     {
                         if (gui.IsDone())
                         {
-                            //Dont do anything
+                            //Nothing to do here
                         }
                         else
                         {
@@ -171,6 +171,7 @@ namespace WindowsGame1
                         ScriptRunning = false;
                         Commandcounter = -1;
                         oldCommandcounter = -1;
+                        player.istalking = false;
 
                         IFstack.Clear();
                     }

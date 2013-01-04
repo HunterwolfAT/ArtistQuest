@@ -13,20 +13,27 @@ namespace WindowsGame1
         enum directions { up, right, down, left };
 
         public Texture2D image;
+        public Texture2D talkingimage;
         public Sprite imageascii;
         public AnimatedSprite animimage;
+        public AnimatedSprite talkimage;
+
         public Vector2 acc, speed, position;
         public Rectangle playerRect;
         public int direction;
         public bool iswalking = false;
+        public bool istalking = false;
         public int animationcounter = 0;
         public Boolean visible = true;
+
         //public Rectangle Rect;
         Vector2 OriginalPostition;
+
         int deltaX = 0;
         int deltaY = 0;
         int xspeed = 0;
         int yspeed = 0;
+
         bool movewithanim = true;
         public bool moving = false;
         public bool movelock = false;
@@ -41,6 +48,7 @@ namespace WindowsGame1
         public bool asciimode = false;
 
         public bool clipping = true;
+
 
         public Player()
         {
@@ -57,9 +65,11 @@ namespace WindowsGame1
         public void LoadContent(ContentManager myContentManager, SpriteFont font)
         {
             image = myContentManager.Load<Texture2D>("figur");
+            talkingimage = myContentManager.Load<Texture2D>("figurtalking");
             imageascii = new Sprite();
             imageascii.LoadContent(myContentManager, "at");
             animimage = new AnimatedSprite("hero", "figur", image, 4, 9);
+            talkimage = new AnimatedSprite("herotalking", "figurtalking", talkingimage, 4, 5);
 
             playerRect.Width = (animimage.Texture.Width / animimage.Columns) / 2;
             playerRect.Height = (animimage.Texture.Height / animimage.Rows) / 5;
@@ -89,7 +99,12 @@ namespace WindowsGame1
             if (visible)
             {
                 if (!asciimode)
-                    animimage.Draw(mySpriteBatch, new Vector2(playerRect.X - ((image.Width / animimage.Columns) / 5), playerRect.Y - (((image.Height / animimage.Rows) / 5) * 4)));
+                {
+                    if (!istalking)
+                        animimage.Draw(mySpriteBatch, new Vector2(playerRect.X - ((image.Width / animimage.Columns) / 5), playerRect.Y - (((image.Height / animimage.Rows) / 5) * 4)));
+                    else
+                        talkimage.Draw(mySpriteBatch, new Vector2(playerRect.X - ((image.Width / animimage.Columns) / 5), playerRect.Y - (((image.Height / animimage.Rows) / 5) * 4)));
+                }
                 else
                 {
                     imageascii.Position = new Vector2(position.X, position.Y);
@@ -196,7 +211,7 @@ namespace WindowsGame1
             }
         }
 
-        public void Update()
+        public void Update(bool guimsgscrollingdone)
         {
             // Automatic Movement over a specified distance
             if (moving)
@@ -257,6 +272,11 @@ namespace WindowsGame1
                 playerRect.Y = (int)position.Y - playerRect.Height / 2;
             }
 
+            if (guimsgscrollingdone)
+                istalking = false;
+            else
+                istalking = true;
+
             animate();
 
             if (!moving)
@@ -274,10 +294,17 @@ namespace WindowsGame1
                     if (animationcounter > 35)
                         animationcounter = 0;
                 }
+                else if (istalking)
+                {
+                    animationcounter++;
+                    if (animationcounter > 29)
+                        animationcounter = 0;
+                }
                 else
                     animationcounter = 0;
 
                 animimage.SetFrame(9 + (int)(animationcounter / 4));
+                talkimage.SetFrame(5 + (int)(animationcounter / 6));
             }
             if (direction == (int)directions.down)
             {
@@ -287,10 +314,17 @@ namespace WindowsGame1
                     if (animationcounter > 35)
                         animationcounter = 0;
                 }
+                else if (istalking)
+                {
+                    animationcounter++;
+                    if (animationcounter > 29)
+                        animationcounter = 0;
+                }
                 else
                     animationcounter = 0;
 
                 animimage.SetFrame((int)(animationcounter / 4));
+                talkimage.SetFrame((int)(animationcounter / 6));
             }
             if (direction == (int)directions.left)
             {
@@ -300,10 +334,17 @@ namespace WindowsGame1
                     if (animationcounter > 31)
                         animationcounter = 0;
                 }
+                else if (istalking)
+                {
+                    animationcounter++;
+                    if (animationcounter > 29)
+                        animationcounter = 0;
+                }
                 else
                     animationcounter = 0;
 
                 animimage.SetFrame(27 + (int)(animationcounter / 4));
+                talkimage.SetFrame(15 + (int)(animationcounter / 6));
             }
             if (direction == (int)directions.right)
             {
@@ -313,10 +354,17 @@ namespace WindowsGame1
                     if (animationcounter > 31)
                         animationcounter = 0;
                 }
+                else if (istalking)
+                {
+                    animationcounter++;
+                    if (animationcounter > 29)
+                        animationcounter = 0;
+                }
                 else
                     animationcounter = 0;
 
                 animimage.SetFrame(18 + (int)(animationcounter / 4));
+                talkimage.SetFrame(10 + (int)(animationcounter / 6));
             }
         }
 

@@ -406,6 +406,11 @@ namespace WindowsGame1
             }
         }
 
+        public Boolean MSGTextDisplayed()
+        {
+            return (MSGBoxText == ShownMSGBoxText);
+        }
+
         public void SetOpacity(float value)
         {
             FadeOpacity = value;

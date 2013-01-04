@@ -170,7 +170,7 @@ namespace WindowsGame1
 
                     mySpriteBatch.DrawString(font, "Enter", new Vector2(position.X - 56, position.Y + 68), TextColor);
 
-                    //Draw the SHift-Key
+                    //Draw the Shift-Key
                     if (!asciiMode)
                     {
                         ShiftKeySprite.Position = new Vector2(position.X + 10, position.Y + 64);
