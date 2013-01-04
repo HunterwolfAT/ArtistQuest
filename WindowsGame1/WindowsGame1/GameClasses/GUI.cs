@@ -57,6 +57,14 @@ namespace WindowsGame1
         Sprite EnterKeySprite;
         Sprite SpaceKeySprite;
         Sprite ShiftKeySprite;
+        // Original Sprites
+        Sprite EnterKeySpriteOrg;
+        Sprite SpaceKeySpriteOrg;
+        Sprite ShiftKeySpriteOrg;
+        // Ascii Versions
+        Sprite EnterKeySpriteascii;
+        Sprite SpaceKeySpriteascii;
+        Sprite ShiftKeySpriteascii;
 
         // Font font
         SpriteFont Font;
@@ -91,6 +99,12 @@ namespace WindowsGame1
             EnterKeySprite = new Sprite();
             SpaceKeySprite = new Sprite();
             ShiftKeySprite = new Sprite();
+            EnterKeySpriteOrg = new Sprite();
+            SpaceKeySpriteOrg = new Sprite();
+            ShiftKeySpriteOrg = new Sprite();
+            EnterKeySpriteascii = new Sprite();
+            SpaceKeySpriteascii = new Sprite();
+            ShiftKeySpriteascii = new Sprite();
 
             FontColor = Color.Wheat;
 
@@ -127,6 +141,12 @@ namespace WindowsGame1
             EnterKeySprite = new Sprite();
             SpaceKeySprite = new Sprite();
             ShiftKeySprite = new Sprite();
+            EnterKeySpriteOrg = new Sprite();
+            SpaceKeySpriteOrg = new Sprite();
+            ShiftKeySpriteOrg = new Sprite();
+            EnterKeySpriteascii = new Sprite();
+            SpaceKeySpriteascii = new Sprite();
+            ShiftKeySpriteascii = new Sprite();
 
             FontColor = Color.Wheat;
 
@@ -142,9 +162,16 @@ namespace WindowsGame1
             InventoryBackgroundAscii.LoadContent(myContentManager, "inventorybackascii");
             InventoryHighlight.LoadContent(myContentManager, "inventoryselected");
 
-            EnterKeySprite.LoadContent(myContentManager, "keys/enterkey");
-            SpaceKeySprite.LoadContent(myContentManager, "keys/spacekey");
-            ShiftKeySprite.LoadContent(myContentManager, "keys/rshiftkey");
+            EnterKeySpriteOrg.LoadContent(myContentManager, "keys/enterkey");
+            SpaceKeySpriteOrg.LoadContent(myContentManager, "keys/spacekey");
+            ShiftKeySpriteOrg.LoadContent(myContentManager, "keys/rshiftkey");
+            EnterKeySpriteascii.LoadContent(myContentManager, "keys/enterkeyascii");
+            SpaceKeySpriteascii.LoadContent(myContentManager, "keys/spacekeyascii");
+            ShiftKeySpriteascii.LoadContent(myContentManager, "keys/rshiftkeyascii");
+
+            EnterKeySprite = EnterKeySpriteOrg;
+            SpaceKeySprite = SpaceKeySpriteOrg;
+            ShiftKeySprite = ShiftKeySpriteOrg;
 
             ScreenFadeTex.LoadContent(myContentManager, "fadepic");
             ScreenFadeTex.Color = new Color(255, 255, 255, FadeOpacity);
@@ -395,11 +422,19 @@ namespace WindowsGame1
             {
                 FontColor = Color.Green;
                 MSGColor = Color.Green;
+
+                EnterKeySprite = EnterKeySpriteascii;
+                SpaceKeySprite = SpaceKeySpriteascii;
+                ShiftKeySprite = ShiftKeySpriteascii;
             }
             else
             {
                 FontColor = Color.Wheat;
                 MSGColor = Color.White;
+
+                EnterKeySprite = EnterKeySpriteOrg;
+                SpaceKeySprite = SpaceKeySpriteOrg;
+                ShiftKeySprite = ShiftKeySpriteOrg;
             }
         }
 
