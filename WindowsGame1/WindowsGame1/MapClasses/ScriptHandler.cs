@@ -419,9 +419,6 @@ namespace WindowsGame1
 
                                 if (activescript.Commands[a].Type == "END IF")
                                 {
-                                    if (ifcounter > 0)
-                                        ifcounter--;
-
                                     if (ifcounter == 0)
                                     {
                                         Console.WriteLine("SETTING SCRIPT TO LINE: " + a);
@@ -429,6 +426,9 @@ namespace WindowsGame1
                                         Commandcounter = a - 1;
                                         break;
                                     }
+
+                                    if (ifcounter > 0)
+                                        ifcounter--;
                                 }
                             }
                         }
