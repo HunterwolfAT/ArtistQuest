@@ -163,7 +163,7 @@ namespace WindowsGame1
             float Screenscaley = graphics.GraphicsDevice.Viewport.Height / baseScreenSize.Y;
 
             //Testwise loading a mp3 of bentalfloss
-            sound = new Sound();
+            sound = new Sound(GetGamePath(), this.Content);
             sound.LoadMusic("bmby", Content);
 
             SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);

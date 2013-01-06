@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Media;
+using System.IO;
 
 namespace WindowsGame1
 {
@@ -13,10 +14,24 @@ namespace WindowsGame1
         private List<SoundEffect> sfx;
         public List<Song> music;
 
-        public Sound()
+        public Sound(String gamepath, ContentManager myContent)
         {
             sfx = new List<SoundEffect>();
             music = new List<Song>();
+
+            // Load all the music and sfx files that are in the content pipeline
+
+                                                          // TODO: V HIER DIE ZAHL MUSS WENN AUF RELEASE GESTELLT WIRD GEÄNDERT WERDEN 
+            String path = gamepath.Substring(0, gamepath.Length - 14) + "Content\\music\\";
+            Console.WriteLine(path);
+            foreach (string f in Directory.GetFiles(path))
+            {
+                string filename = f.Substring(f.LastIndexOf(@"\") + 1);
+                filename = filename.Substring(0, filename.Length - 4);
+                Song newsong = myContent.Load<Song>("music\\" + filename);
+                Console.WriteLine(filename);
+            }
+
         }
 
         public void LoadSound(String soundname, ContentManager Content)
@@ -57,6 +72,17 @@ namespace WindowsGame1
                 Console.WriteLine("Couldn't find that Piece Of Music!");
         }
 
+        public void PlayMusic(Song song)
+        {
+            MediaPlayer.Play(song);
+        }
+
+        public void StopMusic() { MediaPlayer.Stop(); }
+
+        public void PauseMusic() { MediaPlayer.Pause(); }
+
+        public void ResumeMusic() { MediaPlayer.Resume(); }
+
         SoundEffect FindSfx(String name)
         {
             foreach (SoundEffect fx in sfx)
@@ -70,7 +96,7 @@ namespace WindowsGame1
 
         Song FindSong(String name)
         {
-            Console.WriteLine("Looking for: \"music\\\"" + name);
+            Console.WriteLine("Looking for: " + name);
             foreach (Song song in music)
             {
                 if (song.Name == name)

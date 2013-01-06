@@ -177,6 +177,7 @@
             this.islistbox = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.script_gs_toggleascii_Button = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -235,7 +236,11 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.script_gs_toggleascii_Button = new System.Windows.Forms.Button();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.AudioMusic = new System.Windows.Forms.ListBox();
+            this.AudioGroupMusic = new System.Windows.Forms.GroupBox();
+            this.AudioMusicPlay_Button = new System.Windows.Forms.Button();
+            this.AudioMusicStop_Button = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -277,6 +282,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.anispeedBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.tabPage11.SuspendLayout();
+            this.AudioGroupMusic.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -297,6 +304,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1926,6 +1934,16 @@
             this.tabPage7.Text = "Game Stats";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // script_gs_toggleascii_Button
+            // 
+            this.script_gs_toggleascii_Button.Location = new System.Drawing.Point(460, 21);
+            this.script_gs_toggleascii_Button.Name = "script_gs_toggleascii_Button";
+            this.script_gs_toggleascii_Button.Size = new System.Drawing.Size(214, 23);
+            this.script_gs_toggleascii_Button.TabIndex = 7;
+            this.script_gs_toggleascii_Button.Text = "Toggle ASCII Mode";
+            this.script_gs_toggleascii_Button.UseVisualStyleBackColor = true;
+            this.script_gs_toggleascii_Button.Click += new System.EventHandler(this.script_gs_toggleascii_Button_Click);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(272, 137);
@@ -2468,15 +2486,55 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // script_gs_toggleascii_Button
+            // tabPage11
             // 
-            this.script_gs_toggleascii_Button.Location = new System.Drawing.Point(460, 21);
-            this.script_gs_toggleascii_Button.Name = "script_gs_toggleascii_Button";
-            this.script_gs_toggleascii_Button.Size = new System.Drawing.Size(214, 23);
-            this.script_gs_toggleascii_Button.TabIndex = 7;
-            this.script_gs_toggleascii_Button.Text = "Toggle ASCII Mode";
-            this.script_gs_toggleascii_Button.UseVisualStyleBackColor = true;
-            this.script_gs_toggleascii_Button.Click += new System.EventHandler(this.script_gs_toggleascii_Button_Click);
+            this.tabPage11.Controls.Add(this.AudioGroupMusic);
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Size = new System.Drawing.Size(698, 533);
+            this.tabPage11.TabIndex = 5;
+            this.tabPage11.Text = "Audio";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // AudioMusic
+            // 
+            this.AudioMusic.FormattingEnabled = true;
+            this.AudioMusic.Location = new System.Drawing.Point(6, 19);
+            this.AudioMusic.Name = "AudioMusic";
+            this.AudioMusic.Size = new System.Drawing.Size(128, 199);
+            this.AudioMusic.TabIndex = 0;
+            // 
+            // AudioGroupMusic
+            // 
+            this.AudioGroupMusic.Controls.Add(this.AudioMusicStop_Button);
+            this.AudioGroupMusic.Controls.Add(this.AudioMusicPlay_Button);
+            this.AudioGroupMusic.Controls.Add(this.AudioMusic);
+            this.AudioGroupMusic.Location = new System.Drawing.Point(8, 16);
+            this.AudioGroupMusic.Name = "AudioGroupMusic";
+            this.AudioGroupMusic.Size = new System.Drawing.Size(242, 293);
+            this.AudioGroupMusic.TabIndex = 1;
+            this.AudioGroupMusic.TabStop = false;
+            this.AudioGroupMusic.Text = "Music";
+            // 
+            // AudioMusicPlay_Button
+            // 
+            this.AudioMusicPlay_Button.Location = new System.Drawing.Point(141, 20);
+            this.AudioMusicPlay_Button.Name = "AudioMusicPlay_Button";
+            this.AudioMusicPlay_Button.Size = new System.Drawing.Size(95, 29);
+            this.AudioMusicPlay_Button.TabIndex = 1;
+            this.AudioMusicPlay_Button.Text = "Test Play";
+            this.AudioMusicPlay_Button.UseVisualStyleBackColor = true;
+            this.AudioMusicPlay_Button.Click += new System.EventHandler(this.AudioMusicPlay_Button_Click);
+            // 
+            // AudioMusicStop_Button
+            // 
+            this.AudioMusicStop_Button.Location = new System.Drawing.Point(141, 56);
+            this.AudioMusicStop_Button.Name = "AudioMusicStop_Button";
+            this.AudioMusicStop_Button.Size = new System.Drawing.Size(95, 28);
+            this.AudioMusicStop_Button.TabIndex = 2;
+            this.AudioMusicStop_Button.Text = "Stop";
+            this.AudioMusicStop_Button.UseVisualStyleBackColor = true;
+            this.AudioMusicStop_Button.Click += new System.EventHandler(this.AudioMusicStop_Button_Click);
             // 
             // Form1
             // 
@@ -2545,6 +2603,8 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.tabPage11.ResumeLayout(false);
+            this.AudioGroupMusic.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2760,6 +2820,11 @@
         private System.Windows.Forms.Button animpicbutton;
         private System.Windows.Forms.Button MSG_Enter;
         private System.Windows.Forms.Button script_gs_toggleascii_Button;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.GroupBox AudioGroupMusic;
+        private System.Windows.Forms.ListBox AudioMusic;
+        private System.Windows.Forms.Button AudioMusicStop_Button;
+        private System.Windows.Forms.Button AudioMusicPlay_Button;
 
     }
 }

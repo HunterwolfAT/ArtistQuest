@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Xna.Framework;
 using System.Drawing;
+using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
@@ -121,6 +122,13 @@ namespace WindowsGame1
             verblistscript.Items.Clear();
             scriptitemscriptlistbox.Items.Clear();
             commandlistbox.Items.Clear();
+
+            // Audio
+            AudioMusic.Items.Clear();
+            foreach (Song song in game.sound.music)
+            {
+                AudioMusic.Items.Add(song.Name);
+            }
 
             UpdateCommandlist();
             
@@ -1607,6 +1615,19 @@ namespace WindowsGame1
             if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                 || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
                 AddCommand("ToggleASCII", iargs, sargs, commandlistbox.SelectedIndex);
+        }
+
+        private void AudioMusicPlay_Button_Click(object sender, EventArgs e)
+        {
+            if (AudioMusic.SelectedIndex != -1)
+            {
+                game.sound.PlayMusic(game.sound.music[AudioMusic.SelectedIndex]);
+            }
+        }
+
+        private void AudioMusicStop_Button_Click(object sender, EventArgs e)
+        {
+            game.sound.StopMusic();
         }
     }
 }
