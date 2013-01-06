@@ -36,6 +36,7 @@ namespace WindowsGame1
 
         //Game critical Objects
         public Project proj;
+        public Sound sound;
         public Maps map;
         public Player player;
         public Itemhandler items;
@@ -161,6 +162,10 @@ namespace WindowsGame1
             float Screenscalex = graphics.GraphicsDevice.Viewport.Width / baseScreenSize.X;
             float Screenscaley = graphics.GraphicsDevice.Viewport.Height / baseScreenSize.Y;
 
+            //Testwise loading a mp3 of bentalfloss
+            sound = new Sound();
+            sound.LoadMusic("bmby", Content);
+
             SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);
         }
 
@@ -222,6 +227,8 @@ namespace WindowsGame1
                                         scripthandler.RunScript(introscript);
                                     }
                                     title.Startup = false;
+                                    Console.WriteLine(sound.music[0].Name);
+                                    sound.PlayMusic("bmby");
                                 }
                                 break;
                             case 1:

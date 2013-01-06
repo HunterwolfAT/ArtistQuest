@@ -8,32 +8,38 @@ using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
-    class Sound
+    public class Sound
     {
         private List<SoundEffect> sfx;
-        private List<Song> music;
+        public List<Song> music;
 
-        void LoadSound(String soundname, ContentManager Content)
+        public Sound()
+        {
+            sfx = new List<SoundEffect>();
+            music = new List<Song>();
+        }
+
+        public void LoadSound(String soundname, ContentManager Content)
         {
             SoundEffect effect = Content.Load<SoundEffect>("sounds/" + soundname);
             sfx.Add(effect);
         }
-        void LoadMusic(String musicname, ContentManager Content)
+        public void LoadMusic(String musicname, ContentManager Content)
         {
             Song song = Content.Load<Song>("music/" + musicname);
             music.Add(song);
         }
 
-        void PlaySound(String name)
+        public void PlaySound(String name)
         {
-            SoundEffect effect = FindSfx(name);
+            SoundEffect effect = FindSfx("sound/" + name);
             if (effect != null)
                 effect.Play();
             else
                 Console.WriteLine("Couldn't find that Soundeffect!");
         }
 
-        void PlaySound(String name, float volume, float pitch, float pan)
+        public void PlaySound(String name, float volume, float pitch, float pan)
         {
             SoundEffect effect = FindSfx(name);
             if (effect != null)
@@ -42,9 +48,9 @@ namespace WindowsGame1
                 Console.WriteLine("Couldn't find that Soundeffect!");
         }
 
-        void PlayMusic(String name)
+        public void PlayMusic(String name)
         {
-            Song song = FindSong(name);
+            Song song = FindSong("music\\" + name);
             if (song != null)
                 MediaPlayer.Play(song);
             else
@@ -64,6 +70,7 @@ namespace WindowsGame1
 
         Song FindSong(String name)
         {
+            Console.WriteLine("Looking for: \"music\\\"" + name);
             foreach (Song song in music)
             {
                 if (song.Name == name)
