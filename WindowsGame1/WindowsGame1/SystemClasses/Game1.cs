@@ -164,7 +164,6 @@ namespace WindowsGame1
 
             //Testwise loading a mp3 of bentalfloss
             sound = new Sound(GetGamePath(), this.Content);
-            sound.LoadMusic("bmby", Content);
 
             SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);
         }
@@ -228,7 +227,7 @@ namespace WindowsGame1
                                     }
                                     title.Startup = false;
                                     Console.WriteLine(sound.music[0].Name);
-                                    sound.PlayMusic("bmby");
+                                    //sound.PlayMusic("music/bmby");
                                 }
                                 break;
                             case 1:
@@ -844,6 +843,13 @@ namespace WindowsGame1
                 Snapshot newsnapshot = new Snapshot(GameVariables, map, map.Objects);
 
                 Snapshots.Add(newsnapshot);
+            }
+
+            // If the map has a background song, load and play it now!
+            if (map.backgroundmusic != "")
+            {
+                //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
+                sound.PlayMusic(map.backgroundmusic);
             }
 
             Console.WriteLine("MAP LOCKED AND LOADED, SIR!");

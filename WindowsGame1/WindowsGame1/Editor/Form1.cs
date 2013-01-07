@@ -125,10 +125,17 @@ namespace WindowsGame1
 
             // Audio
             AudioMusic.Items.Clear();
+            AudioMusic.Items.Add("<NONE>");
             foreach (Song song in game.sound.music)
             {
                 AudioMusic.Items.Add(song.Name);
             }
+
+            if (game.map.backgroundmusic != null)
+                AudioMusic.SelectedIndex = game.sound.FindSongIndex(game.map.backgroundmusic) + 1;
+            else
+                AudioMusic.SelectedIndex = 0;
+            Console.WriteLine(AudioMusic.SelectedIndex);
 
             UpdateCommandlist();
             
@@ -1621,13 +1628,19 @@ namespace WindowsGame1
         {
             if (AudioMusic.SelectedIndex != -1)
             {
-                game.sound.PlayMusic(game.sound.music[AudioMusic.SelectedIndex]);
+                game.sound.PlayMusic(game.sound.music[AudioMusic.SelectedIndex - 1]);   // Gotta do -1 because the first Item in the list is <NONE>
             }
         }
 
         private void AudioMusicStop_Button_Click(object sender, EventArgs e)
         {
             game.sound.StopMusic();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            if (AudioMusic.SelectedIndex > 0)
+                game.map.backgroundmusic = AudioMusic.Items[AudioMusic.SelectedIndex].ToString();
         }
     }
 }

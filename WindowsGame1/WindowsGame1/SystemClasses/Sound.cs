@@ -29,6 +29,7 @@ namespace WindowsGame1
                 string filename = f.Substring(f.LastIndexOf(@"\") + 1);
                 filename = filename.Substring(0, filename.Length - 4);
                 Song newsong = myContent.Load<Song>("music\\" + filename);
+                music.Add(newsong);
                 Console.WriteLine(filename);
             }
 
@@ -65,7 +66,7 @@ namespace WindowsGame1
 
         public void PlayMusic(String name)
         {
-            Song song = FindSong("music\\" + name);
+            Song song = FindSong(name);
             if (song != null)
                 MediaPlayer.Play(song);
             else
@@ -104,6 +105,21 @@ namespace WindowsGame1
             }
 
             return null;
+        }
+
+        public int FindSongIndex(String name)
+        {
+            Console.WriteLine("Looking for: " + name);
+            int x = 0;
+            foreach (Song song in music)
+            {
+                Console.WriteLine(song.Name);
+                if (song.Name == name)
+                    return x;
+                x++;
+            }
+
+            return -1;
         }
     }
 }

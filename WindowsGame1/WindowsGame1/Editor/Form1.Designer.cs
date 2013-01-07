@@ -241,6 +241,14 @@
             this.AudioGroupMusic = new System.Windows.Forms.GroupBox();
             this.AudioMusicPlay_Button = new System.Windows.Forms.Button();
             this.AudioMusicStop_Button = new System.Windows.Forms.Button();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.Script_Music_LB = new System.Windows.Forms.ListBox();
+            this.script_music_play_B = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
+            this.button25 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -284,6 +292,7 @@
             this.statusStrip1.SuspendLayout();
             this.tabPage11.SuspendLayout();
             this.AudioGroupMusic.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -1159,6 +1168,7 @@
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage9);
+            this.tabControl2.Controls.Add(this.tabPage12);
             this.tabControl2.Location = new System.Drawing.Point(0, 298);
             this.tabControl2.Multiline = true;
             this.tabControl2.Name = "tabControl2";
@@ -2506,6 +2516,7 @@
             // 
             // AudioGroupMusic
             // 
+            this.AudioGroupMusic.Controls.Add(this.button25);
             this.AudioGroupMusic.Controls.Add(this.AudioMusicStop_Button);
             this.AudioGroupMusic.Controls.Add(this.AudioMusicPlay_Button);
             this.AudioGroupMusic.Controls.Add(this.AudioMusic);
@@ -2518,7 +2529,7 @@
             // 
             // AudioMusicPlay_Button
             // 
-            this.AudioMusicPlay_Button.Location = new System.Drawing.Point(141, 20);
+            this.AudioMusicPlay_Button.Location = new System.Drawing.Point(141, 53);
             this.AudioMusicPlay_Button.Name = "AudioMusicPlay_Button";
             this.AudioMusicPlay_Button.Size = new System.Drawing.Size(95, 29);
             this.AudioMusicPlay_Button.TabIndex = 1;
@@ -2528,13 +2539,91 @@
             // 
             // AudioMusicStop_Button
             // 
-            this.AudioMusicStop_Button.Location = new System.Drawing.Point(141, 56);
+            this.AudioMusicStop_Button.Location = new System.Drawing.Point(141, 88);
             this.AudioMusicStop_Button.Name = "AudioMusicStop_Button";
             this.AudioMusicStop_Button.Size = new System.Drawing.Size(95, 28);
             this.AudioMusicStop_Button.TabIndex = 2;
             this.AudioMusicStop_Button.Text = "Stop";
             this.AudioMusicStop_Button.UseVisualStyleBackColor = true;
             this.AudioMusicStop_Button.Click += new System.EventHandler(this.AudioMusicStop_Button_Click);
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.label38);
+            this.tabPage12.Controls.Add(this.button24);
+            this.tabPage12.Controls.Add(this.button23);
+            this.tabPage12.Controls.Add(this.button13);
+            this.tabPage12.Controls.Add(this.script_music_play_B);
+            this.tabPage12.Controls.Add(this.Script_Music_LB);
+            this.tabPage12.Location = new System.Drawing.Point(4, 4);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Size = new System.Drawing.Size(690, 208);
+            this.tabPage12.TabIndex = 5;
+            this.tabPage12.Text = "Audio";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // Script_Music_LB
+            // 
+            this.Script_Music_LB.FormattingEnabled = true;
+            this.Script_Music_LB.Location = new System.Drawing.Point(8, 27);
+            this.Script_Music_LB.Name = "Script_Music_LB";
+            this.Script_Music_LB.Size = new System.Drawing.Size(128, 173);
+            this.Script_Music_LB.TabIndex = 1;
+            // 
+            // script_music_play_B
+            // 
+            this.script_music_play_B.Location = new System.Drawing.Point(142, 27);
+            this.script_music_play_B.Name = "script_music_play_B";
+            this.script_music_play_B.Size = new System.Drawing.Size(58, 31);
+            this.script_music_play_B.TabIndex = 2;
+            this.script_music_play_B.Text = "Play";
+            this.script_music_play_B.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(142, 101);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(57, 31);
+            this.button13.TabIndex = 3;
+            this.button13.Text = "Pause";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(142, 64);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(57, 31);
+            this.button23.TabIndex = 4;
+            this.button23.Text = "Stop";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(143, 138);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(57, 31);
+            this.button24.TabIndex = 5;
+            this.button24.Text = "Resume";
+            this.button24.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(11, 11);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(60, 13);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "Music Stuff";
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(141, 19);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(95, 29);
+            this.button25.TabIndex = 3;
+            this.button25.Text = "Set";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // Form1
             // 
@@ -2605,6 +2694,8 @@
             this.statusStrip1.PerformLayout();
             this.tabPage11.ResumeLayout(false);
             this.AudioGroupMusic.ResumeLayout(false);
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2825,6 +2916,14 @@
         private System.Windows.Forms.ListBox AudioMusic;
         private System.Windows.Forms.Button AudioMusicStop_Button;
         private System.Windows.Forms.Button AudioMusicPlay_Button;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button script_music_play_B;
+        private System.Windows.Forms.ListBox Script_Music_LB;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button button25;
 
     }
 }
