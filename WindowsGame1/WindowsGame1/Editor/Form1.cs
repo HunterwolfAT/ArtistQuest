@@ -125,10 +125,12 @@ namespace WindowsGame1
 
             // Audio
             AudioMusic.Items.Clear();
+            Script_Music_LB.Items.Clear();
             AudioMusic.Items.Add("<NONE>");
             foreach (Song song in game.sound.music)
             {
                 AudioMusic.Items.Add(song.Name);
+                Script_Music_LB.Items.Add(song.Name);
             }
 
             if (game.map.backgroundmusic != null)
@@ -1642,5 +1644,67 @@ namespace WindowsGame1
             if (AudioMusic.SelectedIndex > 0)
                 game.map.backgroundmusic = AudioMusic.Items[AudioMusic.SelectedIndex].ToString();
         }
+
+        private void script_music_play_B_Click(object sender, EventArgs e)
+        {
+            if (Script_Music_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Play Song", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (Script_Music_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Stop Song", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            if (Script_Music_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Pause Song", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if (Script_Music_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Resume Song", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+
     }
 }

@@ -189,6 +189,13 @@
             this.comremoveintentorybutton = new System.Windows.Forms.Button();
             this.comaddinventorybutton = new System.Windows.Forms.Button();
             this.comitemlist = new System.Windows.Forms.ListBox();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.label38 = new System.Windows.Forms.Label();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.script_music_play_B = new System.Windows.Forms.Button();
+            this.Script_Music_LB = new System.Windows.Forms.ListBox();
             this.commandlistbox = new System.Windows.Forms.ListBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.itempicbutton = new System.Windows.Forms.Button();
@@ -224,6 +231,12 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.aniobjectlistbox = new System.Windows.Forms.ListBox();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.AudioGroupMusic = new System.Windows.Forms.GroupBox();
+            this.button25 = new System.Windows.Forms.Button();
+            this.AudioMusicStop_Button = new System.Windows.Forms.Button();
+            this.AudioMusicPlay_Button = new System.Windows.Forms.Button();
+            this.AudioMusic = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newRoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -236,19 +249,6 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.AudioMusic = new System.Windows.Forms.ListBox();
-            this.AudioGroupMusic = new System.Windows.Forms.GroupBox();
-            this.AudioMusicPlay_Button = new System.Windows.Forms.Button();
-            this.AudioMusicStop_Button = new System.Windows.Forms.Button();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.Script_Music_LB = new System.Windows.Forms.ListBox();
-            this.script_music_play_B = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.label38 = new System.Windows.Forms.Label();
-            this.button25 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -282,17 +282,17 @@
             this.groupBox3.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AnimationPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anispeedBox)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.tabPage11.SuspendLayout();
             this.AudioGroupMusic.SuspendLayout();
-            this.tabPage12.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -2054,6 +2054,78 @@
             this.comitemlist.Size = new System.Drawing.Size(210, 134);
             this.comitemlist.TabIndex = 0;
             // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.label38);
+            this.tabPage12.Controls.Add(this.button24);
+            this.tabPage12.Controls.Add(this.button23);
+            this.tabPage12.Controls.Add(this.button13);
+            this.tabPage12.Controls.Add(this.script_music_play_B);
+            this.tabPage12.Controls.Add(this.Script_Music_LB);
+            this.tabPage12.Location = new System.Drawing.Point(4, 4);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Size = new System.Drawing.Size(690, 208);
+            this.tabPage12.TabIndex = 5;
+            this.tabPage12.Text = "Audio";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(11, 11);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(60, 13);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "Music Stuff";
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(143, 138);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(57, 31);
+            this.button24.TabIndex = 5;
+            this.button24.Text = "Resume";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(142, 64);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(57, 31);
+            this.button23.TabIndex = 4;
+            this.button23.Text = "Stop";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(142, 101);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(57, 31);
+            this.button13.TabIndex = 3;
+            this.button13.Text = "Pause";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click_1);
+            // 
+            // script_music_play_B
+            // 
+            this.script_music_play_B.Location = new System.Drawing.Point(142, 27);
+            this.script_music_play_B.Name = "script_music_play_B";
+            this.script_music_play_B.Size = new System.Drawing.Size(58, 31);
+            this.script_music_play_B.TabIndex = 2;
+            this.script_music_play_B.Text = "Play";
+            this.script_music_play_B.UseVisualStyleBackColor = true;
+            this.script_music_play_B.Click += new System.EventHandler(this.script_music_play_B_Click);
+            // 
+            // Script_Music_LB
+            // 
+            this.Script_Music_LB.FormattingEnabled = true;
+            this.Script_Music_LB.Location = new System.Drawing.Point(8, 27);
+            this.Script_Music_LB.Name = "Script_Music_LB";
+            this.Script_Music_LB.Size = new System.Drawing.Size(128, 173);
+            this.Script_Music_LB.TabIndex = 1;
+            // 
             // commandlistbox
             // 
             this.commandlistbox.FormattingEnabled = true;
@@ -2404,6 +2476,67 @@
             this.aniobjectlistbox.TabIndex = 0;
             this.aniobjectlistbox.SelectedIndexChanged += new System.EventHandler(this.aniobjectlistbox_SelectedIndexChanged);
             // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.AudioGroupMusic);
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Size = new System.Drawing.Size(698, 533);
+            this.tabPage11.TabIndex = 5;
+            this.tabPage11.Text = "Audio";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // AudioGroupMusic
+            // 
+            this.AudioGroupMusic.Controls.Add(this.button25);
+            this.AudioGroupMusic.Controls.Add(this.AudioMusicStop_Button);
+            this.AudioGroupMusic.Controls.Add(this.AudioMusicPlay_Button);
+            this.AudioGroupMusic.Controls.Add(this.AudioMusic);
+            this.AudioGroupMusic.Location = new System.Drawing.Point(8, 16);
+            this.AudioGroupMusic.Name = "AudioGroupMusic";
+            this.AudioGroupMusic.Size = new System.Drawing.Size(242, 293);
+            this.AudioGroupMusic.TabIndex = 1;
+            this.AudioGroupMusic.TabStop = false;
+            this.AudioGroupMusic.Text = "Music";
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(141, 19);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(95, 29);
+            this.button25.TabIndex = 3;
+            this.button25.Text = "Set";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // AudioMusicStop_Button
+            // 
+            this.AudioMusicStop_Button.Location = new System.Drawing.Point(141, 88);
+            this.AudioMusicStop_Button.Name = "AudioMusicStop_Button";
+            this.AudioMusicStop_Button.Size = new System.Drawing.Size(95, 28);
+            this.AudioMusicStop_Button.TabIndex = 2;
+            this.AudioMusicStop_Button.Text = "Stop";
+            this.AudioMusicStop_Button.UseVisualStyleBackColor = true;
+            this.AudioMusicStop_Button.Click += new System.EventHandler(this.AudioMusicStop_Button_Click);
+            // 
+            // AudioMusicPlay_Button
+            // 
+            this.AudioMusicPlay_Button.Location = new System.Drawing.Point(141, 53);
+            this.AudioMusicPlay_Button.Name = "AudioMusicPlay_Button";
+            this.AudioMusicPlay_Button.Size = new System.Drawing.Size(95, 29);
+            this.AudioMusicPlay_Button.TabIndex = 1;
+            this.AudioMusicPlay_Button.Text = "Test Play";
+            this.AudioMusicPlay_Button.UseVisualStyleBackColor = true;
+            this.AudioMusicPlay_Button.Click += new System.EventHandler(this.AudioMusicPlay_Button_Click);
+            // 
+            // AudioMusic
+            // 
+            this.AudioMusic.FormattingEnabled = true;
+            this.AudioMusic.Location = new System.Drawing.Point(6, 19);
+            this.AudioMusic.Name = "AudioMusic";
+            this.AudioMusic.Size = new System.Drawing.Size(128, 199);
+            this.AudioMusic.TabIndex = 0;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2430,7 +2563,7 @@
             // newRoomToolStripMenuItem
             // 
             this.newRoomToolStripMenuItem.Name = "newRoomToolStripMenuItem";
-            this.newRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.newRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.newRoomToolStripMenuItem.Text = "New Room";
             this.newRoomToolStripMenuItem.Click += new System.EventHandler(this.newRoomToolStripMenuItem_Click);
             // 
@@ -2438,7 +2571,7 @@
             // 
             this.saveRoomToolStripMenuItem1.Name = "saveRoomToolStripMenuItem1";
             this.saveRoomToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(283, 22);
+            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
             this.saveRoomToolStripMenuItem1.Text = "Save Room";
             this.saveRoomToolStripMenuItem1.Click += new System.EventHandler(this.saveRoomToolStripMenuItem1_Click);
             // 
@@ -2447,28 +2580,28 @@
             this.saveRoomToolStripMenuItem.Name = "saveRoomToolStripMenuItem";
             this.saveRoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
                         | System.Windows.Forms.Keys.S)));
-            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.saveRoomToolStripMenuItem.Text = "Save Room As...";
             this.saveRoomToolStripMenuItem.Click += new System.EventHandler(this.saveRoomToolStripMenuItem_Click);
             // 
             // loadRoomToolStripMenuItem
             // 
             this.loadRoomToolStripMenuItem.Name = "loadRoomToolStripMenuItem";
-            this.loadRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.loadRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.loadRoomToolStripMenuItem.Text = "Load Room";
             this.loadRoomToolStripMenuItem.Click += new System.EventHandler(this.loadRoomToolStripMenuItem_Click);
             // 
             // closeEditorToolStripMenuItem
             // 
             this.closeEditorToolStripMenuItem.Name = "closeEditorToolStripMenuItem";
-            this.closeEditorToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.closeEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.closeEditorToolStripMenuItem.Text = "Close Editor";
             this.closeEditorToolStripMenuItem.Click += new System.EventHandler(this.closeEditorToolStripMenuItem_Click);
             // 
             // exitGameToolStripMenuItem
             // 
             this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
-            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
+            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.exitGameToolStripMenuItem.Text = "Exit Game";
             this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
             // 
@@ -2495,135 +2628,6 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
-            // 
-            // tabPage11
-            // 
-            this.tabPage11.Controls.Add(this.AudioGroupMusic);
-            this.tabPage11.Location = new System.Drawing.Point(4, 22);
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(698, 533);
-            this.tabPage11.TabIndex = 5;
-            this.tabPage11.Text = "Audio";
-            this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // AudioMusic
-            // 
-            this.AudioMusic.FormattingEnabled = true;
-            this.AudioMusic.Location = new System.Drawing.Point(6, 19);
-            this.AudioMusic.Name = "AudioMusic";
-            this.AudioMusic.Size = new System.Drawing.Size(128, 199);
-            this.AudioMusic.TabIndex = 0;
-            // 
-            // AudioGroupMusic
-            // 
-            this.AudioGroupMusic.Controls.Add(this.button25);
-            this.AudioGroupMusic.Controls.Add(this.AudioMusicStop_Button);
-            this.AudioGroupMusic.Controls.Add(this.AudioMusicPlay_Button);
-            this.AudioGroupMusic.Controls.Add(this.AudioMusic);
-            this.AudioGroupMusic.Location = new System.Drawing.Point(8, 16);
-            this.AudioGroupMusic.Name = "AudioGroupMusic";
-            this.AudioGroupMusic.Size = new System.Drawing.Size(242, 293);
-            this.AudioGroupMusic.TabIndex = 1;
-            this.AudioGroupMusic.TabStop = false;
-            this.AudioGroupMusic.Text = "Music";
-            // 
-            // AudioMusicPlay_Button
-            // 
-            this.AudioMusicPlay_Button.Location = new System.Drawing.Point(141, 53);
-            this.AudioMusicPlay_Button.Name = "AudioMusicPlay_Button";
-            this.AudioMusicPlay_Button.Size = new System.Drawing.Size(95, 29);
-            this.AudioMusicPlay_Button.TabIndex = 1;
-            this.AudioMusicPlay_Button.Text = "Test Play";
-            this.AudioMusicPlay_Button.UseVisualStyleBackColor = true;
-            this.AudioMusicPlay_Button.Click += new System.EventHandler(this.AudioMusicPlay_Button_Click);
-            // 
-            // AudioMusicStop_Button
-            // 
-            this.AudioMusicStop_Button.Location = new System.Drawing.Point(141, 88);
-            this.AudioMusicStop_Button.Name = "AudioMusicStop_Button";
-            this.AudioMusicStop_Button.Size = new System.Drawing.Size(95, 28);
-            this.AudioMusicStop_Button.TabIndex = 2;
-            this.AudioMusicStop_Button.Text = "Stop";
-            this.AudioMusicStop_Button.UseVisualStyleBackColor = true;
-            this.AudioMusicStop_Button.Click += new System.EventHandler(this.AudioMusicStop_Button_Click);
-            // 
-            // tabPage12
-            // 
-            this.tabPage12.Controls.Add(this.label38);
-            this.tabPage12.Controls.Add(this.button24);
-            this.tabPage12.Controls.Add(this.button23);
-            this.tabPage12.Controls.Add(this.button13);
-            this.tabPage12.Controls.Add(this.script_music_play_B);
-            this.tabPage12.Controls.Add(this.Script_Music_LB);
-            this.tabPage12.Location = new System.Drawing.Point(4, 4);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(690, 208);
-            this.tabPage12.TabIndex = 5;
-            this.tabPage12.Text = "Audio";
-            this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // Script_Music_LB
-            // 
-            this.Script_Music_LB.FormattingEnabled = true;
-            this.Script_Music_LB.Location = new System.Drawing.Point(8, 27);
-            this.Script_Music_LB.Name = "Script_Music_LB";
-            this.Script_Music_LB.Size = new System.Drawing.Size(128, 173);
-            this.Script_Music_LB.TabIndex = 1;
-            // 
-            // script_music_play_B
-            // 
-            this.script_music_play_B.Location = new System.Drawing.Point(142, 27);
-            this.script_music_play_B.Name = "script_music_play_B";
-            this.script_music_play_B.Size = new System.Drawing.Size(58, 31);
-            this.script_music_play_B.TabIndex = 2;
-            this.script_music_play_B.Text = "Play";
-            this.script_music_play_B.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(142, 101);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(57, 31);
-            this.button13.TabIndex = 3;
-            this.button13.Text = "Pause";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(142, 64);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(57, 31);
-            this.button23.TabIndex = 4;
-            this.button23.Text = "Stop";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(143, 138);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(57, 31);
-            this.button24.TabIndex = 5;
-            this.button24.Text = "Resume";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(11, 11);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(60, 13);
-            this.label38.TabIndex = 6;
-            this.label38.Text = "Music Stuff";
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(141, 19);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(95, 29);
-            this.button25.TabIndex = 3;
-            this.button25.Text = "Set";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // Form1
             // 
@@ -2680,6 +2684,8 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.tabPage9.ResumeLayout(false);
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -2688,14 +2694,12 @@
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AnimationPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anispeedBox)).EndInit();
+            this.tabPage11.ResumeLayout(false);
+            this.AudioGroupMusic.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.tabPage11.ResumeLayout(false);
-            this.AudioGroupMusic.ResumeLayout(false);
-            this.tabPage12.ResumeLayout(false);
-            this.tabPage12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

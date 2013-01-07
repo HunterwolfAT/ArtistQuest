@@ -655,6 +655,12 @@ namespace WindowsGame1
                         game.player.verbmenu.toggleAscii(!game.player.verbmenu.asciiMode);
                     }
                     #endregion
+                    #region Song Commands
+                    else if (activescript.Commands[Commandcounter].Type == "Play Song")     { game.sound.PlayMusic(activescript.Commands[Commandcounter].SArgs[0]); }
+                    else if (activescript.Commands[Commandcounter].Type == "Stop Song")     { game.sound.StopMusic(); }
+                    else if (activescript.Commands[Commandcounter].Type == "Pause Song")    { game.sound.PauseMusic(); }
+                    else if (activescript.Commands[Commandcounter].Type == "Resume Song")    {game.sound.ResumeMusic(); }
+                    #endregion
                     else
                         Console.WriteLine("Couldn't get that command right!");
                 }
