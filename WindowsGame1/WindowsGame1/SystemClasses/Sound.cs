@@ -22,8 +22,14 @@ namespace WindowsGame1
             // Load all the music and sfx files that are in the content pipeline
 
                                                           // TODO: V HIER DIE ZAHL MUSS WENN AUF RELEASE GESTELLT WIRD GEÄNDERT WERDEN 
-            String path = gamepath.Substring(0, gamepath.Length - 14) + "Content\\music\\";
+            #if (DEBUG)
+                String path = gamepath.Substring(0, gamepath.Length - 14) + "Content\\music\\";
+            #else
+                String path = gamepath.Substring(0, gamepath.Length - 16) + "Content\\music\\";
+            #endif
+            
             Console.WriteLine(path);
+
             foreach (string f in Directory.GetFiles(path))
             {
                 string filename = f.Substring(f.LastIndexOf(@"\") + 1);
