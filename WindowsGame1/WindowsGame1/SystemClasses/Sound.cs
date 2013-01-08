@@ -28,16 +28,22 @@ namespace WindowsGame1
                 String path = gamepath.Substring(0, gamepath.Length - 16) + "Content\\music\\";
             #endif
             
-            Console.WriteLine(path);
+            Console.WriteLine("Path to look for music in: " + path);
 
             foreach (string f in Directory.GetFiles(path))
             {
                 string filename = f.Substring(f.LastIndexOf(@"\") + 1);
                 filename = filename.Substring(0, filename.Length - 4);
-                Song newsong = myContent.Load<Song>("music\\" + filename);
-                music.Add(newsong);
-                Console.WriteLine(filename);
+                if (filename != "Thumb")
+                {
+                    Song newsong = myContent.Load<Song>("music\\" + filename);
+                    music.Add(newsong);
+                }
+                //Console.WriteLine(filename);
             }
+
+            // Make the Backgroundmusic loop ifinitly
+            MediaPlayer.IsRepeating = true;
 
         }
 
