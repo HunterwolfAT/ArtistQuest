@@ -297,14 +297,14 @@ namespace WindowsGame1
                 else if (istalking)
                 {
                     animationcounter++;
-                    if (animationcounter > 29)
+                    if (animationcounter > 14)
                         animationcounter = 0;
                 }
                 else
                     animationcounter = 0;
 
                 animimage.SetFrame(9 + (int)(animationcounter / 4));
-                talkimage.SetFrame(5 + (int)(animationcounter / 6));
+                talkimage.SetFrame(5 + (int)(animationcounter / 3));
             }
             if (direction == (int)directions.down)
             {
@@ -317,14 +317,14 @@ namespace WindowsGame1
                 else if (istalking)
                 {
                     animationcounter++;
-                    if (animationcounter > 29)
+                    if (animationcounter > 14)
                         animationcounter = 0;
                 }
                 else
                     animationcounter = 0;
 
                 animimage.SetFrame((int)(animationcounter / 4));
-                talkimage.SetFrame((int)(animationcounter / 6));
+                talkimage.SetFrame((int)(animationcounter / 3));
             }
             if (direction == (int)directions.left)
             {
@@ -337,14 +337,14 @@ namespace WindowsGame1
                 else if (istalking)
                 {
                     animationcounter++;
-                    if (animationcounter > 29)
+                    if (animationcounter > 14)
                         animationcounter = 0;
                 }
                 else
                     animationcounter = 0;
 
                 animimage.SetFrame(27 + (int)(animationcounter / 4));
-                talkimage.SetFrame(15 + (int)(animationcounter / 6));
+                talkimage.SetFrame(15 + (int)(animationcounter / 3));
             }
             if (direction == (int)directions.right)
             {
@@ -357,14 +357,14 @@ namespace WindowsGame1
                 else if (istalking)
                 {
                     animationcounter++;
-                    if (animationcounter > 29)
+                    if (animationcounter > 14)
                         animationcounter = 0;
                 }
                 else
                     animationcounter = 0;
 
                 animimage.SetFrame(18 + (int)(animationcounter / 4));
-                talkimage.SetFrame(10 + (int)(animationcounter / 6));
+                talkimage.SetFrame(10 + (int)(animationcounter / 3));
             }
         }
 
