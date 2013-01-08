@@ -22,6 +22,7 @@ namespace WindowsGame1
         //SUPER SECRET ONLY ONCE IN A LIFETIME ADJUSTING VARIABLES
         private String Projectname = "ArtistQuestProt";
         private String FirstRoom = "ProtRoom";
+        private String MenuSong = "ColdFunk";
         private Boolean Debug = true;
         private Boolean ShowTitle = true;
         
@@ -153,17 +154,18 @@ namespace WindowsGame1
             
             font = Content.Load<SpriteFont>("Defaultfont");
 
+            sound = new Sound(GetGamePath(), this.Content);
+
             //Loads the title (and loading-) screen
-            title.LoadContent(this.Content);
+            title.LoadContent(this.Content, MenuSong);
+
+            sound.PlayMusic(title.titlesong);
 
             if (!ShowTitle)
                 LoadContentContent();
 
             float Screenscalex = graphics.GraphicsDevice.Viewport.Width / baseScreenSize.X;
             float Screenscaley = graphics.GraphicsDevice.Viewport.Height / baseScreenSize.Y;
-
-            //Testwise loading a mp3 of bentalfloss
-            sound = new Sound(GetGamePath(), this.Content);
 
             SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);
         }
@@ -225,9 +227,14 @@ namespace WindowsGame1
                                         gui.SetOpacity(1f);
                                         scripthandler.RunScript(introscript);
                                     }
+
+                                    // If the map has a background song, play it now!
+                                    if (map.backgroundmusic != null)
+                                    {
+                                        //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
+                                        sound.PlayMusic(map.backgroundmusic);
+                                    }
                                     title.Startup = false;
-                                    Console.WriteLine(sound.music[0].Name);
-                                    //sound.PlayMusic("music/bmby");
                                 }
                                 break;
                             case 1:
@@ -845,13 +852,6 @@ namespace WindowsGame1
                 Snapshots.Add(newsnapshot);
             }
 
-            // If the map has a background song, load and play it now!
-            if (map.backgroundmusic != "")
-            {
-                //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
-                sound.PlayMusic(map.backgroundmusic);
-            }
-
             Console.WriteLine("MAP LOCKED AND LOADED, SIR!");
         }
 
@@ -944,6 +944,7 @@ namespace WindowsGame1
         }
 
         // Loads the image number for all the objects in the new room from the previously saved (in the scripthandler in the TELEPORT command) Autosave file
+        // Used when entering a previously entered room
         public void LoadObjStat()
         {
             //Find the path to all the saves
@@ -1033,7 +1034,7 @@ namespace WindowsGame1
                 counter++;
             }
 
-            // Load Plaser Position
+            // Load Player Position
             player.position = save.Playerpos;
 
             //Load everything into all of the variables!
@@ -1069,6 +1070,13 @@ namespace WindowsGame1
                         }
                     }
                 }
+            }
+
+            // If the map has a background song, play it now!
+            if (map.backgroundmusic != null)
+            {
+                //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
+                sound.PlayMusic(map.backgroundmusic);
             }
 
         }
