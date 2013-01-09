@@ -14,18 +14,22 @@ namespace WindowsGame1
         private List<SoundEffect> sfx;
         public List<Song> music;
 
-        private float fadecounter;
+        public float maxvolume;
+
+        private Boolean crossfading;
         public float fadespeed;
+        private float fadecounter;
+
         private Boolean songplaying;
         public Song currentsong;
         private Song nextsong;
-        private Boolean crossfading;
-        //private TimeSpan titlemusicpos;
 
         public Sound(String gamepath, ContentManager myContent)
         {
             sfx = new List<SoundEffect>();
             music = new List<Song>();
+
+            maxvolume = 0.5f;
 
             fadecounter = 0;
             fadespeed = 0.02f;
@@ -91,6 +95,10 @@ namespace WindowsGame1
                 MediaPlayer.Volume = fadecounter;
             }
             //Console.WriteLine(MediaPlayer.Volume.ToString());
+
+            //dont make the volume louder then the user specified volume
+            if (MediaPlayer.Volume > maxvolume)
+                MediaPlayer.Volume = maxvolume;
         }
 
         public void LoadSound(String soundname, ContentManager Content)
