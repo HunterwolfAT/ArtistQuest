@@ -100,7 +100,7 @@ namespace WindowsGame1
             {
                 if (!asciimode)
                 {
-                    if (!istalking)
+                    if (!istalking || moving)
                         animimage.Draw(mySpriteBatch, new Vector2(playerRect.X - ((image.Width / animimage.Columns) / 5), playerRect.Y - (((image.Height / animimage.Rows) / 5) * 4)));
                     else
                         talkimage.Draw(mySpriteBatch, new Vector2(playerRect.X - ((image.Width / animimage.Columns) / 5), playerRect.Y - (((image.Height / animimage.Rows) / 5) * 4)));
