@@ -14,10 +14,20 @@ namespace WindowsGame1
         private List<SoundEffect> sfx;
         public List<Song> music;
 
+        private float fadecounter;
+        public float fadespeed;
+        private Boolean songplaying;
+        private Song nextsong;
+        private Boolean crossfading;
+
         public Sound(String gamepath, ContentManager myContent)
         {
             sfx = new List<SoundEffect>();
             music = new List<Song>();
+
+            fadecounter = 0;
+            fadespeed = 0.02f;
+            crossfading = false;
 
             // Load all the music and sfx files that are in the content pipeline
 
@@ -45,6 +55,36 @@ namespace WindowsGame1
             // Make the Backgroundmusic loop ifinitly
             MediaPlayer.IsRepeating = true;
 
+        }
+
+        public void Update()
+        {
+            // FADE STUFF IN AND OUT ADJUSTE THE FADECOUNTER AND STUFF PLS
+            if (songplaying && fadecounter < 1 && !crossfading)
+            {
+                fadecounter += fadespeed;
+                if (fadecounter > 1)
+                    fadecounter = 1;
+                MediaPlayer.Volume = fadecounter;
+            }
+            else if (!songplaying && fadecounter > 0 || songplaying && crossfading && fadecounter > 0)
+            {
+                fadecounter -= fadespeed;
+                if (fadecounter < 0)
+                {
+                    fadecounter = 0;
+
+                    MediaPlayer.Stop();
+                    if (crossfading)
+                    {
+                        MediaPlayer.Play(nextsong);
+                    }
+                    crossfading = false;
+
+                }
+                MediaPlayer.Volume = fadecounter;
+            }
+            Console.WriteLine(MediaPlayer.Volume.ToString());
         }
 
         public void LoadSound(String soundname, ContentManager Content)
@@ -80,17 +120,40 @@ namespace WindowsGame1
         {
             Song song = FindSong(name);
             if (song != null)
-                MediaPlayer.Play(song);
+            {
+                //Check wether a song is already playing
+                if (songplaying)
+                {
+                    crossfading = true;
+                    nextsong = song;
+                }
+                else
+                    MediaPlayer.Play(song);
+            }
             else
                 Console.WriteLine("Couldn't find that Piece Of Music!");
+
+            songplaying = true;
         }
 
         public void PlayMusic(Song song)
         {
-            MediaPlayer.Play(song);
+            
+            MediaPlayer.Volume = fadecounter;
+            
+            //Check wether a song is already playing
+            if (songplaying)
+            {
+                crossfading = true;
+                nextsong = song;
+            }
+            else
+                MediaPlayer.Play(song);
+
+            songplaying = true;
         }
 
-        public void StopMusic() { MediaPlayer.Stop(); }
+        public void StopMusic() { songplaying = false; }
 
         public void PauseMusic() { MediaPlayer.Pause(); }
 

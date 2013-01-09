@@ -23,7 +23,7 @@ namespace WindowsGame1
         private String Projectname = "ArtistQuestProt";
         private String FirstRoom = "ProtRoom";
         private String MenuSong = "ColdFunk";
-        private Boolean Debug = true;
+        private Boolean Debug = false;
         private Boolean ShowTitle = true;
         
         //System Variables
@@ -302,6 +302,8 @@ namespace WindowsGame1
 
                 scripthandler.Update(gui, GameVariables, gameTime);
             }
+
+            sound.Update();
 
             base.Update(gameTime);
 
