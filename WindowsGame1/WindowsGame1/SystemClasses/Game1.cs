@@ -23,7 +23,7 @@ namespace WindowsGame1
         private String Projectname = "ArtistQuestProt";
         private String FirstRoom = "ProtRoom";
         private String MenuSong = "ColdFunk";
-        private Boolean Debug = false;
+        private Boolean Debug = true;
         private Boolean ShowTitle = true;
         
         //System Variables
@@ -234,8 +234,13 @@ namespace WindowsGame1
                                         //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
                                         sound.PlayMusic(map.backgroundmusic);
                                     }
+
                                     title.Startup = false;
                                 }
+
+                                if (title.lastsong != null)
+                                    sound.PlayMusic(title.lastsong.Name);
+                               
                                 break;
                             case 1:
                                 title.Mode = "Save";
@@ -438,7 +443,9 @@ namespace WindowsGame1
                 {
                     ShowTitle = true;
                     title.SelectedIndex = 0;
-                    title.Show(scripthandler.IsScriptRunning());
+
+                    title.Show(scripthandler.IsScriptRunning(), sound.currentsong);
+                    sound.PlayMusic(title.titlesong);
                 }
 
                 // Show Player position in the room for reasons

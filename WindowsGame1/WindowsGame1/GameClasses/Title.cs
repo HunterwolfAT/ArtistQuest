@@ -31,6 +31,7 @@ namespace WindowsGame1
         SpriteFont myfont;
         Boolean DontSave;
         public Song titlesong;
+        public Song lastsong;   // The song that was played during the game before the titlescreen was called up
         public String newsavename;
         public Boolean Startup;
         public String Mode;
@@ -67,6 +68,8 @@ namespace WindowsGame1
             newsavename = "";
 
             Savefilenames = new List<String>();
+
+            //lastsong = new Song();
 
             Flakes = new List<Snowflake>();
             Die = new Random();
@@ -194,10 +197,11 @@ namespace WindowsGame1
             }
         }
 
-        public void Show(bool dontsave)
+        public void Show(bool dontsave, Song songbefore)
         {
             ConfirmedSelectedIndex = -1;
             DontSave = dontsave;
+            lastsong = songbefore;
         }
 
         public void Draw(SpriteBatch mySpriteBatch, Boolean GameStartup, SpriteFont Font, String Path)

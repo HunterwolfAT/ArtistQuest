@@ -17,8 +17,10 @@ namespace WindowsGame1
         private float fadecounter;
         public float fadespeed;
         private Boolean songplaying;
+        public Song currentsong;
         private Song nextsong;
         private Boolean crossfading;
+        //private TimeSpan titlemusicpos;
 
         public Sound(String gamepath, ContentManager myContent)
         {
@@ -28,6 +30,9 @@ namespace WindowsGame1
             fadecounter = 0;
             fadespeed = 0.02f;
             crossfading = false;
+
+            currentsong = null;
+            nextsong = null;
 
             // Load all the music and sfx files that are in the content pipeline
 
@@ -78,13 +83,14 @@ namespace WindowsGame1
                     if (crossfading)
                     {
                         MediaPlayer.Play(nextsong);
+                        currentsong = nextsong;
                     }
                     crossfading = false;
 
                 }
                 MediaPlayer.Volume = fadecounter;
             }
-            Console.WriteLine(MediaPlayer.Volume.ToString());
+            //Console.WriteLine(MediaPlayer.Volume.ToString());
         }
 
         public void LoadSound(String soundname, ContentManager Content)
@@ -128,7 +134,10 @@ namespace WindowsGame1
                     nextsong = song;
                 }
                 else
+                {
                     MediaPlayer.Play(song);
+                    currentsong = song;
+                }
             }
             else
                 Console.WriteLine("Couldn't find that Piece Of Music!");
@@ -148,12 +157,15 @@ namespace WindowsGame1
                 nextsong = song;
             }
             else
+            {
                 MediaPlayer.Play(song);
+                currentsong = song;
+            }
 
             songplaying = true;
         }
 
-        public void StopMusic() { songplaying = false; }
+        public void StopMusic() { songplaying = false; currentsong = null; }
 
         public void PauseMusic() { MediaPlayer.Pause(); }
 
@@ -170,7 +182,7 @@ namespace WindowsGame1
             return null;
         }
 
-        Song FindSong(String name)
+        public Song FindSong(String name)
         {
             Console.WriteLine("Looking for: " + name);
             foreach (Song song in music)
@@ -196,5 +208,21 @@ namespace WindowsGame1
 
             return -1;
         }
+
+        public Boolean isplaying()
+        {
+            return songplaying;
+        }
+
+        //public void pausetitletheme()
+        //{
+        //    titlemusicpos = MediaPlayer.PlayPosition;
+        //}
+
+        //public void resumetitletheme(Song titlemusic)
+        //{
+        //    MediaPlayer.Play(titlemusic);
+        //}
     }
+
 }
