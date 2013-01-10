@@ -338,7 +338,13 @@ namespace WindowsGame1
             if (ShowItemBox)
             {
                 MsgBox.Position = new Vector2(MSGposition.X + 190, 200);
-                MsgBox.Draw(mySpriteBatch);
+                MsgBoxAscii.Position = MsgBox.Position;
+
+                if (!asciiMode)
+                    MsgBox.Draw(mySpriteBatch);
+                else
+                    MsgBoxAscii.Draw(mySpriteBatch);
+
                 ItemPic.Draw(mySpriteBatch);
 
                 String notification;

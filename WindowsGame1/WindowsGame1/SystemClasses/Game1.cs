@@ -851,6 +851,18 @@ namespace WindowsGame1
                     }
                 }
 
+                if (!Startup)
+                {
+                    // If the map has a background song, play it now!
+                    if (map.backgroundmusic != null)
+                    {
+                        //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
+                        sound.PlayMusic(map.backgroundmusic);
+                    }
+                    else
+                        sound.StopMusic();
+                }
+
             }
 
             //Make a new instance of the scripthandler with the freshly loaded map
