@@ -15,6 +15,7 @@ namespace WindowsGame1
         public List<Song> music;
 
         public float maxvolume;
+        public Boolean mute = false;
 
         private Boolean crossfading;
         public float fadespeed;
@@ -99,6 +100,8 @@ namespace WindowsGame1
             //dont make the volume louder then the user specified volume
             if (MediaPlayer.Volume > maxvolume)
                 MediaPlayer.Volume = maxvolume;
+            if (mute)
+                MediaPlayer.Volume = 0;
         }
 
         public void LoadSound(String soundname, ContentManager Content)

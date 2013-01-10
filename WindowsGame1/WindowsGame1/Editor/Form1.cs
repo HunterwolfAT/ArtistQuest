@@ -1484,7 +1484,7 @@ namespace WindowsGame1
                     && commandlistbox.SelectedIndex != -1)
                 {
                     // Once for Item-Scripts 
-                    if (scriptitemlistbox.SelectedIndex < game.map.getObjects()[objectlistbox.SelectedIndex].scripts.Count)
+                    if (scriptitemlistbox.SelectedIndex <= game.map.getObjects()[objectlistbox.SelectedIndex].scripts.Count)
                     {
                         if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
                         {
