@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Microsoft.Xna.Framework;
 using System.Drawing;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace WindowsGame1
 {
@@ -137,7 +138,12 @@ namespace WindowsGame1
                 AudioMusic.SelectedIndex = game.sound.FindSongIndex(game.map.backgroundmusic) + 1;
             else
                 AudioMusic.SelectedIndex = 0;
-            Console.WriteLine(AudioMusic.SelectedIndex);
+
+            Script_SFX_LB.Items.Clear();
+            foreach (SoundEffect sfx in game.sound.GetSfx())
+            {
+                Script_SFX_LB.Items.Add(sfx.Name);
+            }
 
             UpdateCommandlist();
             
@@ -1669,7 +1675,7 @@ namespace WindowsGame1
                 List<String> sargs = new List<String>();
                 List<int> iargs = new List<int>();
 
-                sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+                //sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
 
                 if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                     || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
@@ -1684,7 +1690,7 @@ namespace WindowsGame1
                 List<String> sargs = new List<String>();
                 List<int> iargs = new List<int>();
 
-                sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+                //sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
 
                 if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                     || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
@@ -1699,7 +1705,7 @@ namespace WindowsGame1
                 List<String> sargs = new List<String>();
                 List<int> iargs = new List<int>();
 
-                sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+                //sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
 
                 if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                     || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
@@ -1707,6 +1713,27 @@ namespace WindowsGame1
             }
         }
 
+        private void Script_SFX_Play_Button_Click(object sender, EventArgs e)
+        {
+            if (Script_SFX_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
 
+                sargs.Add(Script_SFX_LB.Items[Script_SFX_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Play SFX", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void Script_SFX_Listen_Button_Click(object sender, EventArgs e)
+        {
+            if (Script_SFX_LB.SelectedIndex != -1)
+            {
+                game.sound.GetSfx()[Script_SFX_LB.SelectedIndex].Play();
+            }
+        }
     }
 }

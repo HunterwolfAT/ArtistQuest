@@ -73,6 +73,7 @@ namespace WindowsGame1
                 if (filename != "Thumb")
                 {
                     SoundEffect newsfx = myContent.Load<SoundEffect>("sfx\\" + filename);
+                    newsfx.Name = filename;
                     sfx.Add(newsfx);
                 }
                 //Console.WriteLine(filename);
@@ -192,6 +193,8 @@ namespace WindowsGame1
             songplaying = true;
         }
 
+        public List<SoundEffect> GetSfx() { return sfx; }
+
         public void StopMusic() { songplaying = false; currentsong = null; }
 
         public void PauseMusic() { MediaPlayer.Pause(); }
@@ -202,10 +205,11 @@ namespace WindowsGame1
         {
             foreach (SoundEffect fx in sfx)
             {
-                if (fx.Name == "sfx\\" + name)
+                if (fx.Name == name)
+                {
                     return fx;
+                }
             }
-
             return null;
         }
 

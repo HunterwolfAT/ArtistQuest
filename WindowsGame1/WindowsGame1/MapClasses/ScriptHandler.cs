@@ -663,6 +663,13 @@ namespace WindowsGame1
                     else if (activescript.Commands[Commandcounter].Type == "Pause Song")    { game.sound.PauseMusic(); }
                     else if (activescript.Commands[Commandcounter].Type == "Resume Song")    {game.sound.ResumeMusic(); }
                     #endregion
+                    #region Play SFX
+                    else if (activescript.Commands[Commandcounter].Type == "Play SFX")
+                    {
+                        game.sound.PlaySound(activescript.Commands[Commandcounter].SArgs[0]);
+                        Console.WriteLine("I DID IT FOR FRASH FRASH!!! Playing: " + activescript.Commands[Commandcounter].SArgs[0]);
+                    }
+                    #endregion
                     else
                         Console.WriteLine("Couldn't get that command right!");
                 }
