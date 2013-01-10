@@ -43,14 +43,15 @@ namespace WindowsGame1
 
                                                           // TODO: V HIER DIE ZAHL MUSS WENN AUF RELEASE GESTELLT WIRD GEÄNDERT WERDEN 
             #if (DEBUG)
-                String path = gamepath.Substring(0, gamepath.Length - 14) + "Content\\music\\";
+                String path = gamepath.Substring(0, gamepath.Length - 14) + "Content\\";
             #else
-                String path = gamepath.Substring(0, gamepath.Length - 16) + "Content\\music\\";
+                String path = gamepath.Substring(0, gamepath.Length - 16) + "Content\\";
             #endif
             
-            Console.WriteLine("Path to look for music in: " + path);
+            Console.WriteLine("Path to look for music in: " + path + "music\\");
 
-            foreach (string f in Directory.GetFiles(path))
+            // Load ALL of the music files!
+            foreach (string f in Directory.GetFiles(path + "music\\"))
             {
                 string filename = f.Substring(f.LastIndexOf(@"\") + 1);
                 filename = filename.Substring(0, filename.Length - 4);
@@ -58,6 +59,21 @@ namespace WindowsGame1
                 {
                     Song newsong = myContent.Load<Song>("music\\" + filename);
                     music.Add(newsong);
+                }
+                //Console.WriteLine(filename);
+            }
+
+            Console.WriteLine("Path to look for music in: " + path + "sfx\\");
+
+            // Load ALL of the sound effects!
+            foreach (string f in Directory.GetFiles(path + "sfx\\"))
+            {
+                string filename = f.Substring(f.LastIndexOf(@"\") + 1);
+                filename = filename.Substring(0, filename.Length - 4);
+                if (filename != "Thumb")
+                {
+                    SoundEffect newsfx = myContent.Load<SoundEffect>("sfx\\" + filename);
+                    sfx.Add(newsfx);
                 }
                 //Console.WriteLine(filename);
             }
@@ -106,25 +122,25 @@ namespace WindowsGame1
 
         public void LoadSound(String soundname, ContentManager Content)
         {
-            SoundEffect effect = Content.Load<SoundEffect>("sounds/" + soundname);
+            SoundEffect effect = Content.Load<SoundEffect>("sfx\\" + soundname);
             sfx.Add(effect);
         }
         public void LoadMusic(String musicname, ContentManager Content)
         {
-            Song song = Content.Load<Song>("music/" + musicname);
+            Song song = Content.Load<Song>("music\\" + musicname);
             music.Add(song);
         }
 
         public void PlaySound(String name)
         {
-            SoundEffect effect = FindSfx("sound/" + name);
+            SoundEffect effect = FindSfx(name);
             if (effect != null)
                 effect.Play();
             else
                 Console.WriteLine("Couldn't find that Soundeffect!");
         }
 
-        public void PlaySound(String name, float volume, float pitch, float pan)
+        public void PlaySound(String name, float volume = 1.0f, float pitch = 0.0f, float pan = 0.0f)
         {
             SoundEffect effect = FindSfx(name);
             if (effect != null)
@@ -186,7 +202,7 @@ namespace WindowsGame1
         {
             foreach (SoundEffect fx in sfx)
             {
-                if (fx.Name == name)
+                if (fx.Name == "sfx\\" + name)
                     return fx;
             }
 
