@@ -225,7 +225,7 @@ namespace WindowsGame1
                     activeverbcount++;
             }
 
-            if (CheckPlayerDistance(playerrect, playerdirection) && activeverbcount != 0)
+            if (CheckPlayerDistance(playerrect, playerdirection) && activeverbcount != 0 && visible)
             {
                 images[imagenum].Color = Color.YellowGreen;
                 playernear = true;

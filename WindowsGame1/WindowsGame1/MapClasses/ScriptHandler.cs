@@ -245,7 +245,9 @@ namespace WindowsGame1
                             if (activescript.Commands[Commandcounter].SArgs[1] == "ON")
                                 ActiveObject.visible = true;
                             else if (activescript.Commands[Commandcounter].SArgs[1] == "OFF")
+                            {
                                 ActiveObject.visible = false;
+                            }
                         }
                         else
                             Console.WriteLine("SCRIPT ERROR: Could not find Object");

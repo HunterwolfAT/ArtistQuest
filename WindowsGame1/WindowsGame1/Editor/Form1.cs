@@ -1484,14 +1484,16 @@ namespace WindowsGame1
                     && commandlistbox.SelectedIndex != -1)
                 {
                     // Once for Item-Scripts 
-                    if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab"
-                        && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
+                    if (scriptitemlistbox.SelectedIndex < game.map.getObjects()[objectlistbox.SelectedIndex].scripts.Count)
                     {
-                        Com_SArg.Text = game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].SArgs[0];
-                        MSG_com.Text = "Edit Message";
-                        comeditbutton.Text = "Stop Edit";
-                        EditingMSGIndex = commandlistbox.SelectedIndex;
-                        EditingMSG = true;
+                        if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
+                        {
+                            Com_SArg.Text = game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].SArgs[0];
+                            MSG_com.Text = "Edit Message";
+                            comeditbutton.Text = "Stop Edit";
+                            EditingMSGIndex = commandlistbox.SelectedIndex;
+                            EditingMSG = true;
+                        }
                     }
                 }
 
