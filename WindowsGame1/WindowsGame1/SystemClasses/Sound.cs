@@ -15,7 +15,7 @@ namespace WindowsGame1
         public List<Song> music;
 
         public float maxvolume;
-        public Boolean mute = false;
+        public Boolean mute = true;
 
         private Boolean crossfading;
         public float fadespeed;
@@ -135,7 +135,7 @@ namespace WindowsGame1
         public void PlaySound(String name)
         {
             SoundEffect effect = FindSfx(name);
-            if (effect != null)
+            if (effect != null && !mute)
                 effect.Play();
             else
                 Console.WriteLine("Couldn't find that Soundeffect!");

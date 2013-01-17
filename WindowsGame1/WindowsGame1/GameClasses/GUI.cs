@@ -37,6 +37,9 @@ namespace WindowsGame1
 
         public int InventorySelected;
 
+        // Project class / global variables
+        Project project;
+
         // NewItemBox variables
         public bool ShowItemBox;
         public bool AddedItem;      //If true, Item has been added, if false, Item has been removed from player inventory
@@ -91,6 +94,8 @@ namespace WindowsGame1
             InvList = new List<Item>();
             InventorySelected = 0;
 
+            project = new Project();
+
             ItemPic = new Sprite();
 
             ScreenFadeTex = new Sprite();
@@ -111,7 +116,7 @@ namespace WindowsGame1
             scrollcounter = 0;
         }
         
-        public GUI(SpriteFont font, List<Item> inventory)
+        public GUI(SpriteFont font, List<Item> inventory, Project prj)
         {
             MSGBoxText = "";
             ShownMSGBoxText = "";
@@ -132,6 +137,8 @@ namespace WindowsGame1
             ShowInventory = false;
             InvList = inventory;
             InventorySelected = 0;
+
+            project = prj;
 
             ItemPic = new Sprite();
 
@@ -183,6 +190,27 @@ namespace WindowsGame1
             ShowMSG = true;
             ShownMSGBoxText = "";
             MSGBoxTextName = name;
+
+            //Replace eventual variables with their value
+            int firstmark = MSGBoxText.IndexOf("|");
+            if (firstmark != -1)
+            {
+                String secondpart = MSGBoxText.Substring(firstmark + 1);
+                int lastmark = secondpart.IndexOf("|");
+
+                if (lastmark != -1)
+                {
+                    String varname = secondpart.Substring(0, lastmark);
+                    Console.WriteLine("Variable " + varname + " detected. Replacing name with value.");
+                    String value = project.FindVarValue(varname);
+
+                    if (value != null)
+                    {
+                        MSGBoxText = MSGBoxText.Substring(0, firstmark) + value + MSGBoxText.Substring(firstmark + varname.Length + 2);
+                    }
+                }
+            }
+
             if (!scrolling)
                 ShownMSGBoxText = MSGBoxText;
             

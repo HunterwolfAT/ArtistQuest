@@ -179,7 +179,7 @@ namespace WindowsGame1
             // TODO: use this.Content to load your game content here
             map.LoadContent(this.Content);
             player.LoadContent(this.Content, font);
-            gui = new GUI(font, player.InvList);
+            gui = new GUI(font, player.InvList, proj);
             gui.LoadContent(this.Content);
 
             scripthandler = new ScriptHandler(map, player, items, this);
