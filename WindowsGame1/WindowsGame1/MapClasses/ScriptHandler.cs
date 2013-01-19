@@ -507,7 +507,7 @@ namespace WindowsGame1
                     #region END SCRIPT
                     else if (activescript.Commands[Commandcounter].Type == "END SCRIPT")
                     {
-                        Commandcounter = activescript.Commands.Count();
+                        Commandcounter = activescript.Commands.Count() - 1;
                     }
                     #endregion
                     #region Screenfade
