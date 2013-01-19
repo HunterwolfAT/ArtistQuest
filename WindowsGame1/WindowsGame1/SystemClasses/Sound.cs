@@ -40,14 +40,9 @@ namespace WindowsGame1
             nextsong = null;
 
             // Load all the music and sfx files that are in the content pipeline
+            String path = gamepath + "\\Content\\";
 
-                                                              // TODO: V HIER DIE ZAHL MUSS WENN AUF RELEASE GESTELLT WIRD GEÄNDERT WERDEN 
-            #if (DEBUG)
-                String path = gamepath.Substring(0, gamepath.Length - 14) + "Content\\";
-            #else
-                String path = gamepath.Substring(0, gamepath.Length - 16) + "Content\\";
-            #endif
-            
+                Console.WriteLine("GamePath: " + gamepath);
             Console.WriteLine("Path to look for music in: " + path + "music\\");
 
             // Load ALL of the music files!
