@@ -41,7 +41,7 @@ namespace WindowsGame1
 
             // Load all the music and sfx files that are in the content pipeline
 
-                                                          // TODO: V HIER DIE ZAHL MUSS WENN AUF RELEASE GESTELLT WIRD GEÄNDERT WERDEN 
+                                                              // TODO: V HIER DIE ZAHL MUSS WENN AUF RELEASE GESTELLT WIRD GEÄNDERT WERDEN 
             #if (DEBUG)
                 String path = gamepath.Substring(0, gamepath.Length - 14) + "Content\\";
             #else
