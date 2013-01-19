@@ -23,7 +23,7 @@ namespace WindowsGame1
         private String Projectname = "ArtistQuestProt";
         private String FirstRoom = "ProtRoom";
         private String MenuSong = "ColdFunk";
-        private Boolean Debug = true;
+        private Boolean Debug = false;
         private Boolean ShowTitle = true;
         
         //System Variables
@@ -396,6 +396,11 @@ namespace WindowsGame1
                 float Screenscaley = graphics.GraphicsDevice.Viewport.Height / baseScreenSize.Y;
 
                 SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);
+            }
+
+            if (KnewState.IsKeyDown(Keys.M) && KoldState.IsKeyUp(Keys.M))
+            {
+                sound.mute = !sound.mute;
             }
 
             if (KnewState.IsKeyDown(Keys.F6) && KoldState.IsKeyUp(Keys.F6))
