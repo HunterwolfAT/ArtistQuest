@@ -477,7 +477,7 @@ namespace WindowsGame1
                 {
                     if (!scripthandler.IsScriptRunning())
                         gui.ShowInventory = !gui.ShowInventory;
-                    if (gui.InventorySelected >= gui.InvList.Count)
+                    if (gui.InventorySelected >= gui.InvList.Count && gui.InvList.Count > 0)
                         gui.InventorySelected = gui.InvList.Count - 1;
                 }
 
