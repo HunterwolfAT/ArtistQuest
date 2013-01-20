@@ -76,7 +76,7 @@
         <X>571</X>
         <Y>171</Y>
         <Width>93</Width>
-        <Height>84</Height>
+        <Height>83</Height>
         <Location>
           <X>571</X>
           <Y>171</Y>
@@ -88,10 +88,67 @@
       </rectOffset>
       <interactOffset>
         <X>0</X>
-        <Y>0</Y>
+        <Y>16</Y>
       </interactOffset>
-      <radius>6000</radius>
-      <scripts />
+      <radius>3000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>1</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>1</opacity>
+      <scripts>
+        <Script>
+          <Name>Look at</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Oh man... this world looks worse and worse the further I go...</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Somebody has to do something against this!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
       <images>
         <Sprite>
           <Texture>
@@ -99,7 +156,7 @@
           </Texture>
           <Position>
             <X>617</X>
-            <Y>213</Y>
+            <Y>212</Y>
           </Position>
           <SourceRect xsi:nil="true" />
           <Color>
@@ -156,8 +213,47 @@
         <X>0</X>
         <Y>0</Y>
       </interactOffset>
-      <radius>6000</radius>
-      <scripts />
+      <radius>2000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>1</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>1</opacity>
+      <scripts>
+        <Script>
+          <Name>Look at</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Looks like I won't leave this way.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
       <images>
         <Sprite>
           <Texture>
@@ -222,8 +318,104 @@
         <X>0</X>
         <Y>-101</Y>
       </interactOffset>
-      <radius>6000</radius>
-      <scripts />
+      <radius>2000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>1</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>1</opacity>
+      <scripts>
+        <Script>
+          <Name>Take</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Hey, a generic looking key!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Add Item</Type>
+              <SArgs>
+                <string>generic looking key</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change Visible</Type>
+              <SArgs>
+                <string>Key</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Key</string>
+                <string>Take</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
       <images>
         <Sprite>
           <Texture>
@@ -271,12 +463,12 @@
         <PackedValue>4294967295</PackedValue>
       </color>
       <rect>
-        <X>373</X>
+        <X>371</X>
         <Y>211</Y>
         <Width>16</Width>
         <Height>113</Height>
         <Location>
-          <X>373</X>
+          <X>371</X>
           <Y>211</Y>
         </Location>
       </rect>
@@ -288,15 +480,161 @@
         <X>0</X>
         <Y>0</Y>
       </interactOffset>
-      <radius>6000</radius>
-      <scripts />
+      <radius>2500</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>1</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>1</opacity>
+      <scripts>
+        <Script>
+          <Name>Open</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>MysteryDoorOpen</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Well NOW you're just mocking me!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Aaaaaaaaaand It's locked.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Well I usually do lock this door so it's not surprising to me.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>*OPENING DOOR*</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
       <images>
         <Sprite>
           <Texture>
             <Name />
           </Texture>
           <Position>
-            <X>381</X>
+            <X>379</X>
             <Y>267</Y>
           </Position>
           <SourceRect xsi:nil="true" />
@@ -309,7 +647,7 @@
           </Color>
           <Rotation>0</Rotation>
           <Origin>
-            <X>8</X>
+            <X>7</X>
             <Y>56</Y>
           </Origin>
           <Scale>1</Scale>

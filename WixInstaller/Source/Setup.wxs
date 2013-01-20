@@ -117,6 +117,7 @@
     <Feature Id="MyFeature" Title="Required Files" Level="1">
       <ComponentRef Id="StartMenuEntriesComponent" />
       <ComponentRef Id="MyComponent" />
+  	  <ComponentRef Id="Rooms"/>
     </Feature>  
     <!-- END INSTALL DESCRIPTION -->
     

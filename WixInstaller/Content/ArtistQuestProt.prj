@@ -54,6 +54,18 @@
       <string>WindowOpen</string>
       <string>false</string>
     </ArrayOfString>
+    <ArrayOfString>
+      <string>LookedAtFrontDoor</string>
+      <string>false</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>ReadLetter</string>
+      <string>false</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>MysteryDoorOpen</string>
+      <string>false</string>
+    </ArrayOfString>
   </GameVariables>
   <Items>
     <Item>
@@ -1142,14 +1154,14 @@
             <Command>
               <Type>Message</Type>
               <SArgs>
-                <string>It's a pretty fine battery-powered hand-drill for making manmade-holes!</string>
+                <string>It's a pretty fine battery-powered wood hand-drill for making manmade-holes!</string>
               </SArgs>
               <IArgs />
               <gui>
                 <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
+                <ShowInventory>true</ShowInventory>
                 <InvList />
-                <InventoryActive>false</InventoryActive>
+                <InventoryActive>true</InventoryActive>
                 <InventorySelected>0</InventorySelected>
                 <ShowItemBox>false</ShowItemBox>
                 <AddedItem>false</AddedItem>
@@ -1398,6 +1410,51 @@
             <Command>
               <Type>END IF</Type>
               <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Front Door</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>This door  has a metal plate at the front.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But I'm really glad they invented a wood setting nevertheless.</string>
+              </SArgs>
               <IArgs />
               <gui>
                 <ShowMSG>false</ShowMSG>
@@ -1755,6 +1812,60 @@
             <Command>
               <Type>END IF</Type>
               <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Front Door</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Just placing the handle on the door plate wont get me far.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Safe</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>The handle doesn't fit in this hexagon-looking hole!</string>
+              </SArgs>
               <IArgs />
               <gui>
                 <ShowMSG>false</ShowMSG>
@@ -2181,6 +2292,273 @@
                 <string>WindowLoose</string>
                 <string>true</string>
               </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
+    </Item>
+    <Item>
+      <Name>generic looking key</Name>
+      <Picturename>items\key</Picturename>
+      <scripts>
+        <Script>
+          <Name>look</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>How generic looking!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>true</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>defaultUse</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Where there is a key.... there is a lock!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>true</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>And that's not the lock.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>true</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Mysterious Door</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>MysteryDoorOpen</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Oh, please don't make my life too easy!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>*crack*</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Remove Item</Type>
+              <SArgs>
+                <string>generic looking key</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I thought it looked not very sturdy...</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But at least the door is open now.</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>MysteryDoorOpen</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>How did I get my key again? It's supposed to be broken! YOU CHEATER!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
               <IArgs />
               <gui>
                 <ShowMSG>false</ShowMSG>

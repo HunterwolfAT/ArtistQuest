@@ -48,6 +48,7 @@ namespace WindowsGame1
                 Console.WriteLine("RUNNING SCRIPT NOW");
                 ScriptRunning = true;
                 activescript = newscript;
+                IFstack.Clear();
             }
         }
 
@@ -56,16 +57,19 @@ namespace WindowsGame1
             if (ScriptRunning)
             {
                 Boolean RunNextCommand = true;
-                
+
+                Console.WriteLine(Commandcounter.ToString() + " Count: " + activescript.Commands.Count.ToString());
+
                 if ((Commandcounter + 1) < activescript.Commands.Count)
                 {
                     Commandcounter++;
+                    Console.WriteLine(Commandcounter.ToString() + " Count: " + activescript.Commands.Count.ToString());
 
-                    if (Commandcounter != 0 && activescript.Commands[Commandcounter-1].Type == "Message")
+                    if (Commandcounter != 0 && activescript.Commands[Commandcounter - 1].Type == "Message")
                     {
                         if (gui.IsDone())
                         {
-                            //Dont do anything
+                            //Nothing to do here
                         }
                         else
                         {
@@ -140,14 +144,37 @@ namespace WindowsGame1
                     }
 
                 }
-                else
+                else    // were on the last command in the script now
                 {
-                    Console.WriteLine("SCRIPT IS DONE!");
-                    ScriptRunning = false;
-                    Commandcounter = -1;
-                    oldCommandcounter = -1;
+                    Boolean endscript = true;
 
-                    IFstack.Clear();
+                    //if this last command is a message, dont end it until the message has been clicked away!
+                    if (activescript.Commands.Count != 0)
+                    {
+                        if (activescript.Commands[Commandcounter].Type == "Message")
+                        {
+                            if (gui.IsDone())
+                            {
+                                endscript = true;
+                            }
+                            else
+                            {
+                                endscript = false;
+                            }
+                        }
+                    }
+
+                    //then, end it
+                    if (endscript)
+                    {
+                        Console.WriteLine("SCRIPT IS DONE!");
+                        ScriptRunning = false;
+                        Commandcounter = -1;
+                        oldCommandcounter = -1;
+                        player.istalking = false;
+
+                        IFstack.Clear();
+                    }
                 }
 
                 if (oldCommandcounter != Commandcounter && RunNextCommand)
@@ -158,7 +185,23 @@ namespace WindowsGame1
                     if (activescript.Commands[Commandcounter].Type == "Message")
                     {
                         if (activescript.Commands[Commandcounter].SArgs.Count != 0)
-                            gui.DisplayMSG(activescript.Commands[Commandcounter].SArgs[0], true);
+                        {
+                            Boolean firstMSG = false;
+
+                            if (Commandcounter > 0)
+                            {
+                                if (activescript.Commands[Commandcounter - 1].Type != "Message")
+                                    firstMSG = true;
+                            }
+                            else
+                                firstMSG = true;
+
+                            Boolean downbox = true;
+                            if (game.player.position.Y > 290)
+                                downbox = false;
+
+                            gui.DisplayMSG(activescript.Commands[Commandcounter].SArgs[0], true, "LOL", downbox, firstMSG);
+                        }
                         else
                             Console.WriteLine("No Message was defined!");
                     }
@@ -202,7 +245,9 @@ namespace WindowsGame1
                             if (activescript.Commands[Commandcounter].SArgs[1] == "ON")
                                 ActiveObject.visible = true;
                             else if (activescript.Commands[Commandcounter].SArgs[1] == "OFF")
+                            {
                                 ActiveObject.visible = false;
+                            }
                         }
                         else
                             Console.WriteLine("SCRIPT ERROR: Could not find Object");
@@ -328,9 +373,6 @@ namespace WindowsGame1
 
                                 if (activescript.Commands[a].Type == "END IF" || activescript.Commands[a].Type == "ELSE")
                                 {
-                                    if (ifcounter > 0 && activescript.Commands[a].Type == "END IF")
-                                        ifcounter--;
-
                                     if (ifcounter == 0)
                                     {
                                         Console.WriteLine("SETTING SCRIPT TO LINE: " + a);
@@ -340,6 +382,9 @@ namespace WindowsGame1
                                             Commandcounter = a;
                                         break;
                                     }
+
+                                    if (ifcounter > 0 && activescript.Commands[a].Type == "END IF")
+                                        ifcounter--;
                                 }
                             }
                         }
@@ -377,9 +422,6 @@ namespace WindowsGame1
 
                                 if (activescript.Commands[a].Type == "END IF")
                                 {
-                                    if (ifcounter > 0)
-                                        ifcounter--;
-
                                     if (ifcounter == 0)
                                     {
                                         Console.WriteLine("SETTING SCRIPT TO LINE: " + a);
@@ -387,6 +429,9 @@ namespace WindowsGame1
                                         Commandcounter = a - 1;
                                         break;
                                     }
+
+                                    if (ifcounter > 0)
+                                        ifcounter--;
                                 }
                             }
                         }
@@ -462,7 +507,7 @@ namespace WindowsGame1
                     #region END SCRIPT
                     else if (activescript.Commands[Commandcounter].Type == "END SCRIPT")
                     {
-                        Commandcounter = activescript.Commands.Count();
+                        Commandcounter = activescript.Commands.Count() - 1;
                     }
                     #endregion
                     #region Screenfade
@@ -602,6 +647,27 @@ namespace WindowsGame1
                             game.map.FindObject(activescript.Commands[Commandcounter].SArgs[0]).fadein(speed);
                         if (activescript.Commands[Commandcounter].SArgs[1] == "out")
                             game.map.FindObject(activescript.Commands[Commandcounter].SArgs[0]).fadeout(speed);
+                    }
+                    #endregion
+                    #region Toggle ASCII
+                    else if (activescript.Commands[Commandcounter].Type == "ToggleASCII")
+                    {
+                        game.player.toggleAscii(!player.asciimode);
+                        game.gui.toggleAscii(!gui.asciiMode);
+                        game.player.verbmenu.toggleAscii(!game.player.verbmenu.asciiMode);
+                    }
+                    #endregion
+                    #region Song Commands
+                    else if (activescript.Commands[Commandcounter].Type == "Play Song")     { game.sound.PlayMusic(activescript.Commands[Commandcounter].SArgs[0]); }
+                    else if (activescript.Commands[Commandcounter].Type == "Stop Song")     { game.sound.StopMusic(); }
+                    else if (activescript.Commands[Commandcounter].Type == "Pause Song")    { game.sound.PauseMusic(); }
+                    else if (activescript.Commands[Commandcounter].Type == "Resume Song")    {game.sound.ResumeMusic(); }
+                    #endregion
+                    #region Play SFX
+                    else if (activescript.Commands[Commandcounter].Type == "Play SFX")
+                    {
+                        game.sound.PlaySound(activescript.Commands[Commandcounter].SArgs[0]);
+                        Console.WriteLine("I DID IT FOR FRASH FRASH!!! Playing: " + activescript.Commands[Commandcounter].SArgs[0]);
                     }
                     #endregion
                     else

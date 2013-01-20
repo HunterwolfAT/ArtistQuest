@@ -22,7 +22,7 @@ namespace WindowsGame1
 
         public void LoadContent(ContentManager myContentMangager, String filename)
         {
-             Texture = myContentMangager.Load<Texture2D>(filename);
+            Texture = myContentMangager.Load<Texture2D>(filename);
             Origin = new Vector2(Texture.Width / 2, Texture.Height / 2);
             Position = Origin;
         }

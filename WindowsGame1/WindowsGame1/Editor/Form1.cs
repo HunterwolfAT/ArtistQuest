@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Xna.Framework;
 using System.Drawing;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace WindowsGame1
 {
@@ -121,6 +123,27 @@ namespace WindowsGame1
             verblistscript.Items.Clear();
             scriptitemscriptlistbox.Items.Clear();
             commandlistbox.Items.Clear();
+
+            // Audio
+            AudioMusic.Items.Clear();
+            Script_Music_LB.Items.Clear();
+            AudioMusic.Items.Add("<NONE>");
+            foreach (Song song in game.sound.music)
+            {
+                AudioMusic.Items.Add(song.Name);
+                Script_Music_LB.Items.Add(song.Name);
+            }
+
+            if (game.map.backgroundmusic != null)
+                AudioMusic.SelectedIndex = game.sound.FindSongIndex(game.map.backgroundmusic) + 1;
+            else
+                AudioMusic.SelectedIndex = 0;
+
+            Script_SFX_LB.Items.Clear();
+            foreach (SoundEffect sfx in game.sound.GetSfx())
+            {
+                Script_SFX_LB.Items.Add(sfx.Name);
+            }
 
             UpdateCommandlist();
             
@@ -1039,8 +1062,24 @@ namespace WindowsGame1
 
         private void saveRoomToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //String Path = 
-            //game.SaveMap();
+             String path = game.GetGamePath();
+             path += "\\saves";
+
+            //If the room hasnt been saved before
+             if (game.map.name == "NewRoom")
+             {
+                 saveFileDialog1.InitialDirectory = path;
+
+                 saveFileDialog1.FileName = game.map.name;
+                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                     game.SaveMap(saveFileDialog1.FileName);
+             }
+             else
+             {
+                 path += "\\" + game.map.name;
+                 game.SaveMap(path);
+                 Console.WriteLine("Game saved to: " + path);
+             }
         }
 
         private void verblist_SelectedIndexChanged(object sender, EventArgs e)
@@ -1447,21 +1486,26 @@ namespace WindowsGame1
             // If nothing is to be edited yet
             if (!EditingMSG)
             {
-                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
-                    && commandlistbox.SelectedIndex != -1
-                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1
                     && commandlistbox.SelectedIndex != -1)
                 {
                     // Once for Item-Scripts 
-                    if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab"
-                        && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
+                    if (scriptitemlistbox.SelectedIndex <= game.map.getObjects()[objectlistbox.SelectedIndex].scripts.Count)
                     {
-                        Com_SArg.Text = game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].SArgs[0];
-                        MSG_com.Text = "Edit Message";
-                        comeditbutton.Text = "Stop Edit";
-                        EditingMSGIndex = commandlistbox.SelectedIndex;
-                        EditingMSG = true;
+                        if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
+                        {
+                            Com_SArg.Text = game.map.getObjects()[objectlistbox.SelectedIndex].scripts[scriptitemlistbox.SelectedIndex].Commands[commandlistbox.SelectedIndex].SArgs[0];
+                            MSG_com.Text = "Edit Message";
+                            comeditbutton.Text = "Stop Edit";
+                            EditingMSGIndex = commandlistbox.SelectedIndex;
+                            EditingMSG = true;
+                        }
                     }
+                }
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    && commandlistbox.SelectedIndex != -1)
+                {
                     // And again for the scripts of objects
                     if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab"
                         && game.map.getObjects()[objectlistbox.SelectedIndex].scripts[verblistscript.SelectedIndex].Commands[commandlistbox.SelectedIndex].Type == "Message")
@@ -1474,6 +1518,7 @@ namespace WindowsGame1
                     }
 
                 }
+                
             }
             else    // When some editing is already in progress, stop it!
             {
@@ -1577,6 +1622,118 @@ namespace WindowsGame1
             if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                 || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
                 AddCommand("Wait for Enter", iargs, sargs, commandlistbox.SelectedIndex);
+        }
+
+        private void script_gs_toggleascii_Button_Click(object sender, EventArgs e)
+        {
+            List<String> sargs = new List<String>();
+            List<int> iargs = new List<int>();
+
+            if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                AddCommand("ToggleASCII", iargs, sargs, commandlistbox.SelectedIndex);
+        }
+
+        private void AudioMusicPlay_Button_Click(object sender, EventArgs e)
+        {
+            if (AudioMusic.SelectedIndex != -1)
+            {
+                game.sound.PlayMusic(game.sound.music[AudioMusic.SelectedIndex - 1]);   // Gotta do -1 because the first Item in the list is <NONE>
+            }
+        }
+
+        private void AudioMusicStop_Button_Click(object sender, EventArgs e)
+        {
+            game.sound.StopMusic();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            if (AudioMusic.SelectedIndex > 0)
+                game.map.backgroundmusic = AudioMusic.Items[AudioMusic.SelectedIndex].ToString();
+        }
+
+        private void script_music_play_B_Click(object sender, EventArgs e)
+        {
+            if (Script_Music_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Play Song", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (Script_Music_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                //sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Stop Song", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            if (Script_Music_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                //sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Pause Song", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if (Script_Music_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                //sargs.Add(Script_Music_LB.Items[Script_Music_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Resume Song", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void Script_SFX_Play_Button_Click(object sender, EventArgs e)
+        {
+            if (Script_SFX_LB.SelectedIndex != -1)
+            {
+                List<String> sargs = new List<String>();
+                List<int> iargs = new List<int>();
+
+                sargs.Add(Script_SFX_LB.Items[Script_SFX_LB.SelectedIndex].ToString());
+
+                if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                    || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                    AddCommand("Play SFX", iargs, sargs, commandlistbox.SelectedIndex);
+            }
+        }
+
+        private void Script_SFX_Listen_Button_Click(object sender, EventArgs e)
+        {
+            if (Script_SFX_LB.SelectedIndex != -1)
+            {
+                game.sound.GetSfx()[Script_SFX_LB.SelectedIndex].Play();
+            }
         }
     }
 }

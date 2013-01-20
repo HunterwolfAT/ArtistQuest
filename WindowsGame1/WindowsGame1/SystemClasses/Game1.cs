@@ -22,6 +22,7 @@ namespace WindowsGame1
         //SUPER SECRET ONLY ONCE IN A LIFETIME ADJUSTING VARIABLES
         private String Projectname = "ArtistQuestProt";
         private String FirstRoom = "ProtRoom";
+        private String MenuSong = "ColdFunk";
         private Boolean Debug = true;
         private Boolean ShowTitle = true;
         
@@ -30,10 +31,13 @@ namespace WindowsGame1
         private SpriteBatch spriteBatch;
         private Boolean GameStartup = true;
         private TextInput textinput;
+        private Vector2 baseScreenSize = new Vector2(800, 480);
+        private Matrix SpriteScale;
         
 
         //Game critical Objects
         public Project proj;
+        public Sound sound;
         public Maps map;
         public Player player;
         public Itemhandler items;
@@ -73,9 +77,10 @@ namespace WindowsGame1
             // Define resolution of the game
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 480;
+            //graphics.ToggleFullScreen();
 
             //this.Window.AllowUserResizing = true;
-            this.Window.Title = "Artist Quest Alpha v0.65b";
+            this.Window.Title = "Artist Quest Alpha v0.8";
         }
 
         /// <summary>
@@ -149,11 +154,20 @@ namespace WindowsGame1
             
             font = Content.Load<SpriteFont>("Defaultfont");
 
+            sound = new Sound(GetGamePath(), this.Content);
+
             //Loads the title (and loading-) screen
-            title.LoadContent(this.Content);
+            title.LoadContent(this.Content, MenuSong);
+
+            sound.PlayMusic(title.titlesong);
 
             if (!ShowTitle)
                 LoadContentContent();
+
+            float Screenscalex = graphics.GraphicsDevice.Viewport.Width / baseScreenSize.X;
+            float Screenscaley = graphics.GraphicsDevice.Viewport.Height / baseScreenSize.Y;
+
+            SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);
         }
 
         /// <summary>
@@ -165,7 +179,7 @@ namespace WindowsGame1
             // TODO: use this.Content to load your game content here
             map.LoadContent(this.Content);
             player.LoadContent(this.Content, font);
-            gui = new GUI(font, player.InvList);
+            gui = new GUI(font, player.InvList, proj);
             gui.LoadContent(this.Content);
 
             scripthandler = new ScriptHandler(map, player, items, this);
@@ -191,7 +205,6 @@ namespace WindowsGame1
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //    this.Exit();
 
-            // TODO: Add your update logic here
             if (ShowTitle)
             {
                 if (title.Update(gameTime) == -1)
@@ -211,11 +224,25 @@ namespace WindowsGame1
                                     Script introscript = map.PlayIntro();
                                     if (introscript != null && !Debug)
                                     {
-                                        gui.SetOpacity(255);
+                                        gui.SetOpacity(1f);
                                         scripthandler.RunScript(introscript);
                                     }
+
+                                    // If the map has a background song, play it now!
+                                    if (map.backgroundmusic != null)
+                                    {
+                                        //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
+                                        sound.PlayMusic(map.backgroundmusic);
+                                    }
+                                    else
+                                        sound.StopMusic();
+
                                     title.Startup = false;
                                 }
+
+                                if (title.lastsong != null)
+                                    sound.PlayMusic(title.lastsong.Name);
+                               
                                 break;
                             case 1:
                                 title.Mode = "Save";
@@ -258,7 +285,7 @@ namespace WindowsGame1
             }
             else // Regular Game Logic
             {
-                player.Update();
+                player.Update(gui.MSGTextDisplayed());
 
                 if (Editor.ShowPlayerPos)
                     Console.WriteLine("Player X: " + player.position.X.ToString() + " Y: " + player.position.Y.ToString());
@@ -283,6 +310,8 @@ namespace WindowsGame1
                 scripthandler.Update(gui, GameVariables, gameTime);
             }
 
+            sound.Update();
+
             base.Update(gameTime);
 
         }
@@ -297,7 +326,7 @@ namespace WindowsGame1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullNone, null, SpriteScale);
 
             if (ShowTitle)
             {
@@ -312,10 +341,10 @@ namespace WindowsGame1
             else
             {
                 // Draw everything behind the player
-                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), false);
+                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), false, scripthandler.IsScriptRunning());
                 player.Draw(spriteBatch, graphics);
                 // And then everything in front of him
-                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), true);
+                map.Draw(spriteBatch, graphics, new Vector2(player.position.X, player.position.Y + player.playerRect.Height), true, scripthandler.IsScriptRunning());
 
                 // Drawing UserInterface last
                 player.verbmenu.Draw(spriteBatch);
@@ -338,6 +367,47 @@ namespace WindowsGame1
 
             if (KnewState.IsKeyDown(Keys.F4) && KoldState.IsKeyUp(Keys.F4))
                 player.clipping = !player.clipping;
+
+            if (KnewState.IsKeyDown(Keys.F2) && KoldState.IsKeyUp(Keys.F2) && Debug)
+                player.movelock = !player.movelock;
+
+            // CHANGE THE FRIGGIN REOLUTION AT WILL MOFO
+            if (KnewState.IsKeyDown(Keys.F5) && KoldState.IsKeyUp(Keys.F5))
+            {
+                if (graphics.PreferredBackBufferHeight == 480)
+                {
+                    graphics.PreferredBackBufferWidth = 1280;
+                    graphics.PreferredBackBufferHeight = 720;
+                }
+                else if (graphics.PreferredBackBufferHeight == 720)
+                {
+                    graphics.PreferredBackBufferWidth = 1920;
+                    graphics.PreferredBackBufferHeight = 1080;
+                }
+                else if (graphics.PreferredBackBufferHeight == 1080)
+                {
+                    graphics.PreferredBackBufferWidth = 800;
+                    graphics.PreferredBackBufferHeight = 480;
+                }
+
+                graphics.ApplyChanges();
+
+                float Screenscalex = graphics.GraphicsDevice.Viewport.Width / baseScreenSize.X;
+                float Screenscaley = graphics.GraphicsDevice.Viewport.Height / baseScreenSize.Y;
+
+                SpriteScale = Matrix.CreateScale(Screenscalex, Screenscaley, 1);
+            }
+
+            if (KnewState.IsKeyDown(Keys.M) && KoldState.IsKeyUp(Keys.M))
+            {
+                sound.mute = !sound.mute;
+            }
+
+            if (KnewState.IsKeyDown(Keys.F6) && KoldState.IsKeyUp(Keys.F6))
+            {
+                graphics.IsFullScreen = !graphics.IsFullScreen;
+                graphics.ApplyChanges();
+            }
 
             // Title-Screen keyboard checks
             if (ShowTitle)
@@ -370,7 +440,7 @@ namespace WindowsGame1
                         title.newsavename = input;
                 }
             }
-            else
+            else if (!player.movelock)
             {
                 // REGULAR GAME KEYBOARD CHECKS
 
@@ -379,7 +449,9 @@ namespace WindowsGame1
                 {
                     ShowTitle = true;
                     title.SelectedIndex = 0;
-                    title.Show(scripthandler.IsScriptRunning());
+
+                    title.Show(scripthandler.IsScriptRunning(), sound.currentsong);
+                    sound.PlayMusic(title.titlesong);
                 }
 
                 // Show Player position in the room for reasons
@@ -410,6 +482,8 @@ namespace WindowsGame1
                 {
                     if (!scripthandler.IsScriptRunning())
                         gui.ShowInventory = !gui.ShowInventory;
+                    if (gui.InventorySelected >= gui.InvList.Count && gui.InvList.Count > 0)
+                        gui.InventorySelected = gui.InvList.Count - 1;
                 }
 
                 if (gui.ShowInventory == false)
@@ -782,10 +856,30 @@ namespace WindowsGame1
                     }
                 }
 
+                if (!Startup)
+                {
+                    // If the map has a background song, play it now!
+                    if (map.backgroundmusic != null)
+                    {
+                        //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
+                        sound.PlayMusic(map.backgroundmusic);
+                    }
+                    else
+                        sound.StopMusic();
+                }
+
             }
 
             //Make a new instance of the scripthandler with the freshly loaded map
             scripthandler = new ScriptHandler(map, player, items, this);
+
+            if (!Startup)
+            {
+                //Also make a snapshot right awayy
+                Snapshot newsnapshot = new Snapshot(GameVariables, map, map.Objects);
+
+                Snapshots.Add(newsnapshot);
+            }
 
             Console.WriteLine("MAP LOCKED AND LOADED, SIR!");
         }
@@ -879,6 +973,7 @@ namespace WindowsGame1
         }
 
         // Loads the image number for all the objects in the new room from the previously saved (in the scripthandler in the TELEPORT command) Autosave file
+        // Used when entering a previously entered room
         public void LoadObjStat()
         {
             //Find the path to all the saves
@@ -949,8 +1044,6 @@ namespace WindowsGame1
             string relPath2 = System.IO.Path.Combine(path + "\\saves\\", save.CurrentRoom);
             LoadMap(relPath2, Startup);
 
-            //proj.SetGlobalVariables(save.GameVariables);
-
             player.InvList.Clear();
             foreach (String itemname in save.Inventory)
             {
@@ -970,6 +1063,7 @@ namespace WindowsGame1
                 counter++;
             }
 
+            // Load Player Position
             player.position = save.Playerpos;
 
             //Load everything into all of the variables!
@@ -1006,6 +1100,15 @@ namespace WindowsGame1
                     }
                 }
             }
+
+            // If the map has a background song, play it now!
+            if (map.backgroundmusic != null)
+            {
+                //sound.LoadMusic(map.backgroundmusic, Content);    //It loads all the music at the beginning of the game anyway!
+                sound.PlayMusic(map.backgroundmusic);
+            }
+            else
+                sound.StopMusic();
 
         }
     }
