@@ -23,7 +23,7 @@ namespace WindowsGame1
         private String Projectname = "ArtistQuestProt";
         private String FirstRoom = "ProtRoom";
         private String MenuSong = "ColdFunk";
-        private Boolean Debug = false;
+        private Boolean Debug = true;
         private Boolean ShowTitle = true;
         
         //System Variables

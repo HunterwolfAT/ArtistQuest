@@ -233,7 +233,7 @@ namespace WindowsGame1
         public void DisplayNewItem(Item targetitem, bool Addedtoinventory)
         {
             ItemPic = targetitem.getPicture();
-            ItemPic.Position = new Vector2(300, 200);
+            ItemPic.Position = new Vector2(270, 200);
             ItemName = targetitem.Name;
             ShowItemBox = true;
             AddedItem = Addedtoinventory;
@@ -382,20 +382,35 @@ namespace WindowsGame1
                 else
                     notification = " removed from inventory.";
 
-                mySpriteBatch.DrawString(Font, ItemName, new Vector2(MSGposition.X + 140, 180), FontColor);
-                mySpriteBatch.DrawString(Font, notification, new Vector2(MSGposition.X + 140, 200), FontColor);
+                String ItemDisplayName = parseText(ItemName, true);
+
+                int notificationY = 200;
+                int ItemDisplayNameY = 180;
+
+                if (ItemDisplayName.IndexOf('\n') != -1)
+                {
+                    notificationY = 210;
+                    ItemDisplayNameY = 160;
+                }
+
+                mySpriteBatch.DrawString(Font, ItemDisplayName, new Vector2(MSGposition.X + 110, ItemDisplayNameY), FontColor);
+                mySpriteBatch.DrawString(Font, notification, new Vector2(MSGposition.X + 110, notificationY), FontColor);
             }
         }
 
-        private String parseText(String text)
+        private String parseText(String text, bool ItemNotification = false)
         {
             String line = String.Empty;
             String returnString = String.Empty;
             String[] wordArray = text.Split(' ');
+            int bordertolerance = 15;
+
+            if (ItemNotification)
+                bordertolerance = 120;
 
             foreach (String word in wordArray)
             {
-                if (Font.MeasureString(line + word).Length() > MsgBox.Texture.Width - 15)
+                if (Font.MeasureString(line + word).Length() > MsgBox.Texture.Width - bordertolerance)
                 {
                     returnString = returnString + line + '\n';
                     line = String.Empty;
