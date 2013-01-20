@@ -12,6 +12,7 @@ namespace WindowsGame1
     {
         //Message (Text-) box variables
         Sprite MsgBox;
+        Sprite MsgBoxAscii;
         String MSGBoxText;
         String ShownMSGBoxText;
         String MSGBoxTextName;
@@ -19,11 +20,15 @@ namespace WindowsGame1
         public Boolean ShowMSG;
         Boolean MSGisdone;
         Color MSGColor;
+        float MSGOpacity = 0f;
+        Boolean MSGMoving;
+        int MSGYOffset;
 
         int scrollcounter;
 
         // Inventory variables
         Sprite InventoryBackground;
+        Sprite InventoryBackgroundAscii;
         Sprite InventoryHighlight;
         int InvPositionY;
         public bool ShowInventory;
@@ -32,38 +37,56 @@ namespace WindowsGame1
 
         public int InventorySelected;
 
+        // Project class / global variables
+        Project project;
+
         // NewItemBox variables
         public bool ShowItemBox;
         public bool AddedItem;      //If true, Item has been added, if false, Item has been removed from player inventory
         Sprite ItemPic;
         String ItemName;
 
+        // ASCII-Mode
+        public bool asciiMode;
+
         //Fade-Control variables
         Sprite ScreenFadeTex;
         public bool FadedOut = false;
         public bool Fading = false;
-        int FadeOpacity;
-        int FadeStep = 5;
+        float FadeOpacity;
+        float FadeStep = 0.01f;
 
         // Key sprites
         Sprite EnterKeySprite;
         Sprite SpaceKeySprite;
         Sprite ShiftKeySprite;
+        // Original Sprites
+        Sprite EnterKeySpriteOrg;
+        Sprite SpaceKeySpriteOrg;
+        Sprite ShiftKeySpriteOrg;
+        // Ascii Versions
+        Sprite EnterKeySpriteascii;
+        Sprite SpaceKeySpriteascii;
+        Sprite ShiftKeySpriteascii;
 
         // Font font
         SpriteFont Font;
+        Color FontColor;
 
         public GUI()
         {
             MSGBoxText = "";
             ShownMSGBoxText = "";
             ShowMSG = false;
-            MSGisdone = false;
+            MSGisdone = true;
             MSGposition = new Vector2(10f, 10f);
             MSGColor = Color.White;
             MsgBox = new Sprite();
+            MsgBoxAscii = new Sprite();
+            asciiMode = false;
 
             InventoryBackground = new Sprite();
+            InventoryBackgroundAscii = new Sprite();
             InventoryHighlight = new Sprite();
             InvPositionY = 543;
             InventoryBackground.Position = new Vector2(0f, (float)InvPositionY);
@@ -71,30 +94,43 @@ namespace WindowsGame1
             InvList = new List<Item>();
             InventorySelected = 0;
 
+            project = new Project();
+
             ItemPic = new Sprite();
 
             ScreenFadeTex = new Sprite();
-            FadeOpacity = 0;
+            FadeOpacity = 0f;
 
             EnterKeySprite = new Sprite();
             SpaceKeySprite = new Sprite();
             ShiftKeySprite = new Sprite();
+            EnterKeySpriteOrg = new Sprite();
+            SpaceKeySpriteOrg = new Sprite();
+            ShiftKeySpriteOrg = new Sprite();
+            EnterKeySpriteascii = new Sprite();
+            SpaceKeySpriteascii = new Sprite();
+            ShiftKeySpriteascii = new Sprite();
+
+            FontColor = Color.Wheat;
 
             scrollcounter = 0;
         }
         
-        public GUI(SpriteFont font, List<Item> inventory)
+        public GUI(SpriteFont font, List<Item> inventory, Project prj)
         {
             MSGBoxText = "";
             ShownMSGBoxText = "";
             ShowMSG = false;
-            MSGisdone = false;
+            MSGisdone = true;
             Font = font;
             MSGposition = new Vector2(10f, 10f);
             MSGColor = Color.White;
             MsgBox = new Sprite();
+            MsgBoxAscii = new Sprite();
+            asciiMode = false;
 
             InventoryBackground = new Sprite();
+            InventoryBackgroundAscii = new Sprite();
             InventoryHighlight = new Sprite();
             InvPositionY = 543;
             InventoryBackground.Position = new Vector2(0f, (float)InvPositionY);
@@ -102,13 +138,24 @@ namespace WindowsGame1
             InvList = inventory;
             InventorySelected = 0;
 
+            project = prj;
+
             ItemPic = new Sprite();
 
             ScreenFadeTex = new Sprite();
+            FadeOpacity = 0f;
 
             EnterKeySprite = new Sprite();
             SpaceKeySprite = new Sprite();
             ShiftKeySprite = new Sprite();
+            EnterKeySpriteOrg = new Sprite();
+            SpaceKeySpriteOrg = new Sprite();
+            ShiftKeySpriteOrg = new Sprite();
+            EnterKeySpriteascii = new Sprite();
+            SpaceKeySpriteascii = new Sprite();
+            ShiftKeySpriteascii = new Sprite();
+
+            FontColor = Color.Wheat;
 
             scrollcounter = 0;
         }
@@ -117,35 +164,76 @@ namespace WindowsGame1
         {
             Font = myContentManager.Load<SpriteFont>("Defaultfont");
             MsgBox.LoadContent(myContentManager, "textbox");
+            MsgBoxAscii.LoadContent(myContentManager, "textboxascii");
             InventoryBackground.LoadContent(myContentManager, "inventoryback");
+            InventoryBackgroundAscii.LoadContent(myContentManager, "inventorybackascii");
             InventoryHighlight.LoadContent(myContentManager, "inventoryselected");
 
-            EnterKeySprite.LoadContent(myContentManager, "keys/enterkey");
-            SpaceKeySprite.LoadContent(myContentManager, "keys/spacekey");
-            ShiftKeySprite.LoadContent(myContentManager, "keys/rshiftkey");
+            EnterKeySpriteOrg.LoadContent(myContentManager, "keys/enterkey");
+            SpaceKeySpriteOrg.LoadContent(myContentManager, "keys/spacekey");
+            ShiftKeySpriteOrg.LoadContent(myContentManager, "keys/rshiftkey");
+            EnterKeySpriteascii.LoadContent(myContentManager, "keys/enterkeyascii");
+            SpaceKeySpriteascii.LoadContent(myContentManager, "keys/spacekeyascii");
+            ShiftKeySpriteascii.LoadContent(myContentManager, "keys/rshiftkeyascii");
+
+            EnterKeySprite = EnterKeySpriteOrg;
+            SpaceKeySprite = SpaceKeySpriteOrg;
+            ShiftKeySprite = ShiftKeySpriteOrg;
 
             ScreenFadeTex.LoadContent(myContentManager, "fadepic");
             ScreenFadeTex.Color = new Color(255, 255, 255, FadeOpacity);
         }
 
-        public void DisplayMSG(String MSG, Boolean scrolling, String name = "")
+        public void DisplayMSG(String MSG, Boolean scrolling, String name = "", Boolean down = true, Boolean first = false)
         {
             MSGBoxText = parseText(MSG);
             ShowMSG = true;
             ShownMSGBoxText = "";
             MSGBoxTextName = name;
+
+            //Replace eventual variables with their value
+            int firstmark = MSGBoxText.IndexOf("|");
+            if (firstmark != -1)
+            {
+                String secondpart = MSGBoxText.Substring(firstmark + 1);
+                int lastmark = secondpart.IndexOf("|");
+
+                if (lastmark != -1)
+                {
+                    String varname = secondpart.Substring(0, lastmark);
+                    Console.WriteLine("Variable " + varname + " detected. Replacing name with value.");
+                    String value = project.FindVarValue(varname);
+
+                    if (value != null)
+                    {
+                        MSGBoxText = MSGBoxText.Substring(0, firstmark) + value + MSGBoxText.Substring(firstmark + varname.Length + 2);
+                    }
+                }
+            }
+
             if (!scrolling)
                 ShownMSGBoxText = MSGBoxText;
+            
+            //Would the box overlay the player?
+            if (down)
+                MSGposition = new Vector2(200, 300);
+            else
+                MSGposition = new Vector2(200, 100);
 
-            MSGposition = new Vector2(200, 300);
             MsgBox.Position = new Vector2(MSGposition.X - 10, MSGposition.Y - 15);
             MSGisdone = false;
+            if (first)
+            {
+                MSGMoving = true;
+                MSGYOffset = 15;
+                MSGOpacity = 0f;
+            }
         }
 
         public void DisplayNewItem(Item targetitem, bool Addedtoinventory)
         {
             ItemPic = targetitem.getPicture();
-            ItemPic.Position = new Vector2(300, 200);
+            ItemPic.Position = new Vector2(270, 200);
             ItemName = targetitem.Name;
             ShowItemBox = true;
             AddedItem = Addedtoinventory;
@@ -180,9 +268,17 @@ namespace WindowsGame1
 
             if (verbmenuopen)
                 invtext = "Use Item";
-            
-            InventoryBackground.Draw(mySpriteBatch);
-            
+
+            if (!asciiMode)
+            {
+                InventoryBackground.Draw(mySpriteBatch);
+            }
+            else
+            {
+                InventoryBackgroundAscii.Position = InventoryBackground.Position;
+                InventoryBackgroundAscii.Draw(mySpriteBatch);
+            }
+
             //Inventory needs to be shown UNDER the messagebox
             if (ShowInventory)
             {
@@ -193,16 +289,16 @@ namespace WindowsGame1
 
                 if (InventoryActive && InvList.Count > 0 && InventorySelected < InvList.Count())
                 {
-                    mySpriteBatch.DrawString(Font, InvList[InventorySelected].Name, new Vector2(20 + (110 * InventorySelected), InvPositionY - 60), Color.AntiqueWhite);
+                    mySpriteBatch.DrawString(Font, InvList[InventorySelected].Name, new Vector2(20 + (110 * InventorySelected), InvPositionY - 60), FontColor);
                     ShiftKeySprite.Position = new Vector2(230, InvPositionY - 95);
                     ShiftKeySprite.Draw(mySpriteBatch);
-                    mySpriteBatch.DrawString(Font, "Look at", new Vector2(250, InvPositionY - 110), Color.Wheat);
+                    mySpriteBatch.DrawString(Font, "Look at", new Vector2(250, InvPositionY - 110), FontColor);
 
                     if (interactwithobject != null)
                     {
                         EnterKeySprite.Position = new Vector2(340, InvPositionY - 95);
                         EnterKeySprite.Draw(mySpriteBatch);
-                        mySpriteBatch.DrawString(Font, "Use with " + interactwithobject.name, new Vector2(360, InvPositionY - 110), Color.Wheat);
+                        mySpriteBatch.DrawString(Font, "Use with " + interactwithobject.name, new Vector2(360, InvPositionY - 110), FontColor);
                     }
                 }
 
@@ -218,40 +314,51 @@ namespace WindowsGame1
             {
                 SpaceKeySprite.Position = new Vector2(40, InvPositionY - 95);
                 SpaceKeySprite.Draw(mySpriteBatch);
-                mySpriteBatch.DrawString(Font, invtext, new Vector2(70, InvPositionY - 110), Color.Wheat);
+                mySpriteBatch.DrawString(Font, invtext, new Vector2(70, InvPositionY - 110), FontColor);
             }
 
-            if (interactwithobject != null && verbmenuopen == false && ShowMSG == false && InventoryActive == false && ShowItemBox == false)
+            if (interactwithobject != null && verbmenuopen == false && ShowMSG == false && InventoryActive == false && ShowItemBox == false && ascriptisrunning == false)
             {
                 EnterKeySprite.Position = new Vector2(710, 445);
                 EnterKeySprite.Draw(mySpriteBatch);
-                mySpriteBatch.DrawString(Font, "Interact", new Vector2(725, 435), Color.Wheat);
+                mySpriteBatch.DrawString(Font, "Interact", new Vector2(725, 435), FontColor);
                 //Draw the name of the object in front of the key symbol - but 
                 //do it so that the name can be as long as it wants and the text will 
                 //be displayed at the same position
-                mySpriteBatch.DrawString(Font, interactwithobject.name, new Vector2(695 - Font.MeasureString(interactwithobject.name).Length(), 435), Color.Wheat);
+                mySpriteBatch.DrawString(Font, interactwithobject.name, new Vector2(695 - Font.MeasureString(interactwithobject.name).Length(), 435), FontColor);
             }
 
             // The Fade-Sprite over everything
-            if (FadeOpacity != 0)
+            if (FadeOpacity > 0f)
             {
-                ScreenFadeTex.Color = new Color(255, 255, 255, FadeOpacity);
-                ScreenFadeTex.Draw(mySpriteBatch);
+                ScreenFadeTex.Color = new Color(255, 255, 255);
+                ScreenFadeTex.Draw(mySpriteBatch, FadeOpacity);
             }
 
             //Messagebox needs to be shown OVER the Inventory
             if (ShowMSG)
             {
-                MsgBox.Position = new Vector2(MSGposition.X+190, MSGposition.Y+42); 
-                MsgBox.Draw(mySpriteBatch);
-                mySpriteBatch.DrawString(Font, ShownMSGBoxText, MSGposition, MSGColor);
+                if (!asciiMode)
+                {
+                    MsgBox.Position = new Vector2(MSGposition.X + 190, MSGposition.Y + 42 + MSGYOffset);
+                    MsgBox.Draw(mySpriteBatch, MSGOpacity);
+                }
+                else
+                {
+                    MsgBoxAscii.Position = new Vector2(MSGposition.X + 190, MSGposition.Y + 42);
+                    MsgBoxAscii.Draw(mySpriteBatch);
+                }
+                
+                
+                if (!MSGMoving)
+                    mySpriteBatch.DrawString(Font, ShownMSGBoxText, MSGposition, MSGColor);
 
                 //Draw Key-Prompt
                 if (MSGBoxText == ShownMSGBoxText)
                 {
                     EnterKeySprite.Position = new Vector2(MSGposition.X + 380, MSGposition.Y + 95);
                     EnterKeySprite.Draw(mySpriteBatch);
-                    mySpriteBatch.DrawString(Font, "Continue", new Vector2(MSGposition.X + 395, MSGposition.Y + 90), Color.Wheat);
+                    mySpriteBatch.DrawString(Font, "Continue", new Vector2(MSGposition.X + 395, MSGposition.Y + 90), FontColor);
                 }
             }
 
@@ -259,7 +366,13 @@ namespace WindowsGame1
             if (ShowItemBox)
             {
                 MsgBox.Position = new Vector2(MSGposition.X + 190, 200);
-                MsgBox.Draw(mySpriteBatch);
+                MsgBoxAscii.Position = MsgBox.Position;
+
+                if (!asciiMode)
+                    MsgBox.Draw(mySpriteBatch);
+                else
+                    MsgBoxAscii.Draw(mySpriteBatch);
+
                 ItemPic.Draw(mySpriteBatch);
 
                 String notification;
@@ -269,20 +382,35 @@ namespace WindowsGame1
                 else
                     notification = " removed from inventory.";
 
-                mySpriteBatch.DrawString(Font, ItemName, new Vector2(MSGposition.X + 140, 180), Color.Wheat);
-                mySpriteBatch.DrawString(Font, notification, new Vector2(MSGposition.X + 140, 200), Color.Wheat);
+                String ItemDisplayName = parseText(ItemName, true);
+
+                int notificationY = 200;
+                int ItemDisplayNameY = 180;
+
+                if (ItemDisplayName.IndexOf('\n') != -1)
+                {
+                    notificationY = 210;
+                    ItemDisplayNameY = 160;
+                }
+
+                mySpriteBatch.DrawString(Font, ItemDisplayName, new Vector2(MSGposition.X + 110, ItemDisplayNameY), FontColor);
+                mySpriteBatch.DrawString(Font, notification, new Vector2(MSGposition.X + 110, notificationY), FontColor);
             }
         }
 
-        private String parseText(String text)
+        private String parseText(String text, bool ItemNotification = false)
         {
             String line = String.Empty;
             String returnString = String.Empty;
             String[] wordArray = text.Split(' ');
+            int bordertolerance = 15;
+
+            if (ItemNotification)
+                bordertolerance = 120;
 
             foreach (String word in wordArray)
             {
-                if (Font.MeasureString(line + word).Length() > MsgBox.Texture.Width - 15)
+                if (Font.MeasureString(line + word).Length() > MsgBox.Texture.Width - bordertolerance)
                 {
                     returnString = returnString + line + '\n';
                     line = String.Empty;
@@ -327,23 +455,67 @@ namespace WindowsGame1
             }
         }
 
-        public void SetOpacity(int value)
+        public Boolean MSGTextDisplayed()
+        {
+            return (MSGBoxText == ShownMSGBoxText);
+        }
+
+        public void SetOpacity(float value)
         {
             FadeOpacity = value;
-            if (value == 0)
+            if (value < 1f)
                 FadedOut = false;
             else
                 FadedOut = true;
         }
 
+        public void toggleAscii(bool on = true)
+        {
+            asciiMode = on;
+            if (asciiMode)
+            {
+                FontColor = Color.Green;
+                MSGColor = Color.Green;
+
+                EnterKeySprite = EnterKeySpriteascii;
+                SpaceKeySprite = SpaceKeySpriteascii;
+                ShiftKeySprite = ShiftKeySpriteascii;
+            }
+            else
+            {
+                FontColor = Color.Wheat;
+                MSGColor = Color.White;
+
+                EnterKeySprite = EnterKeySpriteOrg;
+                SpaceKeySprite = SpaceKeySpriteOrg;
+                ShiftKeySprite = ShiftKeySpriteOrg;
+            }
+        }
+
         public void Update()
         {
-            if (MSGBoxText.Length > ShownMSGBoxText.Length)
+            if (MSGMoving)
             {
-                ShownMSGBoxText += MSGBoxText[ShownMSGBoxText.Length];
-                scrollcounter = -1;
+                MSGOpacity += 0.1f;
+                if (MSGOpacity > 1f)
+                    MSGOpacity = 1f;
+
+                MSGYOffset -= 1;
+                if (MSGYOffset == 0)
+                    MSGYOffset = 0;
+
+                if (MSGYOffset == 0 && MSGOpacity == 1f)
+                    MSGMoving = false;
             }
-            scrollcounter++;
+            else
+            {
+                if (MSGBoxText.Length > ShownMSGBoxText.Length)
+                {
+                    ShownMSGBoxText += MSGBoxText[ShownMSGBoxText.Length];
+                    scrollcounter = -1;
+                }
+                scrollcounter++;
+            }
 
 
             if (ShowInventory)
@@ -371,9 +543,9 @@ namespace WindowsGame1
                 Console.WriteLine(FadeOpacity);
                 if (FadedOut)
                 {
-                    if (FadeOpacity < 0)
+                    if (FadeOpacity < 0f)
                     {
-                        FadeOpacity = 0;
+                        FadeOpacity = 0f;
                         FadedOut = false;
                         Fading = false;
                     }
@@ -382,9 +554,9 @@ namespace WindowsGame1
                 }
                 else
                 {
-                    if (FadeOpacity > 255)
+                    if (FadeOpacity > 1f)
                     {
-                        FadeOpacity = 255;
+                        FadeOpacity = 1f;
                         FadedOut = true;
                         Fading = false;
                     }

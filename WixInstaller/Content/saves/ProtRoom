@@ -181,7 +181,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts>
         <Script>
           <Name>Examine</Name>
@@ -192,17 +192,6 @@
                 <string>My cupboard/closet. The only constant in this whole mess.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>IF</Type>
@@ -213,17 +202,6 @@
                 <string>\true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -231,17 +209,6 @@
                 <string>...that someone STILL managed to screw over.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -249,17 +216,6 @@
                 <string>Sigh.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>IF</Type>
@@ -269,17 +225,6 @@
                 <string>is in inventory</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>IF</Type>
@@ -289,17 +234,6 @@
                 <string>is not in inventory</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -307,17 +241,6 @@
                 <string>Wait a second!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -325,17 +248,6 @@
                 <string>Why is it still empty? Don't tell me...</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -343,17 +255,6 @@
                 <string>The artist only drew states of the closet where it appears empty.... even if it's not?!?</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -361,17 +262,6 @@
                 <string>GGRRRBLMPFH!!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -379,17 +269,6 @@
                 <string>Okay, let us not get carried away, I have more important things to focus on.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -397,17 +276,6 @@
                 <string>But I'll take my clothes with me again. This way I can at least tell if it's there or not.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Add Item</Type>
@@ -415,65 +283,21 @@
                 <string>dirty(?) clothes</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -493,17 +317,6 @@
                 <string>\true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -511,33 +324,11 @@
                 <string>But it is already open!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ELSE</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ChangeSprite</Type>
@@ -547,17 +338,6 @@
               <IArgs>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change GlobalVariable</Type>
@@ -566,17 +346,6 @@
                 <string>true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>IF</Type>
@@ -587,17 +356,6 @@
                 <string>\false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -605,17 +363,6 @@
                 <string>Wha?</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -623,17 +370,6 @@
                 <string>Empty?!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -641,17 +377,6 @@
                 <string>Where is my stuff?! Don't tell me this guy had the time to draw clothes littering on the FLOOR...!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -659,17 +384,6 @@
                 <string>But not the minute to draw something into my closet?! Mmmgfhpgh!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -677,17 +391,6 @@
                 <string>KFFGMMPHFG!!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change GlobalVariable</Type>
@@ -696,49 +399,16 @@
                 <string>true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -748,17 +418,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -768,17 +427,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -798,17 +446,6 @@
                 <string>\false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -816,33 +453,11 @@
                 <string>It is already closed.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ELSE</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ChangeSprite</Type>
@@ -852,17 +467,6 @@
               <IArgs>
                 <int>0</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change GlobalVariable</Type>
@@ -871,33 +475,11 @@
                 <string>false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -907,17 +489,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -927,17 +498,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -1099,7 +659,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts>
         <Script>
           <Name>Look at</Name>
@@ -1110,17 +670,6 @@
                 <string>Hm, dirty clothes that lie on the floor.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -1128,17 +677,6 @@
                 <string>Completly stainless, perfectly white, dirty clothes.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -1146,17 +684,6 @@
                 <string>Mmmmmhm.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -1175,17 +702,6 @@
                 <string>is not in inventory</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -1193,17 +709,6 @@
                 <string>Let's get this "trash" sorted out.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Add Item</Type>
@@ -1211,17 +716,6 @@
                 <string>dirty(?) clothes</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Visible</Type>
@@ -1230,17 +724,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -1250,17 +733,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -1270,33 +742,11 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -1380,7 +830,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts>
         <Script>
           <Name>Open</Name>
@@ -1394,17 +844,6 @@
                 <string>\false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>IF</Type>
@@ -1415,17 +854,6 @@
                 <string>\360</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Move Object</Type>
@@ -1439,33 +867,11 @@
                 <int>10</int>
                 <int>2</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ChangeSprite</Type>
@@ -1475,17 +881,6 @@
               <IArgs>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -1495,17 +890,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -1515,17 +899,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change GlobalVariable</Type>
@@ -1534,17 +907,6 @@
                 <string>true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Visible</Type>
@@ -1553,17 +915,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Walkable</Type>
@@ -1572,17 +923,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Visible</Type>
@@ -1591,17 +931,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Walkable</Type>
@@ -1610,33 +939,11 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ELSE</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -1644,33 +951,11 @@
                 <string>But I took the handle off! I can't open it without one.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -1690,17 +975,6 @@
                 <string>\true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ChangeSprite</Type>
@@ -1710,33 +984,11 @@
               <IArgs>
                 <int>2</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ELSE</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ChangeSprite</Type>
@@ -1746,33 +998,11 @@
               <IArgs>
                 <int>0</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -1782,17 +1012,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -1802,17 +1021,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change GlobalVariable</Type>
@@ -1821,17 +1029,6 @@
                 <string>false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Walkable</Type>
@@ -1840,17 +1037,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Visible</Type>
@@ -1859,17 +1045,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Walkable</Type>
@@ -1878,17 +1053,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Visible</Type>
@@ -1897,17 +1061,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -2043,7 +1196,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts />
       <images>
         <Sprite>
@@ -2138,8 +1291,166 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
-      <scripts />
+      <opacity>1</opacity>
+      <scripts>
+        <Script>
+          <Name>Turn on</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I don't see why....</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But then again, I also don't see why not.</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>Television</string>
+              </SArgs>
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+            </Command>
+            <Command>
+              <Type>Wait</Type>
+              <SArgs />
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Urgh, I can barerly see what everything's supposed to be.</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>Television</string>
+              </SArgs>
+              <IArgs>
+                <int>0</int>
+              </IArgs>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Ah, that's better.</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Play NES</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Let's play one of my favorite games!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Dr. Jekyll and Mr. Hyde!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>Television</string>
+              </SArgs>
+              <IArgs>
+                <int>2</int>
+              </IArgs>
+            </Command>
+            <Command>
+              <Type>Wait</Type>
+              <SArgs />
+              <IArgs>
+                <int>1</int>
+              </IArgs>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Even he NES games look worse! How do you even do that?!</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>And wait! That's Super Mario Bros.! Who want't to play that?!</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>ChangeSprite</Type>
+              <SArgs>
+                <string>Television</string>
+              </SArgs>
+              <IArgs>
+                <int>0</int>
+              </IArgs>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
       <images>
         <Sprite>
           <Texture>
@@ -2166,9 +1477,61 @@
           <Effects>None</Effects>
           <LayerDepth>0</LayerDepth>
         </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>407</X>
+            <Y>184</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>154</R>
+            <G>205</G>
+            <B>50</B>
+            <A>255</A>
+            <PackedValue>4281519514</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>36</X>
+            <Y>33</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>407</X>
+            <Y>184</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>154</R>
+            <G>205</G>
+            <B>50</B>
+            <A>255</A>
+            <PackedValue>4281519514</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>36</X>
+            <Y>33</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
       </images>
       <imagenames>
         <string>tv</string>
+        <string>tvon</string>
+        <string>neson</string>
       </imagenames>
       <aniimages />
       <walkable>false</walkable>
@@ -2215,7 +1578,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts>
         <Script>
           <Name>Open</Name>
@@ -2229,17 +1592,6 @@
                 <string>\false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>IF</Type>
@@ -2249,17 +1601,6 @@
                 <string>is not in inventory</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2267,17 +1608,6 @@
                 <string>?!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2285,17 +1615,6 @@
                 <string>...</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2303,17 +1622,6 @@
                 <string>I..... can't!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -2323,17 +1631,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -2343,33 +1640,29 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Front Door</string>
+                <string>Open</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Front Door</string>
+                <string>Examine</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
             </Command>
             <Command>
               <Type>ELSE</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2377,49 +1670,16 @@
                 <string>I could use the hexagon key on this side too.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ELSE</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2427,17 +1687,6 @@
                 <string>Yes! Sweet Jesus I can't believe I am actually doing this!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2445,17 +1694,6 @@
                 <string>YESSS!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2463,17 +1701,6 @@
                 <string>SSSSSSSSSSSSSS!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Teleport</Type>
@@ -2484,33 +1711,11 @@
                 <int>250</int>
                 <int>250</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -2530,17 +1735,6 @@
                 <string>\true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2548,17 +1742,6 @@
                 <string>I have to think of something to get out of here.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2566,33 +1749,11 @@
                 <string>Something to.... escape the room!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>IF</Type>
@@ -2603,17 +1764,6 @@
                 <string>\false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2621,17 +1771,6 @@
                 <string>The....</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2639,17 +1778,6 @@
                 <string>I can't believe I am saying this.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2657,17 +1785,6 @@
                 <string>The door handle is missing!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2675,17 +1792,6 @@
                 <string>There is no way to open the door!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2693,17 +1799,6 @@
                 <string>Which incompetent fuck forgets to give a door its freaking doorknob?!!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2711,17 +1806,6 @@
                 <string>I guess I'll have to figure something out.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change GlobalVariable</Type>
@@ -2730,33 +1814,11 @@
                 <string>true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -2892,7 +1954,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts>
         <Script>
           <Name>Look at</Name>
@@ -2903,17 +1965,6 @@
                 <string>Yes.... a totally sensicial location for a hand-drill. Why the hell not!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -2923,17 +1974,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -2950,17 +1990,6 @@
                 <string>Let us ignore that this room is completly empty.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2968,17 +1997,6 @@
                 <string>I mean, hey, why even bother!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -2986,17 +2004,6 @@
                 <string>It's not like it would change anything.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3004,17 +2011,6 @@
                 <string>...</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3022,17 +2018,6 @@
                 <string>GIVE ME THAT DRILL!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Add Item</Type>
@@ -3040,17 +2025,6 @@
                 <string>drill</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -3060,17 +2034,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -3080,17 +2043,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change Visible</Type>
@@ -3099,17 +2051,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -3193,7 +2134,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts />
       <images>
         <Sprite>
@@ -3270,7 +2211,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts>
         <Script>
           <Name>Look at</Name>
@@ -3281,17 +2222,6 @@
                 <string>Well, the safe I used to own wasn't this... weird looking. And it didn't have a hole where the spin thingy is supposed to be.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -3301,17 +2231,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -3331,17 +2250,6 @@
                 <string>\false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3349,33 +2257,11 @@
                 <string>It's locked like it's supposed to be... yet the lock shouldn't be this hole... it's not even round!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ELSE</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>IF</Type>
@@ -3386,17 +2272,6 @@
                 <string>\false</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3404,17 +2279,6 @@
                 <string>Oooh! Let's see here.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ChangeSprite</Type>
@@ -3424,17 +2288,6 @@
               <IArgs>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3442,17 +2295,6 @@
                 <string>What?</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change GlobalVariable</Type>
@@ -3461,17 +2303,6 @@
                 <string>true</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -3481,17 +2312,6 @@
                 <string>ON</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -3501,33 +2321,11 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>ELSE</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3535,49 +2333,16 @@
                 <string>But I already openend it.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>END IF</Type>
               <SArgs />
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -3594,17 +2359,6 @@
                 <string>What the heck even is this? A walkie-talkie?</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Add Item</Type>
@@ -3612,17 +2366,6 @@
                 <string>oil</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3630,17 +2373,6 @@
                 <string>Huh.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Change verb</Type>
@@ -3650,17 +2382,6 @@
                 <string>OFF</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -3796,7 +2517,7 @@
       <movingspeed>0</movingspeed>
       <fading>false</fading>
       <fadedout>false</fadedout>
-      <opacity>255</opacity>
+      <opacity>1</opacity>
       <scripts>
         <Script>
           <Name>Intro</Name>
@@ -3807,17 +2528,6 @@
               <IArgs>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3825,17 +2535,6 @@
                 <string>It is late at night.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3843,17 +2542,6 @@
                 <string>You have been up working on a video game that you are developing.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3861,17 +2549,13 @@
                 <string>It was hard work and you have been devoloping it for a very long time now, but it is coming along nicely.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
+            </Command>
+            <Command>
+              <Type>Wait</Type>
+              <SArgs />
+              <IArgs>
+                <int>1</int>
+              </IArgs>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3879,17 +2563,6 @@
                 <string>...</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Wait</Type>
@@ -3897,17 +2570,6 @@
               <IArgs>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3915,17 +2577,6 @@
                 <string>It's time to go to bed for today.</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Wait</Type>
@@ -3933,17 +2584,6 @@
               <IArgs>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3951,17 +2591,6 @@
                 <string>The next morning...</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Screenfade</Type>
@@ -3969,17 +2598,6 @@
                 <string>IN</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -3987,17 +2605,6 @@
                 <string>Alright!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -4005,17 +2612,6 @@
                 <string>Soon my adventure-rpg-strategy-bullethell-MMO will be finally finished!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Move Object</Type>
@@ -4029,17 +2625,6 @@
                 <int>-7</int>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -4047,17 +2632,6 @@
                 <string>I should get going to work on my laser-particly-system with-</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -4065,17 +2639,6 @@
                 <string>Huh?</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -4083,17 +2646,6 @@
                 <string>What the heck? Why does my room look so crappy?!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -4101,17 +2653,6 @@
                 <string>If this would be a game, nobody would would wanna play it!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Move Object</Type>
@@ -4121,21 +2662,10 @@
                 <string>with animation</string>
               </SArgs>
               <IArgs>
-                <int>-16</int>
+                <int>-25</int>
                 <int>0</int>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
@@ -4143,17 +2673,6 @@
                 <string>I need to do something!</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Move Object</Type>
@@ -4167,71 +2686,13 @@
                 <int>-1</int>
                 <int>1</int>
               </IArgs>
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
             <Command>
               <Type>Message</Type>
               <SArgs>
-                <string>I got it!</string>
+                <string>Huh, what's this?</string>
               </SArgs>
               <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
-            </Command>
-            <Command>
-              <Type>Message</Type>
-              <SArgs>
-                <string>I need to get to the cellar!</string>
-              </SArgs>
-              <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
-            </Command>
-            <Command>
-              <Type>Message</Type>
-              <SArgs>
-                <string>Onward! To glory!</string>
-              </SArgs>
-              <IArgs />
-              <gui>
-                <ShowMSG>false</ShowMSG>
-                <ShowInventory>false</ShowInventory>
-                <InvList />
-                <InventoryActive>false</InventoryActive>
-                <InventorySelected>0</InventorySelected>
-                <ShowItemBox>false</ShowItemBox>
-                <AddedItem>false</AddedItem>
-                <FadedOut>false</FadedOut>
-                <Fading>false</Fading>
-              </gui>
             </Command>
           </Commands>
           <ScriptRunning>false</ScriptRunning>
@@ -4269,6 +2730,616 @@
       </images>
       <imagenames>
         <string>empty</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>LetterBig</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>440</X>
+        <Y>19</Y>
+        <Width>300</Width>
+        <Height>300</Height>
+        <Location>
+          <X>440</X>
+          <Y>19</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>6000</radius>
+      <moving>false</moving>
+      <deltaX>-30</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>470</X>
+        <Y>19</Y>
+      </OriginalPostition>
+      <movingspeed>1</movingspeed>
+      <fading>false</fading>
+      <fadedout>true</fadedout>
+      <opacity>0</opacity>
+      <scripts />
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>590</X>
+            <Y>169</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>150</X>
+            <Y>150</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>rooms/protroom/letter</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>false</visible>
+    </Object>
+    <Object>
+      <name>Letter</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>309</X>
+        <Y>150</Y>
+        <Width>20</Width>
+        <Height>20</Height>
+        <Location>
+          <X>309</X>
+          <Y>150</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>19</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>2000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>1</opacity>
+      <scripts>
+        <Script>
+          <Name>Read</Name>
+          <Commands>
+            <Command>
+              <Type>Fade Object</Type>
+              <SArgs>
+                <string>LetterBig</string>
+                <string>in</string>
+                <string>dont wait</string>
+              </SArgs>
+              <IArgs>
+                <int>60</int>
+              </IArgs>
+            </Command>
+            <Command>
+              <Type>Move Object</Type>
+              <SArgs>
+                <string>LetterBig</string>
+                <string>wait</string>
+              </SArgs>
+              <IArgs>
+                <int>30</int>
+                <int>0</int>
+                <int>1</int>
+              </IArgs>
+            </Command>
+            <Command>
+              <Type>Wait for Enter</Type>
+              <SArgs />
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>ReadLetter</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I can swear this letter wasn't here yesterday.</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Interesting... so I guess I'll go to the cellar. I hope somebody has a good explanation.</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>ReadLetter</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Fade Object</Type>
+              <SArgs>
+                <string>LetterBig</string>
+                <string>out</string>
+                <string>dont wait</string>
+              </SArgs>
+              <IArgs>
+                <int>60</int>
+              </IArgs>
+            </Command>
+            <Command>
+              <Type>Move Object</Type>
+              <SArgs>
+                <string>LetterBig</string>
+                <string>wait</string>
+              </SArgs>
+              <IArgs>
+                <int>-30</int>
+                <int>0</int>
+                <int>1</int>
+              </IArgs>
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>319</X>
+            <Y>160</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>10</X>
+            <Y>10</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>rooms\protroom\lettersmal</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>Front Door</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>177</X>
+        <Y>408</Y>
+        <Width>65</Width>
+        <Height>5</Height>
+        <Location>
+          <X>177</X>
+          <Y>408</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>1</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>1000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>1</opacity>
+      <scripts>
+        <Script>
+          <Name>Open</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>.......what?</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>What is going on here?</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Hallway Door</string>
+                <string>Open</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Hallway Door</string>
+                <string>Examine</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Front Door</string>
+                <string>Examine</string>
+                <string>ON</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Change verb</Type>
+              <SArgs>
+                <string>Front Door</string>
+                <string>Open</string>
+                <string>OFF</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+        <Script>
+          <Name>Examine</Name>
+          <Commands>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>LookedAtFrontDoor</string>
+                <string>EQUAL</string>
+                <string>\false</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Alright... the letter said I need to go to the cellar. Let's just....</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>IF</Type>
+              <SArgs>
+                <string>Variablecheck</string>
+                <string>LookedAtHallwayDoor</string>
+                <string>EQUAL</string>
+                <string>\true</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>Here too?</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>What's so hard about drawing a doorknob?!</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>It's just a circle!</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>LookedAtFrontDoor</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>ELSE</Type>
+              <SArgs />
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>This door doesn't have anything to open it! What the heck!</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Change GlobalVariable</Type>
+              <SArgs>
+                <string>LookedAtFrontDoor</string>
+                <string>true</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>END IF</Type>
+              <SArgs />
+              <IArgs />
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>false</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>209</X>
+            <Y>410</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>32</X>
+            <Y>2</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>rooms\protroom\frontdoor</string>
+      </imagenames>
+      <aniimages />
+      <walkable>true</walkable>
+      <visible>true</visible>
+    </Object>
+    <Object>
+      <name>PC</name>
+      <imagenum>0</imagenum>
+      <aniimagenum>-1</aniimagenum>
+      <keepanimating>false</keepanimating>
+      <color>
+        <R>255</R>
+        <G>255</G>
+        <B>255</B>
+        <A>255</A>
+        <PackedValue>4294967295</PackedValue>
+      </color>
+      <rect>
+        <X>430</X>
+        <Y>111</Y>
+        <Width>16</Width>
+        <Height>20</Height>
+        <Location>
+          <X>430</X>
+          <Y>111</Y>
+        </Location>
+      </rect>
+      <rectOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </rectOffset>
+      <interactOffset>
+        <X>0</X>
+        <Y>0</Y>
+      </interactOffset>
+      <radius>1000</radius>
+      <moving>false</moving>
+      <deltaX>0</deltaX>
+      <deltaY>0</deltaY>
+      <OriginalPostition>
+        <X>0</X>
+        <Y>0</Y>
+      </OriginalPostition>
+      <movingspeed>0</movingspeed>
+      <fading>false</fading>
+      <fadedout>false</fadedout>
+      <opacity>1</opacity>
+      <scripts>
+        <Script>
+          <Name>Turn on</Name>
+          <Commands>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>When I got up I was so pumped about working on my game....</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>But seeing it now, with this everthing looking so crude, it would probably just break my heart.</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>I made it really look amazing! People love great graphics, right?</string>
+              </SArgs>
+              <IArgs />
+              <gui>
+                <ShowMSG>false</ShowMSG>
+                <ShowInventory>false</ShowInventory>
+                <InvList />
+                <InventoryActive>false</InventoryActive>
+                <InventorySelected>0</InventorySelected>
+                <ShowItemBox>false</ShowItemBox>
+                <AddedItem>false</AddedItem>
+                <FadedOut>false</FadedOut>
+                <Fading>false</Fading>
+              </gui>
+            </Command>
+            <Command>
+              <Type>Message</Type>
+              <SArgs>
+                <string>So my first priority should be to get to the cellar. That will fix everything. Apparently.</string>
+              </SArgs>
+              <IArgs />
+            </Command>
+          </Commands>
+          <ScriptRunning>false</ScriptRunning>
+          <Commandcounter>-1</Commandcounter>
+          <oldCommandcounter>-1</oldCommandcounter>
+          <Active>true</Active>
+        </Script>
+      </scripts>
+      <images>
+        <Sprite>
+          <Texture>
+            <Name />
+          </Texture>
+          <Position>
+            <X>438</X>
+            <Y>121</Y>
+          </Position>
+          <SourceRect xsi:nil="true" />
+          <Color>
+            <R>255</R>
+            <G>255</G>
+            <B>255</B>
+            <A>255</A>
+            <PackedValue>4294967295</PackedValue>
+          </Color>
+          <Rotation>0</Rotation>
+          <Origin>
+            <X>8</X>
+            <Y>10</Y>
+          </Origin>
+          <Scale>1</Scale>
+          <Effects>None</Effects>
+          <LayerDepth>0</LayerDepth>
+        </Sprite>
+      </images>
+      <imagenames>
+        <string>pc</string>
       </imagenames>
       <aniimages />
       <walkable>true</walkable>

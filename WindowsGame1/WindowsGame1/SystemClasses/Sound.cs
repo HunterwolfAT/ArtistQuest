@@ -4,26 +4,251 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
+using System.IO;
 
 namespace WindowsGame1
 {
-    class Sound
+    public class Sound
     {
-        private SoundEffect effect;
+        private List<SoundEffect> sfx;
+        public List<Song> music;
 
-        void LoadSound(String soundname, ContentManager Content)
+        public float maxvolume;
+        public Boolean mute = false;
+
+        private Boolean crossfading;
+        public float fadespeed;
+        private float fadecounter;
+
+        private Boolean songplaying;
+        public Song currentsong;
+        private Song nextsong;
+
+        public Sound(String gamepath, ContentManager myContent)
         {
-            effect = Content.Load<SoundEffect>("sounds/" + soundname);
+            sfx = new List<SoundEffect>();
+            music = new List<Song>();
+
+            maxvolume = 0.5f;
+
+            fadecounter = 0;
+            fadespeed = 0.02f;
+            crossfading = false;
+
+            currentsong = null;
+            nextsong = null;
+
+            // Load all the music and sfx files that are in the content pipeline
+            String path = gamepath + "\\Content\\";
+
+                Console.WriteLine("GamePath: " + gamepath);
+            Console.WriteLine("Path to look for music in: " + path + "music\\");
+
+            // Load ALL of the music files!
+            foreach (string f in Directory.GetFiles(path + "music\\"))
+            {
+                string filename = f.Substring(f.LastIndexOf(@"\") + 1);
+                filename = filename.Substring(0, filename.Length - 4);
+                if (filename != "Thumb")
+                {
+                    Song newsong = myContent.Load<Song>("music\\" + filename);
+                    music.Add(newsong);
+                }
+                //Console.WriteLine(filename);
+            }
+
+            Console.WriteLine("Path to look for music in: " + path + "sfx\\");
+
+            // Load ALL of the sound effects!
+            foreach (string f in Directory.GetFiles(path + "sfx\\"))
+            {
+                string filename = f.Substring(f.LastIndexOf(@"\") + 1);
+                filename = filename.Substring(0, filename.Length - 4);
+                if (filename != "Thumb")
+                {
+                    SoundEffect newsfx = myContent.Load<SoundEffect>("sfx\\" + filename);
+                    newsfx.Name = filename;
+                    sfx.Add(newsfx);
+                }
+                //Console.WriteLine(filename);
+            }
+
+            // Make the Backgroundmusic loop ifinitly
+            MediaPlayer.IsRepeating = true;
+
         }
 
-        void PlaySound()
+        public void Update()
         {
-            effect.Play();
+            // FADE STUFF IN AND OUT ADJUSTE THE FADECOUNTER AND STUFF PLS
+            if (songplaying && fadecounter < 1 && !crossfading)
+            {
+                fadecounter += fadespeed;
+                if (fadecounter > 1)
+                    fadecounter = 1;
+            }
+            else if (!songplaying && fadecounter > 0 || songplaying && crossfading && fadecounter > 0)
+            {
+                fadecounter -= fadespeed;
+                if (fadecounter < 0)
+                {
+                    fadecounter = 0;
+
+                    MediaPlayer.Stop();
+                    if (crossfading)
+                    {
+                        MediaPlayer.Play(nextsong);
+                        currentsong = nextsong;
+                    }
+                    crossfading = false;
+
+                }
+            }
+            //Console.WriteLine(MediaPlayer.Volume.ToString());
+
+            MediaPlayer.Volume = fadecounter;
+
+            //dont make the volume louder then the user specified volume
+            if (MediaPlayer.Volume > maxvolume)
+                MediaPlayer.Volume = maxvolume;
+            if (mute)
+                MediaPlayer.Volume = 0;
         }
 
-        void PlaySound(float volume, float pitch, float pan)
+        public void LoadSound(String soundname, ContentManager Content)
         {
-            effect.Play(volume, pitch, pan);
+            SoundEffect effect = Content.Load<SoundEffect>("sfx\\" + soundname);
+            sfx.Add(effect);
         }
+        public void LoadMusic(String musicname, ContentManager Content)
+        {
+            Song song = Content.Load<Song>("music\\" + musicname);
+            music.Add(song);
+        }
+
+        public void PlaySound(String name)
+        {
+            SoundEffect effect = FindSfx(name);
+            if (effect != null && !mute)
+                effect.Play();
+            else
+                Console.WriteLine("Couldn't find that Soundeffect!");
+        }
+
+        public void PlaySound(String name, float volume = 1.0f, float pitch = 0.0f, float pan = 0.0f)
+        {
+            SoundEffect effect = FindSfx(name);
+            if (effect != null)
+                effect.Play(volume, pitch, pan);
+            else
+                Console.WriteLine("Couldn't find that Soundeffect!");
+        }
+
+        public void PlayMusic(String name)
+        {
+            Song song = FindSong(name);
+            if (song != null)
+            {
+                //Check wether a song is already playing
+                if (songplaying)
+                {
+                    crossfading = true;
+                    nextsong = song;
+                }
+                else
+                {
+                    MediaPlayer.Play(song);
+                    currentsong = song;
+                }
+            }
+            else
+                Console.WriteLine("Couldn't find that Piece Of Music!");
+
+            songplaying = true;
+        }
+
+        public void PlayMusic(Song song)
+        {
+            
+            MediaPlayer.Volume = fadecounter;
+            
+            //Check wether a song is already playing
+            if (songplaying)
+            {
+                crossfading = true;
+                nextsong = song;
+            }
+            else
+            {
+                MediaPlayer.Play(song);
+                currentsong = song;
+            }
+
+            songplaying = true;
+        }
+
+        public List<SoundEffect> GetSfx() { return sfx; }
+
+        public void StopMusic() { songplaying = false; currentsong = null; }
+
+        public void PauseMusic() { MediaPlayer.Pause(); }
+
+        public void ResumeMusic() { MediaPlayer.Resume(); }
+
+        SoundEffect FindSfx(String name)
+        {
+            foreach (SoundEffect fx in sfx)
+            {
+                if (fx.Name == name)
+                {
+                    return fx;
+                }
+            }
+            return null;
+        }
+
+        public Song FindSong(String name)
+        {
+            Console.WriteLine("Looking for: " + name);
+            foreach (Song song in music)
+            {
+                if (song.Name == name)
+                    return song;
+            }
+
+            return null;
+        }
+
+        public int FindSongIndex(String name)
+        {
+            Console.WriteLine("Looking for: " + name);
+            int x = 0;
+            foreach (Song song in music)
+            {
+                Console.WriteLine(song.Name);
+                if (song.Name == name)
+                    return x;
+                x++;
+            }
+
+            return -1;
+        }
+
+        public Boolean isplaying()
+        {
+            return songplaying;
+        }
+
+        //public void pausetitletheme()
+        //{
+        //    titlemusicpos = MediaPlayer.PlayPosition;
+        //}
+
+        //public void resumetitletheme(Song titlemusic)
+        //{
+        //    MediaPlayer.Play(titlemusic);
+        //}
     }
+
 }

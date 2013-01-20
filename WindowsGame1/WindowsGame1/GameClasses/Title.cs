@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System.IO;
+using Microsoft.Xna.Framework.Media;
 
 namespace WindowsGame1
 {
@@ -29,6 +30,8 @@ namespace WindowsGame1
         public int ScrollIndex;
         SpriteFont myfont;
         Boolean DontSave;
+        public Song titlesong;
+        public Song lastsong;   // The song that was played during the game before the titlescreen was called up
         public String newsavename;
         public Boolean Startup;
         public String Mode;
@@ -66,11 +69,13 @@ namespace WindowsGame1
 
             Savefilenames = new List<String>();
 
+            //lastsong = new Song();
+
             Flakes = new List<Snowflake>();
             Die = new Random();
         }
 
-        public void LoadContent(ContentManager myContentManager)
+        public void LoadContent(ContentManager myContentManager, String titlesongname)
         {
             TitlePic.LoadContent(myContentManager, "title/artistquest");
             Background.LoadContent(myContentManager, "title/titlebackground");
@@ -85,17 +90,19 @@ namespace WindowsGame1
 
             Flake.LoadContent(myContentManager, "title/snowflake");
 
-            TitlePic.Position = new Vector2(396, 70);
-            NewGame.Position = new Vector2(400, 160);
-            SaveGame.Position = new Vector2(400, 220);
-            LoadGame.Position = new Vector2(400, 280);
-            Exit.Position = new Vector2(400, 340);
-            Resume.Position = new Vector2(400, 160);
-            FileSlot.Position = new Vector2(320, 160);
-            ArrowUp.Position = new Vector2(638, 140);
-            ArrowDown.Position = new Vector2(638, 360);
+            TitlePic.Position   =   new Vector2(396, 70);
+            NewGame.Position    =   new Vector2(400, 160);
+            SaveGame.Position   =   new Vector2(400, 220);
+            LoadGame.Position   =   new Vector2(400, 280);
+            Exit.Position       =   new Vector2(400, 340);
+            Resume.Position     =   new Vector2(400, 160);
+            FileSlot.Position   =   new Vector2(320, 160);
+            ArrowUp.Position    =   new Vector2(638, 140);
+            ArrowDown.Position  =   new Vector2(638, 360);
 
             myfont = myContentManager.Load<SpriteFont>("Titlefont");
+
+            titlesong = myContentManager.Load<Song>("music\\" + titlesongname);
         }
 
         public int Update(GameTime gametime)
@@ -162,10 +169,10 @@ namespace WindowsGame1
                 SelectedIndex += 2;
             else if (Mode == "Menu" && SelectedIndex < 3)
                 SelectedIndex++;
-            else if (Mode == "Save" && SelectedIndex < 5 && ScrollIndex + 5 < Savefilenames.Count() || Mode == "Load" && SelectedIndex < 5 && ScrollIndex + 5 < Savefilenames.Count())
+            else if (Mode == "Save" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) < Savefilenames.Count)
                 SelectedIndex++;
 
-            if (Mode == "Save" && SelectedIndex == 5 && ScrollIndex + 5 < Savefilenames.Count() || Mode == "Load" && SelectedIndex == 5 && ScrollIndex + 5 < Savefilenames.Count())
+            if (Mode == "Save" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) < Savefilenames.Count)
             {
                 ScrollIndex++;
                 SelectedIndex--;
@@ -190,10 +197,11 @@ namespace WindowsGame1
             }
         }
 
-        public void Show(bool dontsave)
+        public void Show(bool dontsave, Song songbefore)
         {
             ConfirmedSelectedIndex = -1;
             DontSave = dontsave;
+            lastsong = songbefore;
         }
 
         public void Draw(SpriteBatch mySpriteBatch, Boolean GameStartup, SpriteFont Font, String Path)
@@ -299,14 +307,20 @@ namespace WindowsGame1
                     if (ScrollIndex > 0)
                         ArrowUp.Draw(mySpriteBatch);
 
-                    
+                  
                     for (int x = 0; x < 5; x++)
                     {
-                        if (x == SelectedIndex && Mode != "WriteSave")
-                            mySpriteBatch.DrawString(Font, Savefilenames[x + ScrollIndex], new Vector2(220, 137 + (x * 50)), Color.YellowGreen);
-                        else
-                            mySpriteBatch.DrawString(Font, Savefilenames[x + ScrollIndex], new Vector2(220, 137 + (x * 50)), Color.Red);
+                        if (Savefilenames.Count > x + ScrollIndex)
+                        {
+                            if (x == SelectedIndex && Mode != "WriteSave")
+                                mySpriteBatch.DrawString(Font, Savefilenames[x + ScrollIndex], new Vector2(220, 137 + (x * 50)), Color.YellowGreen);
+                            else
+                            {
+                                mySpriteBatch.DrawString(Font, Savefilenames[x + ScrollIndex], new Vector2(220, 137 + (x * 50)), Color.Red);
+                            }
+                        }
                     }
+
 
                     //int counter = 0;
                     //foreach (string file in Savefilenames)

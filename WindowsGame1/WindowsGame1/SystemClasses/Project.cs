@@ -27,7 +27,7 @@ namespace WindowsGame1
 
         public void SetGlobalVariables(List<String[]> globalvariables)
         {
-            GameVariables = globalvariables;
+            this.GameVariables = globalvariables;
         }
 
         public List<String[]> GetGlobalVariables()
@@ -45,6 +45,16 @@ namespace WindowsGame1
             return Items;
         }
 
+        public String FindVarValue(String name)
+        {
+            foreach(String[] varcouple in GameVariables)
+            {
+                if (varcouple[0] == name)
+                    return varcouple[1];
+            }
+
+            return null;
+        }
 
     }
 }
