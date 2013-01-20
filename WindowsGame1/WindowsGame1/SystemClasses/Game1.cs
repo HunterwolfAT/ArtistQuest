@@ -310,7 +310,11 @@ namespace WindowsGame1
                 scripthandler.Update(gui, GameVariables, gameTime);
             }
 
-            sound.Update();
+
+            bool guiisdone = true;
+            if (gui != null)
+                guiisdone = gui.MSGTextDisplayed();
+            sound.Update(guiisdone);
 
             base.Update(gameTime);
 

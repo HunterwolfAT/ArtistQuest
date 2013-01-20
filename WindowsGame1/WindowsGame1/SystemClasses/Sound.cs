@@ -25,6 +25,8 @@ namespace WindowsGame1
         public Song currentsong;
         private Song nextsong;
 
+        private int talkcounter = 0;
+
         public Sound(String gamepath, ContentManager myContent)
         {
             sfx = new List<SoundEffect>();
@@ -79,7 +81,7 @@ namespace WindowsGame1
 
         }
 
-        public void Update()
+        public void Update(Boolean guiisdone)
         {
             // FADE STUFF IN AND OUT ADJUSTE THE FADECOUNTER AND STUFF PLS
             if (songplaying && fadecounter < 1 && !crossfading)
@@ -114,6 +116,19 @@ namespace WindowsGame1
                 MediaPlayer.Volume = maxvolume;
             if (mute)
                 MediaPlayer.Volume = 0;
+
+            // Play the talking-sfx, when text is scrolling in
+            if (!guiisdone)
+            {
+                if (talkcounter == 0)
+                    FindSfx("Talking").Play(MediaPlayer.Volume, 1.0f, 1.0f);
+                
+                talkcounter++;
+
+                if (talkcounter > 4)
+                    talkcounter = 0;
+
+            }
         }
 
         public void LoadSound(String soundname, ContentManager Content)
