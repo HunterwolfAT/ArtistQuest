@@ -21,7 +21,7 @@ namespace WindowsGame1
         Boolean MSGisdone;
         Color MSGColor;
         float MSGOpacity = 0f;
-        Boolean MSGMoving;
+        public Boolean MSGMoving;
         int MSGYOffset;
 
         int scrollcounter;

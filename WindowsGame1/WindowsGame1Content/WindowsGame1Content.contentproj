@@ -745,13 +745,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sfx\Talking.wav">
-      <Name>Talking</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="rooms\outside\birds.png">
       <Name>birds</Name>
       <Importer>TextureImporter</Importer>
@@ -775,6 +768,13 @@
       <Name>lemonde</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="sfx\Talking.wav">
+      <Name>Talking</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

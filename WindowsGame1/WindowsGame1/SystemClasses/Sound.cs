@@ -114,14 +114,14 @@ namespace WindowsGame1
             //dont make the volume louder then the user specified volume
             if (MediaPlayer.Volume > maxvolume)
                 MediaPlayer.Volume = maxvolume;
-            if (mute)
-                MediaPlayer.Volume = 0;
+
+            MediaPlayer.IsMuted = mute;
 
             // Play the talking-sfx, when text is scrolling in
             if (!guiisdone)
             {
                 if (talkcounter == 0)
-                    FindSfx("Talking").Play(MediaPlayer.Volume, 1.0f, 1.0f);
+                    FindSfx("Talking").Play(MediaPlayer.Volume-0.2f, 1.0f, 1.0f);
                 
                 talkcounter++;
 

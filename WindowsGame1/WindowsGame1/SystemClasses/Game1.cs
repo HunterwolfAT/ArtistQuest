@@ -310,10 +310,14 @@ namespace WindowsGame1
                 scripthandler.Update(gui, GameVariables, gameTime);
             }
 
-
+            // Play the talking-SFX when the main character is talking
             bool guiisdone = true;
             if (gui != null)
+            {
                 guiisdone = gui.MSGTextDisplayed();
+                if (gui.MSGMoving)
+                    guiisdone = true;
+            }
             sound.Update(guiisdone);
 
             base.Update(gameTime);
