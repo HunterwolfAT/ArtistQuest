@@ -13,6 +13,8 @@ namespace WindowsGame1
         enum directions { up, right, down, left };
 
         public Texture2D image;
+        public Texture2D normalimage;
+        public Texture2D gunimage;
         public Texture2D talkingimage;
         public Sprite imageascii;
         public AnimatedSprite animimage;
@@ -46,6 +48,7 @@ namespace WindowsGame1
         public List<Item> InvList;
 
         public bool asciimode = false;
+        public bool gunmode = false;
 
         public bool clipping = true;
 
@@ -64,7 +67,9 @@ namespace WindowsGame1
 
         public void LoadContent(ContentManager myContentManager, SpriteFont font)
         {
-            image = myContentManager.Load<Texture2D>("figur");
+            normalimage = myContentManager.Load<Texture2D>("figur");
+            gunimage = myContentManager.Load<Texture2D>("figurgun");
+            image = normalimage;
             talkingimage = myContentManager.Load<Texture2D>("figurtalking");
             imageascii = new Sprite();
             imageascii.LoadContent(myContentManager, "at");
@@ -382,6 +387,15 @@ namespace WindowsGame1
                 playerRect.Width = (animimage.Texture.Width / animimage.Columns) / 2;
                 playerRect.Height = (animimage.Texture.Height / animimage.Rows) / 5;
             }
+        }
+
+        public void toggleGunMode(bool on = true)
+        {
+            gunmode = on;
+            if (gunmode)
+                image = gunimage;
+            else
+                image = normalimage;
         }
     }
 }

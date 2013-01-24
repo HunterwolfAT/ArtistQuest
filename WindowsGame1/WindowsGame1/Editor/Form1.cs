@@ -1735,5 +1735,15 @@ namespace WindowsGame1
                 game.sound.GetSfx()[Script_SFX_LB.SelectedIndex].Play();
             }
         }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            List<String> sargs = new List<String>();
+            List<int> iargs = new List<int>();
+
+            if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
+                || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
+                AddCommand("Toggle Gun", iargs, sargs, commandlistbox.SelectedIndex);
+        }
     }
 }

@@ -190,6 +190,10 @@
             this.comaddinventorybutton = new System.Windows.Forms.Button();
             this.comitemlist = new System.Windows.Forms.ListBox();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.Script_SFX_Listen_Button = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.Script_SFX_Play_Button = new System.Windows.Forms.Button();
+            this.Script_SFX_LB = new System.Windows.Forms.ListBox();
             this.label38 = new System.Windows.Forms.Label();
             this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
@@ -249,10 +253,7 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.label39 = new System.Windows.Forms.Label();
-            this.Script_SFX_Play_Button = new System.Windows.Forms.Button();
-            this.Script_SFX_LB = new System.Windows.Forms.ListBox();
-            this.Script_SFX_Listen_Button = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1933,6 +1934,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button26);
             this.tabPage7.Controls.Add(this.script_gs_toggleascii_Button);
             this.tabPage7.Controls.Add(this.button9);
             this.tabPage7.Controls.Add(this.label19);
@@ -2076,6 +2078,43 @@
             this.tabPage12.TabIndex = 5;
             this.tabPage12.Text = "Audio";
             this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // Script_SFX_Listen_Button
+            // 
+            this.Script_SFX_Listen_Button.Location = new System.Drawing.Point(383, 63);
+            this.Script_SFX_Listen_Button.Name = "Script_SFX_Listen_Button";
+            this.Script_SFX_Listen_Button.Size = new System.Drawing.Size(58, 31);
+            this.Script_SFX_Listen_Button.TabIndex = 10;
+            this.Script_SFX_Listen_Button.Text = "Listen";
+            this.Script_SFX_Listen_Button.UseVisualStyleBackColor = true;
+            this.Script_SFX_Listen_Button.Click += new System.EventHandler(this.Script_SFX_Listen_Button_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(252, 10);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(52, 13);
+            this.label39.TabIndex = 9;
+            this.label39.Text = "SFX Stuff";
+            // 
+            // Script_SFX_Play_Button
+            // 
+            this.Script_SFX_Play_Button.Location = new System.Drawing.Point(383, 26);
+            this.Script_SFX_Play_Button.Name = "Script_SFX_Play_Button";
+            this.Script_SFX_Play_Button.Size = new System.Drawing.Size(58, 31);
+            this.Script_SFX_Play_Button.TabIndex = 8;
+            this.Script_SFX_Play_Button.Text = "Play";
+            this.Script_SFX_Play_Button.UseVisualStyleBackColor = true;
+            this.Script_SFX_Play_Button.Click += new System.EventHandler(this.Script_SFX_Play_Button_Click);
+            // 
+            // Script_SFX_LB
+            // 
+            this.Script_SFX_LB.FormattingEnabled = true;
+            this.Script_SFX_LB.Location = new System.Drawing.Point(249, 26);
+            this.Script_SFX_LB.Name = "Script_SFX_LB";
+            this.Script_SFX_LB.Size = new System.Drawing.Size(128, 173);
+            this.Script_SFX_LB.TabIndex = 7;
             // 
             // label38
             // 
@@ -2571,7 +2610,7 @@
             // newRoomToolStripMenuItem
             // 
             this.newRoomToolStripMenuItem.Name = "newRoomToolStripMenuItem";
-            this.newRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.newRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.newRoomToolStripMenuItem.Text = "New Room";
             this.newRoomToolStripMenuItem.Click += new System.EventHandler(this.newRoomToolStripMenuItem_Click);
             // 
@@ -2579,37 +2618,37 @@
             // 
             this.saveRoomToolStripMenuItem1.Name = "saveRoomToolStripMenuItem1";
             this.saveRoomToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
+            this.saveRoomToolStripMenuItem1.Size = new System.Drawing.Size(283, 22);
             this.saveRoomToolStripMenuItem1.Text = "Save Room";
             this.saveRoomToolStripMenuItem1.Click += new System.EventHandler(this.saveRoomToolStripMenuItem1_Click);
             // 
             // saveRoomToolStripMenuItem
             // 
             this.saveRoomToolStripMenuItem.Name = "saveRoomToolStripMenuItem";
-            this.saveRoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.S)));
-            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.saveRoomToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.saveRoomToolStripMenuItem.Text = "Save Room As...";
             this.saveRoomToolStripMenuItem.Click += new System.EventHandler(this.saveRoomToolStripMenuItem_Click);
             // 
             // loadRoomToolStripMenuItem
             // 
             this.loadRoomToolStripMenuItem.Name = "loadRoomToolStripMenuItem";
-            this.loadRoomToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.loadRoomToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.loadRoomToolStripMenuItem.Text = "Load Room";
             this.loadRoomToolStripMenuItem.Click += new System.EventHandler(this.loadRoomToolStripMenuItem_Click);
             // 
             // closeEditorToolStripMenuItem
             // 
             this.closeEditorToolStripMenuItem.Name = "closeEditorToolStripMenuItem";
-            this.closeEditorToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.closeEditorToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.closeEditorToolStripMenuItem.Text = "Close Editor";
             this.closeEditorToolStripMenuItem.Click += new System.EventHandler(this.closeEditorToolStripMenuItem_Click);
             // 
             // exitGameToolStripMenuItem
             // 
             this.exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
-            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.exitGameToolStripMenuItem.Size = new System.Drawing.Size(283, 22);
             this.exitGameToolStripMenuItem.Text = "Exit Game";
             this.exitGameToolStripMenuItem.Click += new System.EventHandler(this.exitGameToolStripMenuItem_Click);
             // 
@@ -2637,42 +2676,15 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // label39
+            // button26
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(252, 10);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(52, 13);
-            this.label39.TabIndex = 9;
-            this.label39.Text = "SFX Stuff";
-            // 
-            // Script_SFX_Play_Button
-            // 
-            this.Script_SFX_Play_Button.Location = new System.Drawing.Point(383, 26);
-            this.Script_SFX_Play_Button.Name = "Script_SFX_Play_Button";
-            this.Script_SFX_Play_Button.Size = new System.Drawing.Size(58, 31);
-            this.Script_SFX_Play_Button.TabIndex = 8;
-            this.Script_SFX_Play_Button.Text = "Play";
-            this.Script_SFX_Play_Button.UseVisualStyleBackColor = true;
-            this.Script_SFX_Play_Button.Click += new System.EventHandler(this.Script_SFX_Play_Button_Click);
-            // 
-            // Script_SFX_LB
-            // 
-            this.Script_SFX_LB.FormattingEnabled = true;
-            this.Script_SFX_LB.Location = new System.Drawing.Point(249, 26);
-            this.Script_SFX_LB.Name = "Script_SFX_LB";
-            this.Script_SFX_LB.Size = new System.Drawing.Size(128, 173);
-            this.Script_SFX_LB.TabIndex = 7;
-            // 
-            // Script_SFX_Listen_Button
-            // 
-            this.Script_SFX_Listen_Button.Location = new System.Drawing.Point(383, 63);
-            this.Script_SFX_Listen_Button.Name = "Script_SFX_Listen_Button";
-            this.Script_SFX_Listen_Button.Size = new System.Drawing.Size(58, 31);
-            this.Script_SFX_Listen_Button.TabIndex = 10;
-            this.Script_SFX_Listen_Button.Text = "Listen";
-            this.Script_SFX_Listen_Button.UseVisualStyleBackColor = true;
-            this.Script_SFX_Listen_Button.Click += new System.EventHandler(this.Script_SFX_Listen_Button_Click);
+            this.button26.Location = new System.Drawing.Point(460, 50);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(214, 23);
+            this.button26.TabIndex = 8;
+            this.button26.Text = "Toggle Gun Mode";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // Form1
             // 
@@ -2977,6 +2989,7 @@
         private System.Windows.Forms.Button Script_SFX_Play_Button;
         private System.Windows.Forms.ListBox Script_SFX_LB;
         private System.Windows.Forms.Button Script_SFX_Listen_Button;
+        private System.Windows.Forms.Button button26;
 
     }
 }
