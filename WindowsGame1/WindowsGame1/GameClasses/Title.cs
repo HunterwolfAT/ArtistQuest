@@ -149,7 +149,7 @@ namespace WindowsGame1
 
         public void SelectUp()
         {
-            if (Mode == "Menu" && Startup && SelectedIndex == 2)
+            if (Mode == "Menu" && Startup && SelectedIndex == 2 || Mode == "Menu" && DontSave && SelectedIndex == 2)
                 SelectedIndex -= 2;
             if (Mode == "Load" && SelectedIndex > -1 && ScrollIndex > 0 || Mode == "Save" && SelectedIndex > -1 && ScrollIndex > 0)
                 SelectedIndex--;
