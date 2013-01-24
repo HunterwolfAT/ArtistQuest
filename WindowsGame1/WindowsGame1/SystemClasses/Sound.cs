@@ -121,7 +121,13 @@ namespace WindowsGame1
             if (!guiisdone)
             {
                 if (talkcounter == 0)
-                    FindSfx("Talking").Play(MediaPlayer.Volume-0.2f, 1.0f, 1.0f);
+                {
+                    float talkvolume = MediaPlayer.Volume - 0.2f;
+                    if (talkvolume < 0)
+                        talkvolume = 0;
+                    FindSfx("Talking").Play(talkvolume, 1.0f, 1.0f);
+
+                }
                 
                 talkcounter++;
 
