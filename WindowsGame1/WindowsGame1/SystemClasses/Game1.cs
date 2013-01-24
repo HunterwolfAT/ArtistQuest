@@ -1107,6 +1107,7 @@ namespace WindowsGame1
 
             player.toggleAscii(save.asciimode);
             gui.toggleAscii(save.asciimode);
+            player.verbmenu.toggleAscii(save.asciimode);
 
             // If the map has a background song, play it now!
             if (map.backgroundmusic != null)
