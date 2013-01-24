@@ -13,12 +13,13 @@ namespace WindowsGame1
         enum directions { up, right, down, left };
 
         public Texture2D image;
-        public Texture2D normalimage;
         public Texture2D gunimage;
         public Texture2D talkingimage;
         public Sprite imageascii;
         public AnimatedSprite animimage;
         public AnimatedSprite talkimage;
+        public AnimatedSprite normalimage;
+        public AnimatedSprite gunanimimage;
 
         public Vector2 acc, speed, position;
         public Rectangle playerRect;
@@ -67,13 +68,14 @@ namespace WindowsGame1
 
         public void LoadContent(ContentManager myContentManager, SpriteFont font)
         {
-            normalimage = myContentManager.Load<Texture2D>("figur");
+            image = myContentManager.Load<Texture2D>("figur");
             gunimage = myContentManager.Load<Texture2D>("figurgun");
-            image = normalimage;
             talkingimage = myContentManager.Load<Texture2D>("figurtalking");
             imageascii = new Sprite();
             imageascii.LoadContent(myContentManager, "at");
-            animimage = new AnimatedSprite("hero", "figur", image, 4, 9);
+            normalimage = new AnimatedSprite("hero", "figur", image, 4, 9);
+            gunanimimage = new AnimatedSprite("hero", "figur", gunimage, 4, 9);
+            animimage = normalimage;
             talkimage = new AnimatedSprite("herotalking", "figurtalking", talkingimage, 4, 5);
 
             playerRect.Width = (animimage.Texture.Width / animimage.Columns) / 2;
@@ -391,11 +393,12 @@ namespace WindowsGame1
 
         public void toggleGunMode(bool on = true)
         {
+            //Console.WriteLine("CHANGING GUNMODE LOLOLO");
             gunmode = on;
             if (gunmode)
-                image = gunimage;
+                animimage = gunanimimage;
             else
-                image = normalimage;
+                animimage = normalimage;
         }
     }
 }
