@@ -118,7 +118,7 @@ namespace WindowsGame1
             MediaPlayer.IsMuted = mute;
 
             // Play the talking-sfx, when text is scrolling in
-            if (!guiisdone)
+            if (!guiisdone && !mute)
             {
                 if (talkcounter == 0)
                 {
