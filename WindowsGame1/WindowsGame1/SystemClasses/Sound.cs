@@ -15,7 +15,7 @@ namespace WindowsGame1
         public List<Song> music;
 
         public float maxvolume;
-        public Boolean mute = false;
+        public Boolean mute = true;
 
         private Boolean crossfading;
         public float fadespeed;
@@ -126,7 +126,6 @@ namespace WindowsGame1
                     if (talkvolume < 0)
                         talkvolume = 0;
                     FindSfx("Talking").Play(talkvolume, 1.0f, 1.0f);
-
                 }
                 
                 talkcounter++;

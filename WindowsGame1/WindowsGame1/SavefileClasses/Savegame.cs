@@ -10,6 +10,7 @@ namespace WindowsGame1
     {
         public String Name;
         public Vector2 Playerpos;
+        public Boolean asciimode;
         public List<String> GVName;   // GameVariables Name
         public List<String> GVValue;  // GameVariables Value
         public List<String> Inventory;
@@ -25,6 +26,7 @@ namespace WindowsGame1
             Playerpos = new Vector2(0,0);
             MapSaves = new List<MapSave>();
             CurrentRoom = "";
+            asciimode = false;
         }
 
         public Savegame(List<String[]> gamevariables, List<Item> inventory, Maps map)
@@ -53,9 +55,11 @@ namespace WindowsGame1
                 GVName.Add(str[0]);
                 GVValue.Add(str[1]);
             }
+
+            asciimode = false;
         }
 
-        public void PrepareSave(String name, List<String[]> gamevariables, List<Item> inventory, Vector2 playerpos, Maps map)
+        public void PrepareSave(String name, List<String[]> gamevariables, List<Item> inventory, Vector2 playerpos, Maps map, Boolean ascii)
         {
             Name = name;
             Playerpos = playerpos;
@@ -97,6 +101,8 @@ namespace WindowsGame1
                 GVName.Add(str[0]);
                 GVValue.Add(str[1]);
             }
+
+            asciimode = ascii;
         }
     }
 }
