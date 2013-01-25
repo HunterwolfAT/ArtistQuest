@@ -1155,6 +1155,11 @@ namespace WindowsGame1
 
             sargs.Add("OUT");
 
+            if (Script_Fadeout_White_CB.Checked)
+                sargs.Add("White");
+
+            iargs.Add((int)Script_Fadeout_Speed.Value);
+
             if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                 || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
                 AddCommand("Screenfade", iargs, sargs, commandlistbox.SelectedIndex);
@@ -1166,6 +1171,8 @@ namespace WindowsGame1
             List<int> iargs = new List<int>();
 
             sargs.Add("IN");
+
+            iargs.Add((int)Script_Fadeout_Speed.Value);
 
             if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                 || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)

@@ -177,6 +177,7 @@
             this.islistbox = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button26 = new System.Windows.Forms.Button();
             this.script_gs_toggleascii_Button = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -253,7 +254,9 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.button26 = new System.Windows.Forms.Button();
+            this.Script_Fadeout_Speed = new System.Windows.Forms.NumericUpDown();
+            this.label40 = new System.Windows.Forms.Label();
+            this.Script_Fadeout_White_CB = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -298,6 +301,7 @@
             this.AudioGroupMusic.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Script_Fadeout_Speed)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -1184,6 +1188,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.Script_Fadeout_White_CB);
+            this.tabPage4.Controls.Add(this.label40);
+            this.tabPage4.Controls.Add(this.Script_Fadeout_Speed);
             this.tabPage4.Controls.Add(this.MSG_Enter);
             this.tabPage4.Controls.Add(this.button22);
             this.tabPage4.Controls.Add(this.button21);
@@ -1220,7 +1227,7 @@
             // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(483, 122);
+            this.button22.Location = new System.Drawing.Point(496, 122);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(178, 23);
             this.button22.TabIndex = 17;
@@ -1230,7 +1237,7 @@
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(483, 100);
+            this.button21.Location = new System.Drawing.Point(496, 100);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(178, 23);
             this.button21.TabIndex = 16;
@@ -1240,7 +1247,7 @@
             // 
             // comwaitButton
             // 
-            this.comwaitButton.Location = new System.Drawing.Point(483, 66);
+            this.comwaitButton.Location = new System.Drawing.Point(496, 66);
             this.comwaitButton.Name = "comwaitButton";
             this.comwaitButton.Size = new System.Drawing.Size(178, 28);
             this.comwaitButton.TabIndex = 15;
@@ -1251,7 +1258,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(483, 24);
+            this.label9.Location = new System.Drawing.Point(496, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 13);
             this.label9.TabIndex = 14;
@@ -1259,7 +1266,7 @@
             // 
             // comwaitsecondsBox
             // 
-            this.comwaitsecondsBox.Location = new System.Drawing.Point(499, 40);
+            this.comwaitsecondsBox.Location = new System.Drawing.Point(512, 40);
             this.comwaitsecondsBox.Name = "comwaitsecondsBox";
             this.comwaitsecondsBox.Size = new System.Drawing.Size(114, 20);
             this.comwaitsecondsBox.TabIndex = 13;
@@ -1267,17 +1274,17 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(267, 125);
+            this.label25.Location = new System.Drawing.Point(269, 127);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(89, 13);
+            this.label25.Size = new System.Drawing.Size(107, 13);
             this.label25.TabIndex = 12;
-            this.label25.Text = "^Name        Pos>";
+            this.label25.Text = "^Name              Pos>";
             // 
             // button16
             // 
             this.button16.Location = new System.Drawing.Point(253, 153);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(186, 30);
+            this.button16.Size = new System.Drawing.Size(224, 30);
             this.button16.TabIndex = 11;
             this.button16.Text = "Teleport";
             this.button16.UseVisualStyleBackColor = true;
@@ -1285,14 +1292,14 @@
             // 
             // telposy
             // 
-            this.telposy.Location = new System.Drawing.Point(401, 122);
+            this.telposy.Location = new System.Drawing.Point(417, 124);
             this.telposy.Name = "telposy";
             this.telposy.Size = new System.Drawing.Size(38, 20);
             this.telposy.TabIndex = 10;
             // 
             // telposx
             // 
-            this.telposx.Location = new System.Drawing.Point(360, 122);
+            this.telposx.Location = new System.Drawing.Point(376, 124);
             this.telposx.Name = "telposx";
             this.telposx.Size = new System.Drawing.Size(35, 20);
             this.telposx.TabIndex = 9;
@@ -1301,14 +1308,14 @@
             // 
             this.telname.Location = new System.Drawing.Point(253, 95);
             this.telname.Name = "telname";
-            this.telname.Size = new System.Drawing.Size(186, 20);
+            this.telname.Size = new System.Drawing.Size(224, 20);
             this.telname.TabIndex = 8;
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(253, 60);
+            this.button15.Location = new System.Drawing.Point(253, 47);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(186, 23);
+            this.button15.Size = new System.Drawing.Size(130, 23);
             this.button15.TabIndex = 7;
             this.button15.Text = "Fade Screen In";
             this.button15.UseVisualStyleBackColor = true;
@@ -1316,9 +1323,9 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(253, 29);
+            this.button14.Location = new System.Drawing.Point(253, 24);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(186, 25);
+            this.button14.Size = new System.Drawing.Size(130, 23);
             this.button14.TabIndex = 6;
             this.button14.Text = "Fade Screen Out";
             this.button14.UseVisualStyleBackColor = true;
@@ -1326,7 +1333,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(483, 148);
+            this.button12.Location = new System.Drawing.Point(496, 148);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(178, 41);
             this.button12.TabIndex = 5;
@@ -1949,6 +1956,16 @@
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Game Stats";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(460, 50);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(214, 23);
+            this.button26.TabIndex = 8;
+            this.button26.Text = "Toggle Gun Mode";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // script_gs_toggleascii_Button
             // 
@@ -2676,15 +2693,36 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // button26
+            // Script_Fadeout_Speed
             // 
-            this.button26.Location = new System.Drawing.Point(460, 50);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(214, 23);
-            this.button26.TabIndex = 8;
-            this.button26.Text = "Toggle Gun Mode";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
+            this.Script_Fadeout_Speed.Location = new System.Drawing.Point(387, 35);
+            this.Script_Fadeout_Speed.Name = "Script_Fadeout_Speed";
+            this.Script_Fadeout_Speed.Size = new System.Drawing.Size(49, 20);
+            this.Script_Fadeout_Speed.TabIndex = 19;
+            this.Script_Fadeout_Speed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(384, 21);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(80, 13);
+            this.label40.TabIndex = 20;
+            this.label40.Text = "Speed Fadeout";
+            // 
+            // Script_Fadeout_White_CB
+            // 
+            this.Script_Fadeout_White_CB.AutoSize = true;
+            this.Script_Fadeout_White_CB.Location = new System.Drawing.Point(386, 58);
+            this.Script_Fadeout_White_CB.Name = "Script_Fadeout_White_CB";
+            this.Script_Fadeout_White_CB.Size = new System.Drawing.Size(96, 17);
+            this.Script_Fadeout_White_CB.TabIndex = 21;
+            this.Script_Fadeout_White_CB.Text = "Fadeout White";
+            this.Script_Fadeout_White_CB.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -2757,6 +2795,7 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Script_Fadeout_Speed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2990,6 +3029,9 @@
         private System.Windows.Forms.ListBox Script_SFX_LB;
         private System.Windows.Forms.Button Script_SFX_Listen_Button;
         private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.CheckBox Script_Fadeout_White_CB;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.NumericUpDown Script_Fadeout_Speed;
 
     }
 }

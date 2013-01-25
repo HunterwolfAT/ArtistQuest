@@ -514,9 +514,21 @@ namespace WindowsGame1
                     else if (activescript.Commands[Commandcounter].Type == "Screenfade")
                     {
                         if (activescript.Commands[Commandcounter].SArgs[0] == "OUT")
-                            gui.FadeOut();
+                        {
+                            Boolean white = false;
+                            
+                            if (activescript.Commands[Commandcounter].SArgs.Count > 1)
+                            {
+                                if (activescript.Commands[Commandcounter].SArgs[1] == "White")
+                                    white = true;
+                            }
+                            
+                            gui.FadeOut(white);
+                        }
                         if (activescript.Commands[Commandcounter].SArgs[0] == "IN")
+                        {
                             gui.FadeIn();
+                        }
                     }
                     #endregion
                     #region Teleport

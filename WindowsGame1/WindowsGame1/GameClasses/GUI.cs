@@ -51,6 +51,8 @@ namespace WindowsGame1
 
         //Fade-Control variables
         Sprite ScreenFadeTex;
+        Sprite ScreenFadeTexBlack;
+        Sprite ScreenFadeTexWhite;
         public bool FadedOut = false;
         public bool Fading = false;
         float FadeOpacity;
@@ -99,6 +101,8 @@ namespace WindowsGame1
             ItemPic = new Sprite();
 
             ScreenFadeTex = new Sprite();
+            ScreenFadeTexBlack = new Sprite();
+            ScreenFadeTexWhite = new Sprite();
             FadeOpacity = 0f;
 
             EnterKeySprite = new Sprite();
@@ -143,6 +147,8 @@ namespace WindowsGame1
             ItemPic = new Sprite();
 
             ScreenFadeTex = new Sprite();
+            ScreenFadeTexBlack = new Sprite();
+            ScreenFadeTexWhite = new Sprite();
             FadeOpacity = 0f;
 
             EnterKeySprite = new Sprite();
@@ -180,7 +186,11 @@ namespace WindowsGame1
             SpaceKeySprite = SpaceKeySpriteOrg;
             ShiftKeySprite = ShiftKeySpriteOrg;
 
-            ScreenFadeTex.LoadContent(myContentManager, "fadepic");
+            ScreenFadeTexBlack.LoadContent(myContentManager, "fadepic"); 
+            ScreenFadeTexWhite.LoadContent(myContentManager, "fadepicwhite");
+
+            ScreenFadeTex = ScreenFadeTexBlack;
+
             ScreenFadeTex.Color = new Color(255, 255, 255, FadeOpacity);
         }
 
@@ -247,11 +257,16 @@ namespace WindowsGame1
             InvList.Add(newitem);
         }
 
-        public void FadeOut()
+        public void FadeOut(Boolean White)
         {
             Console.WriteLine("Im supposed to fade out now!");
             if(!FadedOut)
             {
+                if (White)
+                    ScreenFadeTex = ScreenFadeTexWhite;
+                else
+                    ScreenFadeTex = ScreenFadeTexBlack;
+                
                 Fading = true;
             }
         }
