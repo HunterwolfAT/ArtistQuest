@@ -11,6 +11,7 @@ namespace WindowsGame1
         public String Name;
         public Vector2 Playerpos;
         public Boolean asciimode;
+        public Boolean gunmode;
         public List<String> GVName;   // GameVariables Name
         public List<String> GVValue;  // GameVariables Value
         public List<String> Inventory;
@@ -57,9 +58,10 @@ namespace WindowsGame1
             }
 
             asciimode = false;
+            gunmode = false;
         }
 
-        public void PrepareSave(String name, List<String[]> gamevariables, List<Item> inventory, Vector2 playerpos, Maps map, Boolean ascii)
+        public void PrepareSave(String name, List<String[]> gamevariables, List<Item> inventory, Vector2 playerpos, Maps map, Boolean ascii, Boolean gunmo)
         {
             Name = name;
             Playerpos = playerpos;
@@ -103,6 +105,7 @@ namespace WindowsGame1
             }
 
             asciimode = ascii;
+            gunmode = gunmo;
         }
     }
 }

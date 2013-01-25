@@ -965,7 +965,7 @@ namespace WindowsGame1
             path = path.Substring(6, path.Length - 6);      // Getting rid of the file:\ it puts in front of the path with the above line
             string relPath = System.IO.Path.Combine(path + "\\savegames\\", Filename);
 
-            save.PrepareSave(Filename, proj.GetGlobalVariables(), player.InvList, player.position, map, player.asciimode);
+            save.PrepareSave(Filename, proj.GetGlobalVariables(), player.InvList, player.position, map, player.asciimode, player.gunmode);
 
             if (save.Save(path + "\\" + "dummyfile"))
             {
@@ -1108,6 +1108,8 @@ namespace WindowsGame1
             player.toggleAscii(save.asciimode);
             gui.toggleAscii(save.asciimode);
             player.verbmenu.toggleAscii(save.asciimode);
+
+            player.toggleGunMode(save.gunmode);
 
             // If the map has a background song, play it now!
             if (map.backgroundmusic != null)
