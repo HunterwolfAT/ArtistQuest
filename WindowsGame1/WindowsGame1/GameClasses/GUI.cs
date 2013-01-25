@@ -257,7 +257,7 @@ namespace WindowsGame1
             InvList.Add(newitem);
         }
 
-        public void FadeOut(Boolean White)
+        public void FadeOut(Boolean White, int speed)
         {
             Console.WriteLine("Im supposed to fade out now!");
             if(!FadedOut)
@@ -266,15 +266,20 @@ namespace WindowsGame1
                     ScreenFadeTex = ScreenFadeTexWhite;
                 else
                     ScreenFadeTex = ScreenFadeTexBlack;
-                
+
+                FadeStep = speed / 100f;
+
                 Fading = true;
             }
         }
 
-        public void FadeIn()
+        public void FadeIn(int speed)
         {
             if (FadedOut)
+            {
+                FadeStep = speed / 100f;
                 Fading = true;
+            }
         }
 
         public void Draw(SpriteBatch mySpriteBatch, Boolean verbmenuopen, Object interactwithobject, Boolean ascriptisrunning)

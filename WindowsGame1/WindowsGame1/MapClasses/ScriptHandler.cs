@@ -513,6 +513,11 @@ namespace WindowsGame1
                     #region Screenfade
                     else if (activescript.Commands[Commandcounter].Type == "Screenfade")
                     {
+                        int speed = 1;
+                        
+                        if (activescript.Commands[Commandcounter].IArgs.Count > 0)
+                            speed = activescript.Commands[Commandcounter].IArgs[0];
+                        
                         if (activescript.Commands[Commandcounter].SArgs[0] == "OUT")
                         {
                             Boolean white = false;
@@ -523,11 +528,11 @@ namespace WindowsGame1
                                     white = true;
                             }
                             
-                            gui.FadeOut(white);
+                            gui.FadeOut(white, speed);
                         }
                         if (activescript.Commands[Commandcounter].SArgs[0] == "IN")
                         {
-                            gui.FadeIn();
+                            gui.FadeIn(speed);
                         }
                     }
                     #endregion
