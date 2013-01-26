@@ -15,11 +15,14 @@ namespace WindowsGame1
         public Texture2D image;
         public Texture2D gunimage;
         public Texture2D talkingimage;
+        public Texture2D talkingimagegun;
         public Sprite imageascii;
         public AnimatedSprite animimage;
-        public AnimatedSprite talkimage;
         public AnimatedSprite normalimage;
         public AnimatedSprite gunanimimage;
+        public AnimatedSprite talkimage;
+        AnimatedSprite talkimagenormal;
+        AnimatedSprite talkimagegun;
 
         public Vector2 acc, speed, position;
         public Rectangle playerRect;
@@ -71,12 +74,15 @@ namespace WindowsGame1
             image = myContentManager.Load<Texture2D>("figur");
             gunimage = myContentManager.Load<Texture2D>("figurgun");
             talkingimage = myContentManager.Load<Texture2D>("figurtalking");
+            talkingimagegun = myContentManager.Load<Texture2D>("figurtalkinggun");
             imageascii = new Sprite();
             imageascii.LoadContent(myContentManager, "at");
             normalimage = new AnimatedSprite("hero", "figur", image, 4, 9);
             gunanimimage = new AnimatedSprite("hero", "figur", gunimage, 4, 9);
             animimage = normalimage;
-            talkimage = new AnimatedSprite("herotalking", "figurtalking", talkingimage, 4, 5);
+            talkimagenormal = new AnimatedSprite("herotalking", "figurtalking", talkingimage, 4, 5);
+            talkimagegun = new AnimatedSprite("herotalking", "figurtalkinggun", talkingimagegun, 4, 5);
+            talkimage = talkimagenormal;
 
             playerRect.Width = (animimage.Texture.Width / animimage.Columns) / 2;
             playerRect.Height = (animimage.Texture.Height / animimage.Rows) / 5;
@@ -396,9 +402,15 @@ namespace WindowsGame1
             //Console.WriteLine("CHANGING GUNMODE LOLOLO");
             gunmode = on;
             if (gunmode)
+            {
                 animimage = gunanimimage;
+                talkimage = talkimagegun;
+            }
             else
+            {
                 animimage = normalimage;
+                talkimage = talkimagenormal;
+            }
         }
     }
 }
