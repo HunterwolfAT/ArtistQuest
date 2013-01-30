@@ -172,11 +172,14 @@ namespace WindowsGame1
             else if (Mode == "Save" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex < 5 && (SelectedIndex + ScrollIndex + 1) < Savefilenames.Count)
                 SelectedIndex++;
 
-            if (Mode == "Save" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count - 1 || Mode == "Load" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) < Savefilenames.Count)
+            if (Mode == "Save" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex) <= Savefilenames.Count - 1|| Mode == "Load" && SelectedIndex == 5 && (SelectedIndex + ScrollIndex + 1) <= Savefilenames.Count)
             {
                 ScrollIndex++;
                 SelectedIndex--;
             }
+            Console.WriteLine("Selected Index: " + SelectedIndex.ToString());
+            Console.WriteLine("ScrollIndex: " + ScrollIndex.ToString());
+            Console.WriteLine("Savefilenames.Count: " + Savefilenames.Count.ToString());
         }
 
         public void Confirm()
