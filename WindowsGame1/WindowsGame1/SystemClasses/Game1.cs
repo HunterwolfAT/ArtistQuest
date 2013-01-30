@@ -22,8 +22,8 @@ namespace WindowsGame1
         //SUPER SECRET ONLY ONCE IN A LIFETIME ADJUSTING VARIABLES
         private String Projectname = "ArtistQuestProt";
         private String FirstRoom = "ProtRoom";
-        private String MenuSong = "ColdFunk";
-        private Boolean Debug = true;
+        private String MenuSong = "";
+        private Boolean Debug = false;
         private Boolean ShowTitle = true;
         
         //System Variables
@@ -80,7 +80,7 @@ namespace WindowsGame1
             //graphics.ToggleFullScreen();
 
             //this.Window.AllowUserResizing = true;
-            this.Window.Title = "Artist Quest Alpha v0.8";
+            this.Window.Title = "Artist Quest Beta 1.0";
         }
 
         /// <summary>
@@ -273,11 +273,14 @@ namespace WindowsGame1
                     }
                     else if (title.Mode == "Load")
                     {
-                        LoadSave(title.Savefilenames[title.SelectedIndex + title.ScrollIndex]);
-                        title.Mode = "Menu";
-                        ShowTitle = false;
+                        if (title.Savefilenames.Count > 0)
+                        {
+                            LoadSave(title.Savefilenames[title.SelectedIndex + title.ScrollIndex]);
+                            title.Mode = "Menu";
+                            ShowTitle = false;
+                            title.Startup = false;
+                        }
                         title.ConfirmedSelectedIndex = -1;
-                        title.Startup = false;
                     }
                     else
                         title.ConfirmedSelectedIndex = -1;
@@ -314,7 +317,7 @@ namespace WindowsGame1
             bool guiisdone = true;
             if (gui != null)
                 guiisdone = gui.MSGTextDisplayed();
-            sound.Update(guiisdone);
+            //sound.Update(guiisdone);
 
             base.Update(gameTime);
 

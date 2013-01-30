@@ -190,22 +190,24 @@ namespace WindowsGame1
 
         public void PlayMusic(Song song)
         {
-            
-            MediaPlayer.Volume = fadecounter;
-            
-            //Check wether a song is already playing
-            if (songplaying)
+            if (song != null)
             {
-                crossfading = true;
-                nextsong = song;
-            }
-            else
-            {
-                MediaPlayer.Play(song);
-                currentsong = song;
-            }
+                MediaPlayer.Volume = fadecounter;
 
-            songplaying = true;
+                //Check wether a song is already playing
+                if (songplaying)
+                {
+                    crossfading = true;
+                    nextsong = song;
+                }
+                else
+                {
+                    MediaPlayer.Play(song);
+                    currentsong = song;
+                }
+
+                songplaying = true;
+            }
         }
 
         public List<SoundEffect> GetSfx() { return sfx; }

@@ -102,7 +102,8 @@ namespace WindowsGame1
 
             myfont = myContentManager.Load<SpriteFont>("Titlefont");
 
-            titlesong = myContentManager.Load<Song>("music\\" + titlesongname);
+            if (titlesongname != "")
+                titlesong = myContentManager.Load<Song>("music\\" + titlesongname);
         }
 
         public int Update(GameTime gametime)
@@ -224,7 +225,7 @@ namespace WindowsGame1
             
             if (GameStartup)
             {
-                mySpriteBatch.DrawString(myfont, "Loading...", new Vector2(330, 200), Color.LightPink);
+                mySpriteBatch.DrawString(myfont, "Loading...", new Vector2(350, 210), Color.LightPink);
             }
             else
             {
@@ -279,6 +280,10 @@ namespace WindowsGame1
                             Exit.Draw(mySpriteBatch);
                             break;
                     }
+
+                    mySpriteBatch.DrawString(myfont, "2013 (c) by HunterwolfAT", new Vector2(15, 5), Color.DarkRed);
+                    mySpriteBatch.DrawString(myfont, "F5: Changes Res. F6: Fullscreen ", new Vector2(430, 5), Color.White);
+
                 }
                 if (Mode == "Save" || Mode == "Load" || Mode == "WriteSave")
                 {

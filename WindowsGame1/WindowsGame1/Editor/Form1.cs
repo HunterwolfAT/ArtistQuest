@@ -1658,6 +1658,8 @@ namespace WindowsGame1
         {
             if (AudioMusic.SelectedIndex > 0)
                 game.map.backgroundmusic = AudioMusic.Items[AudioMusic.SelectedIndex].ToString();
+            if (AudioMusic.SelectedIndex == 0)
+                game.map.backgroundmusic = null;
         }
 
         private void script_music_play_B_Click(object sender, EventArgs e)
