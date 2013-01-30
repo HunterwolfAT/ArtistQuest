@@ -108,6 +108,9 @@
             this.scriptitemscriptlistbox = new System.Windows.Forms.ListBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.Script_Fadeout_White_CB = new System.Windows.Forms.CheckBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.Script_Fadeout_Speed = new System.Windows.Forms.NumericUpDown();
             this.MSG_Enter = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
@@ -254,9 +257,7 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.Script_Fadeout_Speed = new System.Windows.Forms.NumericUpDown();
-            this.label40 = new System.Windows.Forms.Label();
-            this.Script_Fadeout_White_CB = new System.Windows.Forms.CheckBox();
+            this.button27 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -278,6 +279,7 @@
             this.itemstab.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Script_Fadeout_Speed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comwaitsecondsBox)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comobjmoveSpeedBox)).BeginInit();
@@ -301,7 +303,6 @@
             this.AudioGroupMusic.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Script_Fadeout_Speed)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -333,6 +334,7 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.button27);
             this.tabPage1.Controls.Add(this.a);
             this.tabPage1.Controls.Add(this.newsnapshotButton);
             this.tabPage1.Controls.Add(this.snapshotLB);
@@ -1214,6 +1216,37 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "General";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // Script_Fadeout_White_CB
+            // 
+            this.Script_Fadeout_White_CB.AutoSize = true;
+            this.Script_Fadeout_White_CB.Location = new System.Drawing.Point(386, 58);
+            this.Script_Fadeout_White_CB.Name = "Script_Fadeout_White_CB";
+            this.Script_Fadeout_White_CB.Size = new System.Drawing.Size(96, 17);
+            this.Script_Fadeout_White_CB.TabIndex = 21;
+            this.Script_Fadeout_White_CB.Text = "Fadeout White";
+            this.Script_Fadeout_White_CB.UseVisualStyleBackColor = true;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(384, 21);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(80, 13);
+            this.label40.TabIndex = 20;
+            this.label40.Text = "Speed Fadeout";
+            // 
+            // Script_Fadeout_Speed
+            // 
+            this.Script_Fadeout_Speed.Location = new System.Drawing.Point(387, 35);
+            this.Script_Fadeout_Speed.Name = "Script_Fadeout_Speed";
+            this.Script_Fadeout_Speed.Size = new System.Drawing.Size(49, 20);
+            this.Script_Fadeout_Speed.TabIndex = 19;
+            this.Script_Fadeout_Speed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // MSG_Enter
             // 
@@ -2693,36 +2726,15 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // Script_Fadeout_Speed
+            // button27
             // 
-            this.Script_Fadeout_Speed.Location = new System.Drawing.Point(387, 35);
-            this.Script_Fadeout_Speed.Name = "Script_Fadeout_Speed";
-            this.Script_Fadeout_Speed.Size = new System.Drawing.Size(49, 20);
-            this.Script_Fadeout_Speed.TabIndex = 19;
-            this.Script_Fadeout_Speed.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(384, 21);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(80, 13);
-            this.label40.TabIndex = 20;
-            this.label40.Text = "Speed Fadeout";
-            // 
-            // Script_Fadeout_White_CB
-            // 
-            this.Script_Fadeout_White_CB.AutoSize = true;
-            this.Script_Fadeout_White_CB.Location = new System.Drawing.Point(386, 58);
-            this.Script_Fadeout_White_CB.Name = "Script_Fadeout_White_CB";
-            this.Script_Fadeout_White_CB.Size = new System.Drawing.Size(96, 17);
-            this.Script_Fadeout_White_CB.TabIndex = 21;
-            this.Script_Fadeout_White_CB.Text = "Fadeout White";
-            this.Script_Fadeout_White_CB.UseVisualStyleBackColor = true;
+            this.button27.Location = new System.Drawing.Point(232, 463);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(196, 23);
+            this.button27.TabIndex = 24;
+            this.button27.Text = "Play Intro";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // Form1
             // 
@@ -2760,6 +2772,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Script_Fadeout_Speed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comwaitsecondsBox)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
@@ -2795,7 +2808,6 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Script_Fadeout_Speed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3032,6 +3044,7 @@
         private System.Windows.Forms.CheckBox Script_Fadeout_White_CB;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.NumericUpDown Script_Fadeout_Speed;
+        private System.Windows.Forms.Button button27;
 
     }
 }

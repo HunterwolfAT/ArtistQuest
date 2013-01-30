@@ -1752,5 +1752,11 @@ namespace WindowsGame1
                 || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)
                 AddCommand("Toggle Gun", iargs, sargs, commandlistbox.SelectedIndex);
         }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            game.map.introplayed = false;
+            game.PlayIntro();
+        }
     }
 }
