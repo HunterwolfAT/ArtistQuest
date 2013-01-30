@@ -193,6 +193,7 @@ namespace WindowsGame1
             {
                 Mode = "Menu";
                 SelectedIndex = 0;
+                ScrollIndex = 0;
             }
             if (Mode == "WriteSave")
             {
