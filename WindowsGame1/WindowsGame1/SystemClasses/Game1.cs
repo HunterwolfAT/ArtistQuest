@@ -288,7 +288,7 @@ namespace WindowsGame1
             }
             else // Regular Game Logic
             {
-                player.Update(gui.MSGTextDisplayed());
+                player.Update(gui.MSGShowTalkingAnimation());
 
                 if (Editor.ShowPlayerPos)
                     Console.WriteLine("Player X: " + player.position.X.ToString() + " Y: " + player.position.Y.ToString());

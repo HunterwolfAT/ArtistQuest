@@ -479,6 +479,11 @@ namespace WindowsGame1
                 List<int> iargs = new List<int>();
                 sargs.Add(Com_SArg.Text);
 
+                if (Script_MSG_Silent_CB.Checked)
+                {
+                    sargs.Add("**Silent**");
+                    Script_MSG_Silent_CB.Checked = false;
+                }
 
                 if (tabControl3.TabPages[tabControl3.SelectedIndex].Name == "verbstab" && objectlistbox.SelectedIndex != -1 && verblistscript.SelectedIndex != -1
                     || tabControl3.TabPages[tabControl3.SelectedIndex].Name == "itemstab" && scriptitemlistbox.SelectedIndex != -1 && scriptitemscriptlistbox.SelectedIndex != -1)

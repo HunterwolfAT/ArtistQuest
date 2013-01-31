@@ -200,7 +200,16 @@ namespace WindowsGame1
                             if (game.player.position.Y > 290)
                                 downbox = false;
 
-                            gui.DisplayMSG(activescript.Commands[Commandcounter].SArgs[0], true, "LOL", downbox, firstMSG);
+                            Boolean silent = false;
+                            if (activescript.Commands[Commandcounter].SArgs.Count > 1)
+                            {
+                                if (activescript.Commands[Commandcounter].SArgs[1] == "**Silent**")
+                                {
+                                    silent = true;
+                                }
+                            }
+
+                            gui.DisplayMSG(activescript.Commands[Commandcounter].SArgs[0], true, "LOL", downbox, firstMSG, silent);
                         }
                         else
                             Console.WriteLine("No Message was defined!");

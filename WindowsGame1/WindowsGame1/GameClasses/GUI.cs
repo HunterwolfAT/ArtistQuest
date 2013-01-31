@@ -18,6 +18,7 @@ namespace WindowsGame1
         String MSGBoxTextName;
         Vector2 MSGposition;
         public Boolean ShowMSG;
+        public Boolean SilentMSG;
         Boolean MSGisdone;
         Color MSGColor;
         float MSGOpacity = 0f;
@@ -194,12 +195,13 @@ namespace WindowsGame1
             ScreenFadeTex.Color = new Color(255, 255, 255, FadeOpacity);
         }
 
-        public void DisplayMSG(String MSG, Boolean scrolling, String name = "", Boolean down = true, Boolean first = false)
+        public void DisplayMSG(String MSG, Boolean scrolling, String name = "", Boolean down = true, Boolean first = false, Boolean silent = false)
         {
             MSGBoxText = parseText(MSG);
             ShowMSG = true;
             ShownMSGBoxText = "";
             MSGBoxTextName = name;
+            SilentMSG = silent;
 
             //Replace eventual variables with their value
             int firstmark = MSGBoxText.IndexOf("|");
@@ -478,6 +480,15 @@ namespace WindowsGame1
         public Boolean MSGTextDisplayed()
         {
             return (MSGBoxText == ShownMSGBoxText);
+        }
+
+        public Boolean MSGShowTalkingAnimation()
+        {
+            bool DontAnimate = MSGBoxText == ShownMSGBoxText;
+            if (SilentMSG)
+                DontAnimate = true;
+
+            return (DontAnimate);
         }
 
         public void SetOpacity(float value)

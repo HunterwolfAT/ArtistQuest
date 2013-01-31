@@ -31,6 +31,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button27 = new System.Windows.Forms.Button();
             this.a = new System.Windows.Forms.Button();
             this.newsnapshotButton = new System.Windows.Forms.Button();
             this.snapshotLB = new System.Windows.Forms.ListBox();
@@ -257,7 +258,7 @@
             this.ToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.button27 = new System.Windows.Forms.Button();
+            this.Script_MSG_Silent_CB = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -363,6 +364,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(232, 463);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(196, 23);
+            this.button27.TabIndex = 24;
+            this.button27.Text = "Play Intro";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // a
             // 
@@ -1190,6 +1201,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.Script_MSG_Silent_CB);
             this.tabPage4.Controls.Add(this.Script_Fadeout_White_CB);
             this.tabPage4.Controls.Add(this.label40);
             this.tabPage4.Controls.Add(this.Script_Fadeout_Speed);
@@ -1250,9 +1262,9 @@
             // 
             // MSG_Enter
             // 
-            this.MSG_Enter.Location = new System.Drawing.Point(52, 153);
+            this.MSG_Enter.Location = new System.Drawing.Point(40, 153);
             this.MSG_Enter.Name = "MSG_Enter";
-            this.MSG_Enter.Size = new System.Drawing.Size(186, 36);
+            this.MSG_Enter.Size = new System.Drawing.Size(207, 36);
             this.MSG_Enter.TabIndex = 18;
             this.MSG_Enter.Text = "Wait for ENTER";
             this.MSG_Enter.UseVisualStyleBackColor = true;
@@ -1384,9 +1396,9 @@
             // 
             // MSG_com
             // 
-            this.MSG_com.Location = new System.Drawing.Point(52, 108);
+            this.MSG_com.Location = new System.Drawing.Point(40, 103);
             this.MSG_com.Name = "MSG_com";
-            this.MSG_com.Size = new System.Drawing.Size(186, 37);
+            this.MSG_com.Size = new System.Drawing.Size(140, 37);
             this.MSG_com.TabIndex = 3;
             this.MSG_com.Text = "Message";
             this.MSG_com.UseVisualStyleBackColor = true;
@@ -2726,15 +2738,15 @@
             // 
             this.saveFileDialog1.Filter = "Rooms|*.*";
             // 
-            // button27
+            // Script_MSG_Silent_CB
             // 
-            this.button27.Location = new System.Drawing.Point(232, 463);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(196, 23);
-            this.button27.TabIndex = 24;
-            this.button27.Text = "Play Intro";
-            this.button27.UseVisualStyleBackColor = true;
-            this.button27.Click += new System.EventHandler(this.button27_Click);
+            this.Script_MSG_Silent_CB.AutoSize = true;
+            this.Script_MSG_Silent_CB.Location = new System.Drawing.Point(186, 114);
+            this.Script_MSG_Silent_CB.Name = "Script_MSG_Silent_CB";
+            this.Script_MSG_Silent_CB.Size = new System.Drawing.Size(52, 17);
+            this.Script_MSG_Silent_CB.TabIndex = 22;
+            this.Script_MSG_Silent_CB.Text = "Silent";
+            this.Script_MSG_Silent_CB.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -3045,6 +3057,7 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.NumericUpDown Script_Fadeout_Speed;
         private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.CheckBox Script_MSG_Silent_CB;
 
     }
 }
