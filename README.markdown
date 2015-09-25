@@ -1,6 +1,6 @@
 ArtistQuest
 ====================
-by HunterwolfAT (eMail: hunterwolf0815@gmail.com)
+by HunterwolfAT
 
 Overview
 ---------------------
